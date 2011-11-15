@@ -1,5 +1,5 @@
-cache
-apps/backend/config/settings.yml
-apps/frontend/config/settings.yml
-config/databases.yml
-log
+/cache
+/apps/backend/config/settings.yml
+/apps/frontend/config/settings.yml
+/config/databases.yml
+/log
