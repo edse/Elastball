@@ -1,0 +1,29 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+
+all:
+
+  melody:
+    create_user: false
+    redirect_register: @oauth_register
+    redirect_error: @oauth_error
+
+    facebook:
+      key: 202743519800174
+      secret: cb7e6921ceb5d1f4f13349802835acf9
+      callback: @oauth_connect
+      scope: [email]
+
+    twitter:
+      key: VEu3s2ut5aU2RBAjz9rsg
+      secret: 8fnBeJPMAwjYhyIpDKIA9GxcZFYRmEGHAZGUXro
+      api: YOUR_API_HERE
+      callback: @oauth_connect
+      scope: [email]
+
+  sf_phpopenid_plugin:
+    lib_path: %SF_ROOT_DIR%/lib/vendor/php-openid
+    create_user: false
+    redirect_register: @openid_register

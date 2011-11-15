@@ -1,0 +1,66 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+# User:
+#   fabien:
+#     username: fabien
+#     password: changeme
+#     name:     Fabien Potencier
+#     email:    fabien.potencier@symfony-project.com
+#   kris:
+#     username: Kris.Wallsmith
+#     password: changeme
+#     name:     Kris Wallsmith
+#     email:    kris.wallsmith@symfony-project.com
+
+Team:
+  saopaulo:
+    official_name: São Paulo Futebol Clube
+    name: São Paulo
+    nickname: São Paulo
+    logo: sao_paulo_30x30.png
+    initials: SPO
+    slug: sao-paulo
+
+##### SFGUARD #####
+
+sfGuardUser:
+  User_admin:
+    first_name:     Emerson
+    last_name:      Estrella
+    email_address:  edse@edse.com
+    username:       edse
+    password:       edse
+    is_super_admin: true
+    Groups:         [Group_admin]
+    Permissions:    [Permission_admin]
+  User_editor:
+    first_name:     Editor
+    last_name:      X
+    email_address:  editor@editor.com
+    username:       editor
+    password:       editor
+    is_super_admin: false
+    Groups:         [Group_user]
+    Permissions:    [Permission_user]
+
+sfGuardGroup:
+  Group_admin:
+    name:           admin
+    description:    Administrator group
+    Permissions:    [Permission_admin, Permission_user]
+  Group_user:
+    name:           user
+    description:    User group
+    Permissions:    [Permission_user]
+
+sfGuardPermission:
+  Permission_admin:
+    name:           admin
+    description:    Administrator permission
+  Permission_user:
+    name:           user
+    description:    User permission

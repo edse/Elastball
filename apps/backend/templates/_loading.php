@@ -1,0 +1,1 @@
+	<div id="admin_loading" style="text-align:left; width: 100%;"><img src="/images/loading3.gif" alt="Loading" title="Loading" /></div>

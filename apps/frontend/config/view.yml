@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        ElastBall: Futebol de botão online - Times, Jogos, Campeonatos, Notícias e Iteratividade em tempo real
+    description:  ElastBall: Futebol de botão online - Times, Jogos, Campeonatos, Notícias e Iteratividade em tempo real
+    keywords:     futebol de botão, botão, online, soccer, futebol, clube, social, data, info, realtime, game, jogos, bola, mundo, brasil
+    language:     pt-BR
+    robots:       index, follow
+
+  stylesheets:    [main.css]
+
+  javascripts:    [http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js]
+
+  has_layout:     true
+  layout:         layout

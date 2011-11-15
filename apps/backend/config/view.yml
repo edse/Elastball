@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Elastball
+    description:  Powered by Possum-CMS
+    keywords:     symfony, doctrine, cms, soccer, futebol, clube, social, data, info, realtime, game, jogos, bola, mundo, brasil
+    language:     pt-br
+    robots:       index, follow
+
+  stylesheets:    [core.css]
+
+  javascripts:    [jquery-ui-1.8.16/js/jquery-1.6.2.min.js, jquery-ui-1.8.16/js/jquery-ui-1.8.16.custom.min.js]
+  
+  has_layout:     true
+  layout:         layout

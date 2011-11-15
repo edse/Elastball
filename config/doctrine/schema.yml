@@ -1,0 +1,348 @@
+detect_relations: true
+
+Team:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~, Sluggable: fields: [initials] canUpdate: true unique: true, }
+  columns:
+    official_name:      { type: string(255), notnull: true }
+    name:               { type: string(255), notnull: true }
+    nickname:           { type: string(255), notnull: true }
+    logo:               { type: string(255), notnull: true }
+    initials:           { type: string(255), notnull: true }
+    description:        { type: string(255), notnull: true }
+
+Stadium:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~, Sluggable: fields: [name] canUpdate: true unique: true, }
+  columns:
+    official_name:      { type: string(255), notnull: true }
+    name:               { type: string(255), notnull: true }
+    nickname:           { type: string(255), notnull: true }
+    capacity:           { type: string(255), notnull: true }
+    address:            { type: string(255), notnull: true }
+    inauguration:       { type: string(255), notnull: true }
+    location:           { type: string(255), notnull: true }
+    geo_location:       { type: string(255), notnull: true }
+
+Chat:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    user_id:                 { type: integer }
+    message:                 { type: string(255), notnull: true }
+  relations:
+    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: ChatMessages }
+
+Game:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    date_start:               { type: timestamp, notnull: true }
+    home_user_id:             { type: integer }
+    home_team_id:             { type: integer }
+    home_team_score:          { type: integer }
+    away_user_id:             { type: integer }
+    away_team_id:             { type: integer }
+    away_team_score:          { type: integer }
+    stadium_id:               { type: integer }
+    access_code:              { type: string(255), notnull: true }
+    url:                      { type: string(255), notnull: true }
+  relations:
+    HomeUser: { local: home_user_id, foreign: id, class: sfGuardUser, foreignAlias: HomeGames }
+    AwayUser: { local: away_user_id, foreign: id, class: sfGuardUser, foreignAlias: AwayGames } 
+    HomeTeam: { local: home_team_id, foreign: id, class: Team }
+    AwayTeam: { local: away_team_id, foreign: id, class: Team } 
+
+Movement:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    game_id:                  { type: integer }
+    user_id:                  { type: integer }
+    message:                  { type: string(255), notnull: true }
+  relations:
+    Game: { local: game_id, foreign: id, class: Game, foreignAlias: Movements }
+    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: GameMovements }
+
+###########
+# CMS
+###########
+
+Asset:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~, Sluggable: fields: [title] canUpdate: true unique: true, Taggable: ~ }
+  columns:
+    asset_type_id:  { type: integer, notnull: true }
+    user_id:  { type: integer, notnull: true }
+    title:  { type: string(255), notnull: true }
+    description:  { type: string(255) }
+    is_active: { type: boolean, default: 0 }
+    views: { type: integer }
+    ugc: { type: boolean, default: 0 }
+    date_start: { type: timestamp }
+    date_end: { type: timestamp }
+  relations:
+    AssetType:
+      class: AssetType
+      foreignAlias: Assets
+    sfGuardUser:
+      class: sfGuardUser
+      foreignAlias: Assets
+      local: user_id
+    RelatedAsset:
+      class: RelatedAsset
+      local: id
+      foreign: parent_asset_id
+      alias: RelatedAssets
+  indexes:
+    is_active_idx:
+      fields: [is_active]
+
+RelatedAsset:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    parent_asset_id:  { type: integer, notnull: true }
+    asset_id:  { type: integer, notnull: true }
+    type:  { type: string(255) }
+    description:  { type: string(255) }
+    is_active: { type: boolean, notnull: true, default: 0 }
+    display_order: { type: integer }
+  relations:
+    ParentAsset:
+      class: Asset
+      foreignAlias: RelatedAssets
+      alias: ParentAsset
+    Asset:
+      class: Asset
+      local: asset_id
+      foreignAlias: RelatedAssets
+      alias: Asset
+  indexes:
+    is_active_idx:
+      fields: [is_active]
+
+AssetType:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~, Sluggable: fields: [title]  }
+  columns:
+    title:  { type: string(255), notnull: true }
+    description:  { type: string(255) }
+    model:  { type: string(255), notnull: true }
+    display_order: { type: integer, notnull: true }
+    is_active: { type: boolean, notnull: true, default: 0 }
+    is_visible: { type: boolean, notnull: true, default: 0 }
+    upload_input: { type: boolean, notnull: true, default: 0 }parent_asset
+  indexes:
+    is_active_idx:
+      fields: [is_active]
+    upload_input_idx:
+      fields: [upload_input]
+    is_visible_idx:
+      fields: [is_visible]
+
+## AssetTypes
+
+AssetContent:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    headline:  { type: string(255) }
+    content:  { type: blob }
+    source:  { type: string(255) }
+    author:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetContent }
+
+AssetImage:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    file:  { type: string(255), notnull: true }
+    original_file:  { type: string(255), notnull: true }
+    headline:  { type: string(255) }
+    genre:  { type: string(255), notnull: true }
+    source:  { type: string(255), notnull: true }
+    author:  { type: string(255), notnull: true }
+    original_file_size:  { type: string(255), notnull: true }
+    width:  { type: string(255), notnull: true }
+    height:  { type: string(255), notnull: true }
+    extension:  { type: string(255), notnull: true }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetImage }
+
+AssetVideo:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    youtube_id:  { type: string(255) }
+    youtube_thumb:  { type: string(255) }
+    file:  { type: string(255) }
+    original_file:  { type: string(255) }
+    headline:  { type: string(255) }
+    genre:  { type: string(255) }
+    source:  { type: string(255) }
+    author:  { type: string(255) }
+    width:  { type: string(255) }
+    height:  { type: string(255) }
+    extension:  { type: string(255) }
+    original_file_size:  { type: string(255) }
+    frame_rate:  { type: string(255) }
+    bitrate:  { type: string(255) }
+    duration:  { type: string(255) }
+    start_from:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetVideo }
+
+AssetAudio:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    file:  { type: string(255), notnull: true }
+    original_file:  { type: string(255), notnull: true }
+    genre:  { type: string(255) }
+    source:  { type: string(255) }
+    author:  { type: string(255) }
+    interpret:  { type: string(255) }
+    composer:  { type: string(255) }
+    year:  { type: string(255) }
+    label:  { type: string(255) }
+    extension:  { type: string(255), notnull: true }
+    original_file_size:  { type: string(255), notnull: true }
+    duration:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetAudio }
+
+AssetFile:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    file:  { type: string(255), notnull: true }
+    genre:  { type: string(255) }
+    source:  { type: string(255) }
+    author:  { type: string(255) }
+    extension:  { type: string(255), notnull: true }
+    file_size:  { type: string(255), notnull: true }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetFile }
+
+AssetImageGallery:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    headline:  { type: string(255) }
+    text: { type: clob }
+    source:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetImageGallery }
+
+AssetAudioGallery:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    headline:  { type: string(255) }
+    source:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetAudioGallery }
+
+AssetVideoGallery:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    youtube_id:  { type: string(255) }
+    headline:  { type: string(255) }
+    source:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetVideoGallery }
+
+AssetQuestionnaire:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    name:  { type: string(255), notnull: true }
+    headline:  { type: string(255) }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetQuestionnaire }
+    AssetQuestions: { type: one, foreignType: many, local: id, foreign: asset_questionnaire_id, foreignAlias: AssetQuestionnaire }
+
+AssetQuestion:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer }
+    asset_questionnaire_id:  { type: integer }
+    question:  { type: string(255), notnull: true }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetQuestion }
+    AssetQuestionnaire: { type: one, foreignType: one, local: asset_questionnaire_id, foreign: id, foreignAlias: AssetQuestionnaire }
+
+AssetAnswer:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    asset_question_id:  { type: integer, notnull: true }
+    answer:  { type: string(255), notnull: true }
+    votes:  { type: integer }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetAnswer }
+    AssetQuestion: { local: asset_question_id, foreign: id, foreignAlias: Answers }
+
+AssetVote:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    asset_id:  { type: integer, notnull: true }
+    ip:  { type: string(255), notnull: true }
+  relations:
+    Asset: { onDelete: CASCADE, type: one, foreignType: one, local: asset_id, foreign: id, foreignAlias: AssetVote }
+
+ImageUsage:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~, Sluggable: fields: [title] }
+  columns:
+    title:  { type: string(255), notnull: true }
+    description:  { type: string(255) }
+    width:  { type: integer, notnull: true }
+    height:  { type: integer, notnull: true }
+    background: { type: boolean, notnull: true, default: 0 }
+    background_color: { type: string(255) }

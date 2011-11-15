@@ -1,0 +1,61 @@
+movement:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                movement
+    module:               movement
+    prefix_path:          /movement
+    column:               id
+    with_wildcard_routes: true
+
+chat:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                chat
+    module:               chat
+    prefix_path:          /chat
+    column:               id
+    with_wildcard_routes: true
+
+game:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                game
+    module:               game
+    prefix_path:          /game
+    column:               id
+    with_wildcard_routes: true
+
+stadium:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                stadium
+    module:               stadium
+    prefix_path:          /stadium
+    column:               id
+    with_wildcard_routes: true
+
+team:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                team
+    module:               team
+    prefix_path:          /team
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
