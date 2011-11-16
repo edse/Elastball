@@ -26,6 +26,7 @@
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
  * @property Doctrine_Collection $Tokens
+ * @property Doctrine_Collection $Online
  * @property Doctrine_Collection $ChatMessages
  * @property Doctrine_Collection $HomeGames
  * @property Doctrine_Collection $AwayGames
@@ -53,6 +54,7 @@
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
  * @method Doctrine_Collection   getTokens()                Returns the current record's "Tokens" collection
+ * @method Doctrine_Collection   getOnline()                Returns the current record's "Online" collection
  * @method Doctrine_Collection   getChatMessages()          Returns the current record's "ChatMessages" collection
  * @method Doctrine_Collection   getHomeGames()             Returns the current record's "HomeGames" collection
  * @method Doctrine_Collection   getAwayGames()             Returns the current record's "AwayGames" collection
@@ -79,6 +81,7 @@
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
  * @method sfGuardUser           setTokens()                Sets the current record's "Tokens" collection
+ * @method sfGuardUser           setOnline()                Sets the current record's "Online" collection
  * @method sfGuardUser           setChatMessages()          Sets the current record's "ChatMessages" collection
  * @method sfGuardUser           setHomeGames()             Sets the current record's "HomeGames" collection
  * @method sfGuardUser           setAwayGames()             Sets the current record's "AwayGames" collection
@@ -195,6 +198,10 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasMany('Token as Tokens', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Online', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

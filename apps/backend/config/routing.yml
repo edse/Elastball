@@ -1,3 +1,12 @@
+socket:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                socket
+    module:               socket
+    prefix_path:          /socket
+    column:               id
+    with_wildcard_routes: true
+
 movement:
   class: sfDoctrineRouteCollection
   options:
@@ -49,7 +58,7 @@ team:
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: socket, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules

@@ -6,13 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <?php include_http_metas() ?>
   <?php include_metas() ?>
+  <?php include_title() ?>
   <link rel="shortcut icon" href="/favicon.ico" />
-  <title>ElastBall: Futebol de botão online - Times, Jogos, Campeonatos, Notícias e Iteratividade em tempo real</title> 
-  <link rel="stylesheet"  href="/js/jquery.mobile/jquery.mobile-1.0b2.min.css" /> 
-  <link rel="stylesheet" href="/css/webapp.css" /> 
-  <script src="/js/jquery-1.6.2.min.js"></script> 
-  <script src="/js/webapp.js"></script> 
-  <script src="/js/jquery.mobile/jquery.mobile-1.0b2.min.js"></script>
+  <?php include_stylesheets() ?>
+  <?php include_javascripts() ?>
 </head> 
 <body> 
    <?php if ($sf_user->isAuthenticated()): ?> 

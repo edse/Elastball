@@ -18,6 +18,9 @@
               $c = 'yt-navbar-item';
               $m = $sf_params->get('module');
               if(($sf_user->hasPermission('admin')) || ($sf_user->hasPermission('editor'))) {
+                echo link_to('Socket', 'socket/index', array(
+                  'class'  => $m=='socket' ? $c.' yt-navbar-item-current' : $c
+                ));
                 echo link_to('Teams', 'team/index', array(
                   'class'  => $m=='team' ? $c.' yt-navbar-item-current' : $c
                 ));

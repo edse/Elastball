@@ -1,5 +1,25 @@
 detect_relations: true
 
+Socket:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    host:               { type: string(255) }
+    port:               { type: string(10) }
+    status:             { type: string(255) }
+
+Online:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns:
+    user_id:            { type: integer }
+    socket_user_id:     { type: string(255) }
+    status:             { type: string(255) }
+  relations:
+    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: Online }
+
 Team:
   options:
     collate: utf8_unicode_ci
@@ -45,16 +65,18 @@ Game:
     charset: utf8
   actAs: { Timestampable: ~ }
   columns:
-    date_start:               { type: timestamp, notnull: true }
+    date_start:               { type: timestamp }
+    date_end:                 { type: timestamp }
     home_user_id:             { type: integer }
     home_team_id:             { type: integer }
-    home_team_score:          { type: integer }
+    home_score:          { type: integer }
     away_user_id:             { type: integer }
     away_team_id:             { type: integer }
-    away_team_score:          { type: integer }
+    away_score:          { type: integer }
     stadium_id:               { type: integer }
     access_code:              { type: string(255), notnull: true }
     url:                      { type: string(255), notnull: true }
+    status:                   { type: string(255) }
   relations:
     HomeUser: { local: home_user_id, foreign: id, class: sfGuardUser, foreignAlias: HomeGames }
     AwayUser: { local: away_user_id, foreign: id, class: sfGuardUser, foreignAlias: AwayGames } 
