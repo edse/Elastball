@@ -132,10 +132,16 @@ sfContext::createInstance($configuration)->dispatch();
         }
         elseif(($parts[0] == "yeswant2play")&&(intval($parts[1]) > 0)){
           //GAME REQUEST ACCEPTED
-          $away_user_id = 0;
+          $this->send($user->socket, "startgame<->23");
+          /*
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
             if($this->users[$i]->id == $parts[1]){
+              $this->send($this->users[$i]->socket, "startgame<->23");
+            }
+          }
+          */
+              /*
               $away_user_id = $this->users[$i]->user_id;
 
               //CREATE GAME
@@ -150,12 +156,11 @@ sfContext::createInstance($configuration)->dispatch();
               //$this->users[$i]->game_id = $game->getId();
               //$user->game_id = $game->getId();
 
-              $this->send($this->users[$i]->socket, "startgame<->".$game->getId());
+              $this->send($this->users[$i]->socket, "startgame<->23");
               //$this->send($user->socket, "startgame<->".$game->getId());
-            }
-          }
+              */
         }
-        elseif(($parts[0] == "startgame")&&(intval($parts[1]) > 0)){
+        elseif(($parts[0] == "startgame2")&&(intval($parts[1]) > 0)){
           //START GAME
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
@@ -204,8 +209,8 @@ sfContext::createInstance($configuration)->dispatch();
 		 */
 		function send ($client, $msg) {
 			$this->say ("> {$msg}");
-			$msg = $this->encode ($msg);
-			socket_write ($client, $msg, strlen ($msg));
+			$msg = $this->encode($msg);
+			socket_write($client, $msg, strlen ($msg));
 		}
 
 		/**

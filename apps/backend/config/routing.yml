@@ -1,3 +1,12 @@
+online:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                online
+    module:               online
+    prefix_path:          /online
+    column:               id
+    with_wildcard_routes: true
+
 socket:
   class: sfDoctrineRouteCollection
   options:

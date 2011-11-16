@@ -4,4 +4,4 @@
 
 	// Basic WebSocket demo echoes msg back to client
 	include "websocket.class.php";
-	$master = new WebSocket ("localhost", 8088);
+	$master = new WebSocket ("localhost", 8090);
