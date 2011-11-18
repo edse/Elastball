@@ -1,10 +1,4 @@
 <?php
-require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
-
-$configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
-sfContext::createInstance($configuration)->dispatch();
-
-
 /**
  * Simple implementation of HTML5 WebSocket server-side.
  *
@@ -114,6 +108,10 @@ sfContext::createInstance($configuration)->dispatch();
       if(count($parts)>1){
         if(($parts[0] == "hello")&&(intval($parts[1]) > 0)){
           //ONLINE
+          require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
+          $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
+          sfContext::createInstance($configuration)->dispatch();
+
           $u = Doctrine::getTable('sfGuardUser')->findOneById($parts[1]);
           $user->user_id = $parts[1];
           $user->nick = $u->getNickname();
@@ -160,7 +158,7 @@ sfContext::createInstance($configuration)->dispatch();
               //$this->send($user->socket, "startgame<->".$game->getId());
               */
         }
-        elseif(($parts[0] == "startgame2")&&(intval($parts[1]) > 0)){
+        elseif(($parts[0] == "startgame")&&(intval($parts[1]) > 0)){
           //START GAME
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
@@ -178,6 +176,10 @@ sfContext::createInstance($configuration)->dispatch();
         }
         elseif(($parts[0] == "gamemove")&&(intval($parts[1]) > 0)){
           //GAME MOVEMENT
+          require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
+          $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
+          sfContext::createInstance($configuration)->dispatch();
+
           $move = new Movement();
           $move->setGameId($parts[1]);
           $move->setUserId($user->user_id);
@@ -193,6 +195,10 @@ sfContext::createInstance($configuration)->dispatch();
             $this->send($this->users[$i]->socket, $msg);
         }
         //CHAT MESSAGE
+        require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
+        $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
+        sfContext::createInstance($configuration)->dispatch();
+
         $chat = new Chat();
         $chat->setUserId($user->user_id);
         $chat->setMessage($msg);
@@ -264,6 +270,9 @@ sfContext::createInstance($configuration)->dispatch();
 			}
       
       //OFFLINE
+      require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
+      $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
+      sfContext::createInstance($configuration)->dispatch();
       if($socket_id != 0){
         $online = Doctrine::getTable('Online')->findOneBySocketUserId($socket_id);
         $online->delete();
