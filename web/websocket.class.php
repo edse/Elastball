@@ -197,7 +197,10 @@
               $message .= "elastball.possum-cms.com".$this->users[$i]->id."elastball.possum-cms.com";
             }
           }
-          $this->send($user->socket, $message);
+          //$this->send($user->socket, $message);
+          $this->say("> {$message}");
+          //$msg = $this->encode($msg);
+          socket_write($user->socket, $message, strlen($message));
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
