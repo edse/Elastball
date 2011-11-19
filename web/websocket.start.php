@@ -4,4 +4,12 @@
 
 	// Basic WebSocket demo echoes msg back to client
 	include "websocket.class.php";
-	$master = new WebSocket ("elastball.possum-cms.com", 8086);
+  $port = 8080;
+  for($i=0; $i<=10; $i++){
+    try{
+      $master = new WebSocket ("elastball.possum-cms.com", $port+$i);
+      break;
+    } catch (Exception $e) {
+      echo "\n>>".$e->getMessage();
+    }
+  }
