@@ -198,9 +198,9 @@
             }
           }
           //$this->send($user->socket, $message);
-          $this->say("> {$message}");
-          //$msg = $this->encode($msg);
-          socket_write($user->socket, $message, strlen($message));
+          $msg = $this->encode($message);
+          $this->say("> {$message} l:".strlen($message)."/".strlen($msg));
+          socket_write($user->socket, $msg, strlen($msg));
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
