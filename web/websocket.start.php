@@ -6,8 +6,9 @@
 	include "websocket.class.php";
   $port = 8080;
   for($i=0; $i<=10; $i++){
+    $port+=$i;
     try{
-      $master = new WebSocket ("elastball.possum-cms.com", $port+$i);
+      $master = new WebSocket ("elastball.possum-cms.com", $port);
       break;
     } catch (Exception $e) {
       echo "\n>>".$e->getMessage();
