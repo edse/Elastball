@@ -190,10 +190,11 @@
           */
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "whoisonline")){
-          foreach($this->users as $u){
-            if($user != $u)
-              $this->send($user->socket, $u->id);
-              sleep(1);
+          $n = count($this->users);
+          for($i = 0; $i < $n; $i++) {
+            if($this->users[$i]->id != $user){
+              $this->send($user->socket, "- ".$this->users[$i]->id);
+            }
           }
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
