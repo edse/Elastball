@@ -204,7 +204,7 @@
           $this->say("kicking : ".$parts[2]);
           $n = count($this->users);
           for($i = 0; $i < $n; $i++) {
-            if($this->users[$i]->id == $parts[2]){
+            if(($this->users[$i]->id == $parts[2])&&(!$kick)){
               $this->send($this->users[$i]->socket, "You has been kicked! Bye!");
               $this->disconnect($this->users[$i]->socket);
               $kick = true;
