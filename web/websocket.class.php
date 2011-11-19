@@ -75,7 +75,7 @@
 						}
 					}
 					else {
-						$bytes = @socket_recv ($socket, $buffer, 2048, 0);
+						$bytes = @socket_recv($socket, $buffer, 20480, 0);
 						if ($bytes == 0) {
 							// On socket.close ();
 							$this->disconnect ($socket);
