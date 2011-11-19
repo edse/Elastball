@@ -371,51 +371,6 @@
 			return true;
 		}
 
-    
-    function dohandshake2($user,$buffer){
-      $this->log("\nRequesting handshake...");
-      $this->log($buffer);
-      list($resource,$host,$origin,$strkey1,$strkey2,$data) = $this->getheaders($buffer);
-      $this->log("Handshaking...");
-    
-      $pattern = '/[^\d]*/';
-      $replacement = '';
-      $numkey1 = preg_replace($pattern, $replacement, $strkey1);
-      $numkey2 = preg_replace($pattern, $replacement, $strkey2);
-    
-      $pattern = '/[^ ]*/';
-      $replacement = '';
-      $spaces1 = strlen(preg_replace($pattern, $replacement, $strkey1));
-      $spaces2 = strlen(preg_replace($pattern, $replacement, $strkey2));
-    
-      if($spaces1 == 0 || $spaces2 == 0 || $numkey1 % $spaces1 != 0 || $numkey2 % $spaces2 != 0) {
-        socket_close($user->socket);
-        $this->log('failed');
-        return false;
-      }
-    
-      $ctx = hash_init('md5');
-      hash_update($ctx, pack("N", $numkey1/$spaces1));
-      hash_update($ctx, pack("N", $numkey2/$spaces2));
-      hash_update($ctx, $data);
-      $hash_data = hash_final($ctx,true);
-    
-      $upgrade  = "HTTP/1.1 101 WebSocket Protocol Handshake\r\n" .
-                  "Upgrade: WebSocket\r\n" .
-                  "Connection: Upgrade\r\n" .
-                  "Sec-WebSocket-Origin: " . $origin . "\r\n" .
-                  "Sec-WebSocket-Location: ws://" . $host . $resource . "\r\n" .
-                  "\r\n" .
-                  $hash_data;
-    
-      socket_write($user->socket,$upgrade.chr(0),strlen($upgrade.chr(0)));
-      $user->handshake=true;
-      $this->log($upgrade);
-      $this->log("Done handshaking...");
-      return true;
-    }
-
-
 		/**
 		 * @brief Calculate Sec-WebSocket-Accept
 		 * @note For more info look at: http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-17
@@ -450,6 +405,70 @@
 			
 			return array ($resource, $host, $connection, $version, $origin, $key, $upgrade);
 		}
+
+//////////////////////////////////////////
+
+  function dohandshake2($user,$buffer){
+    $this->log("\nRequesting handshake...");
+    $this->log($buffer);
+    list($resource,$host,$origin,$key1,$key2,$l8b) = $this->getheaders2($buffer);
+    $this->log("Handshaking...");
+    //$port = explode(":",$host);
+    //$port = $port[1];
+    //$this->log($origin."\r\n".$host);
+    $upgrade  = "HTTP/1.1 101 WebSocket Protocol Handshake\r\n" .
+                "Upgrade: WebSocket\r\n" .
+                "Connection: Upgrade\r\n" .
+                                //"WebSocket-Origin: " . $origin . "\r\n" .
+                                //"WebSocket-Location: ws://" . $host . $resource . "\r\n" .
+                "Sec-WebSocket-Origin: " . $origin . "\r\n" .
+                    "Sec-WebSocket-Location: ws://" . $host . $resource . "\r\n" .
+                    //"Sec-WebSocket-Protocol: icbmgame\r\n" . //Client doesn't send this
+                "\r\n" .
+                    $this->calcKey2($key1,$key2,$l8b) . "\r\n";// .
+                        //"\r\n";
+    socket_write($user->socket,$upgrade.chr(0),strlen($upgrade.chr(0)));
+    $user->handshake=true;
+    $this->log($upgrade);
+    $this->log("Done handshaking...");
+    return true;
+  }
+  
+  function calcKey2($key1,$key2,$l8b){
+        //Get the numbers
+        preg_match_all('/([\d]+)/', $key1, $key1_num);
+        preg_match_all('/([\d]+)/', $key2, $key2_num);
+        //Number crunching [/bad pun]
+        $this->log("Key1: " . $key1_num = implode($key1_num[0]) );
+        $this->log("Key2: " . $key2_num = implode($key2_num[0]) );
+        //Count spaces
+        preg_match_all('/([ ]+)/', $key1, $key1_spc);
+        preg_match_all('/([ ]+)/', $key2, $key2_spc);
+        //How many spaces did it find?
+        $this->log("Key1 Spaces: " . $key1_spc = strlen(implode($key1_spc[0])) );
+        $this->log("Key2 Spaces: " . $key2_spc = strlen(implode($key2_spc[0])) );
+        if($key1_spc==0|$key2_spc==0){ $this->log("Invalid key");return; }
+        //Some math
+        $key1_sec = pack("N",$key1_num / $key1_spc); //Get the 32bit secret key, minus the other thing
+        $key2_sec = pack("N",$key2_num / $key2_spc);
+        //This needs checking, I'm not completely sure it should be a binary string
+        return md5($key1_sec.$key2_sec.$l8b,1); //The result, I think
+  }
+  
+  function getheaders2($req){
+    $r=$h=$o=null;
+    if(preg_match("/GET (.*) HTTP/"               ,$req,$match)){ $r=$match[1]; }
+    if(preg_match("/Host: (.*)\r\n/"              ,$req,$match)){ $h=$match[1]; }
+    if(preg_match("/Origin: (.*)\r\n/"            ,$req,$match)){ $o=$match[1]; }
+    if(preg_match("/Sec-WebSocket-Key1: (.*)\r\n/",$req,$match)){ $this->log("Sec Key1: ".$sk1=$match[1]); }
+    if(preg_match("/Sec-WebSocket-Key2: (.*)\r\n/",$req,$match)){ $this->log("Sec Key2: ".$sk2=$match[1]); }
+    if($match=substr($req,-8))                                                                  { $this->log("Last 8 bytes: ".$l8b=$match); }
+    return array($r,$h,$o,$sk1,$sk2,$l8b);
+  }
+
+
+//////////////////////////////////////////
+
 
 		/**
 		 * @brief Retrieve an user from his socket
