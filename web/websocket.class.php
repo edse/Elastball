@@ -112,7 +112,7 @@
       if($user->protocol_version == "76")
         $msg = $this->unwrap($msg);
       else
-        $msg = $this->decode($buffer);
+        $msg = $this->decode($msg);
 
       $n = count($this->users);
       for ($i = 0; $i < $n; $i++) {
