@@ -57,9 +57,7 @@
 			$this->say ("Master socket  : {$this->master}\n");
 			
 			// Main loop
-			$w=0;
 			while (true) {
-			  
 				$changed = $this->sockets;
 				socket_select ($changed, $write = NULL, $except = NULL, NULL);
 				
@@ -94,15 +92,6 @@
 						}
 					}
 				}
-        
-        //SLEEP
-        sleep(3);
-        $w++;
-        if(count($this->users)>0){
-          foreach($this->users as $u){
-            $this->send($u->socket,$w);
-          }
-        }
 			}
 		}
 
@@ -210,8 +199,7 @@
           }
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            if($user == $this->users[$i])
-              $this->send($this->users[$i]->socket, $this->decode($this->encode($message)));
+            $this->send($this->users[$i]->socket, $message);
           }
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
@@ -242,7 +230,7 @@
         }
       }
       else{
-        //SEND MSG TO EVERYONE
+        //SEND MSG TO EVERYONE except user
         $n = count($this->users);
         for ($i = 0; $i < $n; $i++) {
           if($user != $this->users[$i])
