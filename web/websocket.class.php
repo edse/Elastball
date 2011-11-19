@@ -57,7 +57,9 @@
 			$this->say ("Master socket  : {$this->master}\n");
 			
 			// Main loop
+			$w=0;
 			while (true) {
+			  
 				$changed = $this->sockets;
 				socket_select ($changed, $write = NULL, $except = NULL, NULL);
 				
@@ -92,6 +94,15 @@
 						}
 					}
 				}
+        
+        //SLEEP
+        sleep(3);
+        $w++;
+        if(count($this->users)>0){
+          foreach($this->users as $u){
+            $this->send($u->socket,$w);
+          }
+        }
 			}
 		}
 
