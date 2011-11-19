@@ -130,13 +130,20 @@
           //GAME REQUEST
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            if($this->users[$i]->id == $parts[1])
-              $this->send($this->users[$i]->socket, "want2play<->".$user->id);
+            if($this->users[$i]->id == $parts[1]){
+              if($this->users[$i]->protocol_version == "76")
+                $this->send2($this->users[$i]->socket, "want2play<->".$user->id);
+              else
+                $this->send($this->users[$i]->socket, "want2play<->".$user->id);
+            }
           }
         }
         elseif(($parts[0] == "yeswant2play")&&(intval($parts[1]) > 0)){
           //GAME REQUEST ACCEPTED
-          $this->send($user->socket, "startgame<->23");
+          if($user->protocol_version == "76")
+            $this->send2($user->socket, "startgame<->23");
+          else
+            $this->send($user->socket, "startgame<->23");
           /*
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
@@ -168,16 +175,24 @@
           //START GAME
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            if($this->users[$i]->id == $user->id)
-              $this->send($this->users[$i]->socket, $msg);
+            if($this->users[$i]->id == $user->id){
+              if($this->users[$i]->protocol_version == "76")
+                $this->send2($this->users[$i]->socket, $msg);
+              else
+                $this->send($this->users[$i]->socket, $msg);
+            }
           }
         }
         elseif(($parts[0] == "nowant2play")&&(intval($parts[1]) > 0)){
           //GAME REQUEST REFUSED
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            if($this->users[$i]->id == $parts[1])
-              $this->send($this->users[$i]->socket, $msg);
+            if($this->users[$i]->id == $parts[1]){
+              if($this->users[$i]->protocol_version == "76")
+                $this->send2($this->users[$i]->socket, $msg);
+              else
+                $this->send($this->users[$i]->socket, $msg);
+            }
           }
         }
         elseif(($parts[0] == "gamemove")&&(intval($parts[1]) > 0)){
@@ -185,7 +200,10 @@
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
             //if($this->users[$i]->id != $user->id)
-            $this->send($this->users[$i]->socket, $msg);
+            if($this->users[$i]->protocol_version == "76")
+              $this->send2($this->users[$i]->socket, $msg);
+            else
+              $this->send($this->users[$i]->socket, $msg);
           }
           /*
           require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
@@ -208,7 +226,10 @@
           }
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            $this->send($this->users[$i]->socket, $msg);
+            if($this->users[$i]->protocol_version == "76")
+              $this->send2($this->users[$i]->socket, $msg);
+            else
+              $this->send($this->users[$i]->socket, $msg);
           }
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
@@ -223,8 +244,12 @@
               break;
             }
           }
-          if(!$kick)
-            $this->send($user->socket, "Sorry, ".$parts[2]." not found!");
+          if(!$kick){
+            if($user->protocol_version == "76")
+              $this->send2($user->socket, "Sorry, ".$parts[2]." not found!");
+            else
+              $this->send($user->socket, "Sorry, ".$parts[2]." not found!");
+          }
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "shutdown")){
           $this->say("Shutting down at : " . date ('Y-m-d H:i:s'));
@@ -242,8 +267,12 @@
         //SEND MSG TO EVERYONE except user
         $n = count($this->users);
         for ($i = 0; $i < $n; $i++) {
-          if($user != $this->users[$i])
-            $this->send($this->users[$i]->socket, $msg);
+          if($user != $this->users[$i]){
+            if($this->users[$i]->protocol_version == "76")
+              $this->send2($this->users[$i]->socket, $msg);
+            else
+              $this->send($this->users[$i]->socket, $msg);
+          }
         }
         
         //CHAT MESSAGE
@@ -365,6 +394,7 @@
         // Closes the handshake
         socket_write($user->socket, $reply, strlen ($reply));
         $user->handshake = true;
+        $user->protocol_version = "HyBi-17";
         $this->log ($reply);
         $this->log ("Done handshaking...");
       }
@@ -429,6 +459,7 @@
                         //"\r\n";
     socket_write($user->socket,$upgrade.chr(0),strlen($upgrade.chr(0)));
     $user->handshake=true;
+    $user->protocol_version = "76";
     $this->log($upgrade);
     $this->log("Done handshaking...");
     return true;
@@ -466,6 +497,15 @@
     return array($r,$h,$o,$sk1,$sk2,$l8b);
   }
 
+  function send2($client,$msg){
+    $this->say("> ".$msg);
+    $msg = $this->wrap($msg);
+    socket_write($client,$msg,strlen($msg));
+    $this->say("! ".strlen($msg));
+  } 
+
+  function    wrap($msg=""){ return chr(0).$msg.chr(255); }
+  function  unwrap($msg=""){ return substr($msg,1,strlen($msg)-2); }
 
 //////////////////////////////////////////
 
@@ -569,6 +609,7 @@
 		var $id;
 		var $socket;
     var $handshake;
+    var $protocol_version;
     var $status;
     var $user_id;
     var $game_id;
