@@ -178,6 +178,10 @@
         }
         elseif(($parts[0] == "gamemove")&&(intval($parts[1]) > 0)){
           //GAME MOVEMENT
+          for ($i = 0; $i < $n; $i++) {
+            if($this->users[$i]->id != $user->id)
+              $this->send($this->users[$i]->socket, $msg);
+          }
           /*
           require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
           $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
