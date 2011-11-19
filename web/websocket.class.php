@@ -349,7 +349,7 @@
 			list($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders ($buffer);
 			
       if($version != "8"){
-        dohandshake2($user, $buffer);
+        $this->dohandshake2($user, $buffer);
       }else{
         $this->log ("Handshaking...");
         $reply  = 
