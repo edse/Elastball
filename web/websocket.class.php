@@ -91,7 +91,8 @@
 								$this->dohandshake ($user, $buffer);
 							}
 							else {
-								$this->process($user, $this->decode($buffer));
+                //$this->process($user, $this->decode($buffer));
+                $this->process($user, $buffer);
 							}
 						}
 					}
@@ -107,6 +108,11 @@
 		 * @return void
 		 */
 		function process($user, $msg) {
+		  
+      if($user->protocol_version == "76")
+        $msg = $this->unwrap($msg);
+      else
+        $msg = $this->decode($buffer);
 
       $n = count($this->users);
       for ($i = 0; $i < $n; $i++) {
