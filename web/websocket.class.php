@@ -189,14 +189,28 @@
           $move->save();
           */
         }
-        elseif(($parts[0] == "admin")&&(intval($parts[1]) == "whoisonline")){
+        elseif(($parts[0] == "admin")&&($parts[1] == "whoisonline")){
           $msg = "";
           foreach($this->users as $u){
-            $msg .= $u->id.', ';
+            $msg .= $u->id.',';
           }
           $this->send($user->socket, $msg);
         }
-        elseif(($parts[0] == "admin")&&(intval($parts[1]) == "shutdown")){
+        elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
+          $kick = false;
+          $this->say("kicking : ".$parts[2]);
+          $n = count($this->users);
+          for($i = 0; $i < $n; $i++) {
+            if($this->users[$i]->id == $parts[2]){
+              $this->send($this->users[$i]->socket, "You has been kicked! Bye!");
+              socket_close($this->users[$i]->socket);
+              $kick = true;
+            }
+          }
+          if(!$kick)
+            $this->send($user->socket, "Sorry, ".$parts[2]." not found!");
+        }
+        elseif(($parts[0] == "admin")&&($parts[1] == "shutdown")){
           $this->say("Shutting down at : " . date ('Y-m-d H:i:s'));
           socket_close($this->master);
           $master = null;
