@@ -48,10 +48,10 @@
 
       try{
   			// Socket creation
-  			$this->master = socket_create (AF_INET, SOCK_STREAM, SOL_TCP) or die("socket_create() failed");
-  			socket_set_option ($this->master, SOL_SOCKET, SO_REUSEADDR, 1) or die("socket_option() failed");
-  			socket_bind ($this->master, $address, $port) or die("socket_bind() failed");
-  			socket_listen ($this->master, 20) or die("socket_listen() failed");
+  			$this->master = socket_create (AF_INET, SOCK_STREAM, SOL_TCP)/* or die("socket_create() failed")*/;
+  			socket_set_option ($this->master, SOL_SOCKET, SO_REUSEADDR, 1)/* or die("socket_option() failed")*/;
+  			socket_bind ($this->master, $address, $port)/* or die("socket_bind() failed")*/;
+  			socket_listen ($this->master, 20)/* or die("socket_listen() failed")*/;
   			$this->sockets[] = $this->master;
   			$this->say ("Server Started : " . date ('Y-m-d H:i:s'));
   			$this->say ("Listening on   : {$address} {$port}");
