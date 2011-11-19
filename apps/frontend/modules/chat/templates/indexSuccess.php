@@ -99,6 +99,13 @@
                 $('#game_id').val(parts[1]);
                 Engine();
               }
+              else if(parts[0]=="gamemove"){
+                balls[parts[2]].startPoint = new Point2D(balls[parts[2]].x, balls[parts[2]].y);
+                balls[parts[2]].velocityx = parts[3];
+                balls[parts[2]].velocityy = parts[4];
+                running = true;
+                $('#running').val("true");
+              }
             }
             log("<?php echo __('Received')?>: " + msg.data);
           }
