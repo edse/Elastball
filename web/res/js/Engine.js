@@ -1102,7 +1102,7 @@ function Engine() {
     return retval;
   }
   
-  function playerMove(index, vx, vy){
+Engine.prototype.playerMove = function(index, vx, vy) {
     b = balls[index];
     b.startPoint = new Point2D(b.x, b.y);
     b.velocityx = vx;
