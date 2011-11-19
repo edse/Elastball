@@ -107,11 +107,27 @@
 		 * @return void
 		 */
 		function process($user, $msg) {
-		  
-      if($user->protocol_version == "76")
-        $this->send2($user->socket, $msg);
-      else
-        $this->send($user->socket, $msg);
+
+      $n = count($this->users);
+      for ($i = 0; $i < $n; $i++) {
+        if($this->users[$i]->protocol_version == "76")
+          $this->send2($this->users[$i]->socket, $msg);
+        else
+          $this->send($this->users[$i]->socket, $msg);
+      }
+      
+      if($msg == "admin<->shutdown"){
+        $this->say("Shutting down at : " . date ('Y-m-d H:i:s'));
+        socket_close($this->master);
+        $master = null;
+        $sockets = array ();
+        $users = array ();
+        $games = array ();
+        $masks = null;
+        $initFrame = null;
+        die('bye');
+      }
+      
       return;
 
       
