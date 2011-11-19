@@ -357,7 +357,7 @@ class Doctrine_Transaction extends Doctrine_Connection_Module
                 try {
                     $this->_doRollback();
                 } catch (Exception $e) {
-                    throw new Doctrine_Transaction_Exception($e->getMessage());
+                    //throw new Doctrine_Transaction_Exception($e->getMessage());
                 }
             }
 
