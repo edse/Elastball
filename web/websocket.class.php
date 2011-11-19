@@ -203,7 +203,7 @@
           for($i = 0; $i < $n; $i++) {
             if($this->users[$i]->id == $parts[2]){
               $this->send($this->users[$i]->socket, "You has been kicked! Bye!");
-              socket_close($this->users[$i]->socket);
+              disconnect($this->users[$i]->socket);
               $kick = true;
             }
           }
