@@ -644,3 +644,4 @@
     var $game_id;
     var $nick;
 	}
+

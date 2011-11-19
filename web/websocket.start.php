@@ -6,3 +6,4 @@
 	include "websocket.class.php";
   $port = 8082;
   $master = new WebSocket ("elastball.possum-cms.com", $port);
+
