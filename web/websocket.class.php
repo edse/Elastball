@@ -189,6 +189,13 @@
           $move->save();
           */
         }
+        elseif(($parts[0] == "admin")&&(intval($parts[1]) == "whoisonline")){
+          $msg = "";
+          foreach($this->users as $u){
+            $msg .= $u->id.', ';
+          }
+          $this->send($user->socket, $msg);
+        }
         elseif(($parts[0] == "admin")&&(intval($parts[1]) == "shutdown")){
           $this->say("Shutting down at : " . date ('Y-m-d H:i:s'));
           socket_close($this->master);
@@ -198,6 +205,7 @@
           $games = array ();
           $masks = null;
           $initFrame = null;
+          die('bye');
         }
       }
       else{
