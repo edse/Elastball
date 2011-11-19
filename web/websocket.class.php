@@ -343,10 +343,10 @@
 		 * @return Boolean
 		 */
 		function dohandshake($user, $buffer) {
-			$this->log ("\nRequesting handshake...");
-			$this->log ($buffer);
+			$this->log("\nRequesting handshake...");
+			$this->log($buffer);
 			
-			list($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders ($buffer);
+			list($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders($buffer);
 			
       if($version != "8"){
         $this->dohandshake2($user, $buffer);
@@ -375,7 +375,7 @@
     function dohandshake2($user,$buffer){
       $this->log("\nRequesting handshake...");
       $this->log($buffer);
-      list($resource,$host,$origin,$strkey1,$strkey2,$data) = getheaders($buffer);
+      list($resource,$host,$origin,$strkey1,$strkey2,$data) = $this->getheaders($buffer);
       $this->log("Handshaking...");
     
       $pattern = '/[^\d]*/';
