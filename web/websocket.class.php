@@ -193,6 +193,7 @@
           foreach($this->users as $u){
             if($user != $u)
               $this->send($user->socket, $u->id);
+              sleep(1);
           }
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
