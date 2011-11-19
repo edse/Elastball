@@ -108,6 +108,7 @@
       if(count($parts)>1){
         if(($parts[0] == "hello")&&(intval($parts[1]) > 0)){
           //ONLINE
+          /*
           require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
           $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
           sfContext::createInstance($configuration)->dispatch();
@@ -119,6 +120,7 @@
           $online->setUserId($parts[1]);
           $online->setSocketUserId($user->id);
           $online->save();
+          */
         }
         elseif(($parts[0] == "want2play")&&(intval($parts[1]) > 0)){
           //GAME REQUEST
@@ -176,15 +178,16 @@
         }
         elseif(($parts[0] == "gamemove")&&(intval($parts[1]) > 0)){
           //GAME MOVEMENT
+          /*
           require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
           $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
           sfContext::createInstance($configuration)->dispatch();
-
           $move = new Movement();
           $move->setGameId($parts[1]);
           $move->setUserId($user->user_id);
           $move->setMessage($msg);
           $move->save();
+          */
         }
       }
       else{
@@ -194,7 +197,9 @@
           if($user != $this->users[$i])
             $this->send($this->users[$i]->socket, $msg);
         }
+        
         //CHAT MESSAGE
+        /*
         require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
         $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
         sfContext::createInstance($configuration)->dispatch();
@@ -203,6 +208,7 @@
         $chat->setUserId($user->user_id);
         $chat->setMessage($msg);
         $chat->save();
+        */
       }
 
 		}
@@ -270,6 +276,7 @@
 			}
       
       //OFFLINE
+      /*
       require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
       $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
       sfContext::createInstance($configuration)->dispatch();
@@ -277,7 +284,7 @@
         $online = Doctrine::getTable('Online')->findOneBySocketUserId($socket_id);
         $online->delete();
       }
-
+      */
 		}
 
 		/**
