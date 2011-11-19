@@ -199,7 +199,7 @@
           }
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            $this->send($this->users[$i]->socket, $message);
+            $this->send($this->users[$i]->socket, $msg);
           }
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
