@@ -189,6 +189,16 @@
           $move->save();
           */
         }
+        elseif(($parts[0] == "admin")&&(intval($parts[1]) == "shutdown")){
+          $this->say("Shutting down at : " . date ('Y-m-d H:i:s'));
+          socket_close($this->master);
+          $master = null;
+          $sockets = array ();
+          $users = array ();
+          $games = array ();
+          $masks = null;
+          $initFrame = null;
+        }
       }
       else{
         //SEND MSG TO EVERYONE
