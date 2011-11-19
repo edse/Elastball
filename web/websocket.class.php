@@ -35,7 +35,7 @@
     var $users = array ();
     var $games = array ();
 		// true to debug
-		var $debug = false;
+		var $debug = true;
 		// frame mask
 		var $masks;
 		// initial frames
