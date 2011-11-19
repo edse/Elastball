@@ -1089,7 +1089,7 @@ abstract class Doctrine_Connection extends Doctrine_Configurable implements Coun
         $exc->processErrorInfo($e->errorInfo);
 
          if ($this->getAttribute(Doctrine_Core::ATTR_THROW_EXCEPTIONS)) {
-            throw $exc;
+            //throw $exc;
         }
 
         $this->getListener()->postError($event);
