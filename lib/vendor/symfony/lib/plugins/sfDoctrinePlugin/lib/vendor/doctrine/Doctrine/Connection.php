@@ -219,6 +219,9 @@ abstract class Doctrine_Connection extends Doctrine_Configurable implements Coun
         $this->setAttribute(Doctrine_Core::ATTR_ERRMODE, Doctrine_Core::ERRMODE_EXCEPTION);
 
         $this->getAttribute(Doctrine_Core::ATTR_LISTENER)->onOpen($this);
+        
+        $this->setAttribute(Doctrine_Core::ATTR_AUTOCOMMIT, false);
+        
     }
 
     /**
