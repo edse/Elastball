@@ -209,7 +209,7 @@ class Doctrine_Transaction extends Doctrine_Connection_Module
                     try {
                         $this->_doBeginTransaction();
                     } catch (Exception $e) {
-                        //throw new Doctrine_Transaction_Exception($e->getMessage());
+                        throw new Doctrine_Transaction_Exception($e->getMessage());
                     }
                 }
                 $listener->postTransactionBegin($event);
@@ -315,11 +315,9 @@ class Doctrine_Transaction extends Doctrine_Connection_Module
      */
     public function rollback($savepoint = null)
     {
-        /*
         if ($this->_nestingLevel == 0) {
             throw new Doctrine_Transaction_Exception("Rollback failed. There is no active transaction.");
         }
-        */
         
         $this->conn->connect();
 
@@ -357,7 +355,7 @@ class Doctrine_Transaction extends Doctrine_Connection_Module
                 try {
                     $this->_doRollback();
                 } catch (Exception $e) {
-                    //throw new Doctrine_Transaction_Exception($e->getMessage());
+                    throw new Doctrine_Transaction_Exception($e->getMessage());
                 }
             }
 
