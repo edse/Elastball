@@ -108,6 +108,7 @@
       if(count($parts)>1){
         if(($parts[0] == "hello")&&(intval($parts[1]) > 0)){
           //ONLINE
+          $user->user_id = $parts[1];
           /*
           require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');
           $configuration = ProjectConfiguration::getApplicationConfiguration('backend', 'prod', true);
@@ -194,10 +195,10 @@
           $n = count($this->users);
           for($i = 0; $i < $n; $i++) {
             if($this->users[$i]->id != $user->id){
-              $msg .= "- ".$this->users[$i]->id."\n";
+              $msg .= "elastball.possum-cms.com".$this->users[$i]->id."elastball.possum-cms.com";
             }
           }
-          $this->send($user->socket, base64_encode($msg));
+          $this->send($user->socket, $msg);
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
