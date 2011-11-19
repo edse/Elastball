@@ -342,11 +342,11 @@
 		 * @param $buffer {String} : user's request
 		 * @return Boolean
 		 */
-		function dohandshake ($user, $buffer) {
+		function dohandshake($user, $buffer) {
 			$this->log ("\nRequesting handshake...");
 			$this->log ($buffer);
 			
-			list ($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders ($buffer);
+			list($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders ($buffer);
 			
 			$this->log ("Handshaking...");
 			$reply  = 
@@ -360,7 +360,12 @@
 				"\r\n";
 			
 			// Closes the handshake
-			socket_write ($user->socket, $reply, strlen ($reply));
+			try{
+			  socket_write($user->socket, $reply, strlen ($reply));
+      } catch (Exception $e) {
+        dohandshake2($user, $buffer);
+        break;
+      }
 			
 			$user->handshake = true;
 			$this->log ($reply);
@@ -368,6 +373,51 @@
 			
 			return true;
 		}
+
+    
+    function dohandshake2($user,$buffer){
+      console("\nRequesting handshake...");
+      console($buffer);
+      list($resource,$host,$origin,$strkey1,$strkey2,$data) = getheaders($buffer);
+      console("Handshaking...");
+    
+      $pattern = '/[^\d]*/';
+      $replacement = '';
+      $numkey1 = preg_replace($pattern, $replacement, $strkey1);
+      $numkey2 = preg_replace($pattern, $replacement, $strkey2);
+    
+      $pattern = '/[^ ]*/';
+      $replacement = '';
+      $spaces1 = strlen(preg_replace($pattern, $replacement, $strkey1));
+      $spaces2 = strlen(preg_replace($pattern, $replacement, $strkey2));
+    
+      if ($spaces1 == 0 || $spaces2 == 0 || $numkey1 % $spaces1 != 0 || $numkey2 % $spaces2 != 0) {
+            socket_close($user->socket);
+            console('failed');
+            return false;
+      }
+    
+      $ctx = hash_init('md5');
+      hash_update($ctx, pack("N", $numkey1/$spaces1));
+      hash_update($ctx, pack("N", $numkey2/$spaces2));
+      hash_update($ctx, $data);
+      $hash_data = hash_final($ctx,true);
+    
+      $upgrade  = "HTTP/1.1 101 WebSocket Protocol Handshake\r\n" .
+                  "Upgrade: WebSocket\r\n" .
+                  "Connection: Upgrade\r\n" .
+                  "Sec-WebSocket-Origin: " . $origin . "\r\n" .
+                  "Sec-WebSocket-Location: ws://" . $host . $resource . "\r\n" .
+                  "\r\n" .
+                  $hash_data;
+    
+      socket_write($user->socket,$upgrade.chr(0),strlen($upgrade.chr(0)));
+      $user->handshake=true;
+      console($upgrade);
+      console("Done handshaking...");
+      return true;
+    }
+
 
 		/**
 		 * @brief Calculate Sec-WebSocket-Accept
