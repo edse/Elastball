@@ -191,7 +191,7 @@
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "whoisonline")){
           foreach($this->users as $u){
-            if($user != $this->users[$i])
+            if($user != $u)
               $this->send($user->socket, $u->id);
           }
         }
