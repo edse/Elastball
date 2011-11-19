@@ -190,14 +190,14 @@
           */
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "whoisonline")){
-          $msg = "";
+          $message = "";
           $n = count($this->users);
           for($i = 0; $i < $n; $i++) {
             if($this->users[$i]->id != $user->id){
-              $msg .= "elastball.possum-cms.com".$this->users[$i]->id."elastball.possum-cms.com";
+              $message .= "elastball.possum-cms.com".$this->users[$i]->id."elastball.possum-cms.com";
             }
           }
-          $this->process($user->socket, $this->decode($msg));
+          $this->send($user->socket, $msg);
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
