@@ -190,12 +190,14 @@
           */
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "whoisonline")){
+          $msg = "";
           $n = count($this->users);
           for($i = 0; $i < $n; $i++) {
             if($this->users[$i]->id != $user){
-              $this->send($user->socket, "- ".$this->users[$i]->id);
+              $msg .= "- ".$this->users[$i]->id."\n";
             }
           }
+          $this->send($user->socket, $msg);
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
