@@ -29,6 +29,13 @@ function Engine() {
     mouse_down_y = 0;
     if(selected_ball != null){
       if(selected_ball.id != "move" && selected_ball.id != "rotate"){
+        var vx = (selected_ball.x - mouse_up_x) * 0.1;
+        var vy = (selected_ball.y - mouse_up_y) * 0.1;
+       
+        $('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+selected_ball.id+"<->"+vx+"<->"+vy);
+        send();
+
+        /*
         selected_ball.startPoint = new Point2D(selected_ball.x, selected_ball.y);
         selected_ball.velocityx = (selected_ball.x - mouse_up_x) * 0.1;
         selected_ball.velocityy = (selected_ball.y - mouse_up_y) * 0.1;
@@ -45,6 +52,7 @@ function Engine() {
         currentPlayer = selected_ball.id;
         $('#current_player').val(currentPlayer);
         $('#last_collision').val('');
+        */
       }
       else if(selected_ball.id == "rotate"){
         //alert(keepers[0].angle)
