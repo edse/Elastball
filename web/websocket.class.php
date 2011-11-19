@@ -373,10 +373,10 @@
 
     
     function dohandshake2($user,$buffer){
-      say("\nRequesting handshake...");
-      say($buffer);
+      $this->log("\nRequesting handshake...");
+      $this->log($buffer);
       list($resource,$host,$origin,$strkey1,$strkey2,$data) = getheaders($buffer);
-      say("Handshaking...");
+      $this->log("Handshaking...");
     
       $pattern = '/[^\d]*/';
       $replacement = '';
@@ -390,7 +390,7 @@
     
       if($spaces1 == 0 || $spaces2 == 0 || $numkey1 % $spaces1 != 0 || $numkey2 % $spaces2 != 0) {
         socket_close($user->socket);
-        say('failed');
+        $this->log('failed');
         return false;
       }
     
@@ -410,8 +410,8 @@
     
       socket_write($user->socket,$upgrade.chr(0),strlen($upgrade.chr(0)));
       $user->handshake=true;
-      say($upgrade);
-      say("Done handshaking...");
+      $this->log($upgrade);
+      $this->log("Done handshaking...");
       return true;
     }
 
