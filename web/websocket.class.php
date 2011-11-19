@@ -204,10 +204,11 @@
           $this->say("kicking : ".$parts[2]);
           $n = count($this->users);
           for($i = 0; $i < $n; $i++) {
-            if(($this->users[$i]->id == $parts[2])&&(!$kick)){
+            if($this->users[$i]->id == $parts[2]){
               $this->send($this->users[$i]->socket, "You has been kicked! Bye!");
               $this->disconnect($this->users[$i]->socket);
               $kick = true;
+              break;
             }
           }
           if(!$kick)
@@ -300,14 +301,15 @@
 			if (!is_null ($found)) {
 			  $socket_id = $this->users[$found]->id;
 				array_splice ($this->users, $found, 1);
-			}
-			
-			$index = array_search ($socket, $this->sockets);
-			socket_close ($socket);
-			$this->log ("{$socket} DISCONNECTED!");
-			
-			if($index >= 0) {
-				array_splice ($this->sockets, $index, 1);
+
+        $index = array_search ($socket, $this->sockets);
+        socket_close ($socket);
+        $this->log ("{$socket} DISCONNECTED!");
+        
+        if($index >= 0) {
+          array_splice ($this->sockets, $index, 1);
+        }
+
 			}
       
       //OFFLINE
