@@ -112,7 +112,6 @@
         $this->send2($user->socket, $msg);
       else
         $this->send($user->socket, $msg);
-      break;
       return;
 
       
