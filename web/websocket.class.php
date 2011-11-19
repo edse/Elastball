@@ -498,10 +498,10 @@
   }
 
   function send2($client,$msg){
-    $this->say("> ".$msg);
-    $msg = $this->wrap($msg);
-    socket_write($client,$msg,strlen($msg));
-    $this->say("! ".strlen($msg));
+    $this->say("> {$msg}");
+    $msg1 = $this->wrap($msg);
+    socket_write($client,$msg1,strlen($msg1));
+    $this->say("! <{$msg1}> ".strlen($msg1));
   } 
 
   function    wrap($msg=""){ return chr(0).$msg.chr(255); }
