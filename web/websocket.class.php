@@ -373,10 +373,10 @@
 
     
     function dohandshake2($user,$buffer){
-      console("\nRequesting handshake...");
-      console($buffer);
+      say("\nRequesting handshake...");
+      say($buffer);
       list($resource,$host,$origin,$strkey1,$strkey2,$data) = getheaders($buffer);
-      console("Handshaking...");
+      say("Handshaking...");
     
       $pattern = '/[^\d]*/';
       $replacement = '';
@@ -388,10 +388,10 @@
       $spaces1 = strlen(preg_replace($pattern, $replacement, $strkey1));
       $spaces2 = strlen(preg_replace($pattern, $replacement, $strkey2));
     
-      if ($spaces1 == 0 || $spaces2 == 0 || $numkey1 % $spaces1 != 0 || $numkey2 % $spaces2 != 0) {
-            socket_close($user->socket);
-            console('failed');
-            return false;
+      if($spaces1 == 0 || $spaces2 == 0 || $numkey1 % $spaces1 != 0 || $numkey2 % $spaces2 != 0) {
+        socket_close($user->socket);
+        say('failed');
+        return false;
       }
     
       $ctx = hash_init('md5');
@@ -410,8 +410,8 @@
     
       socket_write($user->socket,$upgrade.chr(0),strlen($upgrade.chr(0)));
       $user->handshake=true;
-      console($upgrade);
-      console("Done handshaking...");
+      say($upgrade);
+      say("Done handshaking...");
       return true;
     }
 
