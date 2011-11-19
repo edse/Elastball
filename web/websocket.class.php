@@ -83,12 +83,11 @@
 						else {
 							// Retrieve the user from his socket
 							$user = $this->getuserbysocket ($socket);
-							
 							if (!$user->handshake) {
 								$this->dohandshake ($user, $buffer);
 							}
 							else {
-								$this->process ($user, $this->decode ($buffer));
+								$this->process($user, $this->decode($buffer));
 							}
 						}
 					}
@@ -198,7 +197,7 @@
               $msg .= "elastball.possum-cms.com".$this->users[$i]->id."elastball.possum-cms.com";
             }
           }
-          $this->send($user->socket, $msg);
+          $this->send($user->socket, $this->decode($msg));
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
