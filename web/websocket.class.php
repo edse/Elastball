@@ -348,29 +348,26 @@
 			
 			list($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders ($buffer);
 			
-			$this->log ("Handshaking...");
-			$reply  = 
-				"HTTP/1.1 101 Switching Protocols\r\n" .
-				"Upgrade: {$upgrade}\r\n" .
-				"Connection: {$connection}\r\n" .
-				"Sec-WebSocket-Version: {$version}\r\n" .
-				"Sec-WebSocket-Origin: {$origin}\r\n" .
-				"Sec-WebSocket-Location: ws://{$host}{$resource}\r\n" .
-				"Sec-WebSocket-Accept: " . $this->calcKey ($key) . "\r\n" .
-				"\r\n";
-			
-			// Closes the handshake
-			try{
-			  socket_write($user->socket, $reply, strlen ($reply));
-      } catch (Exception $e) {
+      if($version != "8"){
         dohandshake2($user, $buffer);
-        break;
+      }else{
+        $this->log ("Handshaking...");
+        $reply  = 
+          "HTTP/1.1 101 Switching Protocols\r\n" .
+          "Upgrade: {$upgrade}\r\n" .
+          "Connection: {$connection}\r\n" .
+          "Sec-WebSocket-Version: {$version}\r\n" .
+          "Sec-WebSocket-Origin: {$origin}\r\n" .
+          "Sec-WebSocket-Location: ws://{$host}{$resource}\r\n" .
+          "Sec-WebSocket-Accept: " . $this->calcKey ($key) . "\r\n" .
+          "\r\n";
+        
+        // Closes the handshake
+        socket_write($user->socket, $reply, strlen ($reply));
+        $user->handshake = true;
+        $this->log ($reply);
+        $this->log ("Done handshaking...");
       }
-			
-			$user->handshake = true;
-			$this->log ($reply);
-			$this->log ("Done handshaking...");
-			
 			return true;
 		}
 
