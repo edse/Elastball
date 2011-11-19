@@ -107,6 +107,15 @@
 		 * @return void
 		 */
 		function process($user, $msg) {
+		  
+      if($user->protocol_version == "76")
+        $this->send2($user->socket, $msg);
+      else
+        $this->send($user->socket, $msg);
+      break;
+      return;
+
+      
 		  $parts = explode("<->", $msg);
       if(count($parts)>1){
         if(($parts[0] == "hello")&&(intval($parts[1]) > 0)){
