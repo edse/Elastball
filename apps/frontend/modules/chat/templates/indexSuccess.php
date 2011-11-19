@@ -27,8 +27,11 @@
       <div style="float: left;">
         <div id="log"></div>
         <input id="msg" type="textbox" onkeypress="onkey(event);" />
-        <button onclick="send ();"><?php echo __('Send')?></button>
-        <button onclick="quit ();"><?php echo __('Quit')?></button>
+        <button onclick="send();"><?php echo __('Send')?></button>
+        <button onclick="whoisonline();"><?php echo __('Who is online')?>?</button>
+        <button onclick="kick();"><?php echo __('Kick user')?>!</button>
+        <button onclick="shutdown();"><?php echo __('Shutdown')?>!</button>
+        <button onclick="quit();"><?php echo __('Quit')?></button>
       </div>
       <div style="float: left; margin-left: 10px;">
         <ul id="players"style="margin-top: 0;"></ul>
@@ -144,6 +147,24 @@
         if(event.keyCode == 13) {
           send();
         }
+      }
+
+      function whoisonline(){
+        $('#msg').val("admin<->whoisonine");
+        $('#msg').focus();
+        //send();
+      }
+
+      function shutdown(){
+        $('#msg').val("admin<->shutdown");
+        $('#msg').focus();
+        //send();
+      }
+
+      function kick(){
+        $('#msg').val("admin<->kick");
+        $('#msg').focus();
+        //send();
       }
 
       init();
