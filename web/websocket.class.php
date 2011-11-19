@@ -115,11 +115,13 @@
         $msg = $this->decode($msg);
 
       $n = count($this->users);
-      for ($i = 0; $i < $n; $i++) {
-        if($this->users[$i]->protocol_version == "76")
-          $this->send2($this->users[$i]->socket, $msg);
-        else
-          $this->send($this->users[$i]->socket, $msg);
+      for($i = 0; $i < $n; $i++) {
+        if($this->users[$i]->id != $user->id){
+          if($this->users[$i]->protocol_version == "76")
+            $this->send2($this->users[$i]->socket, $msg);
+          else
+            $this->send($this->users[$i]->socket, $msg);
+        }
       }
       
       if($msg == "admin<->shutdown"){
