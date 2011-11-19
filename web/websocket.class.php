@@ -193,11 +193,11 @@
           $msg = "";
           $n = count($this->users);
           for($i = 0; $i < $n; $i++) {
-            if($this->users[$i]->id != $user){
+            if($this->users[$i]->id != $user->id){
               $msg .= "- ".$this->users[$i]->id."\n";
             }
           }
-          $this->send($user->socket, $msg);
+          $this->send($user->socket, base64_encode($msg));
         }
         elseif(($parts[0] == "admin")&&($parts[1] == "kick")&&($parts[2] != "")){
           $kick = false;
