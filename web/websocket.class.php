@@ -180,8 +180,8 @@
           //GAME MOVEMENT
           $n = count($this->users);
           for ($i = 0; $i < $n; $i++) {
-            if($this->users[$i]->id != $user->id)
-              $this->send($this->users[$i]->socket, $msg);
+            //if($this->users[$i]->id != $user->id)
+            $this->send($this->users[$i]->socket, $msg);
           }
           /*
           require_once(dirname(__FILE__).'/../config/ProjectConfiguration.class.php');

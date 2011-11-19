@@ -1102,7 +1102,14 @@ function Engine() {
     return retval;
   }
   
-
+  function playerMove(index, vx, vy){
+    b = balls[index];
+    b.startPoint = new Point2D(b.x, b.y);
+    b.velocityx = vx;
+    b.velocityy = vy;
+    running = true;
+    $('#running').val("true");
+  }
 
 ////////////////////////////////////////
 /*

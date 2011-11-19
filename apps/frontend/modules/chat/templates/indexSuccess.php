@@ -66,6 +66,7 @@
 
     <script type="text/javascript">
       var socket;
+      var engine;
       function init() {
         var host = "ws://<?php echo($socket->getHost()) ?>:<?php echo($socket->getPort()) ?>";
         try {
@@ -97,14 +98,10 @@
               }
               else if(parts[0]=="startgame"){
                 $('#game_id').val(parts[1]);
-                Engine();
+                engine = new Engine();
               }
               else if(parts[0]=="gamemove"){
-                balls[parts[2]].startPoint = new Point2D(balls[parts[2]].x, balls[parts[2]].y);
-                balls[parts[2]].velocityx = parts[3];
-                balls[parts[2]].velocityy = parts[4];
-                running = true;
-                $('#running').val("true");
+                engine.playerMove(parts[2],parts[3],parts[4]);
               }
             }
             log("<?php echo __('Received')?>: " + msg.data);
@@ -157,7 +154,7 @@
       }
 
       function whoisonline(){
-        $('#msg').val("admin<->whoisonine");
+        $('#msg').val("admin<->whoisonline");
         $('#msg').focus();
         //send();
       }
