@@ -118,7 +118,7 @@
       for($i = 0; $i < $n; $i++) {
         if($this->users[$i]->id != $user->id){
           if($this->users[$i]->protocol_version == "76")
-            $this->send2($this->users[$i]->socket, $msg);
+            $this->send($this->users[$i]->socket, $msg);
           else
             $this->send($this->users[$i]->socket, $msg);
         }
