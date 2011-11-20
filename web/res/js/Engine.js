@@ -1004,7 +1004,7 @@ function Engine() {
     goalAreaHeight:60,
     goalAreaWidth:200,
     goalHeight:40,
-    goalWidth:140,
+    goalWidth:140
   }
 
   var zoom = 1;
