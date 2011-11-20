@@ -527,6 +527,7 @@ function Engine() {
       ball.y = ball.nexty;
       context.save();
       if(!ball.isBall){
+        /*
         if(ball.team == 1)
           t = "a";
         else if(ball.team == 2)
@@ -535,15 +536,16 @@ function Engine() {
           t = t+((i)-(numBalls-1)/2);
         else
           t = t+(i);
+        */
         //console.log(">"+t);
         context.beginPath();
         context.translate(ball.x, ball.y);
-        context.rotate(ball.rangle);
-        imgP = document.getElementById(t);
+        //context.rotate(ball.rangle);
+        //imgP = document.getElementById(t);
         m = document.getElementById("model");
 
         context.shadowColor="black";
-        context.drawImage(imgP, -(ball.radius*zoom), -(ball.radius*zoom), (ball.radius*zoom)*2, (ball.radius*zoom)*2);
+        //context.drawImage(imgP, -(ball.radius*zoom), -(ball.radius*zoom), (ball.radius*zoom)*2, (ball.radius*zoom)*2);
         context.drawImage(m, -(ball.radius*zoom), -(ball.radius*zoom), (ball.radius*zoom)*2, (ball.radius*zoom)*2);
         if(over && (!mouse_down)){
           if(ball.team == 1)
