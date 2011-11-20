@@ -3,3 +3,4 @@
 /apps/frontend/config/settings.yml
 /config/databases.yml
 /log
+/web/websocket/log
