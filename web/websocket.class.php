@@ -329,6 +329,7 @@
 		 * @return void
 		 */
 		function send ($client, $msg) {
+		  $msg = utf8_encode($msg);
 			$this->say ("hybi> {$msg}");
 			$msg = $this->encode($msg);
 			socket_write($client, $msg, strlen ($msg));
@@ -532,6 +533,7 @@
   }
 
   function send2($client,$msg){
+    $msg = utf8_encode($msg);
     /*
     $this->say("> {$msg}");
     $msg1 = $this->wrap($msg);
