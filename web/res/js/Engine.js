@@ -389,7 +389,8 @@ function Engine() {
               nextx:0,
               nexty:0,
               speed:0
-            };
+            }
+            
             var c1 = false;
             var near = false;
             if(c.x < p1n.x && c.y < p1n.y){ //top-left corner
@@ -661,7 +662,8 @@ function Engine() {
         nexty:keeper.y,
         radius:21,
         k:i
-      };
+      }
+      
       overMoveKeeper = mouseIsOver(tempBall);
       if((selected_ball == null)&&(overMoveKeeper)&&(mouse_down)){
         selected_ball = tempBall;
@@ -675,7 +677,8 @@ function Engine() {
         nexty:rp2.y,
         radius:21,
         k:i
-      };
+      }
+      
       overRotateKeeper = mouseIsOver(tempBall);
       if((selected_ball == null)&&(overRotateKeeper)&&(mouse_down)){
         selected_ball = tempBall;
@@ -1000,7 +1003,7 @@ function Engine() {
     goalAreaWidth:200,
     goalHeight:40,
     goalWidth:140,
-  };
+  }
 
   var zoom = 1;
 
@@ -1031,7 +1034,7 @@ function Engine() {
       rangle:0,
       speed:0,
       startPoint: new Point2D(0,0)
-    };
+    }
     if(balls.length <= 0){
       var x0 = parseFloat((theCanvas.width-field.width)/2);
       var y0 = parseFloat((theCanvas.height-field.height)/2);
@@ -1085,7 +1088,8 @@ function Engine() {
     height:45,
     angle:0,
     mass:1000
-  };
+  }
+  
   keepers.push(keeper1);
   keeper2 = {
     id:2,
@@ -1095,7 +1099,8 @@ function Engine() {
     height:45,
     angle:0,
     mass:1000
-  };
+  }
+  
   keepers.push(keeper2);
 
   
