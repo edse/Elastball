@@ -79,7 +79,7 @@
 						}
 					}
 					else {
-						$bytes = @socket_recv($socket, $buffer, 20480, 0);
+						$bytes = @socket_recv($socket, $buffer, 2048, 0);
 						if ($bytes == 0) {
 							// On socket.close ();
 							$this->disconnect ($socket);
@@ -88,7 +88,7 @@
 							// Retrieve the user from his socket
 							$user = $this->getuserbysocket ($socket);
 							if (!$user->handshake) {
-								$this->dohandshake ($user, $buffer);
+								$this->dohandshake($user, $buffer);
 							}
 							else {
                 //$this->process($user, $this->decode($buffer));
@@ -118,8 +118,8 @@
       for($i = 0; $i < $n; $i++) {
         if($this->users[$i]->id != $user->id){
           if($this->users[$i]->protocol_version == "76")
-            $this->send($this->users[$i]->socket, $msg);
-          else
+            $this->send2($this->users[$i]->socket, $msg);
+          elseif($this->users[$i]->protocol_version == "HyBi-17")
             $this->send($this->users[$i]->socket, $msg);
         }
       }
