@@ -408,8 +408,8 @@
 			$this->log($buffer);
 			
 			list($resource, $host, $connection, $version, $origin, $key, $upgrade) = $this->getheaders($buffer);
-			
-      if($version != "8"){
+
+      if($version !== '8'){
         $this->dohandshake2($user, $buffer);
       }else{
         $this->log ("Handshaking...");
