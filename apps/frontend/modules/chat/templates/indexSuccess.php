@@ -75,7 +75,8 @@
           log('<?php echo __('Socket - status')?> ' + socket.readyState);          
           
           socket.onopen = function (msg) {
-            log("<?php echo __('Welcome - status')?> " + this.readyState);            
+            log("<?php echo __('Welcome - status')?> " + this.readyState); 
+            /*           
             try {
               socket.send('hello<-><?php echo $user->getId() ?>');
               log('hello<-><?php echo $user->getId() ?>');
@@ -83,6 +84,7 @@
             catch(ex) {
               log(ex);
             }
+            */
           }
           
           socket.onmessage = function(msg) {
