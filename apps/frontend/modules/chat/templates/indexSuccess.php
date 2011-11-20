@@ -241,7 +241,8 @@
         </fieldset>
   
       </div>
-  
+      
+      <?php /*
       <div style="display: none" />
       <img src="/res/img/model.png" id="model" alt="test" />
       <img src="/res/img/SPO/1/02.png" id="a1" alt="test" />
@@ -265,6 +266,7 @@
       <img src="/res/img/SPO/2/10.png" id="b9" alt="test" />
       <img src="/res/img/SPO/2/11.png" id="b10" alt="test" />
       </div>
+      */ ?>
 
 
     </div>
