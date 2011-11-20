@@ -49,22 +49,6 @@
     </div>
     
     <script type="text/javascript">
-      //Players
-      function players(){
-        var request = $.ajax({
-          url: '<?php echo url_for('@homepage') ?>chat/players',
-          success: function(data) {
-            $('#players').html(data);
-          }
-        });
-      }
-      $(window).load(function(){
-        players();
-        var t=setInterval("players()",10000);
-      });
-    </script>
-
-    <script type="text/javascript">
       var socket;
       var engine;
       function init() {
