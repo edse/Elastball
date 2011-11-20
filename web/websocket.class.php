@@ -108,7 +108,9 @@
 		 * @return void
 		 */
 		function process($user, $msg) {
-		  
+
+      $this->say("\nProcessing message from: ".$user->id." (".$user->protocol_version.")\n");
+
       if($user->protocol_version == "76")
         $msg = $this->unwrap($msg);
       else
@@ -117,10 +119,14 @@
       $n = count($this->users);
       for($i = 0; $i < $n; $i++) {
         if($this->users[$i]->id != $user->id){
-          if($this->users[$i]->protocol_version == "76")
+          if($this->users[$i]->protocol_version == "76"){
+            $this->say("\nSending message to: ".$this->users[$i]->id." (".$this->users[$i]->protocol_version.")\n");
             $this->send2($this->users[$i]->socket, $msg);
-          elseif($this->users[$i]->protocol_version == "HyBi-17")
+          }
+          elseif($this->users[$i]->protocol_version == "HyBi-17"){
+            $this->say("\nSending message to: ".$this->users[$i]->id." (".$this->users[$i]->protocol_version.")\n");
             $this->send($this->users[$i]->socket, $msg);
+          }
         }
       }
       
@@ -329,7 +335,6 @@
 		 * @return void
 		 */
 		function send ($client, $msg) {
-		  $msg = utf8_encode($msg);
 			$this->say ("hybi> {$msg}");
 			$msg = $this->encode($msg);
 			socket_write($client, $msg, strlen ($msg));
@@ -533,7 +538,6 @@
   }
 
   function send2($client,$msg){
-    $msg = utf8_encode($msg);
     /*
     $this->say("> {$msg}");
     $msg1 = $this->wrap($msg);
