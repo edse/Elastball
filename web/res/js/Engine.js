@@ -151,6 +151,7 @@ function Engine() {
   }
   
   function drawScreen(){
+    //#
     //bg
     context.fillStyle = '#EEEEEE';
     context.fillRect(0,0,theCanvas.width,theCanvas.height);
