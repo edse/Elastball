@@ -32,10 +32,11 @@ function Engine() {
         var vx = (selected_ball.x - mouse_up_x) * 0.1;
         var vy = (selected_ball.y - mouse_up_y) * 0.1;
        
+        /*
         $('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+selected_ball.id+"<->"+vx+"<->"+vy);
         send();
+        */
 
-        /*
         selected_ball.startPoint = new Point2D(selected_ball.x, selected_ball.y);
         selected_ball.velocityx = (selected_ball.x - mouse_up_x) * 0.1;
         selected_ball.velocityy = (selected_ball.y - mouse_up_y) * 0.1;
@@ -52,7 +53,6 @@ function Engine() {
         currentPlayer = selected_ball.id;
         $('#current_player').val(currentPlayer);
         $('#last_collision').val('');
-        */
       }
       else if(selected_ball.id == "rotate"){
         //alert(keepers[0].angle)
@@ -214,7 +214,8 @@ function Engine() {
     var ball;
     var testBall;
     var w = theCanvas.width;
-    var h = theCanvas.height;
+    //var h = theCanvas.height;
+    var h = 1050;
     var hasCollided = false;
     for(var i = 0; i < balls.length; i++){
       ball = balls[i];
@@ -228,7 +229,9 @@ function Engine() {
         ball.nextx = (ball.radius*zoom); 
         hasCollided = true;
         //ball.anglespeed = Math.atan(ball.velocityy/ball.velocityx);
-      }else if(ball.nexty+(ball.radius*zoom) > h){
+      }
+      /*
+      else if(ball.nexty+(ball.radius*zoom) > h){
         ball.velocityy = ball.velocityy*-1;
         ball.nexty = h-(ball.radius*zoom); 
         hasCollided = true;
@@ -239,6 +242,7 @@ function Engine() {
         hasCollided = true;
         //ball.anglespeed = Math.atan(ball.velocityy/ball.velocityx);
       }
+      */
       
       if(hasCollided)
         ball.startPoint = new Point2D(ball.nextx, ball.nexty);
@@ -527,6 +531,10 @@ function Engine() {
       ball.y = ball.nexty;
       context.save();
       if(!ball.isBall){
+        if(ball.team == 1)
+          context.fillStyle = "rgba(218, 37, 29, 0.5)";
+        else if(ball.team == 2)
+          context.fillStyle = "rgba(74, 133, 255, 0.5)";
         /*
         if(ball.team == 1)
           t = "a";
@@ -542,17 +550,27 @@ function Engine() {
         context.translate(ball.x, ball.y);
         //context.rotate(ball.rangle);
         //imgP = document.getElementById(t);
-        m = document.getElementById("model");
+        //m = document.getElementById("model");
 
         context.shadowColor="black";
         //context.drawImage(imgP, -(ball.radius*zoom), -(ball.radius*zoom), (ball.radius*zoom)*2, (ball.radius*zoom)*2);
-        context.drawImage(m, -(ball.radius*zoom), -(ball.radius*zoom), (ball.radius*zoom)*2, (ball.radius*zoom)*2);
+        //context.drawImage(m, -(ball.radius*zoom), -(ball.radius*zoom), (ball.radius*zoom)*2, (ball.radius*zoom)*2);
+        context.arc(0, 0, (ball.radius*zoom), 0, Math.PI * 2, true);
+        context.fill();
+        context.shadowColor="rgba(0, 0, 0, 0.5)";
+        context.shadowOffsetX = 1;
+        context.shadowOffsetY = 3;
+        context.shadowBlur = 2;
+        context.fill();
+
         if(over && (!mouse_down)){
+          /*
           if(ball.team == 1)
             context.fillStyle = "rgba(218, 37, 29, 0.1)";
           else if(ball.team == 2)
             context.fillStyle = "rgba(74, 133, 255, 0.1)";
-
+          */
+          context.fillStyle = "rgba(250, 250, 250, 0.3)";
           context.arc(0, 0, (ball.radius*zoom), 0, Math.PI * 2, true);
           context.fill();
         }
@@ -561,12 +579,13 @@ function Engine() {
         var s = Math.sqrt(ball.velocityx * ball.velocityx + ball.velocityy * ball.velocityy);
         context.beginPath();
         context.translate(ball.x, ball.y);
-        context.shadowColor="black";
-        context.shadowOffsetX = 1*s;
-        context.shadowOffsetY = 1*s;
-        context.shadowBlur = 5;
         context.arc(0, 0, (ball.radius*zoom), 0, Math.PI * 2, true);
         context.stroke();
+        context.fill();
+        context.shadowColor="rgba(0, 0, 0, 0.5)";
+        context.shadowOffsetX = 1*s;
+        context.shadowOffsetY = 1*s;
+        context.shadowBlur = 3;
         context.fill();
       }
 
@@ -616,7 +635,11 @@ function Engine() {
       //keeper 1
       //for??????????
       //keeper = keepers[0];
-      context.fillStyle = "rgba(255, 0, 0, 1)";
+      if(keeper.team == 1)
+        context.fillStyle = "rgba(218, 37, 29, 0.5)";
+      else
+        context.fillStyle = "rgba(74, 133, 255, 0.5)";
+
       context.strokeStyle = 'rgba(255,255,255,1)';
       //context.fill();
       
@@ -705,6 +728,23 @@ function Engine() {
         }
       }
 
+      context.save();
+      context.beginPath();
+      context.moveTo(rp1.x, rp1.y);
+      context.lineTo(rp2.x, rp2.y);
+      context.lineTo(rp3.x, rp3.y);
+      context.lineTo(rp4.x, rp4.y);
+      context.lineTo(rp1.x, rp1.y);
+      context.closePath();
+      context.fill();
+      context.stroke();
+      context.shadowColor="rgba(0, 0, 0, 1)";
+      context.shadowOffsetX = 3;
+      context.shadowOffsetY = 6;
+      context.shadowBlur = 5;
+      context.fill();
+      context.restore();
+
       if(overKeeper || overMoveKeeper || overRotateKeeper){
         context.save();
         context.beginPath();
@@ -726,15 +766,7 @@ function Engine() {
         context.restore();
       }
 
-      context.beginPath();        
-      context.moveTo(rp1.x, rp1.y);
-      context.lineTo(rp2.x, rp2.y);
-      context.lineTo(rp3.x, rp3.y);
-      context.lineTo(rp4.x, rp4.y);
-      context.lineTo(rp1.x, rp1.y);
-      context.closePath();
-      context.stroke();
-      context.restore();
+      /*
 
       context.strokeStyle = 'rgba(155,155,250,0.5)';
       context.beginPath();
@@ -763,6 +795,7 @@ function Engine() {
       context.lineTo(rep4.x, rep4.y);
       context.lineTo(rep1.x, rep1.y);
       context.stroke();
+      */
       
     }
 
@@ -972,8 +1005,8 @@ function Engine() {
       Array(350,600),
       Array(850,600),
       Array(700,600),
-      Array(450,500),
-      Array(600,500)
+      Array(490,625),
+      Array(570,615)
     )
   }
   var teamAway = {
@@ -1086,10 +1119,11 @@ function Engine() {
     id:1,
     x:((theCanvas.width-field.width)/2)+field.width/2,
     y:((theCanvas.height-field.height)/2)+60,
-    width:120,
-    height:45,
+    width:90,
+    height:30,
     angle:0,
-    mass:1000
+    mass:1000,
+    team: 1
   }
   
   keepers.push(keeper1);
@@ -1097,10 +1131,11 @@ function Engine() {
     id:2,
     x:((theCanvas.width-field.width)/2)+field.width/2,
     y:((theCanvas.height-field.height)/2)+field.height-60,
-    width:120,
-    height:45,
+    width:90,
+    height:30,
     angle:0,
-    mass:1000
+    mass:1000,
+    team: 2
   }
   
   keepers.push(keeper2);
