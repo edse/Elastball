@@ -1,20 +1,24 @@
 <html>
   <head>
     <title>Sectorball</title>
-    <script src="/res/js/jquery.min.js"></script>
     <script src="/res/js/Point2D.js"></script>
-    <script src="/res/js/Engine.js"></script>
     <script src="/res/js/Intersections.js"></script>
+    <script src="/res/js/Ball.js"></script>
+    <script src="/res/js/Field.js"></script>
+    <script src="/res/js/Game.js"></script>
+    <script src="/res/js/Keeper.js"></script>
+    <script src="/res/js/Mouse.js"></script>
+    <script src="/res/js/Player.js"></script>
+    <script src="/res/js/Team.js"></script>
     <script>
-      $(function() {
-        Engine();
-      });
-      function send(){
+      var game;
+      function startGame(){
+        game = new Game(document.getElementById('canvasOne'));
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no"/>
   </head>
-  <body>
+  <body onload="startGame()">
     <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 0px; left:0px;"></canvas>
     <!-- <canvas id="canvasOne" width="1050" height="1300" style="background-color: black; position: absolute; top: 0px; left:0px;"></canvas> -->
     <div style="width: 210px; position: fixed; left: 1060px; top:8px; height: 450px; overflow-x: hidden; overflow-y: auto; display: none;">
