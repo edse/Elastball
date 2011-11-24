@@ -12,15 +12,75 @@
     <script src="/res/js/Team.js"></script>
     <script>
       var game;
+      window.addEventListener('load', startGame, true);
       function startGame(){
         game = new Game(document.getElementById('canvasOne'));
+        game.mouse = new Mouse();
+        window.addEventListener('mousemove', mousemove, true);
+        window.addEventListener('mousedown', mousedown, true);
+        window.addEventListener('mouseup', mouseup, true);
+        var interval = setInterval(draw, 33);
+      }
+      function draw(){
+        game.draw();
+      }
+      function mousemove(event) {
+        game.mouse.x = event.pageX;
+        game.mouse.y = event.pageY;
+      }
+      function mousedown(event) {
+        game.mouse.down_x =  (event.pageX);
+        game.mouse.down_y = (event.pageY);
+        game.mouse.down = true;
+        game.mouse.up = false;
+        game.mouse.up_x = 0;
+        game.mouse.up_y = 0;
+      }
+      function mouseup(event){
+        game.mouse.up_x = (event.pageX);
+        game.mouse.up_y = (event.pageY);
+        game.mouse.up = true;
+        game.mouse.down = false;
+        game.mouse.down_x = 0;
+        game.mouse.down_y = 0;
+        if(game.selected_ball != null){
+          if(game.selected_ball.id != "move" && game.selected_ball.id != "rotate"){
+            var vx = (game.selected_ball.x - game.mouse.up_x) * 0.1;
+            var vy = (game.selected_ball.y - game.mouse.up_y) * 0.1;
+            game.selected_ball.startPoint = new Point2D(game.selected_ball.x, game.selected_ball.y);
+            game.selected_ball.velocityx = (game.selected_ball.x - game.mouse.up_x) * 0.1;
+            game.selected_ball.velocityy = (game.selected_ball.y - game.mouse.up_y) * 0.1;
+            if(game.selected_ball.velocityx > game.maxSpeed)
+              game.selected_ball.velocityx = game.maxSpeed;
+            if(game.selected_ball.velocityy > game.maxSpeed)
+              game.selected_ball.velocityy = game.maxSpeed;
+            //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+selected_ball.id+"<->"+selected_ball.velocityx+"<->"+selected_ball.velocityy);
+            //send();
+            game.running = true;
+            //$('#running').val("true");
+            game.currentPlayer = game.selected_ball.id;
+            //$('#current_player').val(currentPlayer);
+            //$('#last_collision').val('');
+          }
+          else if(game.selected_ball.id == "rotate"){
+            //alert(keepers[0].angle)
+            //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].angle);
+            //send();
+          }
+          else if(game.selected_ball.id == "move"){
+            //alert(keepers[0].angle)
+            //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].x+"<->"+keepers[selected_ball.k].y);
+            //send();
+          }
+        }
+        game.selected_ball = null;
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no"/>
   </head>
-  <body onload="startGame()">
-    <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 0px; left:0px;"></canvas>
+  <body>
     <!-- <canvas id="canvasOne" width="1050" height="1300" style="background-color: black; position: absolute; top: 0px; left:0px;"></canvas> -->
+    <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 0px; left:0px;"></canvas>
     <div style="width: 210px; position: fixed; left: 1060px; top:8px; height: 450px; overflow-x: hidden; overflow-y: auto; display: none;">
       <fieldset>
         <label>p1.x: <input type="text" id="p1x" value="" /></label>

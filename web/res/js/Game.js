@@ -10,11 +10,14 @@
  *
  *****/
 function Game(canvas) {
-
-  this.canvas = canvas;
-  this.context = null;
-
   this.zoom = 1;
+  this.canvas = canvas;
+  this.context = this.canvas.getContext("2d");
+  this.context.scale(this.zoom, this.zoom);
+  this.context.fillStyle = '#EEEEEE';
+  this.width = 1050;
+  this.height = 1300;
+  
   this.angle1 = 0;
   this.angle2 = 0;
   
@@ -27,8 +30,6 @@ function Game(canvas) {
   this.friction = 0.06;
   this.running = false;
   
-  this.mouse = null;
-
   this.selected_ball = null;
   this.currentPlayer = null;
   
@@ -36,35 +37,26 @@ function Game(canvas) {
   this.keepers = new Array();
   this.team1 = new Array();
   this.team2 = new Array();
-  
-  this.init();
-}
 
-/*****
- *
- *   init
- *    -
- *
- *****/
-Game.prototype.init = function() {
-  this.context = this.canvas.getContext("2d");
-  this.context.scale(this.zoom, this.zoom);
+
+  //this.canvas.addEventListener('mousemove', this.onMouseMove(), false); 
+  //this.canvas.addEventListener('mousedown', onMouseClick, false); 
   
   this.field = new Field();
-  this.teamHome = new Team();
+  this.teamHome = new Team("","","","rgba(218, 37, 29, 0.7)");
   this.teamHome.formation = Array(
-    Array(300,1050),
-    Array(450,1050),
-    Array(600,1050),
-    Array(750,1050),
-    Array(200,700),
-    Array(350,700),
-    Array(850,700),
-    Array(700,700),
-    Array(450,800),
-    Array(600,800)
+    Array(300,250),
+    Array(450,250),
+    Array(600,250),
+    Array(750,250),
+    Array(200,600),
+    Array(350,600),
+    Array(850,600),
+    Array(700,600),
+    Array(490,625),
+    Array(570,615)
   );
-  this.teamAway = new Team();
+  this.teamAway = new Team("","","","rgba(74, 133, 255, 0.7)");
   this.teamAway.formation = Array(
     Array(300,1050),
     Array(450,1050),
@@ -77,19 +69,28 @@ Game.prototype.init = function() {
     Array(450,800),
     Array(600,800)
   );
-
-  this.mouse = new Mouse();
   
   for(var i = 0; i < this.numBalls; i++){
     //tempRadius = Math.floor(Math.random()*maxSize)+minSize;
     tempRadius = 25;
     tempBall = {
       id:i,
+      x:0,
+      y:0,
       radius:tempRadius,
-      mass:tempRadius*8
+      speed:0,
+      angle:0,
+      velocityx:0,
+      velocityy:0,
+      mass:tempRadius*8,
+      nextx:0,
+      nexty:0,
+      anglespeed:0,
+      rangle:0,
+      speed:0,
+      startPoint: new Point2D(0,0)
     }
     if(this.balls.length <= 0){
-      tempBall.id = 0;
       tempBall.isBall=true;
       tempBall.radius=5;
       tempBall.x=this.canvas.width/2;
@@ -101,8 +102,8 @@ Game.prototype.init = function() {
     }else{
       if(i <= (this.numBalls-1)/2){
         var j = i-1;
-        console.log('j>>'+j);
-        tempBall.team = 1;
+        console.log('team1>>'+j);
+        tempBall.team = this.teamHome;
         tempBall.x = this.teamHome.formation[j][0];
         tempBall.y = this.teamHome.formation[j][1];
         tempBall.nextx = this.teamHome.formation[j][0];
@@ -112,8 +113,8 @@ Game.prototype.init = function() {
       }
       else{
         var j = (i-(this.numBalls-1)/2)-1;
-        console.log('j>>'+j);
-        tempBall.team = 2;
+        console.log('team2>>'+j);
+        tempBall.team = this.teamAway;
         tempBall.x = this.teamAway.formation[j][0];
         tempBall.y = this.teamAway.formation[j][1];
         tempBall.nextx = this.teamAway.formation[j][0];
@@ -156,10 +157,8 @@ Game.prototype.init = function() {
   }
   
   this.keepers.push(keeper2);
-  
-  this.draw();
-  //setInterval(drawScreen, 33);
-
+  //this.draw();
+  //setInterval(this.draw, 33);
 }
 
 /*****
@@ -169,8 +168,9 @@ Game.prototype.init = function() {
  *
  *****/
 Game.prototype.draw = function() {
-  alert('draw');
+  //alert('draw');
   //bg
+
   this.context.fillStyle = '#EEEEEE';
   this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
 
@@ -203,8 +203,8 @@ Game.prototype.update = function() {
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
     //friction
-    ball.velocityx = ball.velocityx - (ball.velocityx * friction);
-    ball.velocityy = ball.velocityy - (ball.velocityy * friction);
+    ball.velocityx = ball.velocityx - (ball.velocityx * this.friction);
+    ball.velocityy = ball.velocityy - (ball.velocityy * this.friction);
     ball.nextx = (ball.x += ball.velocityx);
     ball.nexty = (ball.y += ball.velocityy);
     if((Math.abs(ball.velocityx) > this.minSpeed)||(Math.abs(ball.velocityy) > this.minSpeed))
@@ -214,9 +214,6 @@ Game.prototype.update = function() {
       ball.velocityx = this.maxSpeed;
     if(ball.velocityy > this.maxSpeed)
       ball.velocityy = this.maxSpeed;
-      
-    
-    
   }
   this.running = running;
 }
@@ -277,12 +274,13 @@ Game.prototype.render = function() {
     over = this.mouse.isOverBall(ball);
     ball.x = ball.nextx;
     ball.y = ball.nexty;
-    this.context.save();
+    this.context.save(); 
     this.context.fillStyle = "rgba(255, 255, 255, 1)";
     if(ball.team){
       //players
       this.context.fillStyle = ball.team.color;
       this.context.beginPath();
+      //alert(ball.x+', '+ball.y);
       this.context.translate(ball.x, ball.y);
       this.context.shadowColor="black";
       this.context.arc(0, 0, ball.radius, 0, Math.PI * 2, true);
@@ -293,9 +291,10 @@ Game.prototype.render = function() {
       this.context.shadowBlur = 2;
       this.context.fill();
       if(over && (!this.mouse.down)){
-        context.fillStyle = "rgba(250, 250, 250, 0.3)";
-        context.arc(0, 0, ball.radius, 0, Math.PI * 2, true);
-        context.fill();
+        this.context.fillStyle = "rgba(250, 250, 250, 0.3)";
+        //this.context.fillStyle = ball.team.color;
+        this.context.arc(0, 0, ball.radius, 0, Math.PI * 2, true);
+        this.context.fill();
       }
     }else{
       //ball
@@ -400,16 +399,16 @@ Game.prototype.render = function() {
       this.selected_ball = tempBall;
     }
     if(this.selected_ball != null){
-      if((selected_ball.id == "move")&&(mouse_down)&&(selected_ball.k == i)){
+      if((this.selected_ball.id == "move")&&(this.mouse.down)&&(this.selected_ball.k == i)){
         //move
-        if(mouse_down_x != 0 && mouse_down_y != 0){
+        if(this.mouse.down_x != 0 && this.mouse.down_y != 0){
           keeper.x = this.mouse.x;
           keeper.y = this.mouse.y;
         }
       }
-      if((selected_ball.id == "rotate")&&(mouse_down)&&(selected_ball.k == i)){
+      if((this.selected_ball.id == "rotate")&&(this.mouse.down)&&(this.selected_ball.k == i)){
         //rotate
-        if(mouse_down_x != 0 && mouse_down_y != 0){
+        if(this.mouse.down_x != 0 && this.mouse.down_y != 0){
           var dx = this.mouse.x - keeper.x + 21;
           var dy = this.mouse.y - keeper.y + 21;
           keeper.angle = Math.atan2(dy, dx);
@@ -470,7 +469,7 @@ Game.prototype.drawField = function() {
   this.context.fillStyle = "#FFF";
   this.context.lineWidth = 3;
   var x0 = (this.canvas.width-this.field.width)/2;
-  var y0 = (this.canvas.height-this.field.height)/2;
+  var y0 = (this.height-this.field.height)/2;
   var halfW = this.field.width/2;
   var halfH = this.field.height/2;
   //grass
@@ -544,4 +543,98 @@ Game.prototype.drawField = function() {
   this.context.beginPath();
   this.context.arc(x0+this.field.width, y0+this.field.height, this.field.radiusCorner, -Math.PI/2, -Math.PI, true);
   this.context.stroke();
+}
+
+/*****
+ *
+ *   collide
+ *    - collision check  (ball vs. ball)
+ *
+ *****/
+Game.prototype.collide = function() {
+  var ball;
+  var testBall;
+  var first_hit;
+  var last_hit;
+  var turn;
+  for(var i = 0; i < this.balls.length; i++){
+    ball = this.balls[i];
+    for(var j = i+1; j < this.balls.length; j++){
+      testBall = this.balls[j];
+      if(this.hitTestCircle(ball,testBall)){
+        if(ball.id==0){
+          last_hit = testBall.id;
+          turn = testBall.team;
+        }
+        //Fault
+        if(game.currentPlayer == i || game.currentPlayer == j){
+          if(!first_hit)
+            first_hit = testBall.id;
+          //if(!testBall.isBall && !ball.isBall)
+            //alert('fault?');
+        }
+        this.collideBalls(ball, testBall);
+      }
+    }
+  }
+  this.turn = turn;
+  this.first_collision = first_hit;
+  this.last_collision = last_hit;
+}
+
+/*****
+ *
+ *   collideBalls
+ *    - physical collision between two balls
+ *
+ *****/
+Game.prototype.collideBalls = function(ball1, ball2) {
+  var dx = ball1.nextx - ball2.nextx;
+  var dy = ball1.nexty - ball2.nexty;
+  var collisionAngle = Math.atan2(dy, dx);
+  var speed1 = Math.sqrt(ball1.velocityx * ball1.velocityx + ball1.velocityy * ball1.velocityy);
+  var speed2 = Math.sqrt(ball2.velocityx * ball2.velocityx + ball2.velocityy * ball2.velocityy);
+  var direction1 = Math.atan2(ball1.velocityy, ball1.velocityx);
+  var direction2 = Math.atan2(ball2.velocityy, ball2.velocityx);
+  
+  var velocityx_1 = speed1 * Math.cos(direction1 - collisionAngle);
+  var velocityy_1 = speed1 * Math.sin(direction1 - collisionAngle);
+  var velocityx_2 = speed2 * Math.cos(direction2 - collisionAngle);
+  var velocityy_2 = speed2 * Math.sin(direction2 - collisionAngle);
+  
+  var finalVelocityx_1 = ((ball1.mass - ball2.mass) * velocityx_1 + (ball2.mass + ball2.mass) * velocityx_2) / (ball1.mass + ball2.mass);
+  var finalVelocityx_2 = ((ball1.mass + ball1.mass) * velocityx_1 + (ball2.mass - ball1.mass) * velocityx_2) / (ball1.mass + ball2.mass);
+  
+  var finalVelocityy_1 = velocityy_1;
+  var finalVelocityy_2 = velocityy_2;
+  
+  ball1.velocityx = Math.cos(collisionAngle) * finalVelocityx_1 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityy_1;
+  ball1.velocityy = Math.sin(collisionAngle) * finalVelocityx_1 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityy_1;
+  ball2.velocityx = Math.cos(collisionAngle) * finalVelocityx_2 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityy_2;
+  ball2.velocityy = Math.sin(collisionAngle) * finalVelocityx_2 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityy_2;
+  
+  ball1.nextx = (ball1.nextx += ball1.velocityx);
+  ball1.nexty = (ball1.nexty += ball1.velocityy);
+  ball2.nextx = (ball2.nextx += ball2.velocityx);
+  ball2.nexty = (ball2.nexty += ball2.velocityy);
+  
+  ball1.startPoint = new Point2D(ball1.nextx, ball1.nexty);
+  ball2.startPoint = new Point2D(ball2.nextx, ball2.nexty);
+}
+
+/*****
+ *
+ *   hitTestCircle
+ *    - test collision between two circles
+ *
+ *****/
+Game.prototype.hitTestCircle = function(ball1, ball2) {
+  var retval = false;
+  var dx = ball1.nextx - ball2.nextx;
+  var dy = ball1.nexty - ball2.nexty;
+  var distance = (dx * dx + dy * dy);
+  if(distance <= (ball1.radius + ball2.radius) * (ball1.radius + ball2.radius)){
+    retval = true;
+  }
+  return retval;
 }

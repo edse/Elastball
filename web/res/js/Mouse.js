@@ -17,7 +17,7 @@ function Mouse() {
   this.up_x = 0;
   this.up_y = 0;
   this.down = false;
-  this.up = false;  
+  this.up = false;
 }
 
 /*****
