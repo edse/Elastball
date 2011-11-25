@@ -26,11 +26,12 @@
       }
       function mousemove(event) {
         game.mouse.x = event.pageX;
-        game.mouse.y = event.pageY;
+        game.mouse.y = event.pageY + Math.abs(game.get_y());
+        //console.log('> '+game.get_y()+' : '+game.mouse.x+', '+game.mouse.y);
       }
       function mousedown(event) {
         game.mouse.down_x =  (event.pageX);
-        game.mouse.down_y = (event.pageY);
+        game.mouse.down_y = (event.pageY) + Math.abs(game.get_y());
         game.mouse.down = true;
         game.mouse.up = false;
         game.mouse.up_x = 0;
@@ -38,7 +39,7 @@
       }
       function mouseup(event){
         game.mouse.up_x = (event.pageX);
-        game.mouse.up_y = (event.pageY);
+        game.mouse.up_y = (event.pageY) + Math.abs(game.get_y());
         game.mouse.up = true;
         game.mouse.down = false;
         game.mouse.down_x = 0;
