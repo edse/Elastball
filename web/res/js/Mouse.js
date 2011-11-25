@@ -9,7 +9,8 @@
  *   constructor
  *
  *****/
-function Mouse() {
+function Mouse(game) {
+  this.game = game;
   this.x = 0;
   this.y = 0;
   this.down_x = 0;
@@ -18,6 +19,10 @@ function Mouse() {
   this.up_y = 0;
   this.down = false;
   this.up = false;
+  var me = this;
+  window.addEventListener('mousemove', function(e){ me.mousemove(e) }, true);
+  window.addEventListener('mousedown', function(e){ me.mousedown(e) }, true);
+  window.addEventListener('mouseup', function(e){ me.mouseup(e) }, true);
 }
 
 /*****
@@ -55,4 +60,148 @@ Mouse.prototype.isOverRect = function(p1, p2, p3, p4) {
       && (pt.x < (poly[j].x - poly[i].x) * (pt.y - poly[i].y) / (poly[j].y - poly[i].y) + poly[i].x)
       && (c = !c);
   return c;
+}
+
+/*****
+ *
+ *   getX
+ *
+ *****/
+Mouse.prototype.getX = function() {
+  return this.x;
+}
+
+/*****
+ *
+ *   getY
+ *
+ *****/
+Mouse.prototype.getY = function() {
+  return this.y;
+}
+
+/*****
+ *
+ *   getDownX
+ *
+ *****/
+Mouse.prototype.getDownX = function() {
+  return this.down_x;
+}
+
+/*****
+ *
+ *   getDownY
+ *
+ *****/
+Mouse.prototype.getDownY = function() {
+  return this.down_y;
+}
+
+/*****
+ *
+ *   getUpX
+ *
+ *****/
+Mouse.prototype.getUpX = function() {
+  return this.up_x;
+}
+
+/*****
+ *
+ *   getUpY
+ *
+ *****/
+Mouse.prototype.getUpY = function() {
+  return this.up_y;
+}
+
+/*****
+ *
+ *   getDown
+ *
+ *****/
+Mouse.prototype.getDown = function() {
+  return this.down;
+}
+
+/*****
+ *
+ *   getUp
+ *
+ *****/
+Mouse.prototype.getUp = function() {
+  return this.up;
+}
+
+
+/*****
+ *
+ *   mousemove
+ *
+ *****/
+Mouse.prototype.mousemove = function(event) {
+  
+  this.x = event.pageX;
+  this.y = event.pageY + Math.abs(this.game.get_y());
+  console.log('> '+this.game.get_y()+' : '+this.x+', '+this.y);
+}
+
+/*****
+ *
+ *   mousedown
+ *
+ *****/
+Mouse.prototype.mousedown = function(event) {
+  this.down_x =  (event.pageX);
+  this.down_y = (event.pageY) + Math.abs(this.game.get_y());
+  this.down = true;
+  this.up = false;
+  this.up_x = 0;
+  this.up_y = 0;
+}
+
+/*****
+ *
+ *   mouseup
+ *
+ *****/
+Mouse.prototype.mouseup = function(event) {
+  this.up_x = (event.pageX);
+  this.up_y = (event.pageY) + Math.abs(this.game.get_y());
+  this.up = true;
+  this.down = false;
+  this.down_x = 0;
+  this.down_y = 0;
+  if(this.game.selected_ball != null){
+    if(this.game.selected_ball.id != "move" && this.game.selected_ball.id != "rotate"){
+      var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
+      var vy = (this.game.selected_ball.y - this.up_y) * 0.1;
+      this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
+      this.game.selected_ball.velocityx = (this.game.selected_ball.x - this.up_x) * 0.1;
+      this.game.selected_ball.velocityy = (this.game.selected_ball.y - this.up_y) * 0.1;
+      if(this.game.selected_ball.velocityx > this.game.maxSpeed)
+        this.game.selected_ball.velocityx = this.game.maxSpeed;
+      if(this.game.selected_ball.velocityy > this.game.maxSpeed)
+        this.game.selected_ball.velocityy = this.game.maxSpeed;
+      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+selected_ball.id+"<->"+selected_ball.velocityx+"<->"+selected_ball.velocityy);
+      //send();
+      this.game.running = true;
+      //$('#running').val("true");
+      this.game.currentPlayer = this.game.selected_ball.id;
+      //$('#current_player').val(currentPlayer);
+      //$('#last_collision').val('');
+    }
+    else if(this.game.selected_ball.id == "rotate"){
+      //alert(keepers[0].angle)
+      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].angle);
+      //send();
+    }
+    else if(this.game.selected_ball.id == "move"){
+      //alert(keepers[0].angle)
+      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].x+"<->"+keepers[selected_ball.k].y);
+      //send();
+    }
+  }
+  this.game.selected_ball = null;
 }

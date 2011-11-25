@@ -4,6 +4,8 @@
  *
  *****/
 
+var mouse;
+
 /*****
  *
  *   constructor
@@ -12,7 +14,7 @@
 function Game(canvas) {
   this.zoom = 1;
   this.canvas = canvas;
-  this.context = this.canvas.getContext("2d");
+  this.context = canvas.getContext("2d");
   this.context.scale(this.zoom, this.zoom);
   this.context.fillStyle = '#EEEEEE';
   this.width = 1050;
@@ -136,13 +138,13 @@ function Game(canvas) {
   }
 
   this._x = 0;
-  this._y = - this.height/2 + this.canvas.height/2;
+  this._y = -this.height/2 + this.canvas.height/2;
 
   //goal keepers
   keeper1 = {
     id:1,
-    x:((this.canvas.width-this.field.width)/2)+this.field.width/2,
-    y:((this.canvas.height-this.field.height)/2)+60,
+    x: (this.canvas.width/2)-45,
+    y:90,
     width:90,
     height:30,
     angle:0,
@@ -153,8 +155,8 @@ function Game(canvas) {
   this.keepers.push(keeper1);
   keeper2 = {
     id:2,
-    x:((this.canvas.width-this.field.width)/2)+this.field.width/2,
-    y:((this.canvas.height-this.field.height)/2)+this.field.height-60,
+    x: (this.canvas.width/2)-45,
+    y: this.canvas.width - 90,
     width:90,
     height:30,
     angle:0,
@@ -163,8 +165,16 @@ function Game(canvas) {
   }
   
   this.keepers.push(keeper2);
-  //this.draw();
-  //setInterval(this.draw, 33);
+  
+  var me = this;
+  
+  this.mouse = new Mouse(me);
+  //mouse = new Mouse(this);
+
+  this.interval = setInterval(function() {
+    me.draw();
+  }, 33);
+
 }
 
 /*****
@@ -289,7 +299,7 @@ Game.prototype.render = function() {
   this.context.save(); 
   this.context.translate(this._x, this._y);
   //console.log(this._x+', '+this._y)
-  
+  console.log(this.mouse.y+', '+this.mouse.getY())
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
     over = this.mouse.isOverBall(ball);
@@ -366,8 +376,6 @@ Game.prototype.render = function() {
       this.context.stroke();
     }
   }
-
-  this.context.restore();
 
   //keepers
   for(var i = 0; i < this.keepers.length; i++){
@@ -477,6 +485,9 @@ Game.prototype.render = function() {
       this.context.restore();
     }
   }
+
+  this.context.restore();
+
 }
 
 
