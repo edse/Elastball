@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<title>The Scoreboard</title>
+	<link rel="stylesheet" href="/css/structure.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" id="stylesheet" />
+	<link href="/images/favicon.ico" rel="shortcut icon" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Emerson Estrella" />
+	<meta name="description" content="the scoreboard" />
+	<meta name="keywords" content="" />
+</head>
+<body>
+	<div id="container">
+		<div id="board">
+			<form id="predictions" method="get" action="#">
+				<!-- start .match -->
+				<div class="match">
+					<div class="vs">Vs</div>
+					<div class="info" style="display: none">
+						<div class="tip"></div>
+						<table id="stats">
+							<tbody>
+                <tr id="poss">
+                  <td style="width:33%"><p>7</p></td>
+                  <td style="width:34%"><p>Possession</p></td>
+                  <td style="width:33%"><p>2</p></td>
+                </tr>
+                <tr id="shot">
+                  <td style="width:33%"><p>2</p></td>
+                  <td style="width:34%"><p>Shots</p></td>
+                  <td style="width:33%"><p>0</p></td>
+                </tr>
+                <tr id="fault">
+                  <td style="width:33%"><p>5</p></td>
+                  <td style="width:34%"><p>Faults</p></td>
+                  <td style="width:33%"><p>2</p></td>
+                </tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- end .info -->
+					<div class="badge leftSide"><img src="resources/images/teams/bolton.png" alt="bolton"/></div>
+					<div class="bar">
+						<p class="left"><label for="bolton">Bolton</label><input type="text" value="" id="bolton" name="bolton" class="score" /></p>						
+						<p class="right"><input type="text" value="" id="newcastle" name="newcastle" class="score" /><label for="newcastle">Newcastle</label></p>						
+					</div>
+					<div class="badge rightSide"><img src="resources/images/teams/newcastle.png" alt="newcastle"/></div>
+				</div>
+				<!-- end .match -->
+			</form>
+			<!-- end #predictions -->
+		</div>
+		<!-- end #board -->
+	</div>
+	<!-- end #container -->
+	
+	<canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
+  <script src="/res/js/Point2D.js"></script>
+  <script src="/res/js/Intersections.js"></script>
+  <script src="/res/js/Ball.js"></script>
+  <script src="/res/js/Field.js"></script>
+  <script src="/res/js/Game.js"></script>
+  <script src="/res/js/Keeper.js"></script>
+  <script src="/res/js/Mouse.js"></script>
+  <script src="/res/js/Player.js"></script>
+  <script src="/res/js/Team.js"></script>
+  <script>
+    var game;
+    window.addEventListener('load', startGame, true);
+    function startGame(){
+      game = new Game(document.getElementById('canvasOne'));
+    }
+  </script>
+	
+</body>
+</html>
+

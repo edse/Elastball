@@ -169,11 +169,31 @@ function Game(canvas) {
   var me = this;
   
   this.mouse = new Mouse(me);
-  //mouse = new Mouse(this);
 
+  // shim layer with setTimeout fallback
+  window.requestAnimFrame = (function(){
+    return  window.requestAnimationFrame       || 
+    window.webkitRequestAnimationFrame || 
+    window.mozRequestAnimationFrame    || 
+    window.oRequestAnimationFrame      || 
+    window.msRequestAnimationFrame     || 
+    function(/* function */ callback, /* DOMElement */ element){
+      window.setTimeout(callback, 1000 / 60);
+    };
+  })();
+  // instead of setInterval(render, 16) ....
+  (function animloop(){
+    requestAnimFrame(animloop, this.canvas);
+    me.draw();
+  })();
+  // place the rAF *before* the render() to assure as close to 
+  // 60fps with the setTimeout fallback.
+
+  /*
   this.interval = setInterval(function() {
     me.draw();
   }, 33);
+  */
 
 }
 
@@ -200,7 +220,7 @@ Game.prototype.draw = function() {
     //testLateral();
     this.collide();
     this.testWalls();
-    //this.testKeepers();
+    this.testKeepers();
   }
   
   this.drawField();
@@ -241,46 +261,6 @@ Game.prototype.update = function() {
      this._y = -this.height + this.canvas.height;
  
   this.running = running;
-}
-
-
-/*****
- *
- *   testWalls
- *    - game boundaries
- *
- *****/
-Game.prototype.testWalls = function() {
-  var ball;
-  var testBall;
-  var w = this.canvas.width;
-  var h = this.canvas.height;
-  var hasCollided = false;
-  for(var i = 0; i < this.balls.length; i++){
-    ball = this.balls[i];
-    if(ball.nextx+ball.radius > w){
-      ball.velocityx = ball.velocityx*-1;
-      ball.nextx = w-ball.radius;
-      hasCollided = true;
-    }else if(ball.nextx-ball.radius < 0){
-      ball.velocityx = ball.velocityx*-1;
-      ball.nextx = ball.radius; 
-      hasCollided = true;
-    }
-    /*
-    else if(ball.nexty+ball.radius > h){
-      ball.velocityy = ball.velocityy*-1;
-      ball.nexty = h-ball.radius; 
-      hasCollided = true;
-    }else if(ball.nexty-ball.radius < 0){
-      ball.velocityy = ball.velocityy*-1;
-      ball.nexty = ball.radius; 
-      hasCollided = true;
-    }
-    */
-    if(hasCollided)
-      ball.startPoint = new Point2D(ball.nextx, ball.nexty);
-  }
 }
 
 
@@ -361,16 +341,16 @@ Game.prototype.render = function() {
       var dy2 = this.selected_ball.y - _y;
 
       this.context.beginPath();
-      this.context.lineWidth = 3;
+      this.context.lineWidth = 12;
       this.context.strokeStyle = "rgba(255, 0, 0, 0.5)";
       this.context.moveTo(this.mouse.x,this.mouse.y);
       this.context.lineTo(this.selected_ball.x, this.selected_ball.y);
       this.context.stroke();
-      this.context.lineWidth = 2;
+      this.context.lineWidth = 6;
       this.context.strokeStyle = "rgba(255, 0, 0, 0.3)";
       this.context.lineTo(_x, _y);
       this.context.stroke();
-      this.context.lineWidth = 1;
+      this.context.lineWidth = 3;
       this.context.strokeStyle = "rgba(255, 0, 0, 0.1)";
       this.context.lineTo(_x-dx2, _y-dy2);
       this.context.stroke();
@@ -491,6 +471,7 @@ Game.prototype.render = function() {
 }
 
 
+
 /*****
  *
  *   drawField
@@ -585,6 +566,47 @@ Game.prototype.drawField = function() {
   this.context.restore();
 }
 
+
+/*****
+ *
+ *   testWalls
+ *    - game boundaries
+ *
+ *****/
+Game.prototype.testWalls = function() {
+  var ball;
+  var testBall;
+  var w = this.canvas.width;
+  var h = this.canvas.height;
+  var hasCollided = false;
+  for(var i = 0; i < this.balls.length; i++){
+    ball = this.balls[i];
+    if(ball.nextx+ball.radius > w){
+      ball.velocityx = ball.velocityx*-1;
+      ball.nextx = w-ball.radius;
+      hasCollided = true;
+    }else if(ball.nextx-ball.radius < 0){
+      ball.velocityx = ball.velocityx*-1;
+      ball.nextx = ball.radius; 
+      hasCollided = true;
+    }
+    /*
+    else if(ball.nexty+ball.radius > h){
+      ball.velocityy = ball.velocityy*-1;
+      ball.nexty = h-ball.radius; 
+      hasCollided = true;
+    }else if(ball.nexty-ball.radius < 0){
+      ball.velocityy = ball.velocityy*-1;
+      ball.nexty = ball.radius; 
+      hasCollided = true;
+    }
+    */
+    if(hasCollided)
+      ball.startPoint = new Point2D(ball.nextx, ball.nexty);
+  }
+}
+
+
 /*****
  *
  *   collide
@@ -621,6 +643,7 @@ Game.prototype.collide = function() {
   this.first_collision = first_hit;
   this.last_collision = last_hit;
 }
+
 
 /*****
  *
@@ -679,6 +702,26 @@ Game.prototype.hitTestCircle = function(ball1, ball2) {
   return retval;
 }
 
+/*****
+ *
+ *   pointIsOverRect
+ *    - test collision between point and rect
+ *
+ *****/
+Game.prototype.pointIsOverRect = function(pt, p1, p2, p3, p4) {
+    var poly = new Array();
+    poly[0]=p1;
+    poly[1]=p2;
+    poly[2]=p3;
+    poly[3]=p4;
+    pt = new Point2D(this.mouse.x, this.mouse.y);
+    for(var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
+        ((poly[i].y <= pt.y && pt.y < poly[j].y) || (poly[j].y <= pt.y && pt.y < poly[i].y))
+        && (pt.x < (poly[j].x - poly[i].x) * (pt.y - poly[i].y) / (poly[j].y - poly[i].y) + poly[i].x)
+        && (c = !c);
+    return c;
+  }
+
 
 /*****
  *
@@ -687,4 +730,260 @@ Game.prototype.hitTestCircle = function(ball1, ball2) {
  *****/
 Game.prototype.get_y = function() {
   return this._y;
+}
+
+
+/*****
+ *
+ *   testKeepers
+ *
+ *****/
+Game.prototype.testKeepers = function() {
+  var ball;
+  var testBall;
+  var w = this.canvas.width;
+  var h = this.canvas.height;
+  for(var i = 0; i < this.balls.length; i++){            
+    ball = this.balls[i];
+                
+    for(var j = 0; j < this.keepers.length; j++){
+      keeper = this.keepers[j];
+
+      p1 = new Point2D(
+        keeper.x-(keeper.width+ball.radius/2)*Math.cos(keeper.angle)+(keeper.height+ball.radius/2)*Math.sin(keeper.angle),
+        keeper.y-(keeper.height+ball.radius/2)*Math.cos(keeper.angle)-(keeper.width+ball.radius/2)*Math.sin(keeper.angle)
+      );
+      p2 = new Point2D(
+        keeper.x+(keeper.width+ball.radius/2)*Math.cos(keeper.angle)+(keeper.height+ball.radius/2)*Math.sin(keeper.angle),
+        keeper.y-(keeper.height+ball.radius/2)*Math.cos(keeper.angle)+(keeper.width+ball.radius/2)*Math.sin(keeper.angle)
+      );
+      p3 = new Point2D(
+        keeper.x+(keeper.width+ball.radius/2)*Math.cos(keeper.angle)-(keeper.height+ball.radius/2)*Math.sin(keeper.angle),
+        keeper.y+(keeper.height+ball.radius/2)*Math.cos(keeper.angle)+(keeper.width+ball.radius/2)*Math.sin(keeper.angle)
+      );
+      p4 = new Point2D(
+        keeper.x-(keeper.width+ball.radius/2)*Math.cos(keeper.angle)-(keeper.height+ball.radius/2)*Math.sin(keeper.angle),
+        keeper.y+(keeper.height+ball.radius/2)*Math.cos(keeper.angle)-(keeper.width+ball.radius/2)*Math.sin(keeper.angle)
+      );
+
+      p1n = new Point2D(
+        keeper.x-(keeper.width/2)*Math.cos(keeper.angle)+(keeper.height/2)*Math.sin(keeper.angle),
+        keeper.y-(keeper.height/2)*Math.cos(keeper.angle)-(keeper.width/2)*Math.sin(keeper.angle)
+      );
+      p2n = new Point2D(
+        keeper.x+(keeper.width/2)*Math.cos(keeper.angle)+(keeper.height/2)*Math.sin(keeper.angle),
+        keeper.y-(keeper.height/2)*Math.cos(keeper.angle)+(keeper.width/2)*Math.sin(keeper.angle)
+      );
+      p3n = new Point2D(
+        keeper.x+(keeper.width/2)*Math.cos(keeper.angle)-(keeper.height/2)*Math.sin(keeper.angle),
+        keeper.y+(keeper.height/2)*Math.cos(keeper.angle)+(keeper.width/2)*Math.sin(keeper.angle)
+      );
+      p4n = new Point2D(
+        keeper.x-(keeper.width/2)*Math.cos(keeper.angle)-(keeper.height/2)*Math.sin(keeper.angle),
+        keeper.y+(keeper.height/2)*Math.cos(keeper.angle)-(keeper.width/2)*Math.sin(keeper.angle)
+      );
+
+      p1 = new Point2D(
+        p1n.x-ball.radius,
+        p1n.y-ball.radius
+      );
+      p2 = new Point2D(
+        p2n.x+ball.radius,
+        p2n.y-ball.radius
+      );
+      p3 = new Point2D(
+        p3n.x+ball.radius,
+        p3n.y+ball.radius
+      );
+      p4 = new Point2D(
+        p4n.x-ball.radius,
+        p4n.y+ball.radius
+      );
+
+      var coef = p2.y-p1.y/p2.x-p1.x;
+
+      if(!this.pointIsOverRect(new Point2D(ball.nextx, ball.nexty), p1, p2, p3, p4)){
+                        
+        b1 = new Point2D(ball.startPoint.x, ball.startPoint.y);
+        b2 = new Point2D(ball.x, ball.y);
+        
+        c1 = new Point2D(ball.startPoint.x-ball.radius, ball.startPoint.y-ball.radius);
+        c2 = new Point2D(ball.nextx-ball.radius, ball.nexty-ball.radius);
+
+        d1 = new Point2D(ball.startPoint.x, ball.startPoint.y);
+        d2 = new Point2D(ball.nextx+ball.radius, ball.nexty+ball.radius);
+        
+        /*
+        if(i==1){
+          $('#b1x').val(b1.x);
+          $('#b1y').val(b1.y);
+          $('#b2x').val(b2.x);
+          $('#b2y').val(b2.y);
+          $('#c1x').val(c1.x);
+          $('#c1y').val(c1.y);
+          $('#c2x').val(c2.x);
+          $('#c2y').val(c2.y);
+          $('#d1x').val(d1.x);
+          $('#d1y').val(d1.y);
+          $('#d2x').val(d2.x);
+          $('#d2y').val(d2.y);
+        }
+        */
+        
+        //top p1 to p2
+        var segment = new Array(p1,p2);
+        var face = 1;
+        c = intersectLineLine(b1,b2,p1,p2);
+        if(!c){
+          //bottom p3 to p4
+          segment = new Array(p3,p4);
+          face = 3;
+          c = intersectLineLine(b1,b2,p3,p4);              
+        }
+        if(!c){
+          //left p4 to p1
+          segment = new Array(p4,p1);
+          face = 4;
+          c = intersectLineLine(b1,b2,p4,p1);
+        }
+        if(!c){
+          //right p2 to p3
+          segment = new Array(p2,p3);
+          face = 2;
+          c = intersectLineLine(b1,b2,p2,p3);              
+        }
+
+        if(c){
+          var tempBall = {
+            x:0,
+            y:0,
+            radius:ball.radius,
+            speed:0,
+            velocityx:0,
+            velocityy:0,
+            mass:999999,
+            nextx:0,
+            nexty:0,
+            speed:0
+          }
+          
+          var c1 = false;
+          var near = false;
+          if(c.x < p1n.x && c.y < p1n.y){ //top-left corner
+            near = true;
+            c1 = intersectCircleLine(p1n, ball.radius, b1, b2);
+            if(c1){
+              tempBall.x = p1n.x;
+              tempBall.y = p1n.y;
+              tempBall.nextx = c1.x;
+              tempBall.nexty = c1.y;
+            }
+          }
+          else if(c.x > p2n.x && c.y < p2n.y){ //top-right corner
+            near = true;
+            c1 = intersectCircleLine(p2n, ball.radius, b1, b2);
+            if(c1){
+              tempBall.x = p2n.x;
+              tempBall.y = p2n.y;
+              tempBall.nextx = c1.x;
+              tempBall.nexty = c1.y;
+            }
+          }
+          else if(c.x > p3n.x && c.y > p3n.y){ //bottom-right corner
+            near = true;
+            c1 = intersectCircleLine(p3n, ball.radius, b1, b2);
+            if(c1){
+              tempBall.x = p3n.x;
+              tempBall.y = p3n.y;
+              tempBall.nextx = c1.x;
+              tempBall.nexty = c1.y;
+            }
+          }
+          else if(c.x < p4n.x && c.y > p4n.y){ //bottom-left corner
+            near = true;
+            c1 = intersectCircleLine(p4n, ball.radius, b1, b2);
+            if(c1){
+              tempBall.x = p4n.x;
+              tempBall.y = p4n.y;
+              tempBall.nextx = c1.x;
+              tempBall.nexty = c1.y;
+            }
+          }
+          
+          // response for corner collision
+          if(c1){
+            //$('#p1x').val(c1.x);
+            //$('#p1y').val(c1.y);
+            c = c1;
+            tempBall.velocityx = 0;
+            tempBall.velocityy = 0;
+            tempBall.nextx = tempBall.x;
+            tempBall.nexty = tempBall.y;
+            this.collideBalls(tempBall, ball);
+          }else if(!near){
+            //$('#p1x').val(c.x);
+            //$('#p1y').val(c.y);
+            
+            // response for face collision
+            tempBall.mass = 999999999999;
+            tempBall.radius = 0;
+            tempBall.x = c.x;
+            tempBall.y = c.y;
+            tempBall.velocityx = 0;
+            tempBall.velocityy = 0;
+            if(face == 1)
+              tempBall.y = c.y-ball.radius;
+            else if(face == 3){
+              tempBall.y = c.x*coef;
+              tempBall.x = c.x;
+            }
+            else if(face == 2)
+              tempBall.x = c.x-ball.radius;
+            else if(face == 4)
+              tempBall.x = c.x+ball.radius;
+            tempBall.nextx = tempBall.x;
+            tempBall.nexty = tempBall.y;
+
+            //collideBalls(tempBall,ball);
+            var ball1 = ball;
+            var ball2 = tempBall;
+            var dx = ball1.x - ball2.nextx;
+            var dy = ball1.y - ball2.nexty;
+            var collisionAngle = Math.atan2(dy, dx);
+            var speed1 = Math.sqrt(ball1.velocityx * ball1.velocityx + ball1.velocityy * ball1.velocityy);
+            var speed2 = 0;
+            var direction1 = Math.atan2(ball1.velocityy, ball1.velocityx);
+            var direction2 = Math.atan2(ball2.velocityy, ball2.velocityx);
+            
+            var velocityx_1 = speed1 * Math.cos(direction1 - collisionAngle);
+            var velocityy_1 = speed1 * Math.sin(direction1 - collisionAngle);
+            var velocityx_2 = speed2 * Math.cos(direction2 - collisionAngle);
+            var velocityy_2 = speed2 * Math.sin(direction2 - collisionAngle);
+            
+            var finalVelocityx_1 = ((ball1.mass - ball2.mass) * velocityx_1 + (ball2.mass + ball2.mass) * velocityx_2) / (ball1.mass + ball2.mass);
+            var finalVelocityx_2 = ((ball1.mass + ball1.mass) * velocityx_1 + (ball2.mass - ball1.mass) * velocityx_2) / (ball1.mass + ball2.mass);
+            
+            var finalVelocityy_1 = velocityy_1;
+            var finalVelocityy_2 = velocityy_2;
+            
+            ball1.velocityx = Math.cos(collisionAngle) * finalVelocityx_1 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityy_1;
+            ball1.velocityy = Math.sin(collisionAngle) * finalVelocityx_1 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityy_1;
+            ball2.velocityx = Math.cos(collisionAngle) * finalVelocityx_2 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityy_2;
+            ball2.velocityy = Math.sin(collisionAngle) * finalVelocityx_2 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityy_2;
+            
+            ball1.nextx = (ball1.nextx += ball1.velocityx);
+            ball1.nexty = (ball1.nexty += ball1.velocityy);
+            ball2.nextx = (ball2.nextx += ball2.velocityx);
+            ball2.nexty = (ball2.nexty += ball2.velocityy);
+            
+            ball1.startPoint = new Point2D(ball1.nextx, ball1.nexty);
+            ball2.startPoint = new Point2D(ball2.nextx, ball2.nexty);
+
+            console.log("face>>>>>"+face);
+          }
+        }
+      }
+    }
+  }
+
 }

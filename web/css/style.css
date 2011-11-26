@@ -1,0 +1,266 @@
+
+/*
+	Author: Philip Beel
+	Description: Styling for the scoreboard
+*/
+
+html {
+	background:url("../images/grass.jpg") repeat scroll 0 0 #238605;
+}
+body {
+	width:960px;
+	margin:0 auto;
+}
+/*background*/
+#container {
+	background:#FFF;
+	width:940px;
+	margin:0 auto;
+	margin-top:50px;
+	margin-bottom:50px;
+	padding:10px;
+	position:relative;
+	float:left;
+	background-color: rgba(255, 255, 255, 0.6);
+	-webkit-box-shadow: 2px 2px 2px #303030;
+	-moz-box-shadow: 2px 2px 2px #303030;
+	box-shadow: 2px 2px 2px #303030; 
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+}
+	#board {
+		background:url("../images/chalk.png") repeat scroll 0 0 #313331;
+		width:940px;
+		margin:5 auto;
+		-moz-border-radius: 5px;
+		border-radius: 5px; 
+		position:relative;
+		float:left;
+		/*min-height:200px;*/
+	}
+		#board h1 {
+			text-align:center;
+			padding:25px 10px 5px 10px;
+		}
+		#board p {
+			text-align:center;
+			padding:15px 20px 15px 20px;
+		}
+		#board .clear hr {
+			background-color:#3e3e3e;
+			border-left:0px  none;
+			border-right:0px  none;
+			border-top:1px solid #202020;
+			border-bottom:1px solid #3e3e3e;
+			clear:both;
+			float:left;
+			height:1px;
+			margin-bottom:5px;
+			margin-top:25px;
+			position:relative;
+			width:100%;
+		}
+			#predictions {
+				margin-top:10px;
+				position: relative;
+				float:left;
+				width:940px;
+			}
+
+			/*individual matches*/
+			#predictions .match {
+				height:85px;
+			}
+				/*team emblem styles*/
+				#predictions .badge {
+					width:60px;
+					height:60px;
+				}
+					#predictions .leftSide {
+						left:44px;
+						margin-top:7px;
+						position:absolute;
+						z-index:99;
+					}
+					#predictions .rightSide {
+						position:absolute;
+						z-index:99;
+						right:50px;
+						margin-top:7px;
+					}
+				
+				#predictions .bar {
+					background:url("../images/bar.png") repeat scroll 0 0 #000;
+					border:1px solid #161616;
+					-moz-border-radius: 5px;
+					border-radius: 5px; 
+					margin:6px auto 0 15px;
+					width:910px;
+					position:relative;
+					float:left;
+				}
+					#predictions .vs {
+						background:transparent url("../images/vs_sprite.png") no-repeat scroll 0 -93px;
+						height:95px;
+						width:95px;
+						z-index:99;
+						text-indent:-9999px;
+						position:absolute;
+						left:400px;
+						margin-top:-9px;
+						cursor:pointer;
+					}
+					#predictions .vs:hover {
+						background:transparent url("../images/vs_sprite.png") no-repeat scroll 0 -93px;
+					}
+						#predictions .info {
+							background:none repeat scroll 0 0 #0f0f0f;
+							border:1px solid #FFFFFF;
+							display:none;
+							margin:85px 25px 25px 195px;
+							padding:0;
+							position:absolute;
+							text-align:left;
+							width:500px;
+							z-index:100;
+							-webkit-box-shadow: 1px 2px 2px #000;
+							-moz-box-shadow: 1px 2px 2px #000;
+							box-shadow: 1px 2px 2px #000; 
+						}
+							#predictions .tip{
+								background:transparent url("../images/tip.png") no-repeat;
+								height:20px;
+								width:20px;
+								position:absolute;			
+								margin-left:242px;
+								margin-top:-18px;
+							}
+								#predictions table td {
+									width:51%;		
+									margin-left:0px;
+									border-bottom:1px solid #202020;		
+								}
+								#predictions table p.right {
+									text-align:right;	
+									width:400px;
+									margin-left:0px;		
+								}
+							#predictions .info p {
+								padding:10px;	
+								text-align:center;				
+							}
+					/*Left side teams*/
+					#predictions p.left {
+						width:400px
+						position:relative;
+						float:left;
+						padding:10px;
+					}
+					#predictions p.left input {
+						width:35px;
+						text-align:center;
+					}
+					#predictions p.left label {
+						float:left;
+						font-size:42px;
+						padding-right:15px;
+						padding-top:12px;
+						position:relative;
+						text-align:right;
+						width:300px;
+					}
+					/*Right side teams*/
+					#predictions p.right {
+						float:left;
+						margin-left:90px;
+						padding:10px;
+					}
+					#predictions p.right input {
+						float:left;
+						margin-left:15px;
+						text-align:center;
+						width:35px;
+					}
+					#predictions p.right label {
+						float:left;
+						font-size:42px;
+						margin-left:10px;
+						padding-right:15px;
+						padding-top:12px;
+						position:relative;
+						text-align:left;
+						width:245px;
+					}
+									
+		/*Footer*/
+		#footer {
+			margin-top:10px;
+		}			
+		#footer .submit {
+			background:url("../images/button.png") repeat scroll 0 0 #83a736;
+			border:1px solid #202020;
+			font-family: Arial, Helvetica, sans-serif;
+			cursor:pointer;
+			display:inline-block;
+			margin:0 2px;
+			margin-left:321px;
+			margin-bottom:25px;
+			outline:medium none;
+			padding:6px;
+			width:300px;
+			letter-spacing:-1px;
+			text-align:center;
+			text-decoration:none;
+			text-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
+		}
+		#footer .submit:hover {
+			background:url("../images/button.png") repeat scroll 0 59px #83a736;
+			border:1px solid #000000;
+		}			
+		
+		/*Error handling*/
+		#predictions .error {
+			border:1px solid #A80000;
+		}
+		
+		#predictions p.left label.error, #predictions p.right label.error {
+			border:0 none;
+			padding:0;
+			width:0;
+		}
+		/*Callbacks*/
+		#success {
+			display:none;	
+			background:none repeat scroll 0 0 #678e29;
+			border:1px solid #000000;
+			float:left;
+			margin:33px auto 0 39px;
+			padding:10px;
+			position:relative;
+			width:830px;
+			text-align:center;
+			-moz-border-radius: 5px;
+			border-radius: 5px; 
+		}
+		
+		#error {
+			display:none;	
+			background:none repeat scroll 0 0 #A80000;
+			border:1px solid #000000;
+			float:left;
+			margin:0 auto 0 39px;
+			padding:10px;
+			position:relative;
+			width:830px;
+			text-align:center;
+			-moz-border-radius: 5px;
+			border-radius: 5px; 
+		}
+		
+	/*Tipsy tool tip*/
+	.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url("../images/tipsy.gif"); }
+	.tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
+	.tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+	.tipsy-north { background-position: top center; }	
+							
+  #stats { width: 100% }
