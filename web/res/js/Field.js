@@ -9,15 +9,18 @@
  *   constructor
  *
  *****/
-function Field(width, height) {
-  if(arguments.length > 0) {
+function Field(game, width, height) {
+  if(game)
+    this.game = game;
+  if(width)
     this.width = width;
-    this.height = height;
-  }
-  else{
+  else
     this.width = 800;
+  if(height)
+    this.height = height;
+  else
     this.height = 1200;
-  }
+
   this.radiusBall = 10;
   this.radiusCorner = 20;
   this.radiusMidfield = 100;

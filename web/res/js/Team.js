@@ -27,6 +27,13 @@ function Team(slug, formation, player, color) {
       Array(850,600),
       Array(700,600),
       Array(490,625),
+      Array(570,615),
+      Array(570,615),
+      Array(570,615),
+      Array(570,615),
+      Array(570,615),
+      Array(570,615),
+      Array(570,615),
       Array(570,615)
     );
   if(player)

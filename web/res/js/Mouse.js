@@ -141,9 +141,8 @@ Mouse.prototype.getUp = function() {
  *
  *****/
 Mouse.prototype.mousemove = function(event) {
-  
-  this.x = event.pageX;
-  this.y = event.pageY + Math.abs(this.game.get_y()) + this.game.canvas.offsetTop;
+  this.x = event.pageX + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
+  this.y = event.pageY + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;
   console.log('> '+this.game.canvas.offsetTop+' : '+this.x+', '+this.y);
 }
 
@@ -153,8 +152,10 @@ Mouse.prototype.mousemove = function(event) {
  *
  *****/
 Mouse.prototype.mousedown = function(event) {
-  this.down_x =  (event.pageX);
-  this.down_y = (event.pageY) + Math.abs(this.game.get_y());
+  if(!this.game.is_moving)
+    document.body.style.cursor = 'auto';
+  this.down_x =  (event.pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
+  this.down_y = (event.pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
   this.down = true;
   this.up = false;
   this.up_x = 0;
@@ -167,8 +168,9 @@ Mouse.prototype.mousedown = function(event) {
  *
  *****/
 Mouse.prototype.mouseup = function(event) {
-  this.up_x = (event.pageX);
-  this.up_y = (event.pageY) + Math.abs(this.game.get_y());
+  document.body.style.cursor = 'auto';
+  this.up_x =  (event.pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
+  this.up_y = (event.pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
   this.up = true;
   this.down = false;
   this.down_x = 0;
@@ -203,5 +205,7 @@ Mouse.prototype.mouseup = function(event) {
       //send();
     }
   }
+  else if(this.game.is_moving)
+    this.game.is_moving = false;
   this.game.selected_ball = null;
 }
