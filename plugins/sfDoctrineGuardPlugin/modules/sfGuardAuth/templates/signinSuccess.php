@@ -45,19 +45,12 @@
   <td width="98%" valign="top">
 
 <div>
-<strong>Para acessar o Astolfo, entre com o login e senha fornecidos.</strong>
+<strong>Entre com o login e senha fornecidos.</strong>
 <br /><br />
-O Astolfo faz o gerenciamento de todos os web-assets da Fundação Padre Anchieta.<br />
-O principal objetivo do Astolfo é de tornar ágil e fácil o gerenciamento dos portais e sites da Fundação Padre Anchieta.<br /><br />
-Algumas das principais métas do Astolfo são:<br /><br />
 <ul>
-  <li>Centralizar o gerenciamento de todos os portais e sites em uma única aplicação.</li>
-  <li>Simplificar o workflow tornando-o uniforme para todos os portais, sites, canals e programas.</li>
-  <li>Gerenciamento de todos os tipos de assets produzidos pela fundação.</li>
-  <li>Upload automático de vídeos para o YouTube.
-  <li>Redução drástica do espaço de armazenamento nescessário para o Astolfo.</li>
-  <li>Tornar simples a manutenção do sistema e elaboração de novas features.</li>
-  <li>3 Diferentes níveis de usuários. Administradores, editores e colaboradores.</li>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
 </ul>
 <br><br>
 Entre com suas credênciais ao lado ou <a href="#">peça a criação de sua conta agora</a>.
@@ -83,7 +76,7 @@ Entre com suas credênciais ao lado ou <a href="#">peça a criação de sua cont
             </div>
             <div id="dashboard-side">
                 <div id="dashboard-blog" class="module">
-                    <h3>Entre com a sua conta do Astolfo</h3>
+                    <h3>Entre com a sua conta</h3>
                     <div class="module-info">
             <div id="sf_admin_bar">
 
@@ -100,7 +93,7 @@ Entre com suas credênciais ao lado ou <a href="#">peça a criação de sua cont
 <table cellspacing="3" cellpadding="6" border="0" width="100%" class="form-noindent">
   <tbody><tr>
   <td bgcolor="#e8eefa" align="center" style="font-size: 83%; text-align: center;">
-  <b>Você não tem uma conta no Astolfo?</b><br />
+  <b>Você não tem uma conta?</b><br />
   <a href="#"><strong>Crie uma conta agora</strong></a>
   </td>
   </tr>
