@@ -218,7 +218,8 @@ function Game(canvas) {
     window.oRequestAnimationFrame      || 
     window.msRequestAnimationFrame     || 
     function(/* function */ callback, /* DOMElement */ element){
-      window.setTimeout(callback, 1000 / 60);
+      //window.setTimeout(callback, 1000 / 60);
+      window.setTimeout(callback, 1000 / 30);
     };
   })();
   // instead of setInterval(render, 16) ....
@@ -244,7 +245,6 @@ function Game(canvas) {
  *
  *****/
 Game.prototype.draw = function() {
-  //alert('draw');
   //bg
 
   this.context.fillStyle = '#EEEEEE';
@@ -334,7 +334,6 @@ Game.prototype.render = function() {
       //players
       this.context.fillStyle = ball.team.color;
       this.context.beginPath();
-      //alert(ball.x+', '+ball.y);
       this.context.translate(ball.x, ball.y);
       this.context.shadowColor="black";
       this.context.arc(0, 0, ball.radius, 0, Math.PI * 2, true);
@@ -646,7 +645,44 @@ Game.prototype.drawField = function() {
   this.context.arc(x0+this.field.width, y0+this.field.height, this.field.radiusCorner, -Math.PI/2, -Math.PI, true);
   this.context.stroke();
   
+  //goal1
+  this.context.save();
+  this.context.lineWidth = 1;
+  this.context.strokeStyle = "rgba(250, 0, 0, 1)";
+  var ball = this.balls[0];
+  var p1 = new Point2D(this.balls[1].x+ball.radius,this.balls[1].y-ball.radius);
+  var p2 = new Point2D(this.balls[1].x+ball.radius,this.balls[1].y+ball.radius-this.field.goalHeight);
+  var p3 = new Point2D(this.balls[2].x-ball.radius,this.balls[2].y-ball.radius);
+  var p4 = new Point2D(this.balls[2].x-ball.radius,this.balls[2].y+ball.radius-this.field.goalHeight);
+  
+  this.context.moveTo(p1.x, p1.y);  
+  this.context.lineTo(p2.x, p2.y);
+  this.context.lineTo(p4.x, p4.y);
+  this.context.lineTo(p3.x, p3.y);
+  this.context.lineTo(p1.x, p1.y);
+  this.context.stroke();
+
+  //goal2
+  var p1 = new Point2D(this.balls[3].x+ball.radius,this.balls[3].y+ball.radius);
+  var p2 = new Point2D(this.balls[3].x+ball.radius,this.balls[3].y-ball.radius+this.field.goalHeight);
+  var p3 = new Point2D(this.balls[4].x-ball.radius,this.balls[4].y+ball.radius);
+  var p4 = new Point2D(this.balls[4].x-ball.radius,this.balls[4].y-ball.radius+this.field.goalHeight);
+
+  this.context.moveTo(p1.x, p1.y);  
+  this.context.lineTo(p2.x, p2.y);
+  this.context.lineTo(p4.x, p4.y);
+  this.context.lineTo(p3.x, p3.y);
+  this.context.lineTo(p1.x, p1.y);
+
+  this.context.stroke();
+
   this.context.restore();
+
+  
+  
+  
+  this.context.restore();
+  
 }
 
 
@@ -881,7 +917,7 @@ Game.prototype.testKeepers = function() {
       if(!this.pointIsOverRect(new Point2D(ball.nextx, ball.nexty), p1, p2, p3, p4)){
                         
         b1 = new Point2D(ball.startPoint.x, ball.startPoint.y);
-        b2 = new Point2D(ball.x, ball.y);
+        b2 = new Point2D(ball.nextx, ball.nexty);
         
         c1 = new Point2D(ball.startPoint.x-ball.radius, ball.startPoint.y-ball.radius);
         c2 = new Point2D(ball.nextx-ball.radius, ball.nexty-ball.radius);
@@ -1080,10 +1116,31 @@ Game.prototype.testNet = function() {
   var b3 = this.balls[3];
   var b4 = this.balls[4];
   var bounce = 0.15;
+  var score = false;
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
     ball1 = new Point2D(ball.startPoint.x, ball.startPoint.y);
     ball2 = new Point2D(ball.nextx, ball.nexty);
+
+    // SCORE
+    if(i==0 && !score){
+      //goal1
+      var p1 = new Point2D(this.balls[1].x+ball.radius,this.balls[1].y-ball.radius);
+      var p2 = new Point2D(this.balls[2].x-ball.radius,this.balls[2].y-ball.radius);
+      g1 = intersectLineLine(ball1, ball2, p1, p2);
+      if(g1){
+        alert('goal1');
+        score = true;
+      }
+      //goal2
+      var p1 = new Point2D(this.balls[3].x+ball.radius,this.balls[3].y+ball.radius);
+      var p2 = new Point2D(this.balls[4].x-ball.radius,this.balls[4].y+ball.radius);
+      g2 = intersectLineLine(ball1, ball2, p1, p2);
+      if(g2){
+        alert('goal2');
+        score = true;
+      }
+    }
 
     c1 = intersectLineLine(new Point2D(b1.x,b1.y), new Point2D(b1.x,b1.y-this.field.goalHeight), ball1, ball2);
     if(c1){
