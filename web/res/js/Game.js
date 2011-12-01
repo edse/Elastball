@@ -11,7 +11,17 @@ var mouse;
  *   constructor
  *
  *****/
-function Game(canvas) {
+function Game(canvas) {  
+  
+  this.hit1 = document.getElementById('hit1');
+  this.hit7 = document.getElementById('hit7');
+  this.hit3 = document.getElementById('hit3');
+  this.bar = document.getElementById('bar');
+  this.whistle2 = document.getElementById('whistle2'); //start game
+  this.whistle3 = document.getElementById('whistle3'); //fault
+  this.whistle4 = document.getElementById('whistle4'); //end game
+  this.whistle5 = document.getElementById('whistle5'); //out of bounds
+
   this.zoom = 1;
   this.canvas = canvas;
   this.context = canvas.getContext("2d");
@@ -257,11 +267,11 @@ Game.prototype.draw = function() {
   //game running
   if(this.running){
     this.update();
-    //testLateral();
     this.collide();
-    this.testWalls();
     this.testKeepers();
     this.testNet();
+    this.testLateral();
+    this.testWalls();
   }
   
   this.drawField();
@@ -322,7 +332,7 @@ Game.prototype.render = function() {
   this.context.save(); 
   this.context.translate(this._x, this._y);
   //console.log(this._x+', '+this._y)
-  console.log(this.mouse.y+', '+this.mouse.getY())
+  //console.log(this.mouse.y+', '+this.mouse.getY())
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
     over = this.mouse.isOverBall(ball);
@@ -688,6 +698,32 @@ Game.prototype.drawField = function() {
 
 /*****
  *
+ *   testLateral
+ *    - game boundaries
+ *
+ *****/
+Game.prototype.testLateral = function() {
+  var ball = this.balls[0];
+  var x0 = (this.canvas.width-this.field.width)/2;
+  var y0 = (this.canvas.height-this.field.height)/2;
+  if(ball.nextx+ball.radius > x0+this.field.width){
+    if(this.whistle5.currentTime == 0);
+      this.whistle5.play();
+  }else if(ball.nextx-ball.radius < x0){
+    if(this.whistle5.currentTime == 0);
+      this.whistle5.play();
+  }else if(ball.nexty+ball.radius > y0+this.field.height){
+    if(this.whistle5.currentTime == 0);
+      this.whistle5.play();
+  }else if(ball.nexty-ball.radius < y0){
+    if(this.whistle5.currentTime == 0);
+      this.whistle5.play();
+  }
+}
+
+
+/*****
+ *
  *   testWalls
  *    - game boundaries
  *
@@ -751,10 +787,28 @@ Game.prototype.collide = function() {
         if(game.currentPlayer == i || game.currentPlayer == j){
           if(!first_hit)
             first_hit = testBall.id;
-          //if(!testBall.isBall && !ball.isBall)
-            //alert('fault?');
+          if(!testBall.isBall && !ball.isBall){
+            this.whistle3.pause();
+            this.whistle3.currentTime = 0;
+            this.whistle3.play();
+          }
         }
         this.collideBalls(ball, testBall);
+        if((ball.id==1||ball.id==2||ball.id==3||ball.id==4)||(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4)){
+          this.bar.pause();
+          this.bar.currentTime = 0;
+          this.bar.play();
+        }
+        else if(ball.id==0){
+          this.hit1.pause();
+          this.hit1.currentTime = 0;
+          this.hit1.play();
+        }
+        else{
+          this.hit3.pause();
+          this.hit3.currentTime = 0;
+          this.hit3.play();
+        }
       }
     }
   }

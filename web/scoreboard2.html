@@ -63,7 +63,55 @@
     function startGame(){
       game = new Game(document.getElementById('canvasOne'));
     }
+    
+    bg = document.getElementById('bg');
+    bg.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+    }, false);
+    bg.play();
   </script>
+  
+  <div id="resources" style="display: none">
+    <!-- <audio autoplay loop controls> -->
+    <audio id="bg">
+      <source src="/res/audio/bg.mp3" />
+      <source src="/res/audio/bg.ogg" />
+    </audio>
+    <audio id="crowd">
+      <source src="/res/audio/crowd.mp3" />
+      <source src="/res/audio/crowd.ogg" />
+    </audio>
+    <audio id="hit1">
+      <source src="/res/audio/hit-1.mp3" />
+      <source src="/res/audio/hit-1.ogg" />
+    </audio>
+    <audio id="hit2">
+      <source src="/res/audio/hit-2.mp3" />
+      <source src="/res/audio/hit-2.ogg" />
+    </audio>
+    <audio id="hit3">
+      <source src="/res/audio/hit-3.mp3" />
+      <source src="/res/audio/hit-3.ogg" />
+    </audio>
+    <audio id="hit5">
+      <source src="/res/audio/hit-5.mp3" />
+      <source src="/res/audio/hit-5.ogg" />
+    </audio>
+    <audio id="hit6">
+      <source src="/res/audio/hit-6.mp3" />
+      <source src="/res/audio/hit-6.ogg" />
+    </audio>
+    <audio id="hit7">
+      <source src="/res/audio/hit-7.mp3" />
+      <source src="/res/audio/hit-7.ogg" />
+    </audio>
+    <audio id="bar">
+      <source src="/res/audio/hit-bar.mp3" />
+      <source src="/res/audio/hit-bar.ogg" />
+    </audio>
+  </div>
+
   
 </body>
 </html>

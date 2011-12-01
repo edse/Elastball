@@ -143,7 +143,7 @@ Mouse.prototype.getUp = function() {
 Mouse.prototype.mousemove = function(event) {
   this.x = event.pageX + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
   this.y = event.pageY + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;
-  console.log('> '+this.game.canvas.offsetTop+' : '+this.x+', '+this.y);
+  //console.log('> '+this.game.canvas.offsetTop+' : '+this.x+', '+this.y);
 }
 
 /*****

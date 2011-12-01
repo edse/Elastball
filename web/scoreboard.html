@@ -55,6 +55,72 @@
 	</div>
 	<!-- end #container -->
 	
+	<!-- start #resources -->
+  <div id="resources" style="display: none">
+    <!-- <audio autoplay loop controls> -->
+    <audio id="bg">
+      <source src="/res/audio/bg.mp3" />
+      <source src="/res/audio/bg.ogg" />
+    </audio>
+    <audio id="crowd">
+      <source src="/res/audio/crowd.mp3" />
+      <source src="/res/audio/crowd.ogg" />
+    </audio>
+    <audio id="whistle1">
+      <source src="/res/audio/whistle1.mp3" />
+      <source src="/res/audio/whistle1.ogg" />
+    </audio>
+    <audio id="whistle2">
+      <source src="/res/audio/whistle2.mp3" />
+      <source src="/res/audio/whistle2.ogg" />
+    </audio>
+    <audio id="whistle3">
+      <source src="/res/audio/whistle3.mp3" />
+      <source src="/res/audio/whistle3.ogg" />
+    </audio>
+    <audio id="whistle4">
+      <source src="/res/audio/whistle4.mp3" />
+      <source src="/res/audio/whistle4.ogg" />
+    </audio>
+    <audio id="whistle5">
+      <source src="/res/audio/whistle5.ogg" />
+      <source src="/res/audio/whistle5.mp3" />
+    </audio>
+    <audio id="whistle6">
+      <source src="/res/audio/whistle6.mp3" />
+      <source src="/res/audio/whistle6.ogg" />
+    </audio>
+    <audio id="hit1">
+      <source src="/res/audio/hit1.mp3" />
+      <source src="/res/audio/hit1.ogg" />
+    </audio>
+    <audio id="hit2">
+      <source src="/res/audio/hit2.mp3" />
+      <source src="/res/audio/hit2.ogg" />
+    </audio>
+    <audio id="hit3">
+      <source src="/res/audio/hit3.mp3" />
+      <source src="/res/audio/hit3.ogg" />
+    </audio>
+    <audio id="hit5">
+      <source src="/res/audio/hit5.mp3" />
+      <source src="/res/audio/hit5.ogg" />
+    </audio>
+    <audio id="hit6">
+      <source src="/res/audio/hit6.mp3" />
+      <source src="/res/audio/hit6.ogg" />
+    </audio>
+    <audio id="hit7">
+      <source src="/res/audio/hit7.mp3" />
+      <source src="/res/audio/hit7.ogg" />
+    </audio>
+    <audio id="bar">
+      <source src="/res/audio/hitbar.mp3" />
+      <source src="/res/audio/hitbar.ogg" />
+    </audio>
+  </div>
+  <!-- end #resources -->
+	
 	<canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
   <script src="/res/js/Point2D.js"></script>
   <script src="/res/js/Intersections.js"></script>
@@ -70,6 +136,15 @@
     window.addEventListener('load', startGame, true);
     function startGame(){
       game = new Game(document.getElementById('canvasOne'));
+
+      bg = document.getElementById('crowd');
+      bg.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+      }, false);
+      bg.volume = 0.4;
+      bg.play();
+      
     }
   </script>
 	
