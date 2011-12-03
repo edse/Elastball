@@ -46,6 +46,8 @@ function Game(canvas) {
   
   this.selected_ball = null;
   this.currentPlayer = null;
+  this.currentPlayerLastHit = null;
+  this.currentPlayerFirstHit = null;
   
   this.balls = new Array();
   this.keepers = new Array();
@@ -245,6 +247,15 @@ function Game(canvas) {
     me.draw();
   }, 33);
   */
+  
+  //document.getElementById('referee').className = 'fadein';
+  $('#referee').fadeIn();
+  //setTimeout("document.getElementById('referee').className = 'fadeout'",5000);
+  setTimeout("$('#referee').fadeOut()",3000);
+  
+  this.whistle2.pause();
+  this.whistle2.currentTime = 0;
+  this.whistle2.play();
 
 }
 
@@ -387,7 +398,7 @@ Game.prototype.render = function() {
     this.context.restore();
     this.context.closePath();
 
-    if((this.selected_ball == null)&&(over)&&(this.mouse.down)&&(ball.team)&&(!this.is_moving)){
+    if((this.selected_ball == null)&&(over)&&(this.mouse.down)/*&&(ball.team)*/&&(!this.is_moving)){
       this.selected_ball = ball;
       this.currentPlayer = i;
       document.body.style.cursor = 'hand';
@@ -771,28 +782,30 @@ Game.prototype.testWalls = function() {
 Game.prototype.collide = function() {
   var ball;
   var testBall;
-  var first_hit;
-  var last_hit;
-  var turn;
+  //var first_hit;
+  //var last_hit;
+  //var turn;
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
     for(var j = i+1; j < this.balls.length; j++){
       testBall = this.balls[j];
       if(this.hitTestCircle(ball,testBall)){
-        if(ball.id==0){
-          last_hit = testBall.id;
-          turn = testBall.team;
-        }
-        //Fault
-        if(game.currentPlayer == i || game.currentPlayer == j){
-          if(!first_hit)
-            first_hit = testBall.id;
-          if(!testBall.isBall && !ball.isBall){
+        if(this.currentPlayer == i || this.currentPlayer == j){
+          //Fault
+          if(((this.currentPlayerLastHit == null)||(this.currentPlayerLastHit != 0))&&(testBall.team != ball.team)){
             this.whistle3.pause();
             this.whistle3.currentTime = 0;
             this.whistle3.play();
           }
+          if(this.currentPlayerFirstHit == null)
+            this.currentPlayerFirstHit = testBall.id;
+          this.currentPlayerLastHit = testBall.id;
         }
+        if(ball.id==0){
+          this.currentPlayerLastHit = testBall.id;
+          this.turn = testBall.team;
+        }
+
         this.collideBalls(ball, testBall);
         if((ball.id==1||ball.id==2||ball.id==3||ball.id==4)||(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4)){
           this.bar.pause();
@@ -812,9 +825,9 @@ Game.prototype.collide = function() {
       }
     }
   }
-  this.turn = turn;
-  this.first_collision = first_hit;
-  this.last_collision = last_hit;
+  //this.turn = turn;
+  //this.first_collision = first_hit;
+  //this.last_collision = last_hit;
 }
 
 

@@ -176,6 +176,8 @@ Mouse.prototype.mouseup = function(event) {
   this.down_x = 0;
   this.down_y = 0;
   if(this.game.selected_ball != null){
+    this.game.currentPlayerFirstHit = null;
+    this.game.currentPlayerLastHit = null;
     if(this.game.selected_ball.id != "move" && this.game.selected_ball.id != "rotate"){
       var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
       var vy = (this.game.selected_ball.y - this.up_y) * 0.1;

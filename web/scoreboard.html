@@ -118,19 +118,27 @@
       <source src="/res/audio/hitbar.mp3" />
       <source src="/res/audio/hitbar.ogg" />
     </audio>
+    
+    <img src="/res/img/referee/amarelo.jpg" id="ref_yellow" />
+    <img src="/res/img/referee/vermelho.jpg" id="ref_red" />
+    <img src="/res/img/referee/falta1.jpg" id="ref_fault1" />
+    <img src="/res/img/referee/falta2.jpg" id="ref_fault2" />
+    <img src="/res/img/referee/escanteio.jpg" id="ref_corner" />
+    
   </div>
   <!-- end #resources -->
-	
+	<div id="referee" class="fadein" style="display:none;"><img src="/res/img/referee/falta2.jpg" id="refimg" /></div>
 	<canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
-  <script src="/res/js/Point2D.js?a"></script>
-  <script src="/res/js/Intersections.js?a"></script>
-  <script src="/res/js/Ball.js?a"></script>
-  <script src="/res/js/Field.js?a"></script>
-  <script src="/res/js/Game.js?a"></script>
-  <script src="/res/js/Keeper.js?a"></script>
-  <script src="/res/js/Mouse.js?a"></script>
-  <script src="/res/js/Player.js?a"></script>
-  <script src="/res/js/Team.js?a"></script>
+  <script src="/res/js/Point2D.js"></script>
+  <script src="/res/js/Intersections.js"></script>
+  <script src="/res/js/Ball.js"></script>
+  <script src="/res/js/Field.js"></script>
+  <script src="/res/js/Game.js"></script>
+  <script src="/res/js/Keeper.js"></script>
+  <script src="/res/js/Mouse.js"></script>
+  <script src="/res/js/Player.js"></script>
+  <script src="/res/js/Team.js"></script>
+  <script src="/res/js/jquery.min.js"></script>
   <script>
     var game;
     window.addEventListener('load', startGame, true);

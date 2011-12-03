@@ -264,3 +264,41 @@ body {
 	.tipsy-north { background-position: top center; }	
 							
   #stats { width: 100% }
+
+  #referee {
+    -moz-box-shadow: 0 0 5px 5px #FFF;
+    -webkit-box-shadow: 0 0 5px 5px#FFF;
+    box-shadow: 0 0 5px 5px #FFF;
+    position: absolute;
+    top:25px;
+    left:25px;
+    z-index: 2;
+    height:275px;
+  }
+
+  #referee2 {
+    -moz-box-shadow: inset -5px -5px 5px 5px #888;
+    -webkit-box-shadow: inset -5px -5px 5px 5px#888;
+    box-shadow: inset -5px -5px 5px 5px #888;
+    position: absolute;
+    top:25px;
+    left:25px;
+    z-index: 2;
+  }
+
+  #referee1 {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px black;
+    -webkit-box-shadow: 5px 5px black;
+    box-shadow: 5px 5px black;
+  }
+  
+  @-webkit-keyframes FadeIn { 0% { opacity:0; } 100% { opacity:1; } }
+  .fadein { -webkit-animation-name: FadeIn; -webkit-animation-timing-function: ease-in; -webkit-animation-duration: 1s; }
+  .fadeout { -webkit-animation-name: FadeOut; -webkit-animation-timing-function: ease-out; -webkit-animation-duration: 2s; }
+  
+  .flipout {
+    opacity: 0;
+    -webkit-transform: rotateX(90deg);
+  }
