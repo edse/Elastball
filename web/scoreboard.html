@@ -127,7 +127,9 @@
     
   </div>
   <!-- end #resources -->
-	<div id="referee" class="fadein" style="display:none;"><img src="/res/img/referee/falta2.jpg" id="refimg" /></div>
+  <div id="referee" class="fadein" style="display:none;"><img src="/res/img/referee/falta2.jpg" id="refimg" /></div>
+  <div id="t1" style="display: block; position: absolute; left: 500px;"></div>
+  <div id="t2" style="display: block; position: absolute;"></div>
 	<canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
   <script src="/res/js/Point2D.js"></script>
   <script src="/res/js/Intersections.js"></script>
@@ -138,6 +140,8 @@
   <script src="/res/js/Mouse.js"></script>
   <script src="/res/js/Player.js"></script>
   <script src="/res/js/Team.js"></script>
+  <script src="/res/js/Timer.js"></script>
+
   <script src="/res/js/jquery.min.js"></script>
   <script>
     var game;
@@ -152,7 +156,6 @@
       }, false);
       bg.volume = 0.4;
       bg.play();
-      
     }
   </script>
 	

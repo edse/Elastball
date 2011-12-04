@@ -11,7 +11,7 @@ var mouse;
  *   constructor
  *
  *****/
-function Game(canvas) {  
+function Game(canvas) {
   
   this.hit1 = document.getElementById('hit1');
   this.hit7 = document.getElementById('hit7');
@@ -21,7 +21,7 @@ function Game(canvas) {
   this.whistle3 = document.getElementById('whistle3'); //fault
   this.whistle4 = document.getElementById('whistle4'); //end game
   this.whistle5 = document.getElementById('whistle5'); //out of bounds
-
+  
   this.zoom = 1;
   this.canvas = canvas;
   this.context = canvas.getContext("2d");
@@ -46,9 +46,22 @@ function Game(canvas) {
   
   this.selected_ball = null;
   this.currentPlayer = null;
-  this.currentPlayerLastHit = null;
-  this.currentPlayerFirstHit = null;
+  this.currentPlayerLastHit = false;
+  this.currentPlayerFirstHit = false;
+  this.ballLastHit = false;
+  this.ballFirstHit = false;
+  this.movements = new Array();
+  this.team1Score = 0;
+  this.team2Score = 0;
+  this.time = "00:00";
+  this.currentPlayerTimeRemaining = "01:00";
   
+  this.gameTimer = new Timer('t1',90,0);
+  this.turnTimer = new Timer('t2',1,0);
+  
+  this.gameTimer.start();
+  this.turnTimer.start();
+
   this.balls = new Array();
   this.keepers = new Array();
   this.team1 = new Array();
@@ -325,6 +338,9 @@ Game.prototype.update = function() {
   }
  
   this.running = running;
+  
+  console.log("moves: "+this.movements.length);
+  
 }
 
 
@@ -715,18 +731,18 @@ Game.prototype.drawField = function() {
  *****/
 Game.prototype.testLateral = function() {
   var ball = this.balls[0];
-  var x0 = (this.canvas.width-this.field.width)/2;
-  var y0 = (this.canvas.height-this.field.height)/2;
-  if(ball.nextx+ball.radius > x0+this.field.width){
+  var x0 = (this.width-this.field.width)/2;
+  var y0 = (this.height-this.field.height)/2;
+  if(ball.nextx-ball.radius > x0+this.field.width){
     if(this.whistle5.currentTime == 0);
       this.whistle5.play();
-  }else if(ball.nextx-ball.radius < x0){
+  }else if(ball.nextx+ball.radius < x0){
     if(this.whistle5.currentTime == 0);
       this.whistle5.play();
-  }else if(ball.nexty+ball.radius > y0+this.field.height){
+  }else if(ball.nexty-ball.radius > y0+this.field.height){
     if(this.whistle5.currentTime == 0);
       this.whistle5.play();
-  }else if(ball.nexty-ball.radius < y0){
+  }else if(ball.nexty+ball.radius < y0){
     if(this.whistle5.currentTime == 0);
       this.whistle5.play();
   }
@@ -790,38 +806,63 @@ Game.prototype.collide = function() {
     for(var j = i+1; j < this.balls.length; j++){
       testBall = this.balls[j];
       if(this.hitTestCircle(ball,testBall)){
-        if(this.currentPlayer == i || this.currentPlayer == j){
-          //Fault
-          if(((this.currentPlayerLastHit == null)||(this.currentPlayerLastHit != 0))&&(testBall.team != ball.team)){
-            this.whistle3.pause();
-            this.whistle3.currentTime = 0;
-            this.whistle3.play();
-          }
-          if(this.currentPlayerFirstHit == null)
-            this.currentPlayerFirstHit = testBall.id;
-          this.currentPlayerLastHit = testBall.id;
-        }
         if(ball.id==0){
-          this.currentPlayerLastHit = testBall.id;
+          if(!this.ballFirstHit)
+            this.ballFirstHit = testBall.id;
+          this.ballLastHit = testBall.id;
           this.turn = testBall.team;
+          if(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4){
+            this.bar.pause();
+            this.bar.currentTime = 0;
+            this.bar.play();
+          }else{
+            this.hit1.pause();
+            this.hit1.currentTime = 0;
+            this.hit1.play();
+          }
         }
-
-        this.collideBalls(ball, testBall);
-        if((ball.id==1||ball.id==2||ball.id==3||ball.id==4)||(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4)){
+        else if((ball.id==1||ball.id==2||ball.id==3||ball.id==4)||(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4)){
           this.bar.pause();
           this.bar.currentTime = 0;
           this.bar.play();
-        }
-        else if(ball.id==0){
-          this.hit1.pause();
-          this.hit1.currentTime = 0;
-          this.hit1.play();
         }
         else{
           this.hit3.pause();
           this.hit3.currentTime = 0;
           this.hit3.play();
         }
+
+        if((this.currentPlayer == i || this.currentPlayer == j)){
+          if(this.currentPlayer == j){
+            this.currentPlayerLastHit = ball.id;
+            if(this.currentPlayerFirstHit === false)
+              this.currentPlayerFirstHit = ball.id;
+
+            //Fault
+            if((this.currentPlayerFirstHit != 0)&&(this.balls[this.currentPlayerLastHit].team != this.balls[this.currentPlayer].team)&&(!ball.isBall)&&(this.currentPlayerLastHit > 4)){
+              this.whistle3.pause();
+              this.whistle3.currentTime = 0;
+              this.whistle3.play();
+            }
+
+          }
+          else{
+            this.currentPlayerLastHit = testBall.id;
+            if(this.currentPlayerFirstHit === false)
+              this.currentPlayerFirstHit = testBall.id;
+
+            //Fault
+            if((this.currentPlayerFirstHit != 0)&&(this.balls[this.currentPlayerLastHit].team != this.balls[this.currentPlayer].team)&&(!testBall.isBall)&&(this.currentPlayerLastHit > 4)){
+              this.whistle3.pause();
+              this.whistle3.currentTime = 0;
+              this.whistle3.play();
+            }
+
+          }
+          
+        }
+
+        this.collideBalls(ball, testBall);
       }
     }
   }
@@ -1287,4 +1328,113 @@ Game.prototype.get_x = function() {
  *****/
 Game.prototype.get_y = function() {
   return this._y;
+}
+
+
+/*****
+ *
+ *   storeMove
+ *
+ *****/
+Game.prototype.storeMove = function(id,vx,vy) {
+  var move = {
+    positions:this.getPositions(),
+    ball_id:id,
+    vx:vx,
+    vy:vy
+  }
+  this.movements.push(move)
+}
+
+
+/*****
+ *
+ *   makeMove
+ *
+ *****/
+Game.prototype.makeMove = function(id,vx,vy) {
+  this.selected_ball = this.balls[id];
+  this.selected_ball.startPoint = new Point2D(this.selected_ball.x, this.selected_ball.y);
+  this.selected_ball.velocityx = vx;
+  this.selected_ball.velocityy = vy;
+  if(this.selected_ball.velocityx > this.maxSpeed)
+    this.selected_ball.velocityx = this.maxSpeed;
+  if(this.selected_ball.velocityy > this.maxSpeed)
+    this.selected_ball.velocityy = this.maxSpeed;
+  this.running = true;
+  this.currentPlayer = this.selected_ball.id;
+}
+
+
+/*****
+ *
+ *   goBackToMove
+ *
+ *****/
+Game.prototype.goBackToMove = function(i) {  
+  this.setPositions(this.movements[i].positions);
+  this.makeMove(this.movements[i].ball_id,this.movements[i].vx,this.movements[i].vy);
+}
+
+
+/*****
+ *
+ *   setPositions
+ *
+ *****/
+Game.prototype.setPositions = function(p) {
+  for(var i = 0; i < this.balls.length; i++){
+    b = this.balls[i];
+    b.x = p[i].x;
+    b.y = p[i].y;
+  }
+}
+
+
+/*****
+ *
+ *   getPositions
+ *
+ *****/
+Game.prototype.getPositions = function() {
+  var r = new Array();
+  for(var i = 0; i < this.balls.length; i++){
+    r.push(new Point2D(this.balls[i].x,this.balls[i].y));
+  }
+  return r;
+}
+
+
+/*****
+ *
+ *   getCurrentState
+ *
+ *****/
+Game.prototype.getCurrentState = function() {
+  return stats = {
+    game_id:i,
+    time:"34:40",
+    turn:55,
+    team:1,
+    positions:this.getPositions()
+  }
+}
+
+
+
+/*****
+ *
+ *   setCurrentState
+ *
+ *****/
+Game.prototype.setCurrentState = function(s) {
+  this.time = s.time;
+  this.turn = s.turn;
+  this.team = s.team;
+  for(var i = 0; i < s.positions.length; i++){
+    var b = this.balls[i];
+    var s = s.positions[i];
+    b.x = s.x;
+    b.y = s.y;
+  }
 }

@@ -23,6 +23,9 @@ function Mouse(game) {
   window.addEventListener('mousemove', function(e){ me.mousemove(e) }, true);
   window.addEventListener('mousedown', function(e){ me.mousedown(e) }, true);
   window.addEventListener('mouseup', function(e){ me.mouseup(e) }, true);
+  window.addEventListener("keyup", function(e){ me.keyup(e) }, true);
+
+  
 }
 
 /*****
@@ -176,14 +179,16 @@ Mouse.prototype.mouseup = function(event) {
   this.down_x = 0;
   this.down_y = 0;
   if(this.game.selected_ball != null){
-    this.game.currentPlayerFirstHit = null;
-    this.game.currentPlayerLastHit = null;
+    //new move
+    this.game.currentPlayerFirstHit = false;
+    this.game.currentPlayerLastHit = false;
     if(this.game.selected_ball.id != "move" && this.game.selected_ball.id != "rotate"){
       var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
       var vy = (this.game.selected_ball.y - this.up_y) * 0.1;
       this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
-      this.game.selected_ball.velocityx = (this.game.selected_ball.x - this.up_x) * 0.1;
-      this.game.selected_ball.velocityy = (this.game.selected_ball.y - this.up_y) * 0.1;
+      this.game.selected_ball.velocityx = vx;
+      this.game.selected_ball.velocityy = vy;
+      this.game.storeMove(this.game.selected_ball.id,vx,vy); 
       if(this.game.selected_ball.velocityx > this.game.maxSpeed)
         this.game.selected_ball.velocityx = this.game.maxSpeed;
       if(this.game.selected_ball.velocityy > this.game.maxSpeed)
@@ -210,4 +215,24 @@ Mouse.prototype.mouseup = function(event) {
   else if(this.game.is_moving)
     this.game.is_moving = false;
   this.game.selected_ball = null;
+}
+
+
+
+/*****
+ *
+ *   keyup
+ *
+ *****/
+Mouse.prototype.keyup = function(e) {
+  if(e.keyCode == 27){
+    document.body.style.cursor = 'auto';
+    this.up_x =  (event.pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
+    this.up_y = (event.pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
+    this.up = true;
+    this.down = false;
+    this.down_x = 0;
+    this.down_y = 0;
+    this.game.selected_ball = null;
+  }
 }
