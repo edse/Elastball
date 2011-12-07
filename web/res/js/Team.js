@@ -9,7 +9,11 @@
  *   constructor
  *
  *****/
-function Team(slug, formation, player, color) {
+function Team(id, slug, formation, player, color) {
+  if(id != "")
+    this.id = id;
+  else
+    this.id = 1;
   if(slug != "")
     this.slug = slug;
   else

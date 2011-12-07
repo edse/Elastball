@@ -29,13 +29,22 @@ class loginActions extends sfActions{
   }
 
   public function executeFinish(sfWebRequest $request) {
-    $this->redirect('@default?module=chat&action=index');
+    if($this->user = $this->getUser()->getGuardUser()){
+      if($this->user->getTeamId() > 0){
+        $this->redirect('@default?module=chat&action=index');
+      }else{
+        $this->forward('login', 'register');
+      }
+    }else{
+      $this->redirect('@default?module=login&action=index');
+    }
+    
   }
 
   public function executeRegister(sfWebRequest $request) {
     $this->user = $this->getUser()->getGuardUser();
     $this->forward404Unless($this->user);
-    if($this->user->getIsActive() == true){
+    if($this->user->getTeamId() > 0){
       $this->redirect('@default?module=chat&action=index');
     }
     $this->getUser()->setFlash('info', 'User not activate please confirm');

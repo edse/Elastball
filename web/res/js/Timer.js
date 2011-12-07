@@ -11,9 +11,9 @@ function Timer(id,m,s) {
   this.interval = null;
 
   this.update = function() {
-    console.log('>>>>>'+this.id);
-    console.log('>>>>>'+this.mins);
-    console.log('>>>>>'+this.secs);
+    //console.log('>>>>>'+this.id);
+    //console.log('>>>>>'+this.mins);
+    //console.log('>>>>>'+this.secs);
     
     if (this.secs === 0) {
       if (this.mins > 0) {
