@@ -11,6 +11,7 @@
  * @property string $logo
  * @property string $initials
  * @property string $description
+ * @property boolean $is_active
  * @property Doctrine_Collection $sfGuardUsers
  * @property Doctrine_Collection $Game
  * 
@@ -20,6 +21,7 @@
  * @method string              getLogo()          Returns the current record's "logo" value
  * @method string              getInitials()      Returns the current record's "initials" value
  * @method string              getDescription()   Returns the current record's "description" value
+ * @method boolean             getIsActive()      Returns the current record's "is_active" value
  * @method Doctrine_Collection getSfGuardUsers()  Returns the current record's "sfGuardUsers" collection
  * @method Doctrine_Collection getGame()          Returns the current record's "Game" collection
  * @method Team                setOfficialName()  Sets the current record's "official_name" value
@@ -28,6 +30,7 @@
  * @method Team                setLogo()          Sets the current record's "logo" value
  * @method Team                setInitials()      Sets the current record's "initials" value
  * @method Team                setDescription()   Sets the current record's "description" value
+ * @method Team                setIsActive()      Sets the current record's "is_active" value
  * @method Team                setSfGuardUsers()  Sets the current record's "sfGuardUsers" collection
  * @method Team                setGame()          Sets the current record's "Game" collection
  * 
@@ -71,7 +74,18 @@ abstract class BaseTeam extends sfDoctrineRecord
              'notnull' => true,
              'length' => 255,
              ));
+        $this->hasColumn('is_active', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
+             ));
 
+
+        $this->index('is_active_idx', array(
+             'fields' => 
+             array(
+              0 => 'is_active',
+             ),
+             ));
         $this->option('collate', 'utf8_unicode_ci');
         $this->option('charset', 'utf8');
     }
