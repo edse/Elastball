@@ -32,6 +32,10 @@ Team:
     logo:               { type: string(255), notnull: true }
     initials:           { type: string(255), notnull: true }
     description:        { type: string(255), notnull: true }
+    is_active: { type: boolean, default: 0 }
+  indexes:
+    is_active_idx:
+      fields: [is_active]
 
 Stadium:
   options:
