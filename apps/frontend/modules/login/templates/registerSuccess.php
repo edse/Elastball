@@ -1,15 +1,9 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <title>Futebol Clube: Times, Jogos, Campeonatos, Notícias e Iteratividade em tempo real</title> 
-  <link rel="stylesheet"  href="/js/jquery.mobile/jquery.mobile-1.0b2.min.css" /> 
-  <link rel="stylesheet" href="/css/webapp.css" /> 
-  <script src="/js/jquery-1.6.2.min.js"></script> 
-  <script src="/js/webapp.js"></script> 
-  <script src="/js/jquery.mobile/jquery.mobile-1.0b2.min.js"></script>
-  <script src="/js/jquery-validation/jquery.validate.min.js"></script>
+<link rel="stylesheet"  href="/js/jquery.mobile/jquery.mobile-1.0b2.min.css" /> 
+<link rel="stylesheet" href="/css/webapp.css" /> 
+<script src="/js/webapp.js"></script> 
+<script src="/js/jquery.mobile/jquery.mobile-1.0b2.min.js"></script>
+<script src="/js/jquery-validation/jquery.validate.min.js"></script>
+
   <script type="text/javascript">
   $(document).ready(function(){
     // validate signup form on keyup and submit
@@ -68,9 +62,6 @@
       padding-right: .25em; 
   }
   </style>
-</head>
-<body> 
-
   <div data-role="page" class="type-index">
 
     <div data-role="header" data-theme="b">
@@ -133,7 +124,8 @@
 
   </div><!-- /ui-body wrapper -->
  
-</div><!-- /page -->
+  <?php include_partial('global/footer') ?>
 
+</div> 
 </body> 
 </html>

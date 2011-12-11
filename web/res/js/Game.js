@@ -104,14 +104,14 @@ function Game(canvas) {
 
   this.teamHome = new Team(1,"","","","rgba(218, 37, 29, 0.7)");
   this.teamHome.formation = Array(
-    Array(300,250),
-    Array(450,250),
-    Array(600,250),
-    Array(750,250),
-    Array(200,600),
-    Array(350,600),
-    Array(850,600),
-    Array(700,600),
+    Array(300,350),
+    Array(450,350),
+    Array(600,350),
+    Array(750,350),
+    Array(200,650),
+    Array(350,650),
+    Array(850,650),
+    Array(700,650),
     Array(490,625),
     Array(570,615)
   );
@@ -121,12 +121,12 @@ function Game(canvas) {
     Array(450,1050),
     Array(600,1050),
     Array(750,1050),
-    Array(200,700),
-    Array(350,700),
-    Array(850,700),
-    Array(700,700),
-    Array(450,800),
-    Array(600,800)
+    Array(200,750),
+    Array(350,750),
+    Array(850,750),
+    Array(700,750),
+    Array(475,825),
+    Array(575,825)
   );
 
   this.topFieldTeam = this.teamHome.id;
@@ -239,11 +239,13 @@ function Game(canvas) {
   this._x = 0;
   this._y = -this.height/2 + this.canvas.height/2;
 
+  var y0 = (this.height-this.field.height)/2;
+
   //goal keepers
   keeper1 = {
     id:1,
-    x: (this.canvas.width/2)-45,
-    y:90,
+    x: (this.canvas.width/2),
+    y: y0+25,
     width:90,
     height:30,
     angle:0,
@@ -254,8 +256,8 @@ function Game(canvas) {
   this.keepers.push(keeper1);
   keeper2 = {
     id:2,
-    x: (this.canvas.width/2)-45,
-    y: this.canvas.width - 90,
+    x: (this.canvas.width/2),
+    y: y0+this.field.height - 25,
     width:90,
     height:30,
     angle:0,
@@ -645,22 +647,46 @@ Game.prototype.drawField = function() {
     if(i%2!=1) this.context.fillRect(x0, y0+(i*h), this.field.width, h);
   }
   this.context.restore();
+  this.context.save();
   //touch line
   this.context.strokeRect(x0, y0, this.field.width, this.field.height);
-  //midfield line
-  this.context.moveTo(x0, y0+halfH);
-  this.context.lineTo(x0+this.field.width, y0+halfH);
-  this.context.stroke();
-  //midfield ball mark
-  this.context.beginPath();
-  this.context.arc(x0+halfW, y0+halfH, this.field.radiusBall, 0, Math.PI*2, true);
-  this.context.closePath();
-  this.context.fill();
+  
   //midfield
   this.context.beginPath();
   this.context.arc(x0+halfW, y0+halfH, this.field.radiusMidfield, 0, Math.PI*2, true);
   this.context.closePath();
   this.context.stroke();
+  
+  //midfield line
+  this.context.beginPath();
+  this.context.moveTo(x0, y0+halfH);
+  this.context.lineTo(x0+this.field.width, y0+halfH);
+  this.context.closePath();
+  this.context.stroke();
+  
+  //midfield ball mark
+  this.context.beginPath();
+  this.context.fillArc(x0+halfW, y0+halfH, this.field.radiusBall, 0, Math.PI*2, true);
+  this.context.closePath();
+  //this.context.fill();
+  
+  //midfield ball mark
+  /*
+  this.context.beginPath();
+  this.context.arc(x0+halfW, y0+halfH, this.field.radiusBall, 0, Math.PI*2, true);
+  this.context.closePath();
+  this.context.fill();
+  */
+ 
+  //midfield
+  /*
+  this.context.beginPath();
+  this.context.arc(x0+halfW, y0+halfH, this.field.radiusMidfield, 0, Math.PI*2, true);
+  this.context.closePath();
+  this.context.stroke();
+  */
+
+  this.context.restore();  
   
   //goals
   var gx = x0+halfW-(this.field.goalWidth/2);

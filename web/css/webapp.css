@@ -1,0 +1,334 @@
+/* jqm docs css
+
+Beware: lots of last-minute CSS going on in here 
+cobblers, shoes, 
+*/
+
+body { background: #dddddd; }
+
+.ui-mobile #jqm-home {  background: #e5e5e5 url(../images/sitebg4.png) top center repeat-x; }
+.ui-mobile #jqm-homeheader { padding: 40px 10px 0; text-align: center;  margin: 0 auto; }
+.ui-mobile #jqm-homeheader h1 { margin: 0 0 ; }
+.ui-mobile #jqm-homeheader p { margin: .3em 0 0; line-height: 1.3; font-size: .9em; font-weight: bold; color: #666; }
+.ui-mobile #jqm-version { text-indent: -99999px; background: url(../images/version.png) top right no-repeat; width: 119px; height: 122px; overflow: hidden; position: absolute; z-index: 50; top: 0; right: 0; }
+.ui-mobile .jqm-themeswitcher { margin: 10px 25px 10px 10px;  }
+
+h2 { margin:1.2em 0 .4em 0; }
+p code { font-size:1.2em; font-weight:bold; } 
+
+dt { font-weight: bold; margin: 2em 0 .5em; }
+dt code, dd code { font-size:1.3em; line-height:150%; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+#jqm-homeheader img { width: 235px; }
+
+.ui-header .jqm-home { top:0.65em; }
+nav { margin: 0; }
+
+p.intro {
+  font-size: .96em;
+  line-height: 1.3;
+  border-top: 1px solid DarkGray;
+  border-bottom: 0;
+  background: none;
+  margin: 1.5em 0;
+  padding: 1.5em 15px 0;
+}
+p.intro strong {
+  color: DarkGray;
+}
+.footer-docs {
+  padding: 5px 0;
+}
+.footer-docs p {
+  float: left;
+  margin-left:15px;
+  font-weight: normal;
+  font-size: .9em;
+}
+
+.type-interior .content-secondary {
+  border-right: 0;
+  border-left: 0;
+  margin: 10px -15px 0;
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+.type-home .ui-content {
+  margin-top: 5px;
+}
+.type-interior .ui-content {
+  padding-bottom: 0;
+}
+.content-secondary .ui-collapsible-contain {
+  padding: 10px 15px;
+
+}
+.content-secondary .ui-collapsible-heading {
+  margin: 0 0 30px;
+}
+.content-secondary .ui-collapsible-heading-collapsed,
+.content-secondary .ui-collapsible-content {
+  padding:0;
+  margin: 0;
+}
+
+/* new API additions */
+
+dt {  
+  margin: 35px 0 15px 0; 
+  background-color:#ddd; 
+  font-weight:normal;
+}
+dt code { 
+  display:inline-block; 
+  font-weight:bold;
+  color:#56A00E; 
+  padding:3px 7px; 
+  margin-right:10px; 
+  background-color:#fff; 
+}
+dd { 
+  margin-bottom:10px; 
+}
+dd .default { font-weight:bold; }
+dd pre { 
+  margin:0 0 0 0; 
+}
+dd code { font-weight: normal; }
+dd pre code { 
+  margin:0; 
+  border:none; 
+  font-weight:normal; 
+  font-size:100%; 
+  background-color:transparent; 
+}
+dd h4 { margin:15px 0 0 0; }
+    
+.localnav {
+  margin:0 0 20px 0;
+  overflow:hidden;
+}
+.localnav li {
+  float:left;
+}
+.localnav .ui-btn-inner { 
+  padding: .6em 10px; 
+  font-size:80%; 
+}
+
+
+/* F bar theme - just for the docs overview headers */
+.ui-bar-f {
+  border: 1px solid DarkKhaki;
+  background: #74b042;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px #234403;  
+  background-image: -webkit-gradient(linear, left top, left bottom, from(darkGray), to(brown)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, darkGray, brown); /* Chrome 10+, Saf5.1+ */
+  background-image:    -moz-linear-gradient(top, darkGray, brown); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, darkGray, brown); /* IE10 */
+  background-image:      -o-linear-gradient(top, darkGray, brown); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, darkGray, brown);     
+}
+.ui-bar-f,
+.ui-bar-f .ui-link-inherit {
+  color:          #fff;
+}
+.ui-bar-f .ui-link {
+  color:          #fff;
+  font-weight: bold;
+}
+
+
+
+
+/* docs site layout */
+
+@media all and (min-width: 650px){
+  
+  .jqm-home {
+    position: absolute;
+    left: 10px;
+    top: 0;
+  }
+  .type-home .ui-content {
+    margin-top: 5px;
+  }
+  .ui-mobile #jqm-homeheader {
+    max-width: 340px;
+  }
+  .ui-mobile .jqm-themeswitcher {
+    float: right;
+  }
+  p.intro {
+    margin: 2em 0;
+  }
+  .type-home .ui-content,
+  .type-interior .ui-content {
+    padding: 0;
+    background: url(../images/px-ccc.gif) 50% 0 repeat-y;
+  }
+  .type-interior .ui-content {
+    background-position: 45%;
+    overflow: hidden;
+  }
+  .content-secondary {
+    text-align: left;
+    float: left;
+    width: 45%;
+    background: none;
+    border-top: 0;
+  }
+  .content-secondary,
+  .type-interior .content-secondary {
+    margin: 0px 0 20px 2%;
+    padding: 0px 4% 0 0;
+    background: none;
+  }
+  .type-index .content-secondary {
+    padding: 0;
+  }
+  .type-index .content-secondary .ui-listview {
+    margin: 0;
+  }
+
+  .ui-mobile #jqm-homeheader {
+    padding: 0;
+  }
+  .content-primary {
+    width: 45%;
+    float: right;
+    margin-top: 30px;
+    margin-right: 1%;
+    padding-right: 1%;
+  }
+  .content-primary ul:first-child {
+    margin-top: 0;
+  }
+  .content-secondary h2 {
+    position: absolute;
+    left: -9999px;
+  }
+  .type-interior .content-primary {
+    padding: 1.5em 6% 3em 0;
+    margin: 0;
+  }
+  /* fix up the collapsibles - expanded on desktop */
+  .content-secondary .ui-collapsible-heading {
+    display: none;
+  }
+  .content-secondary .ui-collapsible-contain {
+    margin:0;
+  }
+  .content-secondary .ui-collapsible-content {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  .type-interior  .content-secondary .ui-li-divider {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .type-interior .content-secondary {
+    margin: 0;
+    padding: 0;
+  }
+  
+}
+@media all and (min-width: 750px){
+  .type-home .ui-content,
+  .type-interior .ui-content {
+    background-position: 39%;
+  }
+  .content-secondary {
+    width: 34%;
+  }
+  .content-primary {
+    width: 56%;
+    padding-right: 1%;
+  } 
+  .type-interior .ui-content {
+    background-position: 34%;
+  }
+}
+
+@media all and (min-width: 1200px){
+  .type-home .ui-content{
+    background-position: 38.5%;
+  }
+  .type-interior .ui-content {
+    background-position: 30%;
+  }
+  .type-interior .content-secondary {
+    margin: 0;
+    padding: 0;
+  }
+  .content-primary {
+    width: 50%;
+    margin-right: 5%;
+    padding-right: 3%;
+  }
+  .type-interior .content-primary {
+    width: 60%;
+  }
+}
+
+
+
+.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
+#chat .ui-icon { background:  url(/images/icons/09-chat-2.png) 50% 50% no-repeat; background-size: 24px 22px; }
+#email .ui-icon { background:  url(/images/icons/18-envelope.png) 50% 50% no-repeat; background-size: 24px 16px;  }
+#login .ui-icon { background:  url(/images/icons/30-key.png) 50% 50% no-repeat;  background-size: 12px 26px; }
+#beer .ui-icon { background:  url(/images/icons/88-beer-mug.png) 50% 50% no-repeat;  background-size: 22px 27px; }
+#coffee .ui-icon { background:  url(/images/icons/100-coffee.png) 50% 50% no-repeat;  background-size: 20px 24px; }
+#skull .ui-icon { background:  url(/images/icons/21-skull.png) 50% 50% no-repeat;  background-size: 22px 24px; }
+
+#_login .ui-link-inherit { padding: 1.7em 75px 0.7em 55px; }
+
+#_my_team .ui-link-inherit { padding: 1.7em 75px 0.7em 55px; }
+
+.type-interior .content-secondary { padding: 0em 1.2em 1.2em 1.2em; border: none; }
+
+
+.ui-body-suc {
+   border: 1px solid       #459216;
+   color:               #333333;
+   text-shadow: 0 1px 0    #fff;
+   background:          #75c443;
+   background-image: -moz-linear-gradient(top, 
+                     #fff, 
+                     #75c443);
+   background-image: -webkit-gradient(linear,left top,left bottom,
+      color-stop(0,     #fff),
+      color-stop(1,     #75c443));
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#75c443')";
+}
+.ui-body-err {
+   border: 1px solid       #6c2527 ;
+   color:               #fff;
+   text-shadow: 0 0px 0    #000;
+   background:          #bf3639;
+   background-image: -moz-linear-gradient(top, 
+                     #d78485, 
+                     #bf3639);
+   background-image: -webkit-gradient(linear,left top,left bottom,
+      color-stop(0,     #d78485),
+      color-stop(1,     #bf3639));
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#d78485', EndColorStr='#bf3639')";
+}
+.ui-body-info {
+   border: 1px solid       #235596;
+   color:               #333333;
+   text-shadow: 0 1px 0    #fff;
+   background:          #559ed3;
+   background-image: -moz-linear-gradient(top, 
+                     #fff, 
+                     #559ed3);
+   background-image: -webkit-gradient(linear,left top,left bottom,
+      color-stop(0,     #fff),
+      color-stop(1,     #559ed3));
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#559ed3')";
+}
