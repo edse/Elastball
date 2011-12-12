@@ -13,6 +13,8 @@ class languageComponents extends sfComponents
     $this->uri = $request->getUri();
     // URL
     $this->url = @current(explode('?',$this->uri));
-
+    
+    $this->url2 = end(explode($_SERVER['HTTP_HOST'],$this->url));
+    
   }
 }

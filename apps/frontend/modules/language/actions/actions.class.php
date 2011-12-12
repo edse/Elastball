@@ -26,6 +26,7 @@ class languageActions extends sfActions
     $this->uri = $request->getUri();
     // URL
     $this->url = @current(explode('?',$this->uri));
+    
   }
  
   public function executeChangeLanguage(sfWebRequest $request)
@@ -36,8 +37,12 @@ class languageActions extends sfActions
     );
     $form->process($request);
     $referer = $this->getUser()->getReferer($request->getReferer());
-    if($request->getParameter('return_url'))
-      return $request->getParameter('return_url');
+
+    if($request->getParameter('return_url')){
+      header("Location: ".$request->getParameter('return_url'));
+      die();
+      return $this->redirect($request->getParameter('return_url'));
+    }
     else
       return $this->redirect("" != $referer ? $referer : 'homepage');
   }
