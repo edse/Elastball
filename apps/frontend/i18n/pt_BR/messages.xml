@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2011-12-12T01:30:40Z" product-name="messages">
+  <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2011-12-12T02:25:30Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -79,6 +79,42 @@
       <trans-unit id="27">
         <source>Play with the best teams around the world...</source>
         <target>Jogue com os melhores times do mundo...</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Choose one</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>We are all most there... Fill up the information bellow and get yout team ready to play!</source>
+        <target>Estamos quase lá... Preencha os campos abaixo e prepare seu time para jogar</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Nickname</source>
+        <target>Apelido</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>First Name</source>
+        <target>Nome</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Last Name</source>
+        <target>Sobre Nome</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Favorite team</source>
+        <target>Time favorito</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Notifications</source>
+        <target>Notificações</target>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Submit</source>
+        <target></target>
       </trans-unit>
     </body>
   </file>
