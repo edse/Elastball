@@ -68,7 +68,7 @@
 
     <div data-role="content">
     
-      <p><?php echo __("We are all most there... Fill up the information bellow and get ready to play!")?>.</p>
+      <p><?php echo __("We are all most there... Fill up the information bellow and get ready to play")?>.</p>
       
       <form method="post" action="<?php echo url_for('@default?module=login&action=register&code=verify') ?>" name="signup" id="signup" />
         <ul data-role="listview" data-inset="true">
