@@ -12,14 +12,14 @@
     <div class="content-secondary">
       <div id="jqm-homeheader">
         <h1 id="jqm-logo" style="margin-top: 15px;"><img src="/res/img/logo.png" alt="ElastBall" title="ElastBall" /></h1> 
-        <p><?php echo __('Futebol de botão online', array(), 'messages') ?> - <?php echo __('Times, Jogos, Campeonatos, Notícias e Iteratividade') ?></p> 
+        <p><?php echo __('Online sectorball game', array(), 'messages') ?> - <?php echo __('Teams, Games, Tournaments, News, and Iteractivity') ?></p> 
         <!-- <p id="jqm-version">Beta Release</p> --> 
       </div> 
 
-      <p class="intro"><strong>ElastBall</strong> <?php echo __('permite que você desafie outros jogadores online com mais de 700 equipes de futebol do mundo todo') ?>.</p>
+      <p class="intro"><strong>ElastBall</strong> <?php echo __('allows you to chalenge other players online with 700+ soccer teams') ?>.</p>
 
       <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="_login" style="margin-bottom: 40px;"> 
-        <li data-role="list-divider"><?php echo __('Entrar usando...') ?></li>
+        <li data-role="list-divider"><?php echo __('Signin with...') ?></li>
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=google&type=openid') ?>" rel="external"><img src="../images/google.png" alt="Google" class="ui-li-icon">Google</a></li> 
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=twitter&type=oauth') ?>" rel="external"><img src="../images/twitter.png" alt="Twitter" class="ui-li-icon">Twitter</a></li> 
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=facebook&type=oauth') ?>" rel="external"><img src="../images/facebook.png" alt="Facebook" class="ui-li-icon">Facebook</a></li>
@@ -30,7 +30,7 @@
         <img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
       </a>
       
-      <p style="text-align: center; font-size: small;"><?php echo __('Desenvolvido utilizando as mais recentes inovações do HTML5. Conectividade / Tempo Real, CSS3, Acesso ao hardware, Gráficos, 3D e Efeitos, Multimídia, Performance e Integração, Semanticas, Offline e Storage')?></p> 
+      <p style="text-align: center; font-size: small;"><?php echo __('HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage')?></p> 
 
     </div><!--/content-primary--> 
     
@@ -42,7 +42,7 @@
        
       <nav> 
         <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
-          <li data-role="list-divider"><?php echo __('Jogue com os times mais famosos de todo o planeta...')?></li> 
+          <li data-role="list-divider"><?php echo __('Play with the best teams around the world...')?></li> 
           <li>Campeonato Alemão</li>
           <li>Campeonato Argentino</li>
           <li>Campeonato Brasileiro Series A, B, C e D</li>
