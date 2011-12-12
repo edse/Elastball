@@ -42,8 +42,5 @@
     
     <?php echo $sf_content ?>
     
-    <br /><br />
-    <?php include_component('language', 'language') ?>
-    
   </body>
 </html>
