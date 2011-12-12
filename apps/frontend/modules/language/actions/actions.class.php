@@ -41,7 +41,6 @@ class languageActions extends sfActions
     if($request->getParameter('return_url')){
       header("Location: ".$request->getParameter('return_url'));
       die();
-      return $this->redirect($request->getParameter('return_url'));
     }
     else
       return $this->redirect("" != $referer ? $referer : 'homepage');
