@@ -25,9 +25,6 @@
           required: true,
           email: true,
         },
-        phone:{
-          required: true
-        },
         team:{
           required: true
         }
@@ -65,40 +62,42 @@
   <div data-role="page" class="type-index">
 
     <div data-role="header" data-theme="b">
-      <h1>Futebol Clube - Sign up</h1>
+      <h1>Futebol Clube - <?php echo __('Choose one')?>Sign up</h1>
       <?php /* <a href="<?php echo url_for("/webapp/index")?>" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> */ ?>
     </div>
 
     <div data-role="content">
     
-      <p>All form elements begin with standard html controls that are enhanced to make them more attractive and easy-to-use. In browsers that don't support the custom controls, they will still have a usable experience because these are all based on native form elements.</p>
+      <p><?php echo __("We are all most there... Fill up the information bellow and get ready to play!")?>.</p>
       
       <form method="post" action="<?php echo url_for('@default?module=login&action=register&code=verify') ?>" name="signup" id="signup" />
         <ul data-role="listview" data-inset="true">
           <li data-role="fieldcontain"> 
-            <label for="nickname"><em>*</em> Nickname:</label>
+            <label for="nickname"><em>*</em> <?php echo __('Nickname')?>:</label>
             <input type="text" name="nickname" id="nickname" value="" style="width: 25%;" />
           </li>
           <li data-role="fieldcontain"> 
-            <label for="firstname"><em>*</em> First Name:</label>
+            <label for="firstname"><em>*</em> <?php echo __('First Name')?>:</label>
             <input type="text" name="firstname" id="firstname" value="" />
           </li>
           <li data-role="fieldcontain"> 
-            <label for="lastname"><em>*</em> Last Name:</label>
+            <label for="lastname"><em>*</em> <?php echo __('Last Name')?>:</label>
             <input type="text" name="lastname" id="lastname" value="" />
           </li>
           <li data-role="fieldcontain"> 
-            <label for="email"><em>*</em> Email:</label>
+            <label for="email"><em>*</em> <?php echo __('Email')?>:</label>
             <input type="text" name="email" id="email" value="" class="required email" />
           </li>
+          <!--
           <li data-role="fieldcontain"> 
             <label for="phone"><em>*</em> Phone:</label>
             <input type="text" name="phone" id="phone" value="" />
           </li>
+          -->
           <li data-role="fieldcontain"> 
-            <label for="team" class="select"><em>*</em> Favorite team:</label>
+            <label for="team" class="select"><em>*</em> <?php echo __('Favorite team')?>:</label>
             <select name="team" id="team">
-              <option value="">Choose one</option>
+              <option value=""><?php echo __('Choose one')?></option>
               <option value="1">Alabama</option>
               <option value="1">Alaska</option>
               <option value="1">Arizona</option>
@@ -107,7 +106,7 @@
             </select>
           </li>
           <li data-role="fieldcontain"> 
-            <label for="slider2">Notifications:</label>
+            <label for="slider2"><?php echo __('Notifications')?>:</label>
             <select name="slider2" id="slider2" data-role="slider">
               <option value="on">On</option>
               <option value="off">Off</option>
@@ -115,7 +114,7 @@
           </li>
           <li class="ui-body ui-body-b"> 
             <fieldset class="ui-grid-a" style="padding: 15px;"> 
-              <div class="ui-block-b"><button type="submit" data-theme="a">Submit</button></div> 
+              <div class="ui-block-b"><button type="submit" data-theme="a"><?php echo __('Submit')?></button></div> 
             </fieldset> 
           </li> 
         </ul> 

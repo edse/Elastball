@@ -3,11 +3,12 @@
 <html> 
 <head> 
   <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/images/favicon.ico" rel="shortcut icon" /> 
   <?php include_http_metas() ?>
   <?php include_metas() ?>
   <?php include_title() ?>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
   <?php include_stylesheets() ?>
   <?php include_javascripts() ?>
   <script type="text/javascript">
