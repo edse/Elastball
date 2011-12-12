@@ -1,3 +1,5 @@
+<?php use_helper('I18N', 'Date') ?>
+
 <link rel="stylesheet"  href="/js/jquery.mobile/jquery.mobile-1.0b2.min.css" /> 
 <link rel="stylesheet" href="/css/webapp.css" /> 
 <script src="/js/webapp.js"></script> 
