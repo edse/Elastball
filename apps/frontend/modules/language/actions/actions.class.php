@@ -22,6 +22,10 @@ class languageActions extends sfActions
       $this->getUser(),
       array('languages' => array('en', 'pt_BR'))
     );
+    // URI
+    $this->uri = $request->getUri();
+    // URL
+    $this->url = @current(explode('?',$this->uri));
   }
  
   public function executeChangeLanguage(sfWebRequest $request)
@@ -32,12 +36,17 @@ class languageActions extends sfActions
     );
     $form->process($request);
     $referer = $this->getUser()->getReferer($request->getReferer());
-    die($referer);
-    return $this->redirect("" != $referer ? $referer : 'homepage');
+    if($request->getParameter('return_url'))
+      return $request->getParameter('return_url');
+    else
+      return $this->redirect("" != $referer ? $referer : 'homepage');
   }
 
+  /*
   public function executeIndex(sfWebRequest $request)
   {
     $this->forward('default', 'module');
   }
+  */
+
 }

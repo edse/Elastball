@@ -8,5 +8,11 @@ class languageComponents extends sfComponents
       $this->getUser(),
       array('languages' => array('en', 'pt_BR'))
     );
+
+    // URI
+    $this->uri = $request->getUri();
+    // URL
+    $this->url = @current(explode('?',$this->uri));
+
   }
 }
