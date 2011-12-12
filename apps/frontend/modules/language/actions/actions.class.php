@@ -32,6 +32,8 @@ class languageActions extends sfActions
     );
     $form->process($request);
     
+    die($referer);
+    
     $referer = $this->getUser()->getReferer($request->getReferer());
     return $this->redirect("" != $referer ? $referer : 'homepage');
   }
