@@ -31,10 +31,8 @@ class languageActions extends sfActions
       array('languages' => array('en', 'pt_BR'))
     );
     $form->process($request);
-    
-    die($referer);
-    
     $referer = $this->getUser()->getReferer($request->getReferer());
+    die($referer);
     return $this->redirect("" != $referer ? $referer : 'homepage');
   }
 
