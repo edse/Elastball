@@ -332,3 +332,11 @@ dd h4 { margin:15px 0 0 0; }
       color-stop(1,     #559ed3));
    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#559ed3')";
 }
+
+#langform{
+  float: right;
+  padding-right: 30px;
+  padding-top: 8px;
+  text-align: right;
+  width: 50%;
+}

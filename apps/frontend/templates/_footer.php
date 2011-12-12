@@ -1,4 +1,6 @@
   <div data-role="footer" class="footer-docs" data-theme="c"> 
       <p>&copy; Futebol Clube Project</p>
-      <?php include_component('language', 'language') ?>
+      <div id="lang" style="float: right;">
+        <?php include_component('language', 'language') ?>
+      </div>
   </div>  
