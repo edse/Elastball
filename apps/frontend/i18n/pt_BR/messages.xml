@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2011-11-15T16:52:13Z" product-name="messages">
+  <file source-language="EN" target-language="pt_BR" datatype="plaintext" original="messages" date="2011-12-12T00:34:08Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -39,6 +39,46 @@
       <trans-unit id="10">
         <source>Goodbye</source>
         <target>Tchau</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Who is online</source>
+        <target>Quem está online</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Kick user</source>
+        <target>Chutar usuário</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Shutdown</source>
+        <target>Desligar</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Socket - status</source>
+        <target>Socket - status</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Futebol de botão online</source>
+        <target>Online sectorball game</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Times, Jogos, Campeonatos, Notícias e Iteratividade</source>
+        <target>Teams, Games, Tournaments, News, and Iteractivity</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Entrar usando...</source>
+        <target>Signin with</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>permite que você desafie outros jogadores online com mais de 700 equipes de futebol do mundo todo</source>
+        <target>allows you to chalenge other players online with 700+ soccer teams</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Desenvolvido utilizando as mais recentes inovações do HTML5. Conectividade / Tempo Real, CSS3, Acesso ao hardware, Gráficos, 3D e Efeitos, Multimídia, Performance e Integração, Semanticas, Offline e Storage</source>
+        <target>HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Jogue com os times mais famosos de todo o planeta...</source>
+        <target>Play with the best teams around the world...</target>
       </trans-unit>
     </body>
   </file>

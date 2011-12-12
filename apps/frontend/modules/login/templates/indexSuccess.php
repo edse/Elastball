@@ -9,27 +9,38 @@
      
     <div class="content-secondary">
       <div id="jqm-homeheader">
-        <h1 id="jqm-logo" style="margin-top: 15px;"><img src="/res/img/logo.png" alt="ElastBall" /></h1> 
-        <p>Um resumo apurado de tudo que rola no mundo do Futebol em tempo real</p> 
-        <p id="jqm-version">Beta Release</p> 
+        <h1 id="jqm-logo" style="margin-top: 15px;"><img src="/res/img/logo.png" alt="ElastBall" title="ElastBall" /></h1> 
+        <p><?php echo __('Futebol de botão online') ?> - <?php echo __('Times, Jogos, Campeonatos, Notícias e Iteratividade') ?></p> 
+        <!-- <p id="jqm-version">Beta Release</p> --> 
       </div> 
 
-      <p class="intro"><strong>Futebol Clube</strong> permite acesso rápido e fácil a informações dos principais campeonatos de futebol do planeta.</p>
+      <p class="intro"><strong>ElastBall</strong> <?php echo __('permite que você desafie outros jogadores online com mais de 700 equipes de futebol do mundo todo') ?>.</p>
 
-      <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="_login"> 
-        <li data-role="list-divider">Entrar usando...</li>
+      <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" id="_login" style="margin-bottom: 40px;"> 
+        <li data-role="list-divider"><?php echo __('Entrar usando...') ?></li>
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=google&type=openid') ?>" rel="external"><img src="../images/google.png" alt="Google" class="ui-li-icon">Google</a></li> 
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=twitter&type=oauth') ?>" rel="external"><img src="../images/twitter.png" alt="Twitter" class="ui-li-icon">Twitter</a></li> 
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=facebook&type=oauth') ?>" rel="external"><img src="../images/facebook.png" alt="Facebook" class="ui-li-icon">Facebook</a></li>
         <li><a href="<?php echo url_for('@default?module=login&action=login&service=yahoo&type=openid') ?>" rel="external"><img src="../images/yahoo.png" alt="Yahoo!" class="ui-li-icon">Yahoo!</a></li> 
-      </ul> 
+      </ul>
+      
+      <a href="http://www.w3.org/html/logo/" style="margin-left: 45px;">
+        <img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
+      </a>
+      
+      <p style="text-align: center; font-size: small;"><?php echo __('Desenvolvido utilizando as mais recentes inovações do HTML5. Conectividade / Tempo Real, CSS3, Acesso ao hardware, Gráficos, 3D e Efeitos, Multimídia, Performance e Integração, Semanticas, Offline e Storage')?></p> 
 
     </div><!--/content-primary--> 
     
-    <div class="content-primary"> 
+    <div class="content-primary">
+      
+      <div id="video" style="padding-bottom: 20px; text-align: center;">
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/WNkVHYfTReM?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+       
       <nav> 
         <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
-          <li data-role="list-divider">Acompanhe campeonatos tradicionais como...</li> 
+          <li data-role="list-divider"><?php echo __('Jogue com os times mais famosos de todo o planeta...')?></li> 
           <li>Campeonato Alemão</li>
           <li>Campeonato Argentino</li>
           <li>Campeonato Brasileiro Series A, B, C e D</li>
@@ -41,87 +52,6 @@
           <li>Campeonato Português</li>
           <li>Campeonato Russo</li>
           <li>Campeonato Turco</li>
-
-          <li data-role="list-divider">Copas, Ligas, Mundiais, Eliminatorias...</li> 
-          <li>Copa Sul-Americana</li>
-          <li>Eliminatórias da Eurocopa</li>
-          <li>Liga Europa</li>
-          <li>Mundial Sub-20</li>
-          <li>Recopa Sul-Americana</li>
-          <li>Supercopa da Espanha</li>
-          <?php /*
-          <li data-role="list-divider">São mais de 1800 times de futebol incluindo os nacionais...</li> 
-          <li>América-MG</li>
-          <li>Atlético-GO</li>
-          <li>Atlético-MG</li>
-          <li>Atlético-PR</li>
-          <li>Avaí</li>
-          <li>Bahia</li>
-          <li>Botafogo</li>
-          <li>Ceará</li>
-          <li>Corinthians</li>
-          <li>Coritiba</li>
-          <li>Cruzeiro</li>
-          <li>Figueirense</li>
-          <li>Flamengo</li>
-          <li>Fluminense</li>
-          <li>Grêmio</li>
-          <li>Internacional</li>
-          <li>Palmeiras</li>
-          <li>Santos</li>
-          <li>São Paulo</li>
-          <li>Vasco</li>
-
-          <li data-role="list-divider">... e internacionais</li> 
-          <li>Real Madrid</li>
-          <li>Barcelona</li>
-          <li>Milan</li>
-          <li>Juventus</li>
-          <li>Bayern Munchen</li>
-          <li>Manchester United</li>
-          <li>Peñarol</li>
-          <li>Boca Juniors</li>
-          <li>Liverpool</li>
-          <li>Ajax</li>
-          <li>Inter de Milão</li>
-          <li>Porto</li>
-          <li>Benfica</li>
-          <li>River Plate</li>
-          <li>Glasgow Rangers</li>
-          <li>Independiente</li>
-          <li>São Paulo</li>
-          <li>Nacional</li>
-          <li>Santos</li>
-          <li>Linfield</li>
-          <li>Celtic</li>
-          <li>Flamengo</li>
-          <li>Internacional</li>
-          <li>Olimpia</li>
-          <li>Arsenal</li>
-          <li>Athletic Bilbao</li>
-          <li>Sparta Praha</li>
-          <li>Olympiakos</li>
-          <li>PSV Eindhoven</li>
-          <li>Sporting</li>
-          <li>Feyenoord</li>
-          <li>Estrela Vermelha</li>
-          <li>Atlético de Madrid</li>
-          <li>Anderlecht</li>
-          <li>Rapid Viena</li>
-          <li>Zamalek</li>
-          <li>Ferencváros TC</li>
-          <li>Austria Viena</li>
-          <li>Dínamo Kiev</li>
-          <li>Colo Colo</li>
-          <li>CSKA Sofia</li>
-          <li>Valência</li>
-          <li>Éverton</li>
-          <li>Aston Villa</li>
-          <li>Grasshopper</li>
-          <li>Glentoran</li>
-          <li>Borussia Dortmund</li>
-          <li>Copenhague</li>
-          */ ?>
         </ul>
       </nav> 
     </div>
