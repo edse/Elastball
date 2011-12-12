@@ -12,7 +12,7 @@
     <div class="content-secondary">
       <div id="jqm-homeheader">
         <h1 id="jqm-logo" style="margin-top: 15px;"><img src="/res/img/logo.png" alt="ElastBall" title="ElastBall" /></h1> 
-        <p><?php echo __('Futebol de botão online') ?> - <?php echo __('Times, Jogos, Campeonatos, Notícias e Iteratividade') ?></p> 
+        <p><?php echo __('Futebol de botão online', array(), 'messages') ?> - <?php echo __('Times, Jogos, Campeonatos, Notícias e Iteratividade') ?></p> 
         <!-- <p id="jqm-version">Beta Release</p> --> 
       </div> 
 
