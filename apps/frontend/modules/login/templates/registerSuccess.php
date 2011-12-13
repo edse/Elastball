@@ -62,7 +62,7 @@
   <div data-role="page" class="type-index">
 
     <div data-role="header" data-theme="b">
-      <h1>Futebol Clube - <?php echo __('Choose one')?>Sign up</h1>
+      <h1>Futebol Clube - <?php echo __('Sign up')?></h1>
       <?php /* <a href="<?php echo url_for("/webapp/index")?>" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> */ ?>
     </div>
 
@@ -70,7 +70,7 @@
     
       <p><?php echo __("We are all most there... Fill up the information bellow and get ready to play")?>.</p>
       
-      <form method="post" action="<?php echo url_for('@default?module=login&action=register&code=verify') ?>" name="signup" id="signup" />
+      <form method="post" action="<?php echo url_for('@default?module=login&action=register&code=verify') ?>" name="signup" id="signup" data-ajax="false" />
         <ul data-role="listview" data-inset="true">
           <li data-role="fieldcontain"> 
             <label for="nickname"><em>*</em> <?php echo __('Nickname')?>:</label>
@@ -94,17 +94,24 @@
             <input type="text" name="phone" id="phone" value="" />
           </li>
           -->
-          <li data-role="fieldcontain"> 
-            <label for="team" class="select"><em>*</em> <?php echo __('Favorite team')?>:</label>
-            <select name="team" id="team">
-              <option value=""><?php echo __('Choose one')?></option>
-              <option value="1">Alabama</option>
-              <option value="1">Alaska</option>
-              <option value="1">Arizona</option>
-              <option value="1">Arkansas</option>
-              <option value="1">California</option>
+          <?php
+          $teams = Doctrine_Query::create()
+            ->select('t.*')
+            ->from('Team t')
+            ->where('t.is_active = ?', 1)
+            ->orderBy('t.name') 
+            ->execute(); 
+          ?>
+          <li data-role="fieldcontain">
+            <label for="select-choice-a" class="select"><?php echo __('Select your team')?>:</label>
+            <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+              <option><?php echo __('Select your team')?></option>
+              <?php foreach($teams as $t): ?>
+              <option value="<?php echo $t->getId() ?>"><?php echo $t->getName() ?></option>
+              <?php endforeach; ?>
             </select>
           </li>
+
           <li data-role="fieldcontain"> 
             <label for="slider2"><?php echo __('Notifications')?>:</label>
             <select name="slider2" id="slider2" data-role="slider">
