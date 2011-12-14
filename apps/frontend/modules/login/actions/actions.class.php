@@ -61,7 +61,7 @@ class loginActions extends sfActions{
       $this->user->setUsername($request->getParameter('email'));
       $this->user->setEmailAddress($request->getParameter('email'));
       $this->user->setTeamId($request->getParameter('team'));
-      $this->user->setPhone($request->getParameter('phone'));
+      //$this->user->setPhone($request->getParameter('phone'));
       $this->user->setIsActive(true);
       $this->user->save();
       $this->getUser()->setFlash('info', 'User activate');
