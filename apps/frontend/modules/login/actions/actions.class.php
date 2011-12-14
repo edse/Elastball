@@ -53,14 +53,14 @@ class loginActions extends sfActions{
       $this->redirectUnless($request->getParameter('firstname'), '@default?module=login&action=register');
       $this->redirectUnless($request->getParameter('lastname'), '@default?module=login&action=register');
       $this->redirectUnless($request->getParameter('email'), '@default?module=login&action=register');
-      $this->redirectUnless($request->getParameter('team'), '@default?module=login&action=register');
+      $this->redirectUnless($request->getParameter('team_id'), '@default?module=login&action=register');
 
       $this->user->setNickname($request->getParameter('nickname'));
       $this->user->setFirstName($request->getParameter('firstname'));
       $this->user->setLastName($request->getParameter('lastname'));
       $this->user->setUsername($request->getParameter('email'));
       $this->user->setEmailAddress($request->getParameter('email'));
-      $this->user->setTeamId($request->getParameter('team'));
+      $this->user->setTeamId($request->getParameter('team_id'));
       //$this->user->setPhone($request->getParameter('phone'));
       $this->user->setIsActive(true);
       $this->user->save();

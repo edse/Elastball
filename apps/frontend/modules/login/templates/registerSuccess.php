@@ -104,7 +104,7 @@
           ?>
           <li data-role="fieldcontain">
             <label for="select-choice-a" class="select"><?php echo __('Select your team')?>:</label>
-            <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+            <select name="team_id" id="team_id" data-native-menu="false">
               <option><?php echo __('Select your team')?></option>
               <?php foreach($teams as $t): ?>
               <option value="<?php echo $t->getId() ?>"><?php echo $t->getName() ?></option>
