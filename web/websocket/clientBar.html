@@ -23,9 +23,9 @@
 				var host = "ws://localhost:8088/phpwebsockets/server.php";
 				try {
 					if('WebSocket' in window) {
-						socket = new WebSocket(host, "Foo");
+						socket = new WebSocket(host, "Bar");
 					} else if('MozWebSocket' in window) {
-						socket = new MozWebSocket(host, "Foo");
+						socket = new MozWebSocket(host, "Bar");
 					} else {
 						log('WebSockets not support on this browser');
 						return;
@@ -89,7 +89,7 @@
 			Quit
 		</button>
 		<div>
-			Commands: Whatever you type
+			Commands: whatever you type
 		</div>
 	</body>
 </html>

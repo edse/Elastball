@@ -36,7 +36,7 @@ class WebSocket {
 	 * If handshaking has been done this function dispatches the request
 	 * to the service bound to the request associated with the user object
 	 */
-	function handleRequest($socket, $users) {
+	function handleRequest($socket) {
 		// Check the handshake required
 		if(!$this->user->handshakeDone()) {
 			logToFile($socket."Performing the handshake\n");
@@ -63,22 +63,15 @@ class WebSocket {
 		}
 		$appID = $this->user->appId();
 		if($appID === "_ECHO_") {
-      //die('\n\n2) users: '.count($users));
 			try {
 				$protocol = $this->user->protocol();
 				if(isset($protocol)) {
 					$protocol->setSocket($socket);
 					$result = $protocol->read();
 					$bytesRead = $result['size'];
+					
 					if($bytesRead !== -1 && $bytesRead !== -2) {
-						//$protocol->send($result);
-            foreach($users as $u){
-              if($appID==$u->appId()){
-                $p = $u->protocol();
-                $p->setSocket($u->socket());
-                $p->send($result);
-              }
-            }
+						$protocol->send($result);
 					} else {
 						// badness must close
 						$protocol->close();
@@ -99,7 +92,6 @@ class WebSocket {
 				AppFactory::autoload($appID);
 				$this->wsapp = AppFactory::create($appID);
 				$protocol = $this->user->protocol();
-        //die('\n\n1) users: '.count($users));
 				if(isset($protocol)) {
 					$protocol->setSocket($socket);
 					$this->wsapp->setProtocol($protocol);
@@ -156,7 +148,11 @@ class WebSocket {
 	private function getHandshaker($headers) {
 		// Lets check which handshaker we need
 		if(isset($headers['Sec-WebSocket-Version'])) {
-			if($headers['Sec-WebSocket-Version'] === '8') {
+			// The HyBi protocol is still in draft form but each version now just seems
+			// to be semantic changes in the specification
+			// Forcing version numbers above 8 to be HyBi, things might fail if actual protocol
+			// changes are made but at least the resulting errors will be more informative
+			if($headers['Sec-WebSocket-Version'] >= '8') { 
 				// This is the HyBI handshaker
 				return new HandshakeHyBi();
 			}

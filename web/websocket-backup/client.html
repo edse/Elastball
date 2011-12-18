@@ -18,14 +18,16 @@
 		</style>
 		<script>
 			var socket;
+			
+			function delayInit() { setTimeout(function() { init(); }, 5000); }
 
 			function init() {
-				var host = "ws://localhost:8088/phpwebsockets/server.php";
+				var host = "ws://elastball.possum-cms.com:8082";
 				try {
 					if('WebSocket' in window) {
-						socket = new WebSocket(host, "Foo");
+						socket = new WebSocket(host);
 					} else if('MozWebSocket' in window) {
-						socket = new MozWebSocket(host, "Foo");
+						socket = new MozWebSocket(host);
 					} else {
 						log('WebSockets not support on this browser');
 						return;
@@ -78,7 +80,7 @@
 			}
 		</script>
 	</head>
-	<body onload="init()">
+	<body onload="delayInit()">
 		<h3>WebSocket v2.00</h3>
 		<div id="log"></div>
 		<input id="msg" type="textbox" onkeypress="onkey(event)"/>
@@ -89,7 +91,7 @@
 			Quit
 		</button>
 		<div>
-			Commands: Whatever you type
+			Commands: whatever you type
 		</div>
 	</body>
 </html>

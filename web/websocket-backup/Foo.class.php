@@ -14,7 +14,7 @@ require_once "./lib/wsapp.interface.php";
 			$data = $msg['frame'];
 			echo "In Foo Class onMessage: just received ".$data." \n";
 			// Just Echo it back
-		   	$this->protocol->send($msg);
+		  $this->protocol->send($msg);
 		}
 		function onClose() {
 			echo "In Foo Class onClose: closing connection \n";
