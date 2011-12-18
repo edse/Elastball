@@ -8,7 +8,7 @@ require_once 'wsuser.class.php';
  * $log is the log file reference.
  */
 function GetSocket($address, $port, $log){
-  
+  echo "\n".$address."-".$port."\n";
   $master=socket_create(AF_INET, SOCK_STREAM, SOL_TCP)     or die("socket_create() failed");
   socket_set_option($master, SOL_SOCKET, SO_REUSEADDR, 1)  or die("socket_option() failed");
   socket_bind($master, $address, $port)                    or die("socket_bind() failed");

@@ -5,9 +5,80 @@ Socket:
     collate: utf8_unicode_ci
     charset: utf8
   columns:
+    pid:                { type: integer }
     host:               { type: string(255) }
     port:               { type: string(10) }
     status:             { type: string(255) }
+
+Room:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    user_id:                 { type: integer }
+    socket_id:               { type: integer }
+    title:                   { type: string(255), notnull: true }
+    description:             { type: string(255) }
+  relations:
+    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: Rooms }
+    Socket: { local: socket_id, foreign: id, class: Socket, foreignAlias: Room }
+
+Game:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    socket_id:                { type: integer }
+    date_start:               { type: timestamp }
+    date_end:                 { type: timestamp }
+    home_user_id:             { type: integer }
+    home_team_id:             { type: integer }
+    home_score:               { type: integer }
+    away_user_id:             { type: integer }
+    away_team_id:             { type: integer }
+    away_score:               { type: integer }
+    stadium_id:               { type: integer }
+    access_code:              { type: string(255), notnull: true }
+    url:                      { type: string(255), notnull: true }
+    status:                   { type: string(255) }
+  relations:
+    Socket:   { local: socket_id, foreign: id, class: Socket, foreignAlias: Game }
+    HomeUser: { local: home_user_id, foreign: id, class: sfGuardUser, foreignAlias: HomeGames }
+    AwayUser: { local: away_user_id, foreign: id, class: sfGuardUser, foreignAlias: AwayGames } 
+    HomeTeam: { local: home_team_id, foreign: id, class: Team }
+    AwayTeam: { local: away_team_id, foreign: id, class: Team } 
+
+Turn:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    game_id:                  { type: integer }
+    user_id:                  { type: integer }
+    message_id:               { type: integer }
+    number:                   { type: integer }
+  relations:
+    Game: { local: game_id, foreign: id, class: Game, foreignAlias: Turns }
+    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: Turns }
+    Message: { local: message_id, foreign: id, class: Message, alias: Message, foreignAlias: Turn }
+
+Message:
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: { Timestampable: ~ }
+  columns:
+    socket_id:                { type: integer }
+    user_id:                  { type: integer }
+    socket_user_id:           { type: string(255) }
+    type:                     { type: string(255) }
+    message:                  { type: string(255), notnull: true }
+  relations:
+    Socket: { local: socket_id, foreign: id, class: Socket, foreignAlias: Messages }
+    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: Messages }
 
 Online:
   options:
@@ -15,10 +86,12 @@ Online:
     charset: utf8
   columns:
     user_id:            { type: integer }
+    socket_id:          { type: integer }
     socket_user_id:     { type: string(255) }
     status:             { type: string(255) }
   relations:
     User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: Online }
+    Socket: { local: socket_id, foreign: id, class: Socket, foreignAlias: OnlineUsers }
 
 Team:
   options:
@@ -51,54 +124,6 @@ Stadium:
     inauguration:       { type: string(255), notnull: true }
     location:           { type: string(255), notnull: true }
     geo_location:       { type: string(255), notnull: true }
-
-Chat:
-  options:
-    collate: utf8_unicode_ci
-    charset: utf8
-  actAs: { Timestampable: ~ }
-  columns:
-    user_id:                 { type: integer }
-    message:                 { type: string(255), notnull: true }
-  relations:
-    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: ChatMessages }
-
-Game:
-  options:
-    collate: utf8_unicode_ci
-    charset: utf8
-  actAs: { Timestampable: ~ }
-  columns:
-    date_start:               { type: timestamp }
-    date_end:                 { type: timestamp }
-    home_user_id:             { type: integer }
-    home_team_id:             { type: integer }
-    home_score:          { type: integer }
-    away_user_id:             { type: integer }
-    away_team_id:             { type: integer }
-    away_score:          { type: integer }
-    stadium_id:               { type: integer }
-    access_code:              { type: string(255), notnull: true }
-    url:                      { type: string(255), notnull: true }
-    status:                   { type: string(255) }
-  relations:
-    HomeUser: { local: home_user_id, foreign: id, class: sfGuardUser, foreignAlias: HomeGames }
-    AwayUser: { local: away_user_id, foreign: id, class: sfGuardUser, foreignAlias: AwayGames } 
-    HomeTeam: { local: home_team_id, foreign: id, class: Team }
-    AwayTeam: { local: away_team_id, foreign: id, class: Team } 
-
-Movement:
-  options:
-    collate: utf8_unicode_ci
-    charset: utf8
-  actAs: { Timestampable: ~ }
-  columns:
-    game_id:                  { type: integer }
-    user_id:                  { type: integer }
-    message:                  { type: string(255), notnull: true }
-  relations:
-    Game: { local: game_id, foreign: id, class: Game, foreignAlias: Movements }
-    User: { local: user_id, foreign: id, class: sfGuardUser, foreignAlias: GameMovements }
 
 ###########
 # CMS

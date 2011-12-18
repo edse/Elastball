@@ -1,0 +1,7074 @@
+Team:
+  Team_1:
+    official_name: 'São Paulo Futebol Clube'
+    name: 'São Paulo'
+    nickname: 'São Paulo'
+    logo: sao_paulo_65x65.png
+    initials: SPO
+    description: Tricolor
+    is_active: true
+    created_at: '2011-10-01 02:37:00'
+    updated_at: '2011-12-09 22:04:00'
+    slug: sao-paulo
+  Team_2:
+    official_name: 'Fußball-Club Bayern München'
+    name: 'Bayern de Munique'
+    nickname: 'Bayern de Munique'
+    logo: bayern-munchen_65x65.png
+    initials: BAY
+    description: 'Bayern de Munique'
+    is_active: true
+    created_at: '2011-12-04 04:39:00'
+    updated_at: '2011-12-09 22:10:00'
+    slug: bayern-de-munique
+  Team_3:
+    official_name: 'FC Gelsenkirchen-Schalke 04'
+    name: 'Schalke 04'
+    nickname: 'Schalke 04'
+    logo: Schalke_65x65_.png
+    initials: SCH
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-09 22:09:22'
+    slug: schalke-04
+  Team_4:
+    official_name: 'Sportverein Werder Bremen'
+    name: 'Werder Bremen'
+    nickname: 'Werder Bremen'
+    logo: 2134.png
+    initials: WDB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-04 04:39:49'
+    slug: werder-bremen
+  Team_5:
+    official_name: 'Turn- und Sportverein Bayer 04 Leverkusen e. V.'
+    name: 'Bayer Leverkusen '
+    nickname: 'Bayer Leverkusen '
+    logo: bayer-leverkusen_65x65.png
+    initials: BYL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-09 22:10:10'
+    slug: bayer-leverkusen
+  Team_6:
+    official_name: 'Ballspiel-Verein Borussia 1909 e. V. Dortmund'
+    name: 'Borussia Dortmund'
+    nickname: 'Borussia Dortmund'
+    logo: Borussia_Dortmund_65.png
+    initials: BRD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-09 22:10:11'
+    slug: borussia-dortmund
+  Team_7:
+    official_name: 'Verein für Bewegungsspiele Stuttgart 1893 e. V.'
+    name: Stuttgart
+    nickname: Stuttgart
+    logo: Stuttgart_30.png
+    initials: STG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-04 04:39:49'
+    slug: stuttgart
+  Team_8:
+    official_name: 'Hamburger Sport-Verein e. V.'
+    name: Hamburgo
+    nickname: Hamburgo
+    logo: Hamburgo_30x30.png
+    initials: HSV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-04 04:39:49'
+    slug: hamburgo
+  Team_9:
+    official_name: 'Verein für Leibesübungen Wolfsburg'
+    name: Wolfsburg
+    nickname: Wolfsburg
+    logo: Wolfsburg_30.png
+    initials: WLB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-04 04:39:49'
+    slug: wolfsburg
+  Team_10:
+    official_name: '1. FSV Mainz 05'
+    name: Mainz
+    nickname: Mainz
+    logo: Mainz_30.png
+    initials: MAZ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:49'
+    updated_at: '2011-12-04 04:39:49'
+    slug: mainz
+  Team_11:
+    official_name: 'Turn- und Sportgemeinschaft 1899 Hoffenheim e.V.'
+    name: Hoffenheim
+    nickname: Hoffenheim
+    logo: Hoffenheim_30.png
+    initials: HFN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: hoffenheim
+  Team_12:
+    official_name: 'Borussia Mönchengladbach'
+    name: 'Borussia Mönchengladbach'
+    nickname: 'Borussia Mönchengladbach'
+    logo: Borussia-Mgladbach_30.png
+    initials: BMG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: borussia-moenchengladbach
+  Team_13:
+    official_name: '1. FC Köln'
+    name: Colônia
+    nickname: Colônia
+    logo: colonia_30.png
+    initials: COL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: colonia
+  Team_14:
+    official_name: 'Sport-Club Freiburg'
+    name: Freiburg
+    nickname: Freiburg
+    logo: Freiburg_30.png
+    initials: FRB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: freiburg
+  Team_15:
+    official_name: 'Hannover 96'
+    name: Hannover
+    nickname: Hannover
+    logo: Hannover-96_65.png
+    initials: HVN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-09 22:09:22'
+    slug: hannover
+  Team_16:
+    official_name: '1. FC Kaiserslautern'
+    name: Kaiserslautern
+    nickname: Kaiserslautern
+    logo: Kaiserslautern_30.png
+    initials: FCK
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: kaiserslautern
+  Team_17:
+    official_name: '1. FC Nuremberg'
+    name: Nuremberg
+    nickname: Nuremberg
+    logo: nuremberg_30.png
+    initials: NUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: nuremberg
+  Team_18:
+    official_name: 'FC Augsburg 1907'
+    name: Augsburg
+    nickname: Augsburg
+    logo: Augsburg-30.png
+    initials: AUG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: augsburg
+  Team_19:
+    official_name: 'Hertha Berliner Sport-Club von 1892'
+    name: 'Hertha Berlim'
+    nickname: 'Hertha Berlim'
+    logo: hertha--30.png
+    initials: HER
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:39:50'
+    updated_at: '2011-12-04 04:39:50'
+    slug: hertha-berlim
+  Team_20:
+    official_name: 'Clube de Regatas do Flamengo'
+    name: Flamengo
+    nickname: Flamengo
+    logo: flamengo_65x65.png
+    initials: FLA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:14'
+    slug: flamengo
+  Team_21:
+    official_name: 'Botafogo de Futebol e Regatas'
+    name: Botafogo
+    nickname: Botafogo
+    logo: botafogo-65.png
+    initials: BOT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:14'
+    slug: botafogo
+  Team_22:
+    official_name: 'Sport Club Corinthians Paulista'
+    name: Corinthians
+    nickname: Corinthians
+    logo: corinthians_65x65.png
+    initials: COR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: corinthians
+  Team_23:
+    official_name: 'Esporte Clube Bahia'
+    name: Bahia
+    nickname: Bahia
+    logo: bahia_65x65.png
+    initials: BAH
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: bahia
+  Team_24:
+    official_name: 'Fluminense Football Club'
+    name: Fluminense
+    nickname: Fluminense
+    logo: Fluminense_NOVOEscudo_65.png
+    initials: FLU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: fluminense
+  Team_25:
+    official_name: 'Clube de Regatas Vasco da Gama'
+    name: Vasco
+    nickname: Vasco
+    logo: vasco_65x65.png
+    initials: VAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: vasco
+  Team_26:
+    official_name: 'Sociedade Esportiva Palmeiras'
+    name: Palmeiras
+    nickname: Palmeiras
+    logo: palmeiras_65x65.png
+    initials: PAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: palmeiras
+  Team_27:
+    official_name: 'Santos Futebol Clube'
+    name: Santos
+    nickname: Santos
+    logo: Santos_Futebol_Clube_65.png
+    initials: SAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: santos
+  Team_28:
+    official_name: 'Clube Atlético Mineiro'
+    name: Atlético-MG
+    nickname: Atlético-MG
+    logo: Atl_mg_65x65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: atletico-mg
+  Team_29:
+    official_name: 'Cruzeiro Esporte Clube'
+    name: Cruzeiro
+    nickname: Cruzeiro
+    logo: cruzeiro_65x65.png
+    initials: CRU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: cruzeiro
+  Team_30:
+    official_name: 'Grêmio Foot-Ball Porto-Alegrense'
+    name: Grêmio
+    nickname: Grêmio
+    logo: gremio_65x65.png
+    initials: GRE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: gremio
+  Team_31:
+    official_name: 'Sport Club Internacional'
+    name: Internacional
+    nickname: Internacional
+    logo: internacional_65x65.png
+    initials: INT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: internacional
+  Team_32:
+    official_name: 'Clube Atlético Paranaense'
+    name: Atlético-PR
+    nickname: Atlético-PR
+    logo: Atl_pr_65x65.png
+    initials: CAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: atletico-pr
+  Team_33:
+    official_name: 'Coritiba Foot Ball Club'
+    name: Coritiba
+    nickname: Coritiba
+    logo: coritiba_65x65.png
+    initials: CFC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: coritiba
+  Team_34:
+    official_name: 'Avaí Futebol Clube'
+    name: Avaí
+    nickname: Avaí
+    logo: Avai_65x65.png
+    initials: AVA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: avai
+  Team_35:
+    official_name: 'Figueirense Futebol Clube'
+    name: Figueirense
+    nickname: Figueirense
+    logo: figueirense_65x65.png
+    initials: FIG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: figueirense
+  Team_36:
+    official_name: 'América Futebol Clube'
+    name: América-MG
+    nickname: América-MG
+    logo: america-mg_65x65.png
+    initials: AMG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:19:46'
+    slug: america-mg
+  Team_37:
+    official_name: 'Ceará Sporting Club'
+    name: Ceará
+    nickname: Ceará
+    logo: ceara_65x65.png
+    initials: CEA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: ceara
+  Team_38:
+    official_name: 'Atlético Clube Goianiense'
+    name: Atlético-GO
+    nickname: Atlético-GO
+    logo: Atl_go_65x65.png
+    initials: ACG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:40:44'
+    updated_at: '2011-12-09 22:04:15'
+    slug: atletico-go
+  Team_39:
+    official_name: 'Icasa Esporte Clube'
+    name: Icasa
+    nickname: Icasa
+    logo: icasa_65x65.png
+    initials: ICA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:20:39'
+    slug: icasa
+  Team_40:
+    official_name: 'Duque de Caxias Futebol Clube'
+    name: 'Duque de Caxias'
+    nickname: 'Duque de Caxias'
+    logo: Duque_-Caxias_65x65.png
+    initials: DUQ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:21:13'
+    slug: duque-de-caxias
+  Team_41:
+    official_name: 'Grêmio Recreativo Barueri'
+    name: Barueri
+    nickname: Barueri
+    logo: barueri30.png
+    initials: BAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-04 04:43:55'
+    slug: barueri
+  Team_42:
+    official_name: 'Americana Futebol Ltda.'
+    name: Americana
+    nickname: Americana
+    logo: americana_30x30.png
+    initials: AME
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-04 04:43:55'
+    slug: americana
+  Team_43:
+    official_name: 'Salgueiro Atlético Clube'
+    name: Salgueiro-PE
+    nickname: Salgueiro-PE
+    logo: salgueiro_65x65.png
+    initials: SAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:17:45'
+    slug: salgueiro-pe
+  Team_44:
+    official_name: 'Associação Portuguesa de Desportos'
+    name: Portuguesa
+    nickname: Portuguesa
+    logo: portuguesa_sp65.png
+    initials: POR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:18:06'
+    slug: portuguesa
+  Team_45:
+    official_name: 'Guarani Futebol Clube'
+    name: Guarani
+    nickname: Guarani
+    logo: guarani_65x65.png
+    initials: GUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:18:11'
+    slug: guarani
+  Team_46:
+    official_name: 'Clube Atlético Bragantino'
+    name: Bragantino
+    nickname: Bragantino
+    logo: Bragantino_65x65.png
+    initials: BRG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:18:11'
+    slug: bragantino
+  Team_47:
+    official_name: 'Esporte Clube Vitória'
+    name: Vitória
+    nickname: Vitória
+    logo: vitoria_65x65.png
+    initials: VIT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:21:49'
+    slug: vitoria
+  Team_48:
+    official_name: 'Criciúma Esporte Clube'
+    name: Criciúma
+    nickname: Criciúma
+    logo: criciuma65.png
+    initials: CRI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:20:54'
+    slug: criciuma
+  Team_49:
+    official_name: 'Paraná Clube'
+    name: Paraná
+    nickname: Paraná
+    logo: parana-oficial-65.png
+    initials: PAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:55'
+    updated_at: '2011-12-09 22:18:42'
+    slug: parana
+  Team_50:
+    official_name: 'Goiás Esporte Clube'
+    name: Goiás
+    nickname: Goiás
+    logo: goias_65x65.png
+    initials: GOI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:20:14'
+    slug: goias
+  Team_51:
+    official_name: 'Sport Club do Recife'
+    name: Sport
+    nickname: Sport
+    logo: Sport_novo65.png
+    initials: SPT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:17:46'
+    slug: sport
+  Team_52:
+    official_name: 'Associação Atlética Ponte Preta'
+    name: 'Ponte Preta'
+    nickname: 'Ponte Preta'
+    logo: ponte_preta_65.png
+    initials: PON
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:18:11'
+    slug: ponte-preta
+  Team_53:
+    official_name: 'Boa Esporte Clube'
+    name: 'Boa Esporte'
+    nickname: 'Boa Esporte'
+    logo: BOA_esporteclube_65.png
+    initials: BOA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:19:46'
+    slug: boa-esporte
+  Team_54:
+    official_name: 'Agremiação Sportiva Arapiraquense'
+    name: ASA
+    nickname: ASA
+    logo: asa_30x30.png
+    initials: ASA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-04 04:43:56'
+    slug: asa
+  Team_55:
+    official_name: 'Clube Náutico Capibaribe'
+    name: Náutico
+    nickname: Náutico
+    logo: nautico_65x65.png
+    initials: NAU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:17:46'
+    slug: nautico
+  Team_56:
+    official_name: 'ABC Futebol Clube'
+    name: ABC
+    nickname: ABC
+    logo: abc_65.png
+    initials: ABC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:14:26'
+    slug: abc
+  Team_57:
+    official_name: 'Vila Nova Futebol Clube'
+    name: 'Vila Nova'
+    nickname: 'Vila Nova'
+    logo: VilaNova_Novo65.png
+    initials: VIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:20:14'
+    slug: vila-nova
+  Team_58:
+    official_name: 'Associação Desportiva São Caetano'
+    name: 'São Caetano'
+    nickname: 'São Caetano'
+    logo: sao_caetano_65.png
+    initials: SCA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:43:56'
+    updated_at: '2011-12-09 22:18:11'
+    slug: sao-caetano
+  Team_59:
+    official_name: 'Sociedade Desportiva Serra Futebol Clube'
+    name: Serra
+    nickname: Serra
+    logo: serra_65x65.png
+    initials: SER
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:35'
+    slug: serra
+  Team_60:
+    official_name: 'Associação Atlética São Mateus'
+    name: 'São Mateus'
+    nickname: 'São Mateus'
+    logo: saomateus65.png
+    initials: SMA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:35'
+    slug: sao-mateus
+  Team_61:
+    official_name: 'Linhares Futebol Clube'
+    name: Linhares
+    nickname: Linhares
+    logo: linhares_es65.png
+    initials: LIN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:35'
+    slug: linhares
+  Team_62:
+    official_name: 'Espírito Santo Futebol Clube'
+    name: 'ES de Anchieta'
+    nickname: 'ES de Anchieta'
+    logo: es_de_anchieta_65x65.png
+    initials: ESA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:35'
+    slug: es-de-anchieta
+  Team_63:
+    official_name: 'Esporte Clube Aracruz'
+    name: Aracruz
+    nickname: Aracruz
+    logo: aracruz_65x65.png
+    initials: ARA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:36'
+    slug: aracruz
+  Team_64:
+    official_name: 'Colatina Sociedade Esportiva'
+    name: Colatina
+    nickname: Colatina
+    logo: colatina_65x65.png
+    initials: COL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:36'
+    slug: colatina
+  Team_65:
+    official_name: 'Real Noroeste Capixaba Futebol Clube'
+    name: 'Real Noroeste'
+    nickname: 'Real Noroeste'
+    logo: real_noroeste_65x65.png
+    initials: RNO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:36'
+    slug: real-noroeste
+  Team_66:
+    official_name: 'Botafogo Futebol Clube de Jaguaré'
+    name: Botafogo-ES
+    nickname: Botafogo-ES
+    logo: botafogo_de_jaguare_30x30.png
+    initials: BJA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-04 04:45:09'
+    slug: botafogo-es
+  Team_67:
+    official_name: 'Rio Branco Atlético Clube'
+    name: 'Rio Branco-ES'
+    nickname: 'Rio Branco-ES'
+    logo: escudo_RioBrancoES_65.png
+    initials: RIB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:36'
+    slug: rio-branco-es
+  Team_68:
+    official_name: 'Vitória Futebol Clube'
+    name: Vitória-ES
+    nickname: Vitória-ES
+    logo: vitoria_es_65.png
+    initials: VIT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:09'
+    updated_at: '2011-12-09 22:21:36'
+    slug: vitoria-es
+  Team_69:
+    official_name: 'Madureira Esporte Clube'
+    name: Madureira
+    nickname: Madureira
+    logo: Madureira_65x65.png
+    initials: MAD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:35'
+    updated_at: '2011-12-09 22:21:12'
+    slug: madureira
+  Team_70:
+    official_name: Cabofriense
+    name: Cabofriense
+    nickname: Cabofriense
+    logo: Cabofriense_65x65.png
+    initials: CAB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:35'
+    updated_at: '2011-12-09 22:21:13'
+    slug: cabofriense
+  Team_71:
+    official_name: 'Nova Iguaçu Futebol Clube'
+    name: 'Nova Iguaçu'
+    nickname: 'Nova Iguaçu'
+    logo: Nova_Iguacu_65x65.png
+    initials: NOV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:35'
+    updated_at: '2011-12-09 22:21:13'
+    slug: nova-iguacu
+  Team_72:
+    official_name: 'Boavista Sport Club'
+    name: Boavista
+    nickname: Boavista
+    logo: boavista_65x65.png
+    initials: BVT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:35'
+    updated_at: '2011-12-09 22:21:13'
+    slug: boavista
+  Team_73:
+    official_name: 'Macaé Esporte Futebol Clube'
+    name: Macaé
+    nickname: Macaé
+    logo: Macae_65x65.png
+    initials: MAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:13'
+    slug: macae
+  Team_74:
+    official_name: 'Resende Futebol Clube'
+    name: Resende
+    nickname: Resende
+    logo: Resende_65x65.png
+    initials: RES
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:13'
+    slug: resende
+  Team_75:
+    official_name: 'América Football Club'
+    name: América-RJ
+    nickname: América-RJ
+    logo: America-RJ_65x65.png
+    initials: AME
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:18'
+    slug: america-rj
+  Team_76:
+    official_name: 'Bangu Atlético Clube'
+    name: Bangu
+    nickname: Bangu
+    logo: Bangu_65x65.png
+    initials: BAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:19'
+    slug: bangu
+  Team_77:
+    official_name: 'Olaria Atlético Clube'
+    name: Olaria
+    nickname: Olaria
+    logo: Olaria_65x65.png
+    initials: OLA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:19'
+    slug: olaria
+  Team_78:
+    official_name: 'Americano Futebol Clube'
+    name: Americano
+    nickname: Americano
+    logo: Americano_65x65.png
+    initials: AMN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:19'
+    slug: americano
+  Team_79:
+    official_name: 'Volta Redonda Futebol Clube'
+    name: 'Volta Redonda'
+    nickname: 'Volta Redonda'
+    logo: Volta_Redonda_65x65.png
+    initials: VOL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:36'
+    updated_at: '2011-12-09 22:21:19'
+    slug: volta-redonda
+  Team_80:
+    official_name: 'Club Atlético de Madrid'
+    name: 'Atlético de Madri'
+    nickname: 'Atlético de Madri'
+    logo: atleticodemadri_65.png
+    initials: ATL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: atletico-de-madri
+  Team_81:
+    official_name: 'Futbol Club Barcelona'
+    name: Barcelona
+    nickname: Barcelona
+    logo: barcelona_65x65.png
+    initials: BAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: barcelona
+  Team_82:
+    official_name: 'Real Madrid Club de Fútbol'
+    name: 'Real Madrid'
+    nickname: 'Real Madrid'
+    logo: realmadrid_65.png
+    initials: MAD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: real-madrid
+  Team_83:
+    official_name: 'Valencia Club de Fútbol'
+    name: Valencia
+    nickname: Valencia
+    logo: valencia_65x65.png
+    initials: VAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: valencia
+  Team_84:
+    official_name: 'Sevilla Fútbol Club'
+    name: Sevilla
+    nickname: Sevilla
+    logo: Sevillafc-escudo-futbol65.png
+    initials: SEV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: sevilla
+  Team_85:
+    official_name: 'Real Club Deportivo Mallorca'
+    name: Mallorca
+    nickname: Mallorca
+    logo: mallorca-65.png
+    initials: MLC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: mallorca
+  Team_86:
+    official_name: 'Getafe Club de Fútbol'
+    name: Getafe
+    nickname: Getafe
+    logo: getafe-65.png
+    initials: GET
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:38'
+    slug: getafe
+  Team_87:
+    official_name: 'Villarreal Club de Fútbol'
+    name: Villarreal
+    nickname: Villarreal
+    logo: Villarreal65.png
+    initials: VIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: villarreal
+  Team_88:
+    official_name: 'Athletic Club de Bilbao'
+    name: 'Athletic Bilbao'
+    nickname: 'Athletic Bilbao'
+    logo: atleticobilbao-65.png
+    initials: ATH
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: athletic-bilbao
+  Team_89:
+    official_name: 'Reial Club Deportiu Espanyol de Barcelona'
+    name: Espanyol
+    nickname: Espanyol
+    logo: espanyol-65.png
+    initials: ESP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: espanyol
+  Team_90:
+    official_name: 'Club Atlético Osasuna'
+    name: Osasuna
+    nickname: Osasuna
+    logo: osasuna-65.png
+    initials: OSA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: osasuna
+  Team_91:
+    official_name: 'Real Zaragoza S.A.D.'
+    name: Zaragoza
+    nickname: Zaragoza
+    logo: real-zaragoza-65.png
+    initials: ZAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: zaragoza
+  Team_92:
+    official_name: 'Real Sporting de Gijón'
+    name: 'Sporting de Gijón'
+    nickname: 'Sporting de Gijón'
+    logo: sporting-gijon-65.png
+    initials: SGI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: sporting-de-gijon
+  Team_93:
+    official_name: 'Real Racing Club de Santander'
+    name: '  Racing Santander'
+    nickname: '  Racing Santander'
+    logo: racingsantander-65.png
+    initials: RAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: racing-santander
+  Team_94:
+    official_name: 'Málaga Club de Fútbol'
+    name: Málaga
+    nickname: Málaga
+    logo: malaga-65.png
+    initials: MLG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: malaga
+  Team_95:
+    official_name: 'Real Sociedad de Fútbol'
+    name: 'Real Sociedad'
+    nickname: 'Real Sociedad'
+    logo: real-sociedad65.png
+    initials: RSO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: real-sociedad
+  Team_96:
+    official_name: 'Levante Unión Deportiva, S.A.D'
+    name: Levante
+    nickname: Levante
+    logo: levante-65.png
+    initials: LEV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: levante
+  Team_97:
+    official_name: 'Real Betis Balompié'
+    name: Bétis
+    nickname: Bétis
+    logo: realBetis65.png
+    initials: BET
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:39'
+    slug: betis
+  Team_98:
+    official_name: 'Rayo Vallecano de Madrid, S. A. D'
+    name: 'Rayo Vallecano'
+    nickname: 'Rayo Vallecano'
+    logo: RayoVallecano65.png
+    initials: RVL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:40'
+    slug: rayo-vallecano
+  Team_99:
+    official_name: 'Granada Club de Fútbol'
+    name: Granada
+    nickname: Granada
+    logo: granada65.png
+    initials: GRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:45:48'
+    updated_at: '2011-12-09 22:06:40'
+    slug: granada
+  Team_100:
+    official_name: 'OG Nice'
+    name: Nice
+    nickname: Nice
+    logo: nice-65.png
+    initials: NIC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:08'
+    updated_at: '2011-12-09 22:07:05'
+    slug: nice
+  Team_101:
+    official_name: 'Paris Saint Germain Football Club'
+    name: 'Paris Saint Germain'
+    nickname: 'Paris Saint Germain'
+    logo: PSG_65x65.png
+    initials: PSG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:08'
+    updated_at: '2011-12-09 22:07:05'
+    slug: paris-saint-germain
+  Team_102:
+    official_name: 'AJ Auxerre'
+    name: Auxerre
+    nickname: Auxerre
+    logo: Auxerre-65.png
+    initials: AUX
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:08'
+    updated_at: '2011-12-09 22:07:06'
+    slug: auxerre
+  Team_103:
+    official_name: 'Football Club des Girondins de Bordeaux'
+    name: Bordeaux
+    nickname: Bordeaux
+    logo: bordeaux-65.png
+    initials: BOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:08'
+    updated_at: '2011-12-09 22:07:06'
+    slug: bordeaux
+  Team_104:
+    official_name: 'Stade Brestois 29'
+    name: Brest
+    nickname: Brest
+    logo: brest-65.png
+    initials: BRE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:08'
+    updated_at: '2011-12-09 22:07:06'
+    slug: brest
+  Team_105:
+    official_name: 'Stade Malherbe Caen'
+    name: Caen
+    nickname: Caen
+    logo: caen-65.png
+    initials: SMC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:08'
+    updated_at: '2011-12-09 22:07:06'
+    slug: caen
+  Team_106:
+    official_name: 'Lille OS'
+    name: Lille
+    nickname: Lille
+    logo: LILLE650.png
+    initials: LIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:06'
+    slug: lille
+  Team_107:
+    official_name: 'FC Lorient'
+    name: Lorient
+    nickname: Lorient
+    logo: lorient-65.png
+    initials: LOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:06'
+    slug: lorient
+  Team_108:
+    official_name: 'Olympique Lyonnais'
+    name: Lyon
+    nickname: Lyon
+    logo: lyon_65x65.png
+    initials: LYO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:06'
+    slug: lyon
+  Team_109:
+    official_name: 'Olympique de Marselha'
+    name: Olympique
+    nickname: Olympique
+    logo: marseille_65x65.png
+    initials: OLM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:06'
+    slug: olympique
+  Team_110:
+    official_name: 'Montpellier SC'
+    name: Montpellier
+    nickname: Montpellier
+    logo: Montpellier-65.png
+    initials: MNT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:07'
+    slug: montpellier
+  Team_111:
+    official_name: 'AS Nancy'
+    name: Nancy
+    nickname: Nancy
+    logo: nancy_65x65_.png
+    initials: NAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:07'
+    slug: nancy
+  Team_112:
+    official_name: Rennes
+    name: Rennes
+    nickname: Rennes
+    logo: rennes_65.png
+    initials: REN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:07'
+    slug: rennes
+  Team_113:
+    official_name: 'AS Saint-Étienne'
+    name: Saint-Étienne
+    nickname: Saint-Étienne
+    logo: escudo_65.png
+    initials: STE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:07'
+    slug: saint-etienne
+  Team_114:
+    official_name: 'FC Sochaux'
+    name: Sochaux
+    nickname: Sochaux
+    logo: Sochaux_65.png
+    initials: SOC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:07'
+    slug: sochaux
+  Team_115:
+    official_name: 'Toulouse FC'
+    name: Toulouse
+    nickname: Toulouse
+    logo: Toulouse_65.png
+    initials: TOU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:07'
+    slug: toulouse
+  Team_116:
+    official_name: 'Valenciennes FC'
+    name: Valenciennes
+    nickname: Valenciennes
+    logo: valenciennes-fra_65.png
+    initials: VAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:09'
+    updated_at: '2011-12-09 22:07:08'
+    slug: valenciennes
+  Team_117:
+    official_name: 'Athletic Club Ajaccio'
+    name: Ajaccio
+    nickname: Ajaccio
+    logo: Ajaccio65.png
+    initials: AJA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:10'
+    updated_at: '2011-12-09 22:07:08'
+    slug: ajaccio
+  Team_118:
+    official_name: 'Dijon Football Côte d''Or'
+    name: Dijon
+    nickname: Dijon
+    logo: Dijon65.png
+    initials: DIJ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:10'
+    updated_at: '2011-12-09 22:07:08'
+    slug: dijon
+  Team_119:
+    official_name: 'Évian Thonon Gaillard Football Club'
+    name: Évian
+    nickname: Évian
+    logo: Evian65.png
+    initials: EVI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:10'
+    updated_at: '2011-12-09 22:07:08'
+    slug: evian
+  Team_120:
+    official_name: 'Chelsea Football Club'
+    name: Chelsea
+    nickname: Chelsea
+    logo: chelsea_65x65.png
+    initials: CHE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:48'
+    updated_at: '2011-12-09 22:07:35'
+    slug: chelsea
+  Team_121:
+    official_name: 'Manchester United Football Club'
+    name: 'Manchester United'
+    nickname: 'Manchester United'
+    logo: man.united_65x65.png
+    initials: MAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:48'
+    updated_at: '2011-12-09 22:07:35'
+    slug: manchester-united
+  Team_122:
+    official_name: 'Arsenal Football Club'
+    name: Arsenal
+    nickname: Arsenal
+    logo: Arsenal_65x65.png
+    initials: ARS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:48'
+    updated_at: '2011-12-09 22:07:35'
+    slug: arsenal
+  Team_123:
+    official_name: 'Tottenham Hotspur Football Club'
+    name: Tottenham
+    nickname: Tottenham
+    logo: totenham.png
+    initials: TOT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:48'
+    updated_at: '2011-12-04 04:46:48'
+    slug: tottenham
+  Team_124:
+    official_name: 'Manchester City Football Club'
+    name: 'Manchester City'
+    nickname: 'Manchester City'
+    logo: man.city_65x65.png
+    initials: MAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-09 22:07:35'
+    slug: manchester-city
+  Team_125:
+    official_name: 'Aston Villa Football Club'
+    name: 'Aston Villa'
+    nickname: 'Aston Villa'
+    logo: aston_villa.png
+    initials: ASV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: aston-villa
+  Team_126:
+    official_name: 'Liverpool Football Club'
+    name: Liverpool
+    nickname: Liverpool
+    logo: liverpool_65x65.png
+    initials: LIV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-09 22:07:36'
+    slug: liverpool
+  Team_127:
+    official_name: 'Everton Football Club'
+    name: Everton
+    nickname: Everton
+    logo: everton.png
+    initials: EVE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: everton
+  Team_128:
+    official_name: 'Blackburn Rovers Football Club'
+    name: Blackburn
+    nickname: Blackburn
+    logo: blackburn.png
+    initials: BLB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: blackburn
+  Team_129:
+    official_name: 'Stoke City'
+    name: 'Stoke City'
+    nickname: 'Stoke City'
+    logo: stoke.png
+    initials: STC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: stoke-city
+  Team_130:
+    official_name: 'Fulham Football Club'
+    name: Fulham
+    nickname: Fulham
+    logo: fulham.png
+    initials: FUL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: fulham
+  Team_131:
+    official_name: 'Sunderland Association Football Club'
+    name: Sunderland
+    nickname: Sunderland
+    logo: sunderland.png
+    initials: SUN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: sunderland
+  Team_132:
+    official_name: 'Bolton Wanderers Football Club'
+    name: Bolton
+    nickname: Bolton
+    logo: bolton.png
+    initials: BOL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: bolton
+  Team_133:
+    official_name: 'Wolverhampton Wanderers Football Club'
+    name: Wolverhampton
+    nickname: Wolverhampton
+    logo: wolves.png
+    initials: WOL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: wolverhampton
+  Team_134:
+    official_name: 'Wigan Athletic Football Club'
+    name: Wigan
+    nickname: Wigan
+    logo: wigan.png
+    initials: WIG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: wigan
+  Team_135:
+    official_name: 'Newcastle United Football Club'
+    name: Newcastle
+    nickname: Newcastle
+    logo: new_castle.png
+    initials: NEW
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: newcastle
+  Team_136:
+    official_name: 'West Bromwich'
+    name: 'West Bromwich'
+    nickname: 'West Bromwich'
+    logo: west_b.png
+    initials: WBA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-04 04:46:49'
+    slug: west-bromwich
+  Team_137:
+    official_name: 'Swansea City Association Football Club'
+    name: 'Swansea City'
+    nickname: 'Swansea City'
+    logo: SwanseaCity65.png
+    initials: SWA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-09 22:07:36'
+    slug: swansea-city
+  Team_138:
+    official_name: 'Norwich City Football Club'
+    name: 'Norwich City'
+    nickname: 'Norwich City'
+    logo: NorwichCity65.png
+    initials: NOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-09 22:07:37'
+    slug: norwich-city
+  Team_139:
+    official_name: 'Queens Park Rangers Football Club'
+    name: 'Queens Park Rangers'
+    nickname: 'Queens Park Rangers'
+    logo: QueensParkRanges65.png
+    initials: QPR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:46:49'
+    updated_at: '2011-12-09 22:07:37'
+    slug: queens-park-rangers
+  Team_140:
+    official_name: 'Kashiwa Reysol'
+    name: 'Kashiwa Reysol'
+    nickname: 'Kashiwa Reysol'
+    logo: montedio-65_.png
+    initials: KAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: kashiwa-reysol
+  Team_141:
+    official_name: 'Shimizu S-Pulse'
+    name: 'Shimizu S-Pulse'
+    nickname: 'Shimizu S-Pulse'
+    logo: shimizu-65.png
+    initials: SHI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: shimizu-s-pulse
+  Team_142:
+    official_name: 'Vegalta Sendai'
+    name: 'Vegalta Sendai'
+    nickname: 'Vegalta Sendai'
+    logo: vengata-65.png
+    initials: VEG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: vegalta-sendai
+  Team_143:
+    official_name: 'Montedio Yamagata'
+    name: 'Montedio Yamagata'
+    nickname: 'Montedio Yamagata'
+    logo: montedio--65.png
+    initials: YAG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: montedio-yamagata
+  Team_144:
+    official_name: 'Kashima Antlers'
+    name: 'Kashima Antlers'
+    nickname: 'Kashima Antlers'
+    logo: antlers-65.png
+    initials: KAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: kashima-antlers
+  Team_145:
+    official_name: 'Urawa Red Diamonds'
+    name: 'Urawa Red Diamonds'
+    nickname: 'Urawa Red Diamonds'
+    logo: urawa-65.png
+    initials: URA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: urawa-red-diamonds
+  Team_146:
+    official_name: 'Omiya Ardija'
+    name: 'Omiya Ardija'
+    nickname: 'Omiya Ardija'
+    logo: omya-65.png
+    initials: OMI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:29'
+    updated_at: '2011-12-09 22:08:35'
+    slug: omiya-ardija
+  Team_147:
+    official_name: 'Kawasaki Frontale'
+    name: 'Kawasaki Frontale'
+    nickname: 'Kawasaki Frontale'
+    logo: frontale-65.png
+    initials: KAW
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: kawasaki-frontale
+  Team_148:
+    official_name: 'Yokohama Marinos'
+    name: 'Yokohama Marinos'
+    nickname: 'Yokohama Marinos'
+    logo: marinos65.png
+    initials: YOK
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: yokohama-marinos
+  Team_149:
+    official_name: 'Albirex Niigata'
+    name: 'Albirex Niigata'
+    nickname: 'Albirex Niigata'
+    logo: albirex65.png
+    initials: ALB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: albirex-niigata
+  Team_150:
+    official_name: 'Jubilo Iwata'
+    name: 'Jubilo Iwata'
+    nickname: 'Jubilo Iwata'
+    logo: jubilo-65.png
+    initials: JUB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: jubilo-iwata
+  Team_151:
+    official_name: 'Nagoya Grampus'
+    name: 'Nagoya Grampus'
+    nickname: 'Nagoya Grampus'
+    logo: nagoya-65.png
+    initials: NAG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: nagoya-grampus
+  Team_152:
+    official_name: 'Gamba Osaka'
+    name: 'Gamba Osaka'
+    nickname: 'Gamba Osaka'
+    logo: gamba65.png
+    initials: GAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: gamba-osaka
+  Team_153:
+    official_name: 'Cerezo Osaka'
+    name: 'Cerezo Osaka'
+    nickname: 'Cerezo Osaka'
+    logo: cerezo-65.png
+    initials: CER
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: cerezo-osaka
+  Team_154:
+    official_name: 'Vissel Kobe'
+    name: 'Vissel Kobe'
+    nickname: 'Vissel Kobe'
+    logo: vissel-65.png
+    initials: VIS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: vissel-kobe
+  Team_155:
+    official_name: 'Sanfrecce Hiroshima'
+    name: 'Sanfrecce Hiroshima'
+    nickname: 'Sanfrecce Hiroshima'
+    logo: sanfrecce-65.png
+    initials: SAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: sanfrecce-hiroshima
+  Team_156:
+    official_name: 'Ventforet Kofu'
+    name: 'Ventforet Kofu'
+    nickname: 'Ventforet Kofu'
+    logo: kofu-65.png
+    initials: VEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: ventforet-kofu
+  Team_157:
+    official_name: 'Avispa Fukuoka'
+    name: 'Avispa Fukuoka'
+    nickname: 'Avispa Fukuoka'
+    logo: Avispa-65.png
+    initials: AVF
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:30'
+    updated_at: '2011-12-09 22:08:36'
+    slug: avispa-fukuoka
+  Team_158:
+    official_name: 'Sociedade Imperatriz de Desportos'
+    name: Imperatriz
+    nickname: Imperatriz
+    logo: 30x30.png
+    initials: IMP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: imperatriz
+  Team_159:
+    official_name: 'Instituto de Administração de Projetos Educacionais Futebol Club'
+    name: Iape
+    nickname: Iape
+    logo: Iape_escudo_30.png
+    initials: IAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: iape
+  Team_160:
+    official_name: 'Bacabal Esporte Clube'
+    name: Bacabal
+    nickname: Bacabal
+    logo: 30x30.png
+    initials: BAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: bacabal
+  Team_161:
+    official_name: 'Sociedade Esportiva Nacional'
+    name: Nacional-MA
+    nickname: Nacional-MA
+    logo: 30x30.png
+    initials: NAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: nacional-ma
+  Team_162:
+    official_name: 'São José de Ribamar Esporte Clube'
+    name: 'São José-MA'
+    nickname: 'São José-MA'
+    logo: 30x30.png
+    initials: SJO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: sao-jose-ma
+  Team_163:
+    official_name: 'Santa Quitéria Futebol Clube'
+    name: 'Santa Quitéria'
+    nickname: 'Santa Quitéria'
+    logo: 30x30.png
+    initials: SQT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: santa-quiteria
+  Team_164:
+    official_name: 'Cordino Futebol Clube'
+    name: Cordino
+    nickname: Cordino
+    logo: 30x30.png
+    initials: COR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: cordino
+  Team_165:
+    official_name: 'Maranhão Atlético Clube'
+    name: Maranhão
+    nickname: Maranhão
+    logo: 30x30.png
+    initials: MAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: maranhao
+  Team_166:
+    official_name: 'Moto Club de São Luís'
+    name: 'Moto Club'
+    nickname: 'Moto Club'
+    logo: 30x30.png
+    initials: MOT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: moto-club
+  Team_167:
+    official_name: 'Sampaio Corrêa Futebol Clube'
+    name: 'Sampaio Corrêa'
+    nickname: 'Sampaio Corrêa'
+    logo: sampaiocorrea_30.png
+    initials: SAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:47:53'
+    updated_at: '2011-12-04 04:47:53'
+    slug: sampaio-correa
+  Team_168:
+    official_name: 'Castanhal Esporte Clube'
+    name: Castanhal
+    nickname: Castanhal
+    logo: 65x65.png
+    initials: CAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:37'
+    slug: castanhal
+  Team_169:
+    official_name: 'Clube Municipal Ananindeua'
+    name: Ananindeua
+    nickname: Ananindeua
+    logo: 65x65.png
+    initials: ANA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:37'
+    slug: ananindeua
+  Team_170:
+    official_name: 'Águia de Marabá Futebol Clube'
+    name: 'Águia de Marabá'
+    nickname: 'Águia de Marabá'
+    logo: aguia_maraba_65x65.png
+    initials: AGM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:37'
+    slug: aguia-de-maraba
+  Team_171:
+    official_name: 'São Raimundo Esporte Clube'
+    name: 'São Raimundo-PA'
+    nickname: 'São Raimundo-PA'
+    logo: Sao_Raimundo_EC-PA_65.png
+    initials: SRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:37'
+    slug: sao-raimundo-pa
+  Team_172:
+    official_name: 'Cametá Sport Club'
+    name: Cametá
+    nickname: Cametá
+    logo: cameta65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:37'
+    slug: cameta
+  Team_173:
+    official_name: 'Independente Atlético Clube'
+    name: Independente-PA
+    nickname: Independente-PA
+    logo: independente65.png
+    initials: IND
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: independente-pa
+  Team_174:
+    official_name: 'Paysandu Sport Club'
+    name: Paysandu
+    nickname: Paysandu
+    logo: paysandu65.png
+    initials: PAY
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: paysandu
+  Team_175:
+    official_name: 'Sport Club Belém'
+    name: 'Sport Belém'
+    nickname: 'Sport Belém'
+    logo: 65x65.png
+    initials: SBL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: sport-belem
+  Team_176:
+    official_name: 'Abaeté Futebol Clube'
+    name: Abaeté
+    nickname: Abaeté
+    logo: 65x65.png
+    initials: AFC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: abaete
+  Team_177:
+    official_name: 'Parauapebas Futebol Clube'
+    name: Parauapebas
+    nickname: Parauapebas
+    logo: 65x65.png
+    initials: PAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: parauapebas
+  Team_178:
+    official_name: 'Bragantino Clube do Pará'
+    name: Bragantino-PA
+    nickname: Bragantino-PA
+    logo: 65x65.png
+    initials: BRG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: bragantino-pa
+  Team_179:
+    official_name: 'São Francisco Futebol Clube'
+    name: 'São Francisco'
+    nickname: 'São Francisco'
+    logo: 65x65.png
+    initials: SFR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: sao-francisco
+  Team_180:
+    official_name: 'Clube do Remo'
+    name: Remo
+    nickname: Remo
+    logo: remo65x65.png
+    initials: REM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: remo
+  Team_181:
+    official_name: 'Tuna Luso Brasileira'
+    name: 'Tuna Luso'
+    nickname: 'Tuna Luso'
+    logo: 65x65.png
+    initials: TUN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:00'
+    updated_at: '2011-12-09 22:19:38'
+    slug: tuna-luso
+  Team_182:
+    official_name: 'Rio Branco Sport Club'
+    name: 'Rio Branco-PR'
+    nickname: 'Rio Branco-PR'
+    logo: Rio_branco_65x65.png
+    initials: RPR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:41'
+    slug: rio-branco-pr
+  Team_183:
+    official_name: 'Iraty Sport Club'
+    name: Iraty
+    nickname: Iraty
+    logo: iraty_65x65.png
+    initials: IRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:41'
+    slug: iraty
+  Team_184:
+    official_name: 'Atlético Clube Paranavaí'
+    name: Paranavaí
+    nickname: Paranavaí
+    logo: atletico_65x65.png
+    initials: PRV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:41'
+    slug: paranavai
+  Team_185:
+    official_name: 'Cianorte Futebol Clube'
+    name: Cianorte
+    nickname: Cianorte
+    logo: cianorte_65x65.png
+    initials: CIA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:41'
+    slug: cianorte
+  Team_186:
+    official_name: 'Roma Esporte Clube de Apucarana S/A Ltda.'
+    name: Roma-PR
+    nickname: Roma-PR
+    logo: roma_65x65.png
+    initials: ROM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:41'
+    slug: roma-pr
+  Team_187:
+    official_name: 'Sport Club Corinthians Paranaense'
+    name: Corinthians-PR
+    nickname: Corinthians-PR
+    logo: corinthians_65x65.png
+    initials: CPR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:41'
+    slug: corinthians-pr
+  Team_188:
+    official_name: 'Cascavel Clube Recreativo'
+    name: Cascavel
+    nickname: Cascavel
+    logo: cascavel_clube_recreativo65x65.png
+    initials: CAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:42'
+    slug: cascavel
+  Team_189:
+    official_name: 'Arapongas Esporte Clube'
+    name: Arapongas
+    nickname: Arapongão
+    logo: Arapongas_65x65.png
+    initials: AEC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:42'
+    slug: arapongas
+  Team_190:
+    official_name: 'Operário Ferroviário Esporte Clube'
+    name: Operário-PR
+    nickname: Operário-PR
+    logo: operario_65x65.png
+    initials: OPE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:14'
+    updated_at: '2011-12-09 22:18:42'
+    slug: operario-pr
+  Team_191:
+    official_name: 'Ituano Futebol Clube'
+    name: Ituano
+    nickname: Ituano
+    logo: ituano_65x65.png
+    initials: ITU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:28'
+    updated_at: '2011-12-09 22:18:05'
+    slug: ituano
+  Team_192:
+    official_name: 'Paulista Futebol Clube'
+    name: Paulista
+    nickname: Paulista
+    logo: paulista65.png
+    initials: PTA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:05'
+    slug: paulista
+  Team_193:
+    official_name: 'Mogi Mirim Esporte Clube'
+    name: 'Mogi Mirim'
+    nickname: 'Mogi Mirim'
+    logo: mogimirim-sp65.png
+    initials: MOG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:05'
+    slug: mogi-mirim
+  Team_194:
+    official_name: 'Oeste Futebol Clube (Itápolis-SP)'
+    name: Oeste
+    nickname: Oeste
+    logo: Oeste_65x65.png
+    initials: OES
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:05'
+    slug: oeste
+  Team_195:
+    official_name: 'Grêmio Esportivo Catanduvense'
+    name: Catanduvense
+    nickname: Catanduvense
+    logo: catanduvense_65.png
+    initials: CAT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:05'
+    slug: catanduvense
+  Team_196:
+    official_name: 'Clube Atlético Linense'
+    name: Linense
+    nickname: Linense
+    logo: linense65.png
+    initials: LIN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:05'
+    slug: linense
+  Team_197:
+    official_name: 'Mirassol Futebol Clube'
+    name: Mirassol
+    nickname: Mirassol
+    logo: mirassol65.png
+    initials: MIR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:05'
+    slug: mirassol
+  Team_198:
+    official_name: 'Botafogo Futebol Clube'
+    name: Botafogo-PB
+    nickname: Botafogo-PB
+    logo: botafogo-pb_65x65.png
+    initials: BOT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:29'
+    updated_at: '2011-12-09 22:18:56'
+    slug: botafogo-sp
+  Team_199:
+    official_name: 'Comercial Futebol Clube'
+    name: Comercial-SP
+    nickname: Comercial-SP
+    logo: comercial_sp_65.png
+    initials: COM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:30'
+    updated_at: '2011-12-09 22:18:11'
+    slug: comercial-sp
+  Team_200:
+    official_name: 'Esporte Clube XV de Novembro'
+    name: 'XV de Piracicaba'
+    nickname: 'XV de Piracicaba'
+    logo: escudo_XV_65.png
+    initials: PIR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:30'
+    updated_at: '2011-12-09 22:18:11'
+    slug: xv-de-piracicaba
+  Team_201:
+    official_name: 'Sociedade Esportiva Picos'
+    name: Picos
+    nickname: Picos
+    logo: 65x65.png
+    initials: SEP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:11'
+    slug: picos
+  Team_202:
+    official_name: '4 de Julho Esporte Clube'
+    name: '4 de Julho'
+    nickname: '4 de Julho'
+    logo: 4deJulhoi-PI65.png
+    initials: Jul
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: 4-de-julho
+  Team_203:
+    official_name: 'Parnahyba Sport Club'
+    name: Parnahyba
+    nickname: Parnahyba
+    logo: Parnahyba65.png
+    initials: PAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: parnahyba
+  Team_204:
+    official_name: 'Barras Futebol Clube'
+    name: Barras
+    nickname: Barras
+    logo: barras_65.png
+    initials: BAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: barras
+  Team_205:
+    official_name: 'Comercial Atlético Clube'
+    name: Comercial-PI
+    nickname: Comercial-PI
+    logo: comercial_65.png
+    initials: COM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: comercial-pi
+  Team_206:
+    official_name: 'Princesa do Sul Futebol Clube'
+    name: 'Princesa do Sul'
+    nickname: 'Princesa do Sul'
+    logo: 65x65.png
+    initials: PRI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: princesa-do-sul
+  Team_207:
+    official_name: 'Esporte Clube Flamengo'
+    name: Flamengo-PI
+    nickname: Flamengo-PI
+    logo: flamengopi_65__.png
+    initials: ECF
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: flamengo-pi
+  Team_208:
+    official_name: 'Piauí Esporte Clube'
+    name: Piauí
+    nickname: Piauí
+    logo: 65x65.png
+    initials: PIA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: piaui
+  Team_209:
+    official_name: 'River Atlético Clube (Teresina)'
+    name: River
+    nickname: River
+    logo: river_pi65.png
+    initials: RIV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:48:53'
+    updated_at: '2011-12-09 22:15:12'
+    slug: river
+  Team_210:
+    official_name: Beira-Mar
+    name: Beira-Mar
+    nickname: Beira-Mar
+    logo: escudo_BeiraMar_65.png
+    initials: BEI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:02'
+    updated_at: '2011-12-09 22:14:41'
+    slug: beira-mar
+  Team_211:
+    official_name: 'Gil Vicente Futebol Clube'
+    name: 'Gil Vicente'
+    nickname: 'Gil Vicente'
+    logo: Gil_Vicente_65.png
+    initials: GVC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:41'
+    slug: gil-vicente
+  Team_212:
+    official_name: 'Clube Desportivo Feirense'
+    name: Feirense
+    nickname: Feirense
+    logo: Feirense_65.png
+    initials: FEI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:41'
+    slug: feirense
+  Team_213:
+    official_name: Académica
+    name: Académica
+    nickname: Académica
+    logo: academica-65.png
+    initials: ACA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:42'
+    slug: academica
+  Team_214:
+    official_name: Marítimo
+    name: Marítimo
+    nickname: Marítimo
+    logo: club_sport_maritimo_65.png
+    initials: MAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:42'
+    slug: maritimo
+  Team_215:
+    official_name: 'Clube Desportivo Nacional'
+    name: Nacional
+    nickname: Nacional
+    logo: Nacional_da_Madeira_65.png
+    initials: NAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:09:33'
+    slug: nacional
+  Team_216:
+    official_name: 'Futebol Clube do Porto'
+    name: Porto
+    nickname: Porto
+    logo: porto_65x65.png
+    initials: POR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:10:14'
+    slug: porto
+  Team_217:
+    official_name: Olhanense
+    name: Olhanense
+    nickname: Olhanense
+    logo: Sporting_Olhanense_65.png
+    initials: OLH
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:42'
+    slug: olhanense
+  Team_218:
+    official_name: 'Paços de Ferreira'
+    name: 'Paços de Ferreira'
+    nickname: 'Paços de Ferreira'
+    logo: pacos_65.png
+    initials: PDF
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:42'
+    slug: pacos-de-ferreira
+  Team_219:
+    official_name: 'Rio Ave'
+    name: 'Rio Ave'
+    nickname: 'Rio Ave'
+    logo: rioave_65.png
+    initials: RIO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:42'
+    slug: rio-ave
+  Team_220:
+    official_name: Braga
+    name: Braga
+    nickname: Braga
+    logo: Braga65.png
+    initials: BRG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:09:33'
+    slug: braga
+  Team_221:
+    official_name: 'Sport Lisboa e Benfica'
+    name: Benfica
+    nickname: Benfica
+    logo: Benfica_65x65.png
+    initials: BEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:10:14'
+    slug: benfica
+  Team_222:
+    official_name: Sporting
+    name: Sporting
+    nickname: Sporting
+    logo: Sporting_ClubedePortugal_65.png
+    initials: SPT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:09:33'
+    slug: sporting
+  Team_223:
+    official_name: 'União de Leiria'
+    name: 'União de Leiria'
+    nickname: 'União de Leiria'
+    logo: uniao_65.png
+    initials: UDL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:43'
+    slug: uniao-de-leiria
+  Team_224:
+    official_name: 'Vitória de Guimarães'
+    name: 'Vitória de Guimarães'
+    nickname: 'Vitória de Guimarães'
+    logo: vitoria_65.png
+    initials: VDG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:09:34'
+    slug: vitoria-de-guimaraes
+  Team_225:
+    official_name: 'Vitória de Setúbal'
+    name: 'Vitória de Setúbal'
+    nickname: 'Vitória de Setúbal'
+    logo: vitoria_setubal_65.png
+    initials: VDS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:03'
+    updated_at: '2011-12-09 22:14:43'
+    slug: vitoria-de-setubal
+  Team_226:
+    official_name: 'Associação Cultural Esporte Clube Baraúnas'
+    name: Baraúnas
+    nickname: Barú
+    logo: 65x65.png
+    initials: BAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:27'
+    updated_at: '2011-12-09 22:14:26'
+    slug: baraunas
+  Team_227:
+    official_name: 'Atlético Clube Corintians'
+    name: Corintians-RN
+    nickname: Corintians-RN
+    logo: corinthiansRN_65.png
+    initials: COR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:27'
+    updated_at: '2011-12-09 22:14:26'
+    slug: corintians-rn
+  Team_228:
+    official_name: 'Associação Sportiva Sociedade Unida'
+    name: Assu
+    nickname: Assu
+    logo: assu-65.png
+    initials: ASU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:28'
+    updated_at: '2011-12-09 22:14:26'
+    slug: assu
+  Team_229:
+    official_name: 'Clube Centenário Pauferrense'
+    name: Centenário
+    nickname: Centenário
+    logo: 65x65.png
+    initials: CEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:28'
+    updated_at: '2011-12-09 22:14:26'
+    slug: centenario
+  Team_230:
+    official_name: 'Sport Club Santa Cruz'
+    name: 'Santa Cruz-RN'
+    nickname: 'Santa Cruz-RN'
+    logo: santaCruz-RN65.png
+    initials: SRN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:28'
+    updated_at: '2011-12-09 22:14:26'
+    slug: santa-cruz-rn
+  Team_231:
+    official_name: 'Palmeira Futebol Clube da Una'
+    name: Palmeira
+    nickname: Palmeira
+    logo: 65x65.png
+    initials: PAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:28'
+    updated_at: '2011-12-09 22:14:26'
+    slug: palmeira
+  Team_232:
+    official_name: 'Alecrim Futebol Clube'
+    name: Alecrim
+    nickname: Alecrim
+    logo: Alecrim_RN_65.png
+    initials: ALE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:28'
+    updated_at: '2011-12-09 22:14:27'
+    slug: alecrim
+  Team_233:
+    official_name: 'Associação Cultural e Desportiva Potiguar'
+    name: 'Potiguar de Mossoró'
+    nickname: 'Alvirubro mossorense'
+    logo: 65x65.png
+    initials: POT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:28'
+    updated_at: '2011-12-09 22:14:27'
+    slug: potiguar-de-mossoro
+  Team_234:
+    official_name: 'Atlético Roraima Clube'
+    name: 'Atlético Roraima'
+    nickname: 'Atlético Roraima'
+    logo: atletico-roraima-escudo65.png
+    initials: ARR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:37'
+    updated_at: '2011-12-09 22:14:13'
+    slug: atletico-roraima
+  Team_235:
+    official_name: 'Atlético Rio Negro Clube (Roraima)'
+    name: 'Rio Negro-RR'
+    nickname: 'Rio Negro-RR'
+    logo: 65x65.png
+    initials: RIO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:37'
+    updated_at: '2011-12-09 22:14:13'
+    slug: rio-negro-rr
+  Team_236:
+    official_name: 'Grêmio Atlético Sampaio'
+    name: GAS
+    nickname: GAS
+    logo: gremioASampaio_65.png
+    initials: GAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:37'
+    updated_at: '2011-12-09 22:14:13'
+    slug: gas
+  Team_237:
+    official_name: 'Náutico Futebol Clube'
+    name: Náutico-RR
+    nickname: Náutico-RR
+    logo: nautico_65.png
+    initials: NAU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:37'
+    updated_at: '2011-12-09 22:14:14'
+    slug: nautico-rr
+  Team_238:
+    official_name: 'Associação Esportiva Real'
+    name: Real
+    nickname: Real
+    logo: real_65.png
+    initials: REA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:37'
+    updated_at: '2011-12-09 22:14:14'
+    slug: real
+  Team_239:
+    official_name: 'Interporto Futebol Clube'
+    name: Interporto
+    nickname: Interporto
+    logo: Interporto_FutebolClube_65.png
+    initials: INT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:45'
+    updated_at: '2011-12-09 22:13:49'
+    slug: interporto
+  Team_240:
+    official_name: 'Tocantinópolis Esporte Clube'
+    name: Tocantinópolis
+    nickname: Tocantinópolis
+    logo: Tocantinopolis_65.png
+    initials: TCP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:45'
+    updated_at: '2011-12-09 22:13:49'
+    slug: tocantinopolis
+  Team_241:
+    official_name: 'Palmas Futebol e Regatas'
+    name: Palmas
+    nickname: Palmas
+    logo: palmas-65.png
+    initials: PMS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:45'
+    updated_at: '2011-12-09 22:13:49'
+    slug: palmas
+  Team_242:
+    official_name: 'Araguaína Futebol e Regatas'
+    name: Araguaína
+    nickname: Araguaína
+    logo: araguaina65.png
+    initials: ARA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:45'
+    updated_at: '2011-12-09 22:13:49'
+    slug: araguaina
+  Team_243:
+    official_name: 'Gurupi Esporte Clube'
+    name: Gurupi
+    nickname: Gurupi
+    logo: gurupi_65.png
+    initials: GUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:46'
+    updated_at: '2011-12-09 22:13:49'
+    slug: gurupi
+  Team_244:
+    official_name: 'Associação Desportiva e Recreativa São José'
+    name: 'São José-TO'
+    nickname: 'São José-TO'
+    logo: 65x65.png
+    initials: SJO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:46'
+    updated_at: '2011-12-09 22:13:49'
+    slug: sao-jose-to
+  Team_245:
+    official_name: 'Sport Club Guaraí'
+    name: Guaraí
+    nickname: Guaraí
+    logo: 65x65.png
+    initials: GUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:46'
+    updated_at: '2011-12-09 22:13:49'
+    slug: guarai
+  Team_246:
+    official_name: 'Intercap Esporte Clube ou Paraíso Esporte Clube'
+    name: Paraíso
+    nickname: Paraíso
+    logo: 65x65.png
+    initials: ITC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:49:46'
+    updated_at: '2011-12-09 22:13:50'
+    slug: paraiso
+  Team_247:
+    official_name: 'Vilavelhense Futebol Clube'
+    name: Vilavelhense
+    nickname: Vilavelhense
+    logo: vilavelhense_30x30.png
+    initials: VIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:20'
+    updated_at: '2011-12-04 04:50:20'
+    slug: vilavelhense
+  Team_248:
+    official_name: 'Sport Club Capixaba'
+    name: Capixaba
+    nickname: Capixaba
+    logo: capixaba_30x30.png
+    initials: CAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:20'
+    updated_at: '2011-12-04 04:50:20'
+    slug: capixaba
+  Team_249:
+    official_name: 'Espírito Santo Sociedade Esportiva'
+    name: 'ES de Colatina'
+    nickname: 'ES de Colatina'
+    logo: es_de_cola_NOVO_30x30.png
+    initials: ESC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:20'
+    updated_at: '2011-12-04 04:50:20'
+    slug: es-de-colatina
+  Team_250:
+    official_name: 'Associação Desportiva Ferroviária Vale do Rio Doce'
+    name: 'Desportiva Ferroviária'
+    nickname: Desportiva
+    logo: desportiva_ferroviaria_30x30.png
+    initials: DES
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:20'
+    updated_at: '2011-12-04 04:50:20'
+    slug: desportiva-ferroviaria
+  Team_251:
+    official_name: 'Club Deportivo Universidad Católica'
+    name: 'Universidad Católica'
+    nickname: 'Universidad Católica'
+    logo: universidad_catolica.png
+    initials: UCA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: universidad-catolica
+  Team_252:
+    official_name: 'Club de Fútbol Profesional de la Universidad de Chile'
+    name: 'Universidad de Chile'
+    nickname: 'Universidad de Chile'
+    logo: universidad-do-chile65.png
+    initials: UNI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:54'
+    slug: universidad-de-chile
+  Team_253:
+    official_name: 'Club Nacional de Football'
+    name: Nacional-URU
+    nickname: Nacional-URU
+    logo: nacional.png
+    initials: NAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: nacional-uru
+  Team_254:
+    official_name: 'Club Atlético Independiente'
+    name: Independiente
+    nickname: Independiente
+    logo: independiente.png
+    initials: IND
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: independiente
+  Team_255:
+    official_name: 'Club Atlético Vélez Sarsfield'
+    name: 'Vélez Sarsfield'
+    nickname: 'Vélez Sarsfield'
+    logo: velez_sarsfield.png
+    initials: VEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: velez-sarsfield
+  Team_256:
+    official_name: 'Club Olimpia'
+    name: Olimpia
+    nickname: Olimpia
+    logo: Club_Olimpia_65.png
+    initials: OLI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:54'
+    slug: olimpia
+  Team_257:
+    official_name: 'Liga Deportiva Universitária de Quito'
+    name: LDU
+    nickname: LDU
+    logo: ldu.png
+    initials: LDU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: ldu
+  Team_258:
+    official_name: 'Asociación Deportivo Cali'
+    name: 'Deportivo Cali'
+    nickname: 'Deportivo Cali'
+    logo: deportivocali_65.png
+    initials: DEP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:54'
+    slug: deportivo-cali
+  Team_259:
+    official_name: 'Club Universitario de Deportes'
+    name: Universitario
+    nickname: Universitario
+    logo: universitario_peru_65.png
+    initials: UNI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:54'
+    slug: universitario
+  Team_260:
+    official_name: 'Club Atlético Bella Vista'
+    name: 'Bella Vista'
+    nickname: 'Bella Vista'
+    logo: bellavista_paraguai_65.png
+    initials: BEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:54'
+    slug: bella-vista
+  Team_261:
+    official_name: 'Club Sport Emelec'
+    name: Emelec
+    nickname: Emelec
+    logo: emelec.png
+    initials: EME
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: emelec
+  Team_262:
+    official_name: 'The Strongest Foot-Ball Club'
+    name: 'The Strongest'
+    nickname: 'The Strongest'
+    logo: The_Strongest_65.png
+    initials: THE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:55'
+    slug: the-strongest
+  Team_263:
+    official_name: 'Club Libertad'
+    name: Libertad
+    nickname: Libertad
+    logo: libertad.png
+    initials: LIB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-04 04:50:26'
+    slug: libertad
+  Team_264:
+    official_name: Fénix
+    name: Fénix
+    nickname: Fénix
+    logo: fenix_uruguai_65.png
+    initials: FEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:26'
+    updated_at: '2011-12-09 22:12:55'
+    slug: fenix
+  Team_265:
+    official_name: 'Arsenal Fútbol Club'
+    name: 'Arsenal de Sarandí'
+    nickname: 'Arsenal de Sarandí'
+    logo: ArsenalSarandi_65.png
+    initials: ARS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:55'
+    slug: arsenal-de-sarandi
+  Team_266:
+    official_name: 'Club Aurora'
+    name: Aurora
+    nickname: Aurora
+    logo: aurora_bbolivia_65.png
+    initials: AUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:55'
+    slug: aurora
+  Team_267:
+    official_name: 'Club Estudiantes de la Plata'
+    name: Estudiantes
+    nickname: Estudiantes
+    logo: estudiantes.png
+    initials: EST
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-04 04:50:27'
+    slug: estudiantes
+  Team_268:
+    official_name: 'Trujillanos Fútbol Club'
+    name: Trujillanos
+    nickname: Trujillanos
+    logo: Trujillanos_chile_65.png
+    initials: TRU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:55'
+    slug: trujillanos
+  Team_269:
+    official_name: 'Santa Fe Corporación Deportiva'
+    name: 'Santa Fé'
+    nickname: 'Santa Fé'
+    logo: santafe_colombia_65.png
+    initials: SFE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:55'
+    slug: santa-fe
+  Team_270:
+    official_name: 'Club Nacional'
+    name: Nacional-PAR
+    nickname: Nacional-PAR
+    logo: Nacional_paraguai_65.png
+    initials: NPA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:55'
+    slug: nacional-par
+  Team_271:
+    official_name: 'Club Atlético Lanús'
+    name: Lanús
+    nickname: Lanús
+    logo: Lanus_65.png
+    initials: LAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:55'
+    slug: lanus
+  Team_272:
+    official_name: 'Club Deportivo San José'
+    name: 'San José-BOL'
+    nickname: 'San José-BOL'
+    logo: SanJose_bolivia_65.png
+    initials: SAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:56'
+    slug: san-jose-bol
+  Team_273:
+    official_name: 'Sociedad Deportivo Quito'
+    name: 'Deportivo Quito'
+    nickname: 'Deportivo Quito'
+    logo: deportivo_quito.png
+    initials: DEP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-04 04:50:27'
+    slug: deportivo-quito
+  Team_274:
+    official_name: 'Asociación Atlética Argentinos Juniors'
+    name: 'Argentinos Juniors'
+    nickname: 'Argentinos Juniors'
+    logo: argentino_juniors.png
+    initials: AGJ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-04 04:50:27'
+    slug: argentinos-juniors
+  Team_275:
+    official_name: 'Deportivo Anzoátegui Sport Club'
+    name: 'Deportivo Anzoátegui'
+    nickname: 'Deportivo Anzoátegui'
+    logo: deportivo_anzoategui_65.png
+    initials: DEP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:56'
+    slug: deportivo-anzoategui
+  Team_276:
+    official_name: 'Club Juan Aurich de Chiclayo'
+    name: 'Juan Aurich'
+    nickname: 'Juan Aurich'
+    logo: juan_aurich_peru_65.png
+    initials: JUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:56'
+    slug: juan-aurich
+  Team_277:
+    official_name: 'Club Deportivo Universidad César Vallejo'
+    name: 'Univ. César Vallejo'
+    nickname: 'Univ. César Vallejo'
+    logo: universidadcesarvallejo_peru_65.png
+    initials: UCV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-09 22:12:56'
+    slug: univ-cesar-vallejo
+  Team_278:
+    official_name: 'Club Deportivo Godoy Cruz Antonio Tomba'
+    name: 'Godoy Cruz'
+    nickname: 'Godoy Cruz'
+    logo: godoy_cruz.png
+    initials: GOD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:27'
+    updated_at: '2011-12-04 04:50:27'
+    slug: godoy-cruz
+  Team_279:
+    official_name: 'Club de Deportes Iquique'
+    name: 'Deportes Iquique'
+    nickname: 'Deportes Iquique'
+    logo: deportivo_iquique_65.png
+    initials: IQU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:28'
+    updated_at: '2011-12-09 22:12:57'
+    slug: deportes-iquique
+  Team_280:
+    official_name: 'Equidad Club Deportivo'
+    name: 'La Equidad'
+    nickname: 'La Equidad'
+    logo: La_Equidad_colombia_65.png
+    initials: EQU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:28'
+    updated_at: '2011-12-09 22:12:57'
+    slug: la-equidad
+  Team_281:
+    official_name: 'Yaracuyanos Fútbol Club'
+    name: Yaracuyanos
+    nickname: Yaracuyanos
+    logo: yaracuyanos_venezzuela_65.png
+    initials: YAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:50:28'
+    updated_at: '2011-12-09 22:12:57'
+    slug: yaracuyanos
+  Team_282:
+    official_name: 'Seleção Cubana de Futebol'
+    name: Cuba
+    nickname: Cuba
+    logo: cuba_65.png
+    initials: CUB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:48'
+    slug: cuba
+  Team_283:
+    official_name: 'Seleção Haitiana de Futebol'
+    name: Haiti
+    nickname: Haiti
+    logo: haiti_65.png
+    initials: HAI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:48'
+    slug: haiti
+  Team_284:
+    official_name: 'Seleção Jamaicana de Futebol'
+    name: Jamaica
+    nickname: Jamaica
+    logo: jamaica-65.png
+    initials: JAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: jamaica
+  Team_285:
+    official_name: 'Seleção Mexicana de Futebol'
+    name: México
+    nickname: México
+    logo: Fed_mexico_65.png
+    initials: MEX
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: mexico
+  Team_286:
+    official_name: 'Seleção Canadense de Futebol'
+    name: Canadá
+    nickname: Canadá
+    logo: canada-65.png
+    initials: CAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: canada
+  Team_287:
+    official_name: 'Seleção Trinitária de Futebol'
+    name: 'Trinidad e Tobago'
+    nickname: 'Trinidad e Tobago'
+    logo: TrinidadETobago_65.png
+    initials: TRI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: trinidad-e-tobago
+  Team_288:
+    official_name: 'Seleção Hondurenha de Futebol'
+    name: Honduras
+    nickname: Honduras
+    logo: honduras_65.png
+    initials: HON
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: honduras
+  Team_289:
+    official_name: 'Seleção Salvadorenha de Futebol'
+    name: 'El Salvador'
+    nickname: 'El Salvador'
+    logo: ElSalvador_65.png
+    initials: ESA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: el-salvador
+  Team_290:
+    official_name: 'Seleção de Futebol dos Estados Unidos'
+    name: 'Estados Unidos'
+    nickname: 'Estados Unidos'
+    logo: logo_EUA_65.png
+    initials: EUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: estados-unidos
+  Team_291:
+    official_name: 'Seleção Costarriquenha de Futebol'
+    name: 'Costa Rica'
+    nickname: 'Costa Rica'
+    logo: costarica_65.png
+    initials: CRC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:17'
+    updated_at: '2011-12-09 22:11:49'
+    slug: costa-rica
+  Team_292:
+    official_name: 'Seleção Panamenha de Futebol'
+    name: Panamá
+    nickname: Panamá
+    logo: panama-65.png
+    initials: PAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: panama
+  Team_293:
+    official_name: 'Seleção Guatemalteca de Futebol'
+    name: Guatemala
+    nickname: Guatemala
+    logo: guatemala-65.png
+    initials: GUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: guatemala
+  Team_294:
+    official_name: 'Federação Granadina de Futebol'
+    name: Granada
+    nickname: Granada
+    logo: granada_65.png
+    initials: GRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: granada-1
+  Team_295:
+    official_name: 'Federação Antiguana de Futebol'
+    name: 'Antígua e Barbuda'
+    nickname: 'Antígua e Barbuda'
+    logo: antiguaebarbuda_65.png
+    initials: ANB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: antigua-e-barbuda
+  Team_296:
+    official_name: 'Seleção da Guiana de Futebol'
+    name: Guiana
+    nickname: Guiana
+    logo: guiana_65.png
+    initials: GNA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: guiana
+  Team_297:
+    official_name: 'Federação Surinamesa de Futebol'
+    name: Suriname
+    nickname: Suriname
+    logo: suriname_65.png
+    initials: SUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: suriname
+  Team_298:
+    official_name: 'Federação São-Cristovense de Futebol'
+    name: 'São Cristóvão e Névis'
+    nickname: 'São Cristóvão e Névis'
+    logo: SaoCristovaoeNevis_65.png
+    initials: SCN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:50'
+    slug: sao-cristovao-e-nevis
+  Team_299:
+    official_name: 'Federação Dominiquense de Futebol'
+    name: Dominica
+    nickname: Dominica
+    logo: dominica_65.png
+    initials: DCA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: dominica
+  Team_300:
+    official_name: 'Seleção de Futebol de Porto Rico'
+    name: 'Porto Rico'
+    nickname: 'Porto Rico'
+    logo: portorico_65.png
+    initials: PRI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: porto-rico
+  Team_301:
+    official_name: 'Federação Barbadense de Futebol'
+    name: Barbados
+    nickname: Barbados
+    logo: barbados_65.png
+    initials: BAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: barbados
+  Team_302:
+    official_name: 'Seleção de Curaçao de Futebol'
+    name: Curaçao
+    nickname: Curaçao
+    logo: curacao_65.png
+    initials: CUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: curacao
+  Team_303:
+    official_name: 'Federação São-Vicentina de Futebol'
+    name: 'São Vicente e Granadinas'
+    nickname: 'São Vicente e Granadinas'
+    logo: saovicenteegranadinas_65.png
+    initials: SVG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: sao-vicente-e-granadinas
+  Team_304:
+    official_name: 'Federação Caimanesa de Futebol'
+    name: 'Ilhas Cayman'
+    nickname: 'Ilhas Cayman'
+    logo: IlhasCayman_65.png
+    initials: CAY
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: ilhas-cayman
+  Team_305:
+    official_name: 'Federação Nicaraguense de Futebol'
+    name: Nicarágua
+    nickname: Nicarágua
+    logo: nicaragua_65.png
+    initials: NIC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: nicaragua
+  Team_306:
+    official_name: 'Seleção de Bermuda de Futebol'
+    name: Bermuda
+    nickname: Bermuda
+    logo: bermuda_65.png
+    initials: BER
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:51'
+    slug: bermuda
+  Team_307:
+    official_name: 'Federação Belizenha de Futebol'
+    name: Belize
+    nickname: Belize
+    logo: belize_65.png
+    initials: BEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:18'
+    updated_at: '2011-12-09 22:11:52'
+    slug: belize
+  Team_308:
+    official_name: 'Federação Dominicana de Futebol'
+    name: 'República Dominicana'
+    nickname: 'República Dominicana'
+    logo: repdominicana_65.png
+    initials: DOM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:52'
+    slug: republica-dominicana
+  Team_309:
+    official_name: 'Seleção das Ilhas Virgens Americanas de Futebol'
+    name: 'Ilhas Virgens Americanas'
+    nickname: 'Ilhas Virgens Americanas'
+    logo: IlhasVirgensAmericanas_65.png
+    initials: IVA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:52'
+    slug: ilhas-virgens-americanas
+  Team_310:
+    official_name: 'Federação Santa-Lucense de Futebol'
+    name: 'Santa Lúcia'
+    nickname: 'Santa Lúcia'
+    logo: SantaLucia_65.png
+    initials: SLU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:52'
+    slug: santa-lucia
+  Team_311:
+    official_name: 'Federação Baamense de Futebol'
+    name: Bahamas
+    nickname: Bahamas
+    logo: bahamas_65.png
+    initials: BAH
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:52'
+    slug: bahamas
+  Team_312:
+    official_name: 'Associação de Futebol de Montserrat'
+    name: Montserrat
+    nickname: Montserrat
+    logo: montserrat_65.png
+    initials: MTS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:52'
+    slug: montserrat
+  Team_313:
+    official_name: 'Associação de Futebol da Anguilla'
+    name: Anguilla
+    nickname: Anguilla
+    logo: anguilla_65.png
+    initials: AGL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:52'
+    slug: anguilla
+  Team_314:
+    official_name: 'Associação de Futebol das Ilhas Virgens Britânicas'
+    name: 'Ilhas Virgens Britânicas'
+    nickname: 'Ilhas Virgens Britânicas'
+    logo: IlhasVirgensBritanicas_65.png
+    initials: IVB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:53'
+    slug: ilhas-virgens-britanicas
+  Team_315:
+    official_name: 'Associação de Futebol de Aruba'
+    name: Aruba
+    nickname: Aruba
+    logo: aruba_65.png
+    initials: ARU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:53'
+    slug: aruba
+  Team_316:
+    official_name: 'Associação de Futebol de Turks e Caicos'
+    name: 'Turks e Caicos'
+    nickname: 'Turks e Caicos'
+    logo: turkscaicos_65.png
+    initials: TCA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:19'
+    updated_at: '2011-12-09 22:11:53'
+    slug: turks-e-caicos
+  Team_317:
+    official_name: 'Seleção Peruana de Futebol'
+    name: Peru
+    nickname: Peru
+    logo: fed_peru_65.png
+    initials: PER
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: peru
+  Team_318:
+    official_name: 'Seleção Paraguaia de Futebol'
+    name: Paraguai
+    nickname: Paraguai
+    logo: fed_paraguai_65.png
+    initials: PAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: paraguai
+  Team_319:
+    official_name: 'Seleção Boliviana de Futebol'
+    name: Bolívia
+    nickname: Bolívia
+    logo: fed_bolivia_65.png
+    initials: BOL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: bolivia
+  Team_320:
+    official_name: 'Seleção Uruguaia de Futebol'
+    name: Uruguai
+    nickname: Uruguai
+    logo: fed_uruguai_65.png
+    initials: URU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: uruguai
+  Team_321:
+    official_name: 'Seleção Argentina de Futebol'
+    name: Argentina
+    nickname: Argentina
+    logo: logo_Arg_65.png
+    initials: ARG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: argentina
+  Team_322:
+    official_name: 'Seleção Equatoriana de Futebol'
+    name: Equador
+    nickname: Equador
+    logo: fed_euqador_65.png
+    initials: EQU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: equador
+  Team_323:
+    official_name: 'Seleção Colombiana de Futebol'
+    name: Colômbia
+    nickname: Colômbia
+    logo: fed_colombia_65.png
+    initials: COL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: colombia
+  Team_324:
+    official_name: 'Seleção Chilena de Futebol'
+    name: Chile
+    nickname: Chile
+    logo: chile_65.png
+    initials: CHI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: chile
+  Team_325:
+    official_name: 'Seleção Venezuelana de Futebol'
+    name: Venezuela
+    nickname: Venezuela
+    logo: fe_venezuela_65.png
+    initials: VEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:38'
+    updated_at: '2011-12-09 22:11:29'
+    slug: venezuela
+  Team_326:
+    official_name: 'Seleção Norte-Coreana de Futebol'
+    name: 'Coreia do Norte'
+    nickname: 'Coreia do Norte'
+    logo: coreia-65.png
+    initials: CNO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:51'
+    updated_at: '2011-12-09 22:10:34'
+    slug: coreia-do-norte
+  Team_327:
+    official_name: 'Seleção Australiana de Futebol'
+    name: Austrália
+    nickname: Austrália
+    logo: australia-65.png
+    initials: AUS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:51'
+    updated_at: '2011-12-09 22:10:34'
+    slug: australia
+  Team_328:
+    official_name: 'Seleção Iraniana de Futebol'
+    name: Irã
+    nickname: Irã
+    logo: ira_65.png
+    initials: IRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: ira
+  Team_329:
+    official_name: 'Seleção Kuwaitiana de Futebol'
+    name: Kuwait
+    nickname: Kuwait
+    logo: kuwait_65.png
+    initials: KUW
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: kuwait
+  Team_330:
+    official_name: 'Seleção Iraquiana de Futebol'
+    name: Iraque
+    nickname: Iraque
+    logo: iraque_65.png
+    initials: IRQ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: iraque
+  Team_331:
+    official_name: 'Seleção Saudita de Futebol'
+    name: 'Arábia Saudita'
+    nickname: 'Arábia Saudita'
+    logo: arabia_saudita-65.png
+    initials: SAU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: arabia-saudita
+  Team_332:
+    official_name: 'Seleção Chinesa de Futebol'
+    name: China
+    nickname: China
+    logo: china_65.png
+    initials: CHN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: china
+  Team_333:
+    official_name: 'Seleção Japonesa de Futebol'
+    name: Japão
+    nickname: Japão
+    logo: fed_japao_65.png
+    initials: JAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: japao
+  Team_334:
+    official_name: 'Seleção Sul-Coreana de Futebol'
+    name: 'Coreia do Sul'
+    nickname: 'Coreia do Sul'
+    logo: coreiadasul-65.png
+    initials: COR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: coreia-do-sul
+  Team_335:
+    official_name: 'Seleção dos Emirados Árabes Unidos de Futebol'
+    name: 'Emirados Árabes Unidos'
+    nickname: 'Emirados Árabes Unidos'
+    logo: emiradosarabes_65.png
+    initials: EAU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:35'
+    slug: emirados-arabes-unidos
+  Team_336:
+    official_name: 'Seleção Uzbeque de Futebol'
+    name: Uzbequistão
+    nickname: Uzbequistão
+    logo: uzbequistao-65.png
+    initials: UZB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: uzbequistao
+  Team_337:
+    official_name: 'Associação de Futebol da Jordânia'
+    name: Jordânia
+    nickname: Jordânia
+    logo: jordania_65.png
+    initials: JOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: jordania
+  Team_338:
+    official_name: 'Associação de Futebol de Cingapura'
+    name: Cingapura
+    nickname: Cingapura
+    logo: cingapura_65.png
+    initials: CIP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: cingapura
+  Team_339:
+    official_name: 'Federação Libanesa de Futebol'
+    name: Líbano
+    nickname: Líbano
+    logo: libano_65.png
+    initials: LBN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: libano
+  Team_340:
+    official_name: 'Federação Nacional de Futebol do Tadjiquistão'
+    name: Tadjiquistão
+    nickname: Tadjiquistão
+    logo: tadjiquistao_65.png
+    initials: TAD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: tadjiquistao
+  Team_341:
+    official_name: 'Federação Tailandesa de Futebol'
+    name: Tailândia
+    nickname: Tailândia
+    logo: tailandia_65.png
+    initials: TAI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: tailandia
+  Team_342:
+    official_name: 'Associação Omanense de Futebol'
+    name: Omã
+    nickname: Omã
+    logo: oma_65.png
+    initials: OMA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:52'
+    updated_at: '2011-12-09 22:10:36'
+    slug: oma
+  Team_343:
+    official_name: 'Associação de Futebol do Bahrein'
+    name: Bahrein
+    nickname: Bahrein
+    logo: bahrein_65.png
+    initials: BRE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:36'
+    slug: bahrein
+  Team_344:
+    official_name: 'Associação de Futebol do Qatar'
+    name: Qatar
+    nickname: Qatar
+    logo: qatar_65.png
+    initials: QAT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: qatar
+  Team_345:
+    official_name: 'Associação de Futebol da Indonésia'
+    name: Indonésia
+    nickname: Indonésia
+    logo: indonesia_65.png
+    initials: INA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: indonesia
+  Team_346:
+    official_name: 'Federação Síria de Futebol'
+    name: Síria
+    nickname: Síria
+    logo: siria_65.png
+    initials: SIR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: siria
+  Team_347:
+    official_name: 'Federação Turcomena de Futebol'
+    name: Turcomenistão
+    nickname: Turcomenistão
+    logo: turcomenistao_65.png
+    initials: TCO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: turcomenistao
+  Team_348:
+    official_name: 'Federação Iemenita de Futebol'
+    name: Iêmen
+    nickname: Iêmen
+    logo: iemen_65.png
+    initials: IEM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: iemen
+  Team_349:
+    official_name: 'Federação Honconguesa de Futebol'
+    name: 'Hong Kong'
+    nickname: 'Hong Kong'
+    logo: hongkong_65.png
+    initials: HKO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: hong-kong
+  Team_350:
+    official_name: 'Seleção Quirguiz de Futebol'
+    name: Quirguistão
+    nickname: Quirguistão
+    logo: quirquistao_65.png
+    initials: QUI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: quirguistao
+  Team_351:
+    official_name: 'Federação Maldiva de Futebol'
+    name: Maldivas
+    nickname: Maldivas
+    logo: maldivas_65.png
+    initials: MDV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: maldivas
+  Team_352:
+    official_name: 'Federação Indiana de Futebol'
+    name: Índia
+    nickname: Índia
+    logo: india_65.png
+    initials: IND
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:37'
+    slug: india
+  Team_353:
+    official_name: 'Federação Malaia de Futebol'
+    name: Malásia
+    nickname: Malásia
+    logo: malasia65.png
+    initials: MLS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:38'
+    slug: malasia
+  Team_354:
+    official_name: 'Federação Afegã de Futebol'
+    name: Afeganistão
+    nickname: Afeganistão
+    logo: afeganistao_65.png
+    initials: AFG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:38'
+    slug: afeganistao
+  Team_355:
+    official_name: 'Federação Cambodjana de Futebol'
+    name: Camboja
+    nickname: Camboja
+    logo: camboja_65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:38'
+    slug: camboja
+  Team_356:
+    official_name: 'Federação Nepalesa de Futebol'
+    name: Nepal
+    nickname: Nepal
+    logo: nepal_65.png
+    initials: NEP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:38'
+    slug: nepal
+  Team_357:
+    official_name: 'Federação de Futebol do Bangladesh'
+    name: ' Bangladesh'
+    nickname: ' Bangladesh'
+    logo: bangladesh_65.png
+    initials: BAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:38'
+    slug: bangladesh
+  Team_358:
+    official_name: 'Federação Cingalesa de Futebol'
+    name: 'Sri Lanka'
+    nickname: 'Sri Lanka'
+    logo: siri_lanka_65.png
+    initials: SRI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:53'
+    updated_at: '2011-12-09 22:10:38'
+    slug: sri-lanka
+  Team_359:
+    official_name: 'Federação Vietnamita de Futebol'
+    name: Vietnã
+    nickname: Vietnã
+    logo: vietna_65.png
+    initials: VIE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:38'
+    slug: vietna
+  Team_360:
+    official_name: 'Federação Mongol de Futebol'
+    name: Mongólia
+    nickname: Mongólia
+    logo: mongolia_65.png
+    initials: MON
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: mongolia
+  Team_361:
+    official_name: 'Federação Paquistanesa de Futebol'
+    name: Paquistão
+    nickname: Paquistão
+    logo: paquistao_65.png
+    initials: PAQ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: paquistao
+  Team_362:
+    official_name: 'Federação Palestina de Futebol'
+    name: Palestina
+    nickname: Palestina
+    logo: palestina_65.png
+    initials: PLT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: palestina
+  Team_363:
+    official_name: 'Federação Timorense de Futebol'
+    name: 'Timor Leste'
+    nickname: 'Timor Leste'
+    logo: timorleste_65.png
+    initials: TIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: timor-leste
+  Team_364:
+    official_name: 'Federação de Macau de Futebol'
+    name: Macau
+    nickname: Macau
+    logo: macau_65.png
+    initials: MAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: macau
+  Team_365:
+    official_name: 'Federação de Taipé Chinês de Futebol'
+    name: Taiwan
+    nickname: Taiwan
+    logo: taiwan_65.png
+    initials: TAW
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: taiwan
+  Team_366:
+    official_name: 'Federação Mianmarense de Futebol'
+    name: Myanmar
+    nickname: Myanmar
+    logo: myanmar_65.png
+    initials: MYA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:39'
+    slug: myanmar
+  Team_367:
+    official_name: 'Federação Filipina de Futebol'
+    name: Filipinas
+    nickname: Filipinas
+    logo: filipinas_65.png
+    initials: FIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:40'
+    slug: filipinas
+  Team_368:
+    official_name: 'Federação de Laos de Futebol'
+    name: Laos
+    nickname: Laos
+    logo: laos_65.png
+    initials: LAO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:51:54'
+    updated_at: '2011-12-09 22:10:40'
+    slug: laos
+  Team_369:
+    official_name: 'Seleção Neozelandesa de Futebol'
+    name: 'Nova Zelândia'
+    nickname: 'Nova Zelândia'
+    logo: novazelandia-65_.png
+    initials: NZE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:49'
+    slug: nova-zelandia
+  Team_370:
+    official_name: 'Federação Fijiana de Futebol'
+    name: Fiji
+    nickname: Fiji
+    logo: fiji-65.png
+    initials: FIJ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:49'
+    slug: fiji
+  Team_371:
+    official_name: 'Federação Neocaledônia de Futebol'
+    name: 'Nova Caledônia'
+    nickname: 'Nova Caledônia'
+    logo: novacaledonia-65.png
+    initials: NCA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:49'
+    slug: nova-caledonia
+  Team_372:
+    official_name: 'Federação Vanuatuana de Futebol'
+    name: Vanuatu
+    nickname: Vanuatu
+    logo: vanuatu-65.png
+    initials: VAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:49'
+    slug: vanuatu
+  Team_373:
+    official_name: 'Federação Salomónica de Futebol'
+    name: 'Ilhas Salomão'
+    nickname: 'Ilhas Salomão'
+    logo: ilhassalomao-65.png
+    initials: ISA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:49'
+    slug: ilhas-salomao
+  Team_374:
+    official_name: 'Federação Taitiana de Futebol'
+    name: Taiti
+    nickname: Taiti
+    logo: TAITI-65.png
+    initials: TAI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:49'
+    slug: taiti
+  Team_375:
+    official_name: 'Federação Papuásia de Futebol'
+    name: 'Papua Nova Guiné'
+    nickname: 'Papua Nova Guiné'
+    logo: papua-nova-guine-65.png
+    initials: PNG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:50'
+    slug: papua-nova-guine
+  Team_376:
+    official_name: 'Federação Samoana de Futebol'
+    name: Samoa
+    nickname: Samoa
+    logo: samoa-65.png
+    initials: SAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:50'
+    slug: samoa
+  Team_377:
+    official_name: 'Federação Tonganesa de Futebol'
+    name: Tonga
+    nickname: Tonga
+    logo: tonga-65.png
+    initials: TON
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:07'
+    updated_at: '2011-12-09 22:10:50'
+    slug: tonga
+  Team_378:
+    official_name: 'Federação de Futebol das Ilhas Cook'
+    name: 'Ilhas Cook'
+    nickname: 'Ilhas Cook'
+    logo: ilhas-cook-65.png
+    initials: ICO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:08'
+    updated_at: '2011-12-09 22:10:50'
+    slug: ilhas-cook
+  Team_379:
+    official_name: 'Federação da Samoa Americana de Futebol'
+    name: 'Samoa Americana'
+    nickname: 'Samoa Americana'
+    logo: samoa-americana-65.png
+    initials: SAA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:08'
+    updated_at: '2011-12-09 22:10:50'
+    slug: samoa-americana
+  Team_380:
+    official_name: 'Football Club Internazionale Milano'
+    name: 'Inter de Milão'
+    nickname: 'Inter de Milão'
+    logo: interdemilao65.png
+    initials: INT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:13'
+    updated_at: '2011-12-09 22:08:02'
+    slug: inter-de-milao
+  Team_381:
+    official_name: 'Società Sportiva Calcio Napoli'
+    name: Napoli
+    nickname: Napoli
+    logo: napoli_65x65.png
+    initials: NAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:13'
+    updated_at: '2011-12-09 22:08:04'
+    slug: napoli
+  Team_382:
+    official_name: 'Associazione Calcio Milan'
+    name: Milan
+    nickname: Milan
+    logo: milan_65x65.png
+    initials: MIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:13'
+    updated_at: '2011-12-09 22:08:04'
+    slug: milan
+  Team_383:
+    official_name: 'Udinese Calcio'
+    name: Udinese
+    nickname: Udinese
+    logo: Udinese_65x65.png
+    initials: UDI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:13'
+    updated_at: '2011-12-09 22:08:04'
+    slug: udinese
+  Team_384:
+    official_name: Zenit
+    name: Zenit
+    nickname: Zenit
+    logo: Zenit65.png
+    initials: ZEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:14'
+    updated_at: '2011-12-09 22:10:11'
+    slug: zenit
+  Team_385:
+    official_name: 'CSKA Moscou'
+    name: 'CSKA Moscou'
+    nickname: 'CSKA Moscou'
+    logo: CSKAMoscou65.png
+    initials: CSK
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:14'
+    updated_at: '2011-12-09 22:10:11'
+    slug: cska-moscou
+  Team_386:
+    official_name: 'Rubin Kazan'
+    name: 'Rubin Kazan'
+    nickname: 'Rubin Kazan'
+    logo: FK_Rubin_Kazan_65.png
+    initials: KAZ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:14'
+    updated_at: '2011-12-09 22:09:22'
+    slug: rubin-kazan
+  Team_387:
+    official_name: 'Dinamo Zagreb'
+    name: 'Dínamo Zagreb'
+    nickname: 'Dínamo Zagreb'
+    logo: dinamozagreb_65.png
+    initials: ZAG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:14'
+    updated_at: '2011-12-09 22:10:11'
+    slug: dinamo-zagreb
+  Team_388:
+    official_name: 'BATE Borisov'
+    name: 'BATE Borisov'
+    nickname: 'BATE Borisov'
+    logo: BATE_65x65.png
+    initials: BAT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:14'
+    updated_at: '2011-12-09 22:10:11'
+    slug: bate-borisov
+  Team_389:
+    official_name: Basel
+    name: Basel
+    nickname: Basel
+    logo: basel_65.png
+    initials: BAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:14'
+    updated_at: '2011-12-09 22:10:11'
+    slug: basel
+  Team_390:
+    official_name: 'FC Copenhague'
+    name: 'FC Copenhague'
+    nickname: 'FC Copenhague'
+    logo: copenhague65.png
+    initials: COP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:24'
+    slug: fc-copenhague
+  Team_391:
+    official_name: 'Amsterdamsche Football Club Ajax'
+    name: Ajax
+    nickname: Ajax
+    logo: Ajax65.png
+    initials: AJA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:10:12'
+    slug: ajax
+  Team_392:
+    official_name: 'Shakhtar Donetsk'
+    name: 'Shakhtar Donetsk'
+    nickname: 'Shakhtar Donetsk'
+    logo: shakhtar_donetsk_65x65.png
+    initials: SHA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:10:12'
+    slug: shakhtar-donetsk
+  Team_393:
+    official_name: 'Football Club Twente ''65'
+    name: Twente
+    nickname: Twente
+    logo: Twente65.png
+    initials: TWE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:25'
+    slug: twente
+  Team_394:
+    official_name: 'Odense Boldklub'
+    name: Odense
+    nickname: Odense
+    logo: odense_65.png
+    initials: ODE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:25'
+    slug: odense
+  Team_395:
+    official_name: 'Olympiacos Club of Fans of Piraeus F.C.'
+    name: Olympiacos
+    nickname: Olympiacos
+    logo: olympiacos_65.png
+    initials: OLY
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:10:12'
+    slug: olympiacos
+  Team_396:
+    official_name: 'Wisla Kraków SSA'
+    name: 'Wisla Cracóvia'
+    nickname: 'Wisla Cracóvia'
+    logo: wislakrakovia_65.png
+    initials: WLC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:31'
+    slug: wisla-cracovia
+  Team_397:
+    official_name: Apoel
+    name: Apoel
+    nickname: Apoel
+    logo: apoel_65.png
+    initials: APO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:10:12'
+    slug: apoel
+  Team_398:
+    official_name: 'Maccabi Haifa Football Club'
+    name: 'Maccabi Haifa'
+    nickname: 'Maccabi Haifa'
+    logo: maccabi_haifa_65.png
+    initials: MCH
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:31'
+    slug: maccabi-haifa
+  Team_399:
+    official_name: Genk
+    name: Genk
+    nickname: Genk
+    logo: genk_65.png
+    initials: GEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:10:12'
+    slug: genk
+  Team_400:
+    official_name: 'Malmö Fotbollförening'
+    name: Malmö
+    nickname: Malmö
+    logo: malmoe_65.png
+    initials: MAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:32'
+    slug: malmoe
+  Team_401:
+    official_name: 'FC Viktoria Plzeň'
+    name: 'Viktoria Plzen'
+    nickname: 'Viktoria Plzen'
+    logo: Viktoria_65x65.png
+    initials: VPZ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:10:13'
+    slug: viktoria-plzen
+  Team_402:
+    official_name: 'Sportklub Puntigamer Sturm Graz'
+    name: 'Sturm Graz'
+    nickname: 'Sturm Graz'
+    logo: Sturm_Graz_65x65.png
+    initials: STG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:32'
+    slug: sturm-graz
+  Team_403:
+    official_name: 'Fussballclub Zürich'
+    name: 'FC Zurique'
+    nickname: 'FC Zurique'
+    logo: zurique_65x65.png
+    initials: ZUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:15'
+    updated_at: '2011-12-09 22:09:33'
+    slug: fc-zurique
+  Team_404:
+    official_name: 'Fotbal Club Oţelul Galaţi'
+    name: 'Otelul Galati'
+    nickname: 'Otelul Galati'
+    logo: otelulgalati_65.png
+    initials: OTG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:16'
+    updated_at: '2011-12-09 22:10:13'
+    slug: otelul-galati
+  Team_405:
+    official_name: 'Fenerbahçe Sport Kulübü'
+    name: Fenerbahçe
+    nickname: Fenerbahçe
+    logo: Fenerbahçe-65.png
+    initials: FEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:16'
+    updated_at: '2011-12-09 22:10:14'
+    slug: fenerbahce
+  Team_406:
+    official_name: 'Trabzonspor Kulübü'
+    name: Trabzonspor
+    nickname: Trabzonspor
+    logo: Trabzonspor-65.png
+    initials: TRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:16'
+    updated_at: '2011-12-09 22:09:33'
+    slug: trabzonspor
+  Team_407:
+    official_name: 'Associazione Sportiva Roma'
+    name: Roma
+    nickname: Roma
+    logo: Roma_65x65.png
+    initials: ROM
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:38'
+    updated_at: '2011-12-09 22:08:03'
+    slug: roma
+  Team_408:
+    official_name: 'Società Sportiva Lazio'
+    name: Lazio
+    nickname: Lazio
+    logo: lazio_65x65.png
+    initials: LAZ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:38'
+    updated_at: '2011-12-09 22:08:03'
+    slug: lazio
+  Team_409:
+    official_name: 'Birmingham City Football Club'
+    name: Birmingham
+    nickname: Birmingham
+    logo: birminghan.png
+    initials: BIR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:38'
+    updated_at: '2011-12-04 04:52:38'
+    slug: birmingham
+  Team_410:
+    official_name: 'Lokomotiv Moscou'
+    name: 'Lokomotiv Moscou'
+    nickname: 'Lokomotiv Moscou'
+    logo: Lokomotiv_Moscou_65x65.png
+    initials: LOK
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:22'
+    slug: lokomotiv-moscou
+  Team_411:
+    official_name: 'Spartak Moscou'
+    name: 'Spartak Moscou'
+    nickname: 'Spartak Moscou'
+    logo: SpartakMoscou65.png
+    initials: SPA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:23'
+    slug: spartak-moscou
+  Team_412:
+    official_name: 'Alania Vladikavkaz'
+    name: 'Alania Vladikavkaz'
+    nickname: 'Alania Vladikavkaz'
+    logo: AlaniaVladikavkaz_65.png
+    initials: ALA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:23'
+    slug: alania-vladikavkaz
+  Team_413:
+    official_name: 'Hapoel Tel Aviv'
+    name: 'Hapoel Tel Aviv'
+    nickname: 'Hapoel Tel Aviv'
+    logo: Hapoel_Tel_Aviv_65x65.png
+    initials: HAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:23'
+    slug: hapoel-tel-aviv
+  Team_414:
+    official_name: 'Sparta Praga'
+    name: 'Sparta Praga'
+    nickname: 'Sparta Praga'
+    logo: Sparta-Praga_65.png
+    initials: SPR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:23'
+    slug: sparta-praga
+  Team_415:
+    official_name: Rosenborg
+    name: Rosenborg
+    nickname: Rosenborg
+    logo: Rosenborg_65.png
+    initials: ROB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:23'
+    slug: rosenborg
+  Team_416:
+    official_name: 'RB Salzburgo'
+    name: Salzburgo
+    nickname: Salzburgo
+    logo: Salzburgo65.png
+    initials: SAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:39'
+    updated_at: '2011-12-09 22:09:23'
+    slug: salzburgo
+  Team_417:
+    official_name: Partizan
+    name: Partizan
+    nickname: Partizan
+    logo: Partizan_65.png
+    initials: PAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:23'
+    slug: partizan
+  Team_418:
+    official_name: Omonia
+    name: Omonia
+    nickname: Omonia
+    logo: AC_Omonia_65.png
+    initials: OMO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:23'
+    slug: omonia
+  Team_419:
+    official_name: Ekranas
+    name: Ekranas
+    nickname: Ekranas
+    logo: FK_Ekranas_65.png
+    initials: EKR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:24'
+    slug: ekranas
+  Team_420:
+    official_name: HJK
+    name: HJK
+    nickname: HJK
+    logo: HJK_65x65.png
+    initials: HJK
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:24'
+    slug: hjk
+  Team_421:
+    official_name: Anderlecht
+    name: Anderlecht
+    nickname: Anderlecht
+    logo: Anderlecht65.png
+    initials: AND
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:24'
+    slug: anderlecht
+  Team_422:
+    official_name: 'FC Dínamo de Kiev'
+    name: 'Dínamo de Kiev'
+    nickname: 'Dínamo de Kiev'
+    logo: DinamoKiev65.png
+    initials: KIE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:24'
+    slug: dinamo-de-kiev
+  Team_423:
+    official_name: Celtic
+    name: Celtic
+    nickname: Celtic
+    logo: Celtic65.png
+    initials: CEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:40'
+    updated_at: '2011-12-09 22:09:24'
+    slug: celtic
+  Team_424:
+    official_name: 'Young Boys'
+    name: 'Young Boys'
+    nickname: 'Young Boys'
+    logo: YoungBoys65.png
+    initials: YOU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:24'
+    slug: young-boys
+  Team_425:
+    official_name: Panathinaikos
+    name: Panathinaikos
+    nickname: Panathinaikos
+    logo: Panathinaikos_65.png
+    initials: PAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:24'
+    slug: panathinaikos
+  Team_426:
+    official_name: Rangers
+    name: Rangers
+    nickname: Rangers
+    logo: Rangers65.png
+    initials: RAG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:24'
+    slug: rangers
+  Team_427:
+    official_name: 'Alkmaar Zaanstreek'
+    name: AZ
+    nickname: AZ
+    logo: AZAlkmaar_svg65.png
+    initials: AZA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: az
+  Team_428:
+    official_name: 'Philips Sport Vereniging'
+    name: 'PSV Eindhoven'
+    nickname: 'PSV Eindhoven'
+    logo: PSV65.png
+    initials: PSV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: psv-eindhoven
+  Team_429:
+    official_name: 'FC Dnipro Dnipropetrovsk'
+    name: 'Dnipro Dnipropetrovsk'
+    nickname: 'Dnipro Dnipropetrovsk'
+    logo: FC_Dnipro_Dnipropetrovsk_65.png
+    initials: DNI
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: dnipro-dnipropetrovsk
+  Team_430:
+    official_name: 'FC Metalist Carcóvia'
+    name: Metalist
+    nickname: Metalist
+    logo: Metalist_65.png
+    initials: MET
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: metalist
+  Team_431:
+    official_name: 'FC Vorskla Poltava'
+    name: Vorskla
+    nickname: Vorskla
+    logo: Vorskla_65.png
+    initials: VOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: vorskla
+  Team_432:
+    official_name: 'FC Karpaty Lviv'
+    name: Karpaty
+    nickname: Karpaty
+    logo: Karpaty_65.png
+    initials: KAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: karpaty
+  Team_433:
+    official_name: 'Club Brugge Koninklijke Voetbalvereniging'
+    name: Brugge
+    nickname: Brugge
+    logo: Brugge65.png
+    initials: BRU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: brugge
+  Team_434:
+    official_name: 'Pan-Thessalonian Athletic Organisation of Constantinopolitans'
+    name: PAOK
+    nickname: PAOK
+    logo: PAOK-_65.png
+    initials: PAO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: paok
+  Team_435:
+    official_name: 'AEK Athens FC'
+    name: 'AEK Atenas'
+    nickname: 'AEK Atenas'
+    logo: AEKAtenas_65.png
+    initials: AEK
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:41'
+    updated_at: '2011-12-09 22:09:25'
+    slug: aek-atenas
+  Team_436:
+    official_name: 'Fotbal Club Steaua Bucureşti'
+    name: 'Steaua Bucareste'
+    nickname: 'Steaua Bucareste'
+    logo: Steaua_65x65.png
+    initials: STE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:42'
+    updated_at: '2011-12-09 22:09:26'
+    slug: steaua-bucareste
+  Team_437:
+    official_name: 'PFC CSKA Sofia'
+    name: 'CSKA Sofia'
+    nickname: 'CSKA Sofia'
+    logo: CSKA_Sofia_65x65.png
+    initials: CSS
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:42'
+    updated_at: '2011-12-09 22:09:26'
+    slug: cska-sofia
+  Team_438:
+    official_name: 'Royal Standard de Liège'
+    name: 'Standard Liège'
+    nickname: 'Standard Liège'
+    logo: StandardLiege65.png
+    initials: STA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:42'
+    updated_at: '2011-12-09 22:09:26'
+    slug: standard-liege
+  Team_439:
+    official_name: 'FK Estrela Vermelha'
+    name: 'Estrela Vermelha'
+    nickname: 'Estrela Vermelha'
+    logo: EstrelaVermelha_65.png
+    initials: EST
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:42'
+    updated_at: '2011-12-09 22:09:26'
+    slug: estrela-vermelha
+  Team_440:
+    official_name: 'Football Club Spartak Trnava'
+    name: 'Spartak Trnava'
+    nickname: 'Spartak Trnava'
+    logo: Spartak_Trnava_65x65_.png
+    initials: TRN
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:42'
+    updated_at: '2011-12-09 22:09:26'
+    slug: spartak-trnava
+  Team_441:
+    official_name: 'Football Club Sion'
+    name: Sion
+    nickname: Sion
+    logo: Sion65.png
+    initials: SIO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:26'
+    slug: sion
+  Team_442:
+    official_name: 'WKS Śląsk Wroclaw'
+    name: 'Slask Wroclaw'
+    nickname: 'Slask Wroclaw'
+    logo: Slask_65.png
+    initials: SLW
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:26'
+    slug: slask-wroclaw
+  Team_443:
+    official_name: 'Shamrock Rovers Football Club'
+    name: 'Shamrock Rovers'
+    nickname: 'Shamrock Rovers'
+    logo: ShamrockRovers-65.png
+    initials: SRO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:27'
+    slug: shamrock-rovers
+  Team_444:
+    official_name: 'Maccabi Tel Aviv Football Club'
+    name: 'Maccabi Tel Aviv'
+    nickname: 'Maccabi Tel Aviv'
+    logo: Maccabi_Tel_Aviv_65x65.png
+    initials: MTA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: maccabi-tel-aviv
+  Team_445:
+    official_name: 'AEK Larnaca Football Club'
+    name: 'AEK Larnaca'
+    nickname: 'AEK Larnaca'
+    logo: AEK_Larnaca65x65.png
+    initials: AEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: aek-larnaca
+  Team_446:
+    official_name: 'FC Dínamo Bucareste'
+    name: 'Dínamo Bucareste'
+    nickname: 'Dínamo Bucareste'
+    logo: Dinamo_Bucarest_65x65.png
+    initials: DBU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: dinamo-bucareste
+  Team_447:
+    official_name: 'Športový Klub Slovan Bratislava'
+    name: 'Slovan Bratislava'
+    nickname: 'Slovan Bratislava'
+    logo: slovan_bratislava_65.png
+    initials: SLO
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: slovan-bratislava
+  Team_448:
+    official_name: 'Klub Pilkarski Legia Warszawa'
+    name: 'Legia Varsóvia'
+    nickname: 'Legia Varsóvia'
+    logo: LegiaVarsovia_65.png
+    initials: LEG
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: legia-varsovia
+  Team_449:
+    official_name: 'Heart of Midlothian Football Club'
+    name: Hearts
+    nickname: Hearts
+    logo: heart_escocia_65.png
+    initials: HEA
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: hearts
+  Team_450:
+    official_name: 'Nogometni Klub Maribor'
+    name: Maribor
+    nickname: Maribor
+    logo: maribor_65.png
+    initials: MAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:43'
+    updated_at: '2011-12-09 22:09:30'
+    slug: maribor
+  Team_451:
+    official_name: 'FC Nordsjælland'
+    name: Nordsjaelland
+    nickname: Nordsjaelland
+    logo: Nordsjaelland_65x65.png
+    initials: NOD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:31'
+    slug: nordsjaelland
+  Team_452:
+    official_name: 'Fotbal Club Rapid Bucureşti'
+    name: 'Rapid Bucareste'
+    nickname: 'Rapid Bucareste'
+    logo: rapid_bucareste_65.png
+    initials: RAB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:31'
+    slug: rapid-bucareste
+  Team_453:
+    official_name: 'PFC Litex Lovech AD'
+    name: Litex
+    nickname: Litex
+    logo: PFC_Litex_65.png
+    initials: LIT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:31'
+    slug: litex
+  Team_454:
+    official_name: 'SV Josko Fenster Ried'
+    name: Ried
+    nickname: Ried
+    logo: Ried65.png
+    initials: RIE
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:31'
+    slug: ried
+  Team_455:
+    official_name: 'Fussballclub Thun 1898'
+    name: Thun
+    nickname: Thun
+    logo: Thun65.png
+    initials: THU
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:31'
+    slug: thun
+  Team_456:
+    official_name: 'Aalesund Fotballklubb'
+    name: Aalesund
+    nickname: Aalesund
+    logo: Aalesund_65x65.png
+    initials: AAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:31'
+    slug: aalesund
+  Team_457:
+    official_name: 'Fotbal Club Vaslui'
+    name: Vaslui
+    nickname: Vaslui
+    logo: FC_Vaslui_65.png
+    initials: VAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:32'
+    slug: vaslui
+  Team_458:
+    official_name: 'Football Club Zestafoni'
+    name: Zestafoni
+    nickname: Zestafoni
+    logo: Zestafoni_65.png
+    initials: ZES
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:32'
+    slug: zestafoni
+  Team_459:
+    official_name: 'Football Club Dínamo Tbilisi'
+    name: 'Dínamo Tbilisi'
+    nickname: Tbilisi
+    logo: FC_Dinamo_Tbilisi_65.png
+    initials: DNT
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:32'
+    slug: dinamo-tbilisi
+  Team_460:
+    official_name: 'Fußball Klub Austria Wien'
+    name: 'Áustria Viena'
+    nickname: 'Áustria Viena'
+    logo: AustriaViena65.png
+    initials: AUV
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:32'
+    slug: austria-viena
+  Team_461:
+    official_name: 'Club Sportiv Gaz Metan Mediaş'
+    name: 'Gaz Metan'
+    nickname: 'Gaz Metan'
+    logo: Gaz_Metan_65.png
+    initials: GAZ
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:44'
+    updated_at: '2011-12-09 22:09:32'
+    slug: gaz-metan
+  Team_462:
+    official_name: 'Helsingborgs Idrottsförening'
+    name: Helsingborg
+    nickname: Helsingborg
+    logo: Helsingborgs_logo_65.png
+    initials: HEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:45'
+    updated_at: '2011-12-09 22:09:32'
+    slug: helsingborg
+  Team_463:
+    official_name: 'Fudbalski Klub Rabotnički Skopje'
+    name: Rabotnicki
+    nickname: Rabotnicki
+    logo: Rabotnicki_65.png
+    initials: RAB
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:45'
+    updated_at: '2011-12-09 22:09:33'
+    slug: rabotnicki
+  Team_464:
+    official_name: 'Football Club Differdange 03'
+    name: Differdange
+    nickname: Differdange
+    logo: differdange_65x65.png
+    initials: DIF
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:45'
+    updated_at: '2011-12-09 22:09:33'
+    slug: differdange
+  Team_465:
+    official_name: 'Bursaspor Kulübü Derneği'
+    name: Bursaspor
+    nickname: Bursaspor
+    logo: Bursaspor-65.png
+    initials: BUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:45'
+    updated_at: '2011-12-09 22:09:33'
+    slug: bursaspor
+  Team_466:
+    official_name: 'Beşiktaş Jimnastik Kulübü'
+    name: Besiktas
+    nickname: Besiktas
+    logo: Besiktas-65.png
+    initials: BES
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:52:45'
+    updated_at: '2011-12-09 22:09:33'
+    slug: besiktas
+  Team_467:
+    official_name: 'Club de Fútbol Monterrey'
+    name: Monterrey
+    nickname: Monterrey
+    logo: Monterrey_65.png
+    initials: MON
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:53:17'
+    updated_at: '2011-12-09 22:09:11'
+    slug: monterrey
+  Team_468:
+    official_name: 'Al Sadd Sports Club'
+    name: 'Al Sadd '
+    nickname: 'Al Sadd '
+    logo: AlSaad_65.png
+    initials: SAD
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:53:17'
+    updated_at: '2011-12-09 22:09:12'
+    slug: al-sadd
+  Team_469:
+    official_name: 'Auckland City Football Club'
+    name: 'Auckland City'
+    nickname: 'Auckland City'
+    logo: AucklandCity_65.png
+    initials: AUC
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:53:17'
+    updated_at: '2011-12-09 22:09:12'
+    slug: auckland-city
+  Team_470:
+    official_name: 'Espérance Sportive de Tunis'
+    name: Espérance
+    nickname: Espérance
+    logo: esperance_65.png
+    initials: ESP
+    description: ''
+    is_active: false
+    created_at: '2011-12-04 04:53:17'
+    updated_at: '2011-12-09 22:09:12'
+    slug: esperance
+  Team_471:
+    official_name: 'Holanda Esporte Clube'
+    name: Holanda-AM
+    nickname: 'Laranja Mecânica'
+    logo: holandaam_65.png
+    initials: HOL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:14'
+    updated_at: '2011-12-09 21:58:43'
+    slug: holanda-am
+  Team_472:
+    official_name: 'Penarol Atlético Clube'
+    name: Penarol-AM
+    nickname: Penarol-AM
+    logo: penarolam_65.png
+    initials: PEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:43'
+    slug: penarol-am
+  Team_473:
+    official_name: 'Princesa do Solimões Esporte Clube'
+    name: 'Princesa do Solimões'
+    nickname: 'Princesa do Solimões'
+    logo: PrincesadoSolimoes_65.png
+    initials: PSO
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:43'
+    slug: princesa-do-solimoes
+  Team_474:
+    official_name: 'Operário Esporte Clube'
+    name: Operário-AM
+    nickname: Operário-AM
+    logo: operarioam65.png
+    initials: OPE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:43'
+    slug: operario-am
+  Team_475:
+    official_name: 'Centro de Desenvolvimento Comunitário Manicoré'
+    name: 'CDC Manicoré'
+    nickname: 'Águia da Floresta'
+    logo: cdc_manicore_65.png
+    initials: CDC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:43'
+    slug: cdc-manicore
+  Team_476:
+    official_name: 'Esporte Clube Iranduba da Amazônia'
+    name: Iranduba
+    nickname: Alviverde
+    logo: iranduba_65.png
+    initials: IRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:44'
+    slug: iranduba
+  Team_477:
+    official_name: 'Nacional Futebol Clube'
+    name: Nacional-AM
+    nickname: Nacional-AM
+    logo: nacional-am65.png
+    initials: NAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:44'
+    slug: nacional-am
+  Team_478:
+    official_name: 'Atlético Rio Negro Clube (Manaus)'
+    name: 'Rio Negro'
+    nickname: 'Rio Negro'
+    logo: rionegro_65.png
+    initials: RNE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:44'
+    slug: rio-negro
+  Team_479:
+    official_name: 'Nacional Fast Clube'
+    name: Fast
+    nickname: Fast
+    logo: fast_65x65.png
+    initials: FAS
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 21:46:15'
+    updated_at: '2011-12-09 21:58:44'
+    slug: fast
+  Team_480:
+    official_name: 'Bologna Football Club 1909'
+    name: Bologna
+    nickname: Bologna
+    logo: bologna_65x65.png
+    initials: BOL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: bologna
+  Team_481:
+    official_name: 'ACF Fiorentina'
+    name: Fiorentina
+    nickname: Fiorentina
+    logo: fiorentina_65x65.png
+    initials: FIO
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: fiorentina
+  Team_482:
+    official_name: 'Calcio Catania'
+    name: Catania
+    nickname: Catania
+    logo: catania_65x65.png
+    initials: CAT
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: catania
+  Team_483:
+    official_name: 'Genoa Cricket and Football Club'
+    name: Genoa
+    nickname: Genoa
+    logo: genoa_65x65.png
+    initials: GEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: genoa
+  Team_484:
+    official_name: 'Juventus Football Club'
+    name: Juventus
+    nickname: Juventus
+    logo: juventus_65x65.png
+    initials: JUV
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: juventus
+  Team_485:
+    official_name: 'Associazione Calcio Chievo Verona'
+    name: Chievo
+    nickname: Chievo
+    logo: chievo_65x65.png
+    initials: CHI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: chievo
+  Team_486:
+    official_name: 'Associazione Calcio Cesena'
+    name: Cesena
+    nickname: Cesena
+    logo: cesena_65x65.png
+    initials: CES
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: cesena
+  Team_487:
+    official_name: 'Unione Sportiva Lecce'
+    name: Lecce
+    nickname: Lecce
+    logo: lecce_65x65.png
+    initials: LEC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:03'
+    updated_at: '2011-12-09 22:08:03'
+    slug: lecce
+  Team_488:
+    official_name: 'Cagliari Calcio'
+    name: Cagliari
+    nickname: Cagliari
+    logo: cagliari_65x65.png
+    initials: CGL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:04'
+    updated_at: '2011-12-09 22:08:04'
+    slug: cagliari
+  Team_489:
+    official_name: 'Unione Sportiva Città di Palermo'
+    name: Palermo
+    nickname: Palermo
+    logo: palermo_65x65.png
+    initials: PAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:04'
+    updated_at: '2011-12-09 22:08:04'
+    slug: palermo
+  Team_490:
+    official_name: 'Parma Football Club'
+    name: Parma
+    nickname: Parma
+    logo: parma_65x65.png
+    initials: PAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:04'
+    updated_at: '2011-12-09 22:08:04'
+    slug: parma
+  Team_491:
+    official_name: 'Atalanta Bergamasca Calcio'
+    name: Atalanta
+    nickname: Atalanta
+    logo: atalanta_65.png
+    initials: ATA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:04'
+    updated_at: '2011-12-09 22:08:04'
+    slug: atalanta
+  Team_492:
+    official_name: 'Associazione Calcio Siena'
+    name: Siena
+    nickname: Siena
+    logo: Siena_65.png
+    initials: SIE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:04'
+    updated_at: '2011-12-09 22:08:04'
+    slug: siena
+  Team_493:
+    official_name: 'Novara Calcio'
+    name: Novara
+    nickname: Novara
+    logo: novara_65.png
+    initials: NOV
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:08:05'
+    updated_at: '2011-12-09 22:08:05'
+    slug: novara
+  Team_494:
+    official_name: 'Seleção Egípcia de Futebol'
+    name: Egito
+    nickname: Egito
+    logo: egito-escudo-65.png
+    initials: EGI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:32'
+    updated_at: '2011-12-09 22:12:32'
+    slug: egito
+  Team_495:
+    official_name: 'Seleção Marroquina de Futebol'
+    name: Marrocos
+    nickname: Marrocos
+    logo: marrocos65.png
+    initials: MAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:32'
+    updated_at: '2011-12-09 22:12:32'
+    slug: marrocos
+  Team_496:
+    official_name: 'Seleção Tunisina de Futebol'
+    name: Tunísia
+    nickname: Tunísia
+    logo: tunisia65.png
+    initials: TUN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:32'
+    updated_at: '2011-12-09 22:12:32'
+    slug: tunisia
+  Team_497:
+    official_name: 'Seleção Argelina de Futebol'
+    name: Argélia
+    nickname: Argélia
+    logo: argelia65.png
+    initials: AGL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:33'
+    updated_at: '2011-12-09 22:12:33'
+    slug: argelia
+  Team_498:
+    official_name: 'Seleção Senegalesa de Futebol'
+    name: Senegal
+    nickname: Senegal
+    logo: senegal-65.png
+    initials: SEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:33'
+    updated_at: '2011-12-09 22:12:33'
+    slug: senegal
+  Team_499:
+    official_name: 'Seleção Angolana de Futebol'
+    name: Angola
+    nickname: Angola
+    logo: angola-65.png
+    initials: ANG
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:33'
+    updated_at: '2011-12-09 22:12:33'
+    slug: angola
+  Team_500:
+    official_name: 'Seleção Marfinense de Futebol'
+    name: 'Costa do Marfim'
+    nickname: 'Costa do Marfim'
+    logo: costa_do_marfim65.png
+    initials: COS
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:33'
+    updated_at: '2011-12-09 22:12:33'
+    slug: costa-do-marfim
+  Team_501:
+    official_name: 'Seleção Togolesa de Futebol'
+    name: Togo
+    nickname: Togo
+    logo: togo65.png
+    initials: TOG
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:33'
+    updated_at: '2011-12-09 22:12:33'
+    slug: togo
+  Team_502:
+    official_name: 'Seleção Sul-Africana de Futebol'
+    name: 'África do Sul'
+    nickname: 'África do Sul'
+    logo: africadosul65.png
+    initials: AFS
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:33'
+    updated_at: '2011-12-09 22:12:33'
+    slug: africa-do-sul
+  Team_503:
+    official_name: 'Seleção Ganesa de Futebol'
+    name: Gana
+    nickname: Gana
+    logo: gana_65.png
+    initials: GAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: gana
+  Team_504:
+    official_name: 'Seleção Camaronesa de Futebol'
+    name: Camarões
+    nickname: Camarões
+    logo: camaroes-65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: camaroes
+  Team_505:
+    official_name: 'Seleção Nigeriana de Futebol'
+    name: Nigéria
+    nickname: Nigéria
+    logo: nigeria_65.png
+    initials: NIG
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: nigeria
+  Team_506:
+    official_name: 'Seleção Zimbabueana de Futebol'
+    name: Zimbábue
+    nickname: Zimbábue
+    logo: Zimbabue65.png
+    initials: ZIM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: zimbabue
+  Team_507:
+    official_name: 'Seleção Tanzaniana de Futebol'
+    name: Tanzânia
+    nickname: Tanzânia
+    logo: tanzania-65.png
+    initials: TAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: tanzania
+  Team_508:
+    official_name: 'Seleção Congolesa de Futebol'
+    name: Congo
+    nickname: Congo
+    logo: congo-65.png
+    initials: CON
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: congo
+  Team_509:
+    official_name: 'Seleção Ruandesa de Futebol'
+    name: Ruanda
+    nickname: Ruanda
+    logo: ruanda-65.png
+    initials: RUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: ruanda
+  Team_510:
+    official_name: 'Federação Burquinense de Futebol'
+    name: 'Burkina Faso'
+    nickname: 'Burkina Faso'
+    logo: burkina-faso-65.png
+    initials: BKF
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:34'
+    updated_at: '2011-12-09 22:12:34'
+    slug: burkina-faso
+  Team_511:
+    official_name: 'Seleção Guinéu-Equatoriana'
+    name: 'Guiné Equatorial'
+    nickname: 'Guiné Equatorial'
+    logo: guine_65.png
+    initials: GEQ
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:35'
+    updated_at: '2011-12-09 22:12:35'
+    slug: guine-equatorial
+  Team_512:
+    official_name: 'Seleção Malinesa de Futebol'
+    name: Mali
+    nickname: Mali
+    logo: mali-65.png
+    initials: MAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:35'
+    updated_at: '2011-12-09 22:12:35'
+    slug: mali
+  Team_513:
+    official_name: 'Federação Seichelense de Futebol'
+    name: Seychelles
+    nickname: Seychelles
+    logo: seychelles_65.png
+    initials: SEY
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:35'
+    updated_at: '2011-12-09 22:12:35'
+    slug: seychelles
+  Team_514:
+    official_name: 'Federação Lesota de Futebol'
+    name: Lesoto
+    nickname: Lesoto
+    logo: lesoto-65.png
+    initials: LES
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:35'
+    updated_at: '2011-12-09 22:12:35'
+    slug: lesoto
+  Team_515:
+    official_name: 'Federação Burundinesa de Futebol'
+    name: Burundi
+    nickname: Burundi
+    logo: burundi-65.png
+    initials: BUR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:35'
+    updated_at: '2011-12-09 22:12:35'
+    slug: burundi
+  Team_516:
+    official_name: 'Federação Santomense de Futebol'
+    name: 'São Tomé e Príncipe'
+    nickname: 'São Tomé e Príncipe'
+    logo: saotome-principe-65.png
+    initials: STP
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:35'
+    updated_at: '2011-12-09 22:12:35'
+    slug: sao-tome-e-principe
+  Team_517:
+    official_name: 'Federação Chadiana de Futebol'
+    name: Chade
+    nickname: Chade
+    logo: chade-65.png
+    initials: CHA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: chade
+  Team_518:
+    official_name: 'Federação da Eritreia'
+    name: Eritreia
+    nickname: Eritreia
+    logo: Eritreia_65.png
+    initials: ERI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: eritreia
+  Team_519:
+    official_name: 'Federação Suazi de Futebol'
+    name: Suazilândia
+    nickname: Suazilândia
+    logo: Suazilandia_65.png
+    initials: SUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: suazilandia
+  Team_520:
+    official_name: 'Confederação da República Democrática do Congo de Futebol'
+    name: 'RD Congo'
+    nickname: 'RD Congo'
+    logo: rep_Congo_65.png
+    initials: RDC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: rd-congo
+  Team_521:
+    official_name: 'Confederação Djibutiana de Futebol'
+    name: Djibuti
+    nickname: Djibuti
+    logo: Djibuti_65.png
+    initials: DJI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: djibuti
+  Team_522:
+    official_name: 'Federação Namibiana de Futebol'
+    name: Namíbia
+    nickname: Namíbia
+    logo: namibia_65.png
+    initials: NAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: namibia
+  Team_523:
+    official_name: 'Federação Queniana de Futebol'
+    name: Quênia
+    nickname: Quênia
+    logo: quenia_65.png
+    initials: QUE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: quenia
+  Team_524:
+    official_name: 'Federação Somali de Futebol'
+    name: Somália
+    nickname: Somália
+    logo: somalia_65.png
+    initials: SOM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:36'
+    updated_at: '2011-12-09 22:12:36'
+    slug: somalia
+  Team_525:
+    official_name: 'Federação Etíope de Futebol'
+    name: Etiópia
+    nickname: Etiópia
+    logo: etiopia_65.png
+    initials: ETI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: etiopia
+  Team_526:
+    official_name: 'Federação Comorense de Futebol'
+    name: Comores
+    nickname: Comores
+    logo: Comores_65.png
+    initials: COM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: comores
+  Team_527:
+    official_name: 'Federação Moçambicana de Futebol'
+    name: Moçambique
+    nickname: Moçambique
+    logo: Mocambique_65.png
+    initials: MOC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: mocambique
+  Team_528:
+    official_name: 'Federação Mauriciana de Futebol'
+    name: 'Ilhas Maurício'
+    nickname: 'Ilhas Maurício'
+    logo: IlhasMauricio_65.png
+    initials: IMA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: ilhas-mauricio
+  Team_529:
+    official_name: 'Federação Liberiana de Futebol'
+    name: Libéria
+    nickname: Libéria
+    logo: Liberia65.png
+    initials: LBR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: liberia
+  Team_530:
+    official_name: 'Confederação Malgaxe de Futebol'
+    name: Madagascar
+    nickname: Madagascar
+    logo: madagascar65.png
+    initials: MAD
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: madagascar
+  Team_531:
+    official_name: 'Confederação Guineense de Futebol'
+    name: Guiné-Bissau
+    nickname: Guiné-Bissau
+    logo: guineBissau65.png
+    initials: GBS
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:37'
+    updated_at: '2011-12-09 22:12:37'
+    slug: guine-bissau
+  Team_532:
+    official_name: 'Federação Beninense de Futebol'
+    name: Benin
+    nickname: Benin
+    logo: benin65.png
+    initials: BEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: benin
+  Team_533:
+    official_name: 'Federação Botsuanense de Futebol'
+    name: Botsuana
+    nickname: Botsuana
+    logo: botsuana65.png
+    initials: BOT
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: botsuana
+  Team_534:
+    official_name: 'Federação Cabo-Verdiana de Futebol'
+    name: 'Cabo Verde'
+    nickname: 'Cabo Verde'
+    logo: caboverde65.png
+    initials: CAB
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: cabo-verde
+  Team_535:
+    official_name: 'Federação da República Centro-Africana de Futebol'
+    name: 'República Centro-Africana'
+    nickname: 'República Centro-Africana'
+    logo: RepublicaCentroAfricana65.png
+    initials: RCA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: republica-centro-africana
+  Team_536:
+    official_name: 'Federação Gabonense de Futebol'
+    name: Gabão
+    nickname: Gabão
+    logo: gabao65.png
+    initials: GAB
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: gabao
+  Team_537:
+    official_name: 'Federação Gambiana de Futebol'
+    name: Gâmbia
+    nickname: Gâmbia
+    logo: gambia65.png
+    initials: GAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: gambia
+  Team_538:
+    official_name: 'Federação Guineana de Futebol'
+    name: Guiné
+    nickname: Guiné
+    logo: guine65.png
+    initials: GUI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: guine
+  Team_539:
+    official_name: 'Federação Líbia de Futebol'
+    name: Líbia
+    nickname: Líbia
+    logo: Libia65.png
+    initials: LIB
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: libia
+  Team_540:
+    official_name: 'Federação Malauiana de Futebol'
+    name: Malaui
+    nickname: Malaui
+    logo: malaui65.png
+    initials: MLU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:38'
+    updated_at: '2011-12-09 22:12:38'
+    slug: malaui
+  Team_541:
+    official_name: 'Federação Nigerina de Futebol'
+    name: Níger
+    nickname: Níger
+    logo: niger65.png
+    initials: NGR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:39'
+    updated_at: '2011-12-09 22:12:39'
+    slug: niger
+  Team_542:
+    official_name: 'Federação Serra-Leonesa de Futebol'
+    name: 'Serra Leoa'
+    nickname: 'Serra Leoa'
+    logo: SerraLeoa65.png
+    initials: SLE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:39'
+    updated_at: '2011-12-09 22:12:39'
+    slug: serra-leoa
+  Team_543:
+    official_name: 'Federação Sudanesa de Futebol'
+    name: Sudão
+    nickname: Sudão
+    logo: sudao65.png
+    initials: SUD
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:39'
+    updated_at: '2011-12-09 22:12:39'
+    slug: sudao
+  Team_544:
+    official_name: 'Federação Ugandense de Futebol'
+    name: Uganda
+    nickname: Uganda
+    logo: uganda-65.png
+    initials: UGA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:39'
+    updated_at: '2011-12-09 22:12:39'
+    slug: uganda
+  Team_545:
+    official_name: 'Federação Zambiana de Futebol'
+    name: Zâmbia
+    nickname: Zâmbia
+    logo: zambia65.png
+    initials: ZAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:12:39'
+    updated_at: '2011-12-09 22:12:39'
+    slug: zambia
+  Team_546:
+    official_name: 'Centro Esportivo Nova Esperança'
+    name: Cene
+    nickname: Cene
+    logo: cene-MS_65.png
+    initials: CEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:13:59'
+    updated_at: '2011-12-09 22:13:59'
+    slug: cene
+  Team_547:
+    official_name: 'Sociedade Esportiva Recreativa Chapadão'
+    name: Chapadão
+    nickname: Chapadão
+    logo: chapadao_65.png
+    initials: CHA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:13:59'
+    updated_at: '2011-12-09 22:13:59'
+    slug: chapadao
+  Team_548:
+    official_name: 'Esporte Clube Águia Negra'
+    name: 'Águia Negra'
+    nickname: 'Águia Negra'
+    logo: aguiaNegra_MatoGrossodoSul65.png
+    initials: AGN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:13:59'
+    updated_at: '2011-12-09 22:13:59'
+    slug: aguia-negra
+  Team_549:
+    official_name: 'Saad Esporte Clube'
+    name: 'MS Saad'
+    nickname: 'MS Saad'
+    logo: saad_65.png
+    initials: SAA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:13:59'
+    updated_at: '2011-12-09 22:13:59'
+    slug: ms-saad
+  Team_550:
+    official_name: 'Ivinhema Futebol Clube'
+    name: Ivinhema
+    nickname: Ivinhema
+    logo: ivinhema-65.png
+    initials: IVI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: ivinhema
+  Team_551:
+    official_name: 'Misto Esporte Clube'
+    name: Misto
+    nickname: Misto
+    logo: mec_65.png
+    initials: MIS
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: misto
+  Team_552:
+    official_name: 'Clube Esportivo Naviraiense'
+    name: Naviraiense
+    nickname: Naviraiense
+    logo: naviraiense_65.png
+    initials: NAV
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: naviraiense
+  Team_553:
+    official_name: 'Aquidauanense Futebol Clube'
+    name: Aquidauanense
+    nickname: Aquidauanense
+    logo: Aquidauanense-65.png
+    initials: AQU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: aquidauanense
+  Team_554:
+    official_name: 'Clube Atlético Mundo Novo'
+    name: 'Mundo Novo'
+    nickname: 'Mundo Novo'
+    logo: mundonovo_65.png
+    initials: MUN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: mundo-novo
+  Team_555:
+    official_name: 'Clube Recreativo Desportivo 7 de Setembro'
+    name: 'Sete de Setembro'
+    nickname: 'Sete de Setembro'
+    logo: SetedeSetembro_rep_65.png
+    initials: SET
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: sete-de-setembro
+  Team_556:
+    official_name: 'Itaporã Futebol Clube'
+    name: Itaporã
+    nickname: Itaporã
+    logo: itapora_65.png
+    initials: ITA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: itapora
+  Team_557:
+    official_name: 'Maracaju Atlético Clube'
+    name: Maracaju
+    nickname: Maracaju
+    logo: maracaju_MatoGrossodoSul65.png
+    initials: MAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: maracaju
+  Team_558:
+    official_name: 'Associação Esportiva Colorado'
+    name: Colorado-MS
+    nickname: Colorado-MS
+    logo: colorado_ms_65.png
+    initials: COL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:00'
+    updated_at: '2011-12-09 22:14:00'
+    slug: colorado-ms
+  Team_559:
+    official_name: 'Esporte Clube Comercial'
+    name: Comercial-MS
+    nickname: Comercial-MS
+    logo: comercialms_65.png
+    initials: COM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:14:01'
+    updated_at: '2011-12-09 22:14:01'
+    slug: comercial-ms
+  Team_560:
+    official_name: 'Clube Atlético do Porto'
+    name: Porto-PE
+    nickname: Porto-PE
+    logo: porto-pe65.png
+    initials: POR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:45'
+    updated_at: '2011-12-09 22:17:45'
+    slug: porto-pe
+  Team_561:
+    official_name: 'Araripina Futebol Clube'
+    name: Araripina
+    nickname: 'Bode do Araripe'
+    logo: araripina_65x65.png
+    initials: ARA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:45'
+    updated_at: '2011-12-09 22:17:45'
+    slug: araripina
+  Team_562:
+    official_name: 'Sociedade Esportiva Ypiranga Futebol Clube'
+    name: Ypiranga-PE
+    nickname: Ypiranga-PE
+    logo: ypiranga_65x65.png
+    initials: YPI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:45'
+    updated_at: '2011-12-09 22:17:45'
+    slug: ypiranga-pe
+  Team_563:
+    official_name: 'Petrolina Social Futebol Clube'
+    name: Petrolina
+    nickname: Petrolina
+    logo: petrolina_65x65.png
+    initials: PET
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:45'
+    updated_at: '2011-12-09 22:17:45'
+    slug: petrolina
+  Team_564:
+    official_name: 'Serra Talhada Futebol Clube'
+    name: 'Serra Talhada'
+    nickname: 'Serra Talhada'
+    logo: Serratalhada_65.png
+    initials: STL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:46'
+    updated_at: '2011-12-09 22:17:46'
+    slug: serra-talhada
+  Team_565:
+    official_name: 'Belo Jardim Futebol Clube'
+    name: 'Belo Jardim'
+    nickname: 'Belo Jardim'
+    logo: belojardim_65.png
+    initials: BJD
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:46'
+    updated_at: '2011-12-09 22:17:46'
+    slug: belo-jardim
+  Team_566:
+    official_name: 'Santa Cruz Futebol Clube'
+    name: 'Santa Cruz'
+    nickname: 'Santa Cruz'
+    logo: santa_cruz_65x65.png
+    initials: STC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:46'
+    updated_at: '2011-12-09 22:17:46'
+    slug: santa-cruz
+  Team_567:
+    official_name: 'Central Sport Club'
+    name: Central
+    nickname: Central
+    logo: central_65x65.png
+    initials: CEN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:17:46'
+    updated_at: '2011-12-09 22:17:46'
+    slug: central
+  Team_568:
+    official_name: 'Guaratinguetá Futebol Ltda.'
+    name: Guaratinguetá
+    nickname: Guaratinguetá
+    logo: Guaratingueta_65.png
+    initials: GTA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:11'
+    updated_at: '2011-12-09 22:18:11'
+    slug: guaratingueta
+  Team_569:
+    official_name: 'Sousa Esporte Clube'
+    name: Sousa
+    nickname: Sousa
+    logo: sousa_65.png
+    initials: SOU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:55'
+    updated_at: '2011-12-09 22:18:55'
+    slug: sousa
+  Team_570:
+    official_name: 'Centro Sportivo Paraibano'
+    name: CSP
+    nickname: CSP
+    logo: CSP_pb_65.png
+    initials: CSP
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:55'
+    updated_at: '2011-12-09 22:18:55'
+    slug: csp
+  Team_571:
+    official_name: 'Esporte Clube de Patos'
+    name: Esporte
+    nickname: Esporte
+    logo: esporte_patos_65.png
+    initials: ESP
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:55'
+    updated_at: '2011-12-09 22:18:55'
+    slug: esporte
+  Team_572:
+    official_name: 'Nacional Atlético Clube de Patos'
+    name: 'Nacional de Patos'
+    nickname: 'Nacional de Patos'
+    logo: Nac_Patos_65.png
+    initials: NAP
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:55'
+    updated_at: '2011-12-09 22:18:55'
+    slug: nacional-de-patos
+  Team_573:
+    official_name: 'Paraíba Esporte Clube'
+    name: Paraíba
+    nickname: Paraíba
+    logo: paraiba_65.png
+    initials: PRB
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:55'
+    updated_at: '2011-12-09 22:18:55'
+    slug: paraiba
+  Team_574:
+    official_name: 'Esporte Clube Flamengo Paraibano'
+    name: Flamengo-PB
+    nickname: Flamengo-PB
+    logo: flamengopi_65_.png
+    initials: FPB
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:56'
+    updated_at: '2011-12-09 22:18:56'
+    slug: flamengo-pb
+  Team_575:
+    official_name: 'Treze Futebol Clube'
+    name: Treze
+    nickname: Treze
+    logo: treze_65x65.png
+    initials: TRZ
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:56'
+    updated_at: '2011-12-09 22:18:56'
+    slug: treze
+  Team_576:
+    official_name: 'Campinense Clube'
+    name: Campinense
+    nickname: Campinense
+    logo: Campinense65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:56'
+    updated_at: '2011-12-09 22:18:56'
+    slug: campinense
+  Team_577:
+    official_name: 'Auto Esporte Clube'
+    name: 'Auto Esporte-PB'
+    nickname: 'Auto Esporte-PB'
+    logo: autoesporte_65.png
+    initials: AUT
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:18:56'
+    updated_at: '2011-12-09 22:18:56'
+    slug: auto-esporte-pb
+  Team_578:
+    official_name: 'Esporte Clube Democrata'
+    name: 'Democrata GV'
+    nickname: 'Democrata GV'
+    logo: democrata_65x65.png
+    initials: DEM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:45'
+    updated_at: '2011-12-09 22:19:45'
+    slug: democrata-gv
+  Team_579:
+    official_name: 'Tupi Foot Ball Club'
+    name: Tupi-MG
+    nickname: Tupi-MG
+    logo: tupi_65x65.png
+    initials: TUP
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:45'
+    updated_at: '2011-12-09 22:19:45'
+    slug: tupi-mg
+  Team_580:
+    official_name: 'América Futebol Clube de Teófilo Otoni'
+    name: 'América TO'
+    nickname: 'América TO'
+    logo: america_to_65x65.png
+    initials: ATO
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:45'
+    updated_at: '2011-12-09 22:19:45'
+    slug: america-to
+  Team_581:
+    official_name: 'Guarani Esporte Clube'
+    name: 'Guarani de Juazeiro'
+    nickname: 'Guarani de Juazeiro'
+    logo: Guarani_65x65.png
+    initials: GJU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:46'
+    updated_at: '2011-12-09 22:20:39'
+    slug: guarani-mg
+  Team_582:
+    official_name: 'Associação Atlética Caldense'
+    name: Caldense
+    nickname: Caldense
+    logo: caldense_65x65.png
+    initials: CAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:46'
+    updated_at: '2011-12-09 22:19:46'
+    slug: caldense
+  Team_583:
+    official_name: 'Nacional Esporte Clube'
+    name: Nacional-MG
+    nickname: Nacional-MG
+    logo: nacional_65.png
+    initials: NAC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:46'
+    updated_at: '2011-12-09 22:19:46'
+    slug: nacional-mg
+  Team_584:
+    official_name: 'Uberaba Sport Clube'
+    name: Uberaba
+    nickname: Uberaba
+    logo: uberaba_65x65.png
+    initials: UBE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:46'
+    updated_at: '2011-12-09 22:19:46'
+    slug: uberaba
+  Team_585:
+    official_name: 'Villa Nova Atlético Clube'
+    name: 'Villa Nova-MG'
+    nickname: 'Villa Nova-MG'
+    logo: villa_nova_65x65.png
+    initials: VIL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:46'
+    updated_at: '2011-12-09 22:19:46'
+    slug: villa-nova-mg
+  Team_586:
+    official_name: 'Sorriso Esporte Clube'
+    name: Sorriso
+    nickname: Sorriso
+    logo: sorriso_65.png
+    initials: SOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: sorriso
+  Team_587:
+    official_name: 'União Esporte Clube de Rondonópolis'
+    name: 'União Rondonópolis'
+    nickname: 'União Rondonópolis'
+    logo: uniao_65x65.png
+    initials: UNI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: uniao-rondonopolis
+  Team_588:
+    official_name: 'Barra do Garças Futebol Clube'
+    name: 'Barra do Garças'
+    nickname: 'Barra do Garças'
+    logo: barradograca_65.png
+    initials: BAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: barra-do-garcas
+  Team_589:
+    official_name: 'Cuiabá Esporte Clube'
+    name: Cuiabá
+    nickname: Cuiabá
+    logo: cuiaba65_.png
+    initials: CUI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: cuiaba
+  Team_590:
+    official_name: 'Sociedade Esportiva Vila Aurora'
+    name: 'Vila Aurora'
+    nickname: 'Vila Aurora'
+    logo: vilaaurora_65.png
+    initials: VAR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: vila-aurora
+  Team_591:
+    official_name: 'Luverdense Esporte Clube'
+    name: Luverdense
+    nickname: Luverdense
+    logo: luverdense65.png
+    initials: LUV
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: luverdense
+  Team_592:
+    official_name: 'Clube Recreativo Atlético Campoverdense'
+    name: Crac-MT
+    nickname: CRAC-MT
+    logo: crac_65.png
+    initials: CRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: crac-mt
+  Team_593:
+    official_name: 'Rondonópolis Esporte Clube'
+    name: Rondonópolis
+    nickname: Rondonópolis
+    logo: Rondonopolis65.png
+    initials: REC
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: rondonopolis
+  Team_594:
+    official_name: 'Palmeiras Esporte Clube'
+    name: Palmeiras-MT
+    nickname: Palmeiras-MT
+    logo: palmeiras_mt_65.png
+    initials: PAL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:55'
+    updated_at: '2011-12-09 22:19:55'
+    slug: palmeiras-mt
+  Team_595:
+    official_name: 'Mixto Esporte Clube'
+    name: Mixto
+    nickname: Mixto
+    logo: mixto_65.png
+    initials: MIX
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:19:56'
+    updated_at: '2011-12-09 22:19:56'
+    slug: mixto
+  Team_596:
+    official_name: 'Clube Recreativo e Atlético Catalano'
+    name: Crac-GO
+    nickname: CRAC-GO
+    logo: crac_65x65.png
+    initials: CRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:13'
+    updated_at: '2011-12-09 22:20:13'
+    slug: crac-go
+  Team_597:
+    official_name: 'Morrinhos Futebol Clube'
+    name: Morrinhos
+    nickname: Morrinhos
+    logo: morrinhos_65x65.png
+    initials: MOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:14'
+    updated_at: '2011-12-09 22:20:14'
+    slug: morrinhos
+  Team_598:
+    official_name: 'Associação Atlética Aparecidense'
+    name: Aparecidense
+    nickname: Aparecidense
+    logo: aparecidense_65x65.png
+    initials: APA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:14'
+    updated_at: '2011-12-09 22:20:14'
+    slug: aparecidense
+  Team_599:
+    official_name: 'Goianésia Esporte Clube'
+    name: Goianésia
+    nickname: Goianésia
+    logo: goianesia_65x65.png
+    initials: GNS
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:14'
+    updated_at: '2011-12-09 22:20:14'
+    slug: goianesia
+  Team_600:
+    official_name: 'Esporte Clube Rio Verde'
+    name: 'Rio Verde-GO'
+    nickname: 'Rio Verde-GO'
+    logo: riobranco-go-65.png
+    initials: RVD
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:14'
+    updated_at: '2011-12-09 22:20:14'
+    slug: rio-verde-go
+  Team_601:
+    official_name: 'Associação Atlética Anapolina'
+    name: Anapolina
+    nickname: Anapolina
+    logo: anapolina_65x65.png
+    initials: ANA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:14'
+    updated_at: '2011-12-09 22:20:14'
+    slug: anapolina
+  Team_602:
+    official_name: 'Itumbiara Esporte Clube'
+    name: Itumbiara
+    nickname: Itumbiara
+    logo: itumbiara_01_65.png
+    initials: ITB
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:14'
+    updated_at: '2011-12-09 22:20:14'
+    slug: itumbiara
+  Team_603:
+    official_name: 'Esporte Clube Pelotas'
+    name: Pelotas
+    nickname: Pelotas
+    logo: pelotas_65x65.png
+    initials: PEL
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:22'
+    updated_at: '2011-12-09 22:20:22'
+    slug: pelotas
+  Team_604:
+    official_name: 'Canoas Sport Club'
+    name: Canoas
+    nickname: Canoas
+    logo: escudo_Canoas_65.png
+    initials: CAN
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:22'
+    updated_at: '2011-12-09 22:20:22'
+    slug: canoas
+  Team_605:
+    official_name: 'Veranópolis Esporte Clube Recreativo e Cultural'
+    name: Veranópolis
+    nickname: Veranópolis
+    logo: Veranopolis_65x65.png
+    initials: VER
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:22'
+    updated_at: '2011-12-09 22:20:22'
+    slug: veranopolis
+  Team_606:
+    official_name: 'Ypiranga Futebol Clube'
+    name: Ypiranga-RS
+    nickname: Ypiranga-RS
+    logo: ypiranga-rs-65.png
+    initials: YPI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: ypiranga-rs
+  Team_607:
+    official_name: 'Cerâmica Atlético Clube'
+    name: Cerâmica
+    nickname: Cerâmica
+    logo: ceramica_65.png
+    initials: CER
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: ceramica
+  Team_608:
+    official_name: 'Futebol Clube Santa Cruz'
+    name: 'Santa Cruz-RS'
+    nickname: 'Santa Cruz-RS'
+    logo: santa_cruz_65x65.png
+    initials: STA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: santa-cruz-rs
+  Team_609:
+    official_name: 'Esporte Clube São Luiz'
+    name: 'São Luiz'
+    nickname: 'São Luiz'
+    logo: sao_luiz_65x65.png
+    initials: SLU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: sao-luiz
+  Team_610:
+    official_name: 'Esporte Clube São José'
+    name: 'São José-RS'
+    nickname: 'São José-RS'
+    logo: sao_jose_porto_alegre_65.png
+    initials: SJO
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: sao-jose-rs
+  Team_611:
+    official_name: 'Esporte Clube Avenida'
+    name: Avenida
+    nickname: Avenida
+    logo: avenida_rs_65.png
+    initials: AVE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: avenida
+  Team_612:
+    official_name: 'Esporte Clube Juventude'
+    name: Juventude
+    nickname: Juventude
+    logo: juventude65.png
+    initials: JUV
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: juventude
+  Team_613:
+    official_name: 'Clube Esportivo Lajeadense'
+    name: Lajeadense
+    nickname: Lajeadense
+    logo: Lajeadense-RSBR1_65.png
+    initials: LAJ
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:23'
+    updated_at: '2011-12-09 22:20:23'
+    slug: lajeadense
+  Team_614:
+    official_name: 'Esporte Clube Cruzeiro'
+    name: Cruzeiro-RS
+    nickname: Cruzeiro-RS
+    logo: CRUZEIRO-rs65.png
+    initials: CRU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:24'
+    updated_at: '2011-12-09 22:20:24'
+    slug: cruzeiro-rs
+  Team_615:
+    official_name: 'Sociedade Esportiva e Recreativa Caxias do Sul'
+    name: Caxias
+    nickname: Caxias
+    logo: caxias_65x65.png
+    initials: CAX
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:24'
+    updated_at: '2011-12-09 22:20:24'
+    slug: caxias
+  Team_616:
+    official_name: 'Esporte Clube Novo Hamburgo'
+    name: 'Novo Hamburgo'
+    nickname: 'Novo Hamburgo'
+    logo: NovoHamburgo_65x65.png
+    initials: NOV
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:24'
+    updated_at: '2011-12-09 22:20:24'
+    slug: novo-hamburgo
+  Team_617:
+    official_name: 'Crato Esporte Clube'
+    name: Crato
+    nickname: Crato
+    logo: crato_65x65.png
+    initials: CRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:39'
+    updated_at: '2011-12-09 22:20:39'
+    slug: crato
+  Team_618:
+    official_name: 'Guarany Sporting Club'
+    name: 'Guarany de Sobral'
+    nickname: 'Guarany de Sobral'
+    logo: Guarany_65x65.png
+    initials: GSO
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:39'
+    updated_at: '2011-12-09 22:20:39'
+    slug: guarany-de-sobral
+  Team_619:
+    official_name: 'Horizonte Futebol Clube'
+    name: Horizonte-CE
+    nickname: Horizonte-CE
+    logo: horizonte_65.png
+    initials: HOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:39'
+    updated_at: '2011-12-09 22:20:39'
+    slug: horizonte-ce
+  Team_620:
+    official_name: 'Itapipoca Esporte Clube'
+    name: Itapipoca
+    nickname: Itapipoca
+    logo: itapipoca_65x65.png
+    initials: ITP
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:40'
+    updated_at: '2011-12-09 22:20:40'
+    slug: itapipoca
+  Team_621:
+    official_name: 'Associação Esportiva Tiradentes'
+    name: Tiradentes
+    nickname: Tiradentes
+    logo: tiradentes_65x65.png
+    initials: TIR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:40'
+    updated_at: '2011-12-09 22:20:40'
+    slug: tiradentes
+  Team_622:
+    official_name: 'Associação Trairiense de Futebol'
+    name: Trairiense
+    nickname: Trairiense
+    logo: trairiense_65.png
+    initials: TRA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:40'
+    updated_at: '2011-12-09 22:20:40'
+    slug: trairiense
+  Team_623:
+    official_name: 'Crateús Futebol Clube'
+    name: Crateús
+    nickname: Crateús
+    logo: crateus_65.png
+    initials: CTE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:40'
+    updated_at: '2011-12-09 22:20:40'
+    slug: crateus
+  Team_624:
+    official_name: 'Ferroviário Atlético Clube'
+    name: Ferroviário
+    nickname: Ferroviário
+    logo: ferroviario_65_2.png
+    initials: FER
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:40'
+    updated_at: '2011-12-09 22:20:40'
+    slug: ferroviario
+  Team_625:
+    official_name: 'Fortaleza Esporte Clube'
+    name: Fortaleza
+    nickname: Fortaleza
+    logo: fortaleza_65x65.png
+    initials: FOR
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:40'
+    updated_at: '2011-12-09 22:20:40'
+    slug: fortaleza
+  Team_626:
+    official_name: 'Brusque Futebol Clube'
+    name: Brusque
+    nickname: Brusque
+    logo: brusque_65x65.png
+    initials: BRU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:54'
+    updated_at: '2011-12-09 22:20:54'
+    slug: brusque
+  Team_627:
+    official_name: 'Clube Atlético Hermann Aichinger'
+    name: 'Atlético Ibirama'
+    nickname: 'Atlético Ibirama'
+    logo: AtleticoIbirama-65.png
+    initials: IBI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:54'
+    updated_at: '2011-12-09 22:20:54'
+    slug: atletico-ibirama
+  Team_628:
+    official_name: 'Clube Atlético Metropolitano'
+    name: Metropolitano
+    nickname: Metropolitano
+    logo: Metropolitano_65x65.png
+    initials: MET
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:54'
+    updated_at: '2011-12-09 22:20:54'
+    slug: metropolitano
+  Team_629:
+    official_name: 'Clube Náutico Marcílio Dias'
+    name: 'Marcílio Dias'
+    nickname: 'Marcílio Dias'
+    logo: marcilio_65x65.png
+    initials: MCD
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:54'
+    updated_at: '2011-12-09 22:20:54'
+    slug: marcilio-dias
+  Team_630:
+    official_name: 'Associação Chapecoense de Futebol'
+    name: Chapecoense
+    nickname: Chapecoense
+    logo: chapecoense_65x65.png
+    initials: CHA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:54'
+    updated_at: '2011-12-09 22:20:54'
+    slug: chapecoense
+  Team_631:
+    official_name: 'Joinville Esporte Clube'
+    name: Joinville
+    nickname: Joinville
+    logo: jonville_65x65.png
+    initials: JOI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:55'
+    updated_at: '2011-12-09 22:20:55'
+    slug: joinville
+  Team_632:
+    official_name: 'Camboriú Futebol Clube'
+    name: Camboriú
+    nickname: Camboriú
+    logo: camboriuFC-65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:20:55'
+    updated_at: '2011-12-09 22:20:55'
+    slug: camboriu
+  Team_633:
+    official_name: 'Conilon Futebol Clube de Jaguaré'
+    name: Conilon
+    nickname: Conilon
+    logo: conilon_65x65.png
+    initials: CON
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:36'
+    updated_at: '2011-12-09 22:21:36'
+    slug: conilon
+  Team_634:
+    official_name: 'Camaçari Futebol Clube'
+    name: Camaçari
+    nickname: Camaçari
+    logo: camacari_65x65.png
+    initials: CAM
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: camacari
+  Team_635:
+    official_name: 'Juazeiro Social Club'
+    name: Juazeiro
+    nickname: Juazeiro
+    logo: juazeiro-65.png
+    initials: JUA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: juazeiro
+  Team_636:
+    official_name: 'Alagoinhas Atlético Clube'
+    name: Atlético-BA
+    nickname: Atlético-BA
+    logo: atletico_65x65.png
+    initials: ABA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: atletico-ba
+  Team_637:
+    official_name: 'Associação Desportiva Bahia de Feira'
+    name: 'Bahia de Feira'
+    nickname: 'Bahia de Feira'
+    logo: bahiadefeira_65x65.png
+    initials: BFE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: bahia-de-feira
+  Team_638:
+    official_name: 'Esporte Clube Primeiro Passo Vitória da Conquista'
+    name: 'Vitória da Conquista'
+    nickname: 'Vitória da Conquista'
+    logo: vitoria_da_conquista_65x65.png
+    initials: VCO
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: vitoria-da-conquista
+  Team_639:
+    official_name: 'Feirense Futebol Clube'
+    name: Feirense
+    nickname: Feirense
+    logo: feirense-65.png
+    initials: FEI
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: feirense-1
+  Team_640:
+    official_name: 'Serrano Sport Club'
+    name: Serrano-BA
+    nickname: Serrano-BA
+    logo: serrano-65.png
+    initials: SER
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: serrano-ba
+  Team_641:
+    official_name: 'Sociedade Desportiva Juazeirense'
+    name: Juazeirense
+    nickname: Juazeirense
+    logo: juazeirense-65.png
+    initials: JZE
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:49'
+    updated_at: '2011-12-09 22:21:49'
+    slug: juazeirense
+  Team_642:
+    official_name: 'Fluminense de Feira Futebol Clube'
+    name: 'Flu de Feira'
+    nickname: 'Flu de Feira'
+    logo: flu_65x65.png
+    initials: FLU
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:50'
+    updated_at: '2011-12-09 22:21:50'
+    slug: flu-de-feira
+  Team_643:
+    official_name: 'Itabuna Esporte Clube'
+    name: Itabuna
+    nickname: Itabuna
+    logo: itabuna65.png
+    initials: ITA
+    description: ''
+    is_active: false
+    created_at: '2011-12-09 22:21:50'
+    updated_at: '2011-12-09 22:21:50'
+    slug: itabuna

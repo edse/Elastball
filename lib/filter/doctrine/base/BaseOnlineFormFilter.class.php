@@ -14,12 +14,14 @@ abstract class BaseOnlineFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'user_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
+      'socket_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Socket'), 'add_empty' => true)),
       'socket_user_id' => new sfWidgetFormFilterInput(),
       'status'         => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'user_id'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'id')),
+      'socket_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Socket'), 'column' => 'id')),
       'socket_user_id' => new sfValidatorPass(array('required' => false)),
       'status'         => new sfValidatorPass(array('required' => false)),
     ));
@@ -43,6 +45,7 @@ abstract class BaseOnlineFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'             => 'Number',
       'user_id'        => 'ForeignKey',
+      'socket_id'      => 'ForeignKey',
       'socket_user_id' => 'Text',
       'status'         => 'Text',
     );

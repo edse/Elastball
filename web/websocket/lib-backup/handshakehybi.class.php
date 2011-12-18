@@ -1,6 +1,7 @@
 <?php
 require_once 'wsuser.class.php';
 require_once 'handshaker.interface.php';
+//require_once 'hybitranscoder.class.php';
 require_once "protocolhybi.class.php";
 
 /**

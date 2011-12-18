@@ -13,6 +13,7 @@ abstract class BaseGameFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'socket_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Socket'), 'add_empty' => true)),
       'date_start'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'date_end'     => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'home_user_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('HomeUser'), 'add_empty' => true)),
@@ -30,6 +31,7 @@ abstract class BaseGameFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
+      'socket_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Socket'), 'column' => 'id')),
       'date_start'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'date_end'     => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'home_user_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('HomeUser'), 'column' => 'id')),
@@ -64,6 +66,7 @@ abstract class BaseGameFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'           => 'Number',
+      'socket_id'    => 'ForeignKey',
       'date_start'   => 'Date',
       'date_end'     => 'Date',
       'home_user_id' => 'ForeignKey',

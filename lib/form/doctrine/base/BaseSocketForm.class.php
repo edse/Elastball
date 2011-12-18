@@ -16,6 +16,7 @@ abstract class BaseSocketForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'     => new sfWidgetFormInputHidden(),
+      'pid'    => new sfWidgetFormInputText(),
       'host'   => new sfWidgetFormInputText(),
       'port'   => new sfWidgetFormInputText(),
       'status' => new sfWidgetFormInputText(),
@@ -23,6 +24,7 @@ abstract class BaseSocketForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'     => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'pid'    => new sfValidatorInteger(array('required' => false)),
       'host'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'port'   => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'status' => new sfValidatorString(array('max_length' => 255, 'required' => false)),

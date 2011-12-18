@@ -16,6 +16,7 @@ abstract class BaseGameForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
+      'socket_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Socket'), 'add_empty' => true)),
       'date_start'   => new sfWidgetFormDateTime(),
       'date_end'     => new sfWidgetFormDateTime(),
       'home_user_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('HomeUser'), 'add_empty' => true)),
@@ -34,6 +35,7 @@ abstract class BaseGameForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'socket_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Socket'), 'required' => false)),
       'date_start'   => new sfValidatorDateTime(array('required' => false)),
       'date_end'     => new sfValidatorDateTime(array('required' => false)),
       'home_user_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('HomeUser'), 'required' => false)),

@@ -13,12 +13,14 @@ abstract class BaseSocketFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'pid'    => new sfWidgetFormFilterInput(),
       'host'   => new sfWidgetFormFilterInput(),
       'port'   => new sfWidgetFormFilterInput(),
       'status' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
+      'pid'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'host'   => new sfValidatorPass(array('required' => false)),
       'port'   => new sfValidatorPass(array('required' => false)),
       'status' => new sfValidatorPass(array('required' => false)),
@@ -42,6 +44,7 @@ abstract class BaseSocketFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'     => 'Number',
+      'pid'    => 'Number',
       'host'   => 'Text',
       'port'   => 'Text',
       'status' => 'Text',

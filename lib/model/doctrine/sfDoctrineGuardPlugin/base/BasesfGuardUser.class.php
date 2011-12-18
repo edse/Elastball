@@ -26,11 +26,12 @@
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
  * @property Doctrine_Collection $Tokens
- * @property Doctrine_Collection $Online
- * @property Doctrine_Collection $ChatMessages
+ * @property Doctrine_Collection $Rooms
  * @property Doctrine_Collection $HomeGames
  * @property Doctrine_Collection $AwayGames
- * @property Doctrine_Collection $GameMovements
+ * @property Doctrine_Collection $Turns
+ * @property Doctrine_Collection $Messages
+ * @property Doctrine_Collection $Online
  * @property Doctrine_Collection $Assets
  * 
  * @method string                getNickname()              Returns the current record's "nickname" value
@@ -54,11 +55,12 @@
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
  * @method Doctrine_Collection   getTokens()                Returns the current record's "Tokens" collection
- * @method Doctrine_Collection   getOnline()                Returns the current record's "Online" collection
- * @method Doctrine_Collection   getChatMessages()          Returns the current record's "ChatMessages" collection
+ * @method Doctrine_Collection   getRooms()                 Returns the current record's "Rooms" collection
  * @method Doctrine_Collection   getHomeGames()             Returns the current record's "HomeGames" collection
  * @method Doctrine_Collection   getAwayGames()             Returns the current record's "AwayGames" collection
- * @method Doctrine_Collection   getGameMovements()         Returns the current record's "GameMovements" collection
+ * @method Doctrine_Collection   getTurns()                 Returns the current record's "Turns" collection
+ * @method Doctrine_Collection   getMessages()              Returns the current record's "Messages" collection
+ * @method Doctrine_Collection   getOnline()                Returns the current record's "Online" collection
  * @method Doctrine_Collection   getAssets()                Returns the current record's "Assets" collection
  * @method sfGuardUser           setNickname()              Sets the current record's "nickname" value
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
@@ -81,11 +83,12 @@
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
  * @method sfGuardUser           setTokens()                Sets the current record's "Tokens" collection
- * @method sfGuardUser           setOnline()                Sets the current record's "Online" collection
- * @method sfGuardUser           setChatMessages()          Sets the current record's "ChatMessages" collection
+ * @method sfGuardUser           setRooms()                 Sets the current record's "Rooms" collection
  * @method sfGuardUser           setHomeGames()             Sets the current record's "HomeGames" collection
  * @method sfGuardUser           setAwayGames()             Sets the current record's "AwayGames" collection
- * @method sfGuardUser           setGameMovements()         Sets the current record's "GameMovements" collection
+ * @method sfGuardUser           setTurns()                 Sets the current record's "Turns" collection
+ * @method sfGuardUser           setMessages()              Sets the current record's "Messages" collection
+ * @method sfGuardUser           setOnline()                Sets the current record's "Online" collection
  * @method sfGuardUser           setAssets()                Sets the current record's "Assets" collection
  * 
  * @package    elastball
@@ -201,11 +204,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('Online', array(
-             'local' => 'id',
-             'foreign' => 'user_id'));
-
-        $this->hasMany('Chat as ChatMessages', array(
+        $this->hasMany('Room as Rooms', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
@@ -217,7 +216,15 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'away_user_id'));
 
-        $this->hasMany('Movement as GameMovements', array(
+        $this->hasMany('Turn as Turns', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Message as Messages', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('Online', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
