@@ -33,11 +33,15 @@
 						return;
 					}
 					log('WebSocket - status ' + socket.readyState);
-					socket.onopen = function(msg) { log("Welcome - status " + this.readyState);
+					socket.onopen = function(msg) {
+					  log("Welcome - status " + this.readyState);
+					  socket.send('✓hello➾1');
 					};
-					socket.onmessage = function(msg) { log("Received: " + msg.data);
+					socket.onmessage = function(msg) {
+					  log("Received: " + msg.data);
 					};
-					socket.onclose = function(msg) { log("Disconnected - status " + this.readyState);
+					socket.onclose = function(msg) {
+					  log("Disconnected - status " + this.readyState);
 					};
 				} catch(ex) { log(ex);
 				}
@@ -61,6 +65,7 @@
 
 			function quit() {
 				log("Goodbye!");
+        socket.send('✓bye➾1');
 				socket.close();
 				socket = null;
 			}

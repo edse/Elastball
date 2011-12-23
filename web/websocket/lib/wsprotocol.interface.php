@@ -40,4 +40,3 @@ interface WSProtocol {
 	 */
 	function close();
 }
-?>

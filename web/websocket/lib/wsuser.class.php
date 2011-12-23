@@ -12,13 +12,18 @@ class WsUser {
 	private $transcoder;
 	private $appId;
 	private $protocol;
-	
+
+  public $user_id;
+  public $socket_id;
+  public $socket_user_id;
+
 	/**
 	 * Class Constructor for the WsUser Object
 	 * 
 	 */
 	function WsUser() {
 		$this->id = uniqid();
+    $this->socket_user_id = $this->id;
 	}
 	
 	function id() {
@@ -66,4 +71,3 @@ class WsUser {
 	}
 	
 }
-?>

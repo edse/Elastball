@@ -20,7 +20,7 @@
 			var socket;
 
 			function init() {
-				var host = "ws://localhost:8088/phpwebsockets/server.php";
+				var host = "ws://localhost:8211/phpwebsockets/server.php";
 				try {
 					if('WebSocket' in window) {
 						socket = new WebSocket(host, "Foo");

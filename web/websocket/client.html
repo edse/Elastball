@@ -22,7 +22,7 @@
 			function delayInit() { setTimeout(function() { init(); }, 5000); }
 
 			function init() {
-				var host = "ws://localhost:8088/phpwebsockets/server.php";
+				var host = "ws://elastball:8224";
 				try {
 					if('WebSocket' in window) {
 						socket = new WebSocket(host);

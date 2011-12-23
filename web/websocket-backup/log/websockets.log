@@ -29,3 +29,200 @@ Resource id #30Performing the handshake
 Disconnecting Resource id #30 
 
 Resource id #30Handshake Done
+Server Started : 2011-12-17 18:27:06
+Master socket  : Resource id #16
+Listening on   : 127.0.0.1 port 8080
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Server Started : 2011-12-17 18:28:16
+Master socket  : Resource id #16
+Listening on   : elastball port 
+
+Server Started : 2011-12-17 18:28:36
+Master socket  : Resource id #16
+Listening on   : elastball port 8210
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Resource id #26 CONNECTED
+Resource id #26Performing the handshake
+Resource id #26Handshake Done
+Resource id #30 CONNECTED
+Resource id #30Performing the handshake
+Resource id #30Handshake Done
+Resource id #34 CONNECTED
+Resource id #34Performing the handshake
+Disconnecting Resource id #34 
+
+Resource id #34Handshake Done
+Resource id #39 CONNECTED
+Resource id #39Performing the handshake
+Resource id #39Handshake Done
+Disconnecting Resource id #39 
+
+Resource id #39 DISCONNECTED!Resource id #46 CONNECTED
+Resource id #46Performing the handshake
+Disconnecting Resource id #46 
+
+Resource id #46Handshake Done
+Disconnecting Resource id #30 
+
+Resource id #30Client closed DISCONNECTED!Resource id #53 CONNECTED
+Resource id #53Performing the handshake
+Resource id #53Handshake Done
+Resource id #58 CONNECTED
+Resource id #58Performing the handshake
+Disconnecting Resource id #58 
+
+Resource id #58Handshake Done
+Resource id #63 CONNECTED
+Resource id #63Performing the handshake
+Disconnecting Resource id #63 
+
+Resource id #63Handshake Done
+Resource id #68 CONNECTED
+Resource id #68Performing the handshake
+Disconnecting Resource id #68 
+
+Resource id #68Handshake Done
+Resource id #73 CONNECTED
+Resource id #73Performing the handshake
+Disconnecting Resource id #73 
+
+Resource id #73Handshake Done
+Resource id #78 CONNECTED
+Resource id #78Performing the handshake
+Disconnecting Resource id #78 
+
+Resource id #78Handshake Done
+Resource id #83 CONNECTED
+Resource id #83Performing the handshake
+Disconnecting Resource id #83 
+
+Resource id #83Handshake Done
+Server Started : 2011-12-17 18:51:16
+Master socket  : Resource id #16
+Listening on   : elastball port 8211
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Resource id #26 CONNECTED
+Resource id #26Performing the handshake
+Resource id #26Handshake Done
+Resource id #30 CONNECTED
+Resource id #30Performing the handshake
+Disconnecting Resource id #30 
+
+Resource id #30Handshake Done
+Resource id #35 CONNECTED
+Resource id #35Performing the handshake
+Resource id #35Handshake Done
+Resource id #41 CONNECTED
+Resource id #41Performing the handshake
+Disconnecting Resource id #41 
+
+Resource id #41Handshake Done
+Disconnecting Resource id #26 
+
+Resource id #26Client closed DISCONNECTED!Resource id #48 CONNECTED
+Resource id #48Performing the handshake
+Disconnecting Resource id #48 
+
+Resource id #48Handshake Done
+Resource id #53 CONNECTED
+Resource id #53Performing the handshake
+Resource id #53Handshake Done
+Disconnecting Resource id #53 
+
+Resource id #53 DISCONNECTED!Resource id #60 CONNECTED
+Resource id #60Performing the handshake
+Resource id #60Handshake Done
+Disconnecting Resource id #60 
+
+Resource id #66 CONNECTED
+Resource id #66Performing the handshake
+Resource id #66Handshake Done
+Disconnecting Resource id #66 
+
+Resource id #72 CONNECTED
+Resource id #72Performing the handshake
+Resource id #72Handshake Done
+Disconnecting Resource id #72 
+
+Resource id #78 CONNECTED
+Resource id #78Performing the handshake
+Resource id #78Handshake Done
+Disconnecting Resource id #78 
+
+Resource id #84 CONNECTED
+Resource id #84Performing the handshake
+Resource id #84Handshake Done
+Resource id #89 CONNECTED
+Resource id #89Performing the handshake
+Resource id #89Handshake Done
+Disconnecting Resource id #89 
+
+Disconnecting Resource id #84 
+
+Resource id #96 CONNECTED
+Resource id #96Performing the handshake
+Resource id #96Handshake Done
+Disconnecting Resource id #35 
+
+Resource id #35Client closed DISCONNECTED!Resource id #102 CONNECTED
+Resource id #102Performing the handshake
+Resource id #102Handshake Done
+Resource id #106 CONNECTED
+Resource id #106Performing the handshake
+Disconnecting Resource id #106 
+
+Resource id #106Handshake Done
+Server Started : 2011-12-17 19:04:01
+Master socket  : Resource id #16
+Listening on   : elastball port 8212
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Resource id #21Handshake Done
+Resource id #25 CONNECTED
+Resource id #25Performing the handshake
+Disconnecting Resource id #25 
+
+Resource id #25Handshake Done
+Server Started : 2011-12-17 19:05:33
+Master socket  : Resource id #16
+Listening on   : elastball port 8213
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Server Started : 2011-12-17 19:09:35
+Master socket  : Resource id #16
+Listening on   : elastball port 8214
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Server Started : 2011-12-17 19:10:48
+Master socket  : Resource id #16
+Listening on   : elastball port 8215
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done

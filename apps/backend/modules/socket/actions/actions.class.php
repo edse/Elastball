@@ -17,6 +17,7 @@ class socketActions extends autoSocketActions
   public function executeListDashboard(sfWebRequest $request)
   {
     $this->forward404Unless($this->socket = $this->getRoute()->getObject());
+    $this->user = $this->getUser()->getGuardUser();
     //$this->redirect('@default?module=socket&action=index');
   }
 
@@ -33,7 +34,7 @@ class socketActions extends autoSocketActions
         $run = 
 <<<EOT
 #!/bin/sh
-/usr/bin/php -q $sdir/WSdaemon.php --address={$socket->getHost()} --port={$socket->getPort()}
+/usr/bin/php $sdir/WSdaemon2.php --log=$sdir/log/log.txt --address={$socket->getHost()} --port={$socket->getPort()} --id={$socket->getId()}
 EOT;
       
       //$command = "$sdir/WSdaemon.php --address=".$socket->getHost()." --port=".$socket->getPort();
@@ -50,9 +51,9 @@ EOT;
       fclose($fp);
       chmod('run.sh',0777);
       
-      //$pid = shell_exec("./run.sh > /dev/null 2> /dev/null & echo \$!");
-      echo exec("./run.sh > /dev/null &");
-      die();
+      $pid = shell_exec("./run.sh > /dev/null 2> /dev/null & echo \$!");
+      //echo exec("./run.sh > /dev/null &");
+      //die();
       //die('>>>>'.$pid);
 
       if($pid==""){
@@ -76,6 +77,14 @@ EOT;
   public function executeListClose(sfWebRequest $request)
   {
     $this->forward404Unless($socket = $this->getRoute()->getObject());
+    # Delete Online Users
+    $ds = Doctrine_Core::getTable('Online')->findBySocketId($socket->getId());
+    foreach($ds as $d){
+      $d->delete();
+    }
+    # Kill
+    exec("kill -KILL ".$socket->getPid());
+    $this->PsKill($socket->getPid());
     $socket->setStatus("close");
     $socket->save();
     $this->redirect('@default?module=socket&action=index');

@@ -60,24 +60,58 @@
           
           socket.onopen = function (msg) {
             log("<?php echo __('Welcome - status')?> " + this.readyState); 
+            socket.send('✓hello➾<?php echo $user->getId() ?>');
           }
           
           socket.onmessage = function(msg) {
+            var command = "";
+            var parameter1 = "";
+            var parameter2 = "";
+            var parameter3 = "";
             var str = new String(msg.data);
-            var parts = str.split('<->');
-            if(parts.length > 0){
-              console.log(">>>"+parts[0]);
-              if(parts[0]=="want2play"){
-                if(confirm("Você está sendo desafiado. Quer jogar?")){
-                  $('#msg').val('yeswant2play<->'+parts[1]);
-                  send();
+            var parts = str.split('⟽');
+            if(parts.length > 1){
+              console.log(">>>"+parts[1]);
+              
+              var args = new String(parts[1]);
+              var args_parts = args.split('⟻');
+              if(args_parts.length > 1){
+                command = args_parts[0];
+                parameter1 = args_parts[1];
+                parameter2 = args_parts[2];
+                parameter3 = args_parts[3];
+              }else{
+                command = parts[1];
+              }
+              
+              console.log("cmd>>>"+command);
+              console.log("parm1>>>"+parameter1);
+              console.log("parm2>>>"+parameter2);
+              console.log("parm3>>>"+parameter3);
+
+              if(command=="reload-users"){
+                reloadUsers();
+              }
+              else if(command=="challenge-request"){
+                if(confirm('<?php echo __('The user')?>: '+parameter2+'/'+parameter1+' <?php echo __('is challenging you. Do you want to play against him?')?>')){
+                  socket.send('✓create-game➾'+parameter1+'➾<?php echo $user->getId() ?>➾'+parameter3);
+                }else{
+                  socket.send('✓challenge-rejected➾'+parameter1+'➾<?php echo $user->getName() ?>');
+                  alert('nao');
                 }
               }
-              else if(parts[0]=="startgame"){
+              else if(command=="challenge-rejected"){
+                alert('<?php echo __('The user')?>: '+parameter1+' <?php echo __('rejected your challenge.')?>');
+              }
+              else if(command=="go-to-game"){
+                goToGame(parameter1);
+                //alert('starting game'+parameter1+'...');
+              }
+              else if(command=="startgame"){
                 $('#game_id').val(parts[1]);
                 engine = new Engine();
               }
-              else if(parts[0]=="gamemove"){
+              else if(command=="gamemove"){
                 engine.playerMove(parts[2],parts[3],parts[4]);
               }
             }
@@ -92,6 +126,26 @@
           log(ex);
         }
         //$("msg").focus ();
+      }
+
+      function goToGame(u){
+        self.location.href='/game/'+u
+      }
+      
+      function reloadUsers(){
+        var request = $.ajax({
+          dataType: 'html',
+          success: function(data) {
+            $('#players').html(data);
+            $("#players li").click(function() {
+              if(confirm('<?php echo __('Challenge this user?')?>')){
+                socket.send('✓challenge➾'+$(this).attr('id')+'➾<?php echo $user->getName() ?>');
+              }
+            });
+          },
+          url: '/ajax/reloadUsers',
+          data: 'socket_id=<?php echo($socket->getId()) ?>&user_id=<?php echo $user->getId() ?>'
+        });
       }
       
       function send () {
@@ -114,6 +168,7 @@
       
       function quit() {
         log("<?php echo __('Goodbye')?>!");
+        socket.send('✓bye➾<?php echo $user->getId() ?>');
         socket.close();
         socket = null;
       }
@@ -148,7 +203,9 @@
         //send();
       }
 
-      init();
+      $(document).ready(function() {
+        init();
+      });
     </script>
 
 

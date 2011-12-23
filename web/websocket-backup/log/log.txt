@@ -1,0 +1,27 @@
+Server Started : 2011-12-17 19:12:02
+Master socket  : Resource id #16
+Listening on   : elastball port 8216
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Server Started : 2011-12-17 19:16:06
+Master socket  : Resource id #16
+Listening on   : elastball port 8217
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done
+Server Started : 2011-12-17 19:18:22
+Master socket  : Resource id #16
+Listening on   : elastball port 8218
+
+Resource id #21 CONNECTED
+Resource id #21Performing the handshake
+Disconnecting Resource id #21 
+
+Resource id #21Handshake Done

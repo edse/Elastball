@@ -1,3 +1,4 @@
+<?php use_helper('I18N', 'Date') ?>
     <script src="/res/js/jquery.min.js"></script>
     <script type="text/javascript">
       var socket;
@@ -10,7 +11,8 @@
           log('Socket - status ' + socket.readyState);          
           
           socket.onopen = function (msg) {
-            log("Bem-vindo - estado " + this.readyState); 
+            log("<?php echo __('Welcome - status')?> " + this.readyState); 
+            socket.send('✓hello➾<?php echo $user->getId() ?>');
             /*           
             try {
               socket.send('hello<->1');
@@ -73,7 +75,8 @@
       }
       
       function quit() {
-        log("Tchau!");
+        log("<?php echo __('Goodbye')?>!");
+        socket.send('✓bye➾<?php echo $user->getId() ?>');
         socket.close();
         socket = null;
       }
@@ -91,19 +94,19 @@
       }
 
       function whoisonline(){
-        $('#msg').val("admin<->whoisonline");
+        $('#msg').val("➤whoisonline");
         $('#msg').focus();
         //send();
       }
 
       function shutdown(){
-        $('#msg').val("admin<->shutdown");
+        $('#msg').val("➤shutdown");
         $('#msg').focus();
         //send();
       }
 
       function kick(){
-        $('#msg').val("admin<->kick");
+        $('#msg').val("➤kick➾xxx");
         $('#msg').focus();
         //send();
       }

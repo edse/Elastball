@@ -666,7 +666,7 @@ Game.prototype.drawField = function() {
   
   //midfield ball mark
   this.context.beginPath();
-  this.context.fillArc(x0+halfW, y0+halfH, this.field.radiusBall, 0, Math.PI*2, true);
+  //this.context.fillArc(x0+halfW, y0+halfH, this.field.radiusBall, 0, Math.PI*2, true);
   this.context.closePath();
   //this.context.fill();
   
