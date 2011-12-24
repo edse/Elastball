@@ -2,7 +2,7 @@
 # http://www.symfony-project.org/reference/1_4/en/08-Security
 
 default:
-  is_secure: fase
+  is_secure: false
 
 all:
-  is_secure: fase
+  is_secure: false
