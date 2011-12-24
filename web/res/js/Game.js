@@ -1592,13 +1592,3 @@ Game.prototype.setCurrentState = function(s) {
     b.y = s.y;
   }
 }
-/*
-Game.prototype.playerMove = function(index, vx, vy) {
-  b = this.balls[index];
-  b.startPoint = new Point2D(b.x, b.y);
-  b.velocityx = vx;
-  b.velocityy = vy;
-  running = true;
-  $('#running').val("true");
-}
-*/
