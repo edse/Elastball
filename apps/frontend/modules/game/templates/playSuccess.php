@@ -150,10 +150,11 @@
 
   <script>
     var game;
+    var socket;
+
     window.addEventListener('load', startGame, true);
     function startGame(){
       game = new Game(document.getElementById('canvasOne'));
-
       bg = document.getElementById('crowd');
       bg.addEventListener('ended', function() {
         this.currentTime = 0;
@@ -161,9 +162,108 @@
       }, false);
       bg.volume = 0.4;
       bg.play();
+
+      var host = "ws://<?php echo($socket->getHost()) ?>:<?php echo($socket->getPort()) ?>/<?php echo($uid) ?>";
+      try {
+        // Firefox accept only MozWebSocket
+        socket = ("MozWebSocket" in window ? new MozWebSocket (host) : new WebSocket(host));
+        log('<?php echo __('Socket - status')?> ' + socket.readyState);
+        socket.onopen = function (msg) {
+          log("<?php echo __('Welcome - status')?> " + this.readyState); 
+          socket.send('✓hello➾<?php echo $user->getId() ?>➾playing');
+        }
+        socket.onmessage = function(msg) {
+          var command = "";
+          var parameter1 = "";
+          var parameter2 = "";
+          var parameter3 = "";
+          var str = new String(msg.data);
+          var parts = str.split('⟽');
+          if(parts.length > 1){
+            console.log(">>>"+parts[1]);
+            var args = new String(parts[1]);
+            var args_parts = args.split('⟻');
+            if(args_parts.length > 1){
+              command = args_parts[0];
+              parameter1 = args_parts[1];
+              parameter2 = args_parts[2];
+              parameter3 = args_parts[3];
+            }else{
+              command = parts[1];
+            }
+            console.log("cmd>>>"+command);
+            console.log("parm1>>>"+parameter1);
+            console.log("parm2>>>"+parameter2);
+            console.log("parm3>>>"+parameter3);
+            if(command=="gamemove"){
+              game.makeMove(parameter1,parameter2,parameter3);
+            }
+          }
+          log("<?php echo __('Received')?>: " + msg.data);
+        }
+        socket.onclose = function (msg) {
+          log("<?php echo __('Disconnected - status')?> " + this.readyState); 
+        }
+      }
+      catch(ex) {
+        log(ex);
+      }
+      
     }
+
+    function send () {
+      var txt, msg;
+      msg = $("#msg").val();
+      if(!msg) {
+        alert("<?php echo __('Message can not be empty')?>");
+        return;
+      }
+      $("#msg").val("");
+      //$("#msg").focus();
+      try {
+        socket.send(msg);
+        log('<?php echo __('Sent')?>: ' + msg);
+      }
+      catch(ex) {
+        log(ex);
+      }
+    }
+    
+    function quit() {
+      log("<?php echo __('Goodbye')?>!");
+      socket.send('✓bye➾<?php echo $user->getId() ?>');
+      socket.close();
+      socket = null;
+    }
+
+    // Utilities
+    function log(msg) {
+      var a = $("#log").html();
+      $("#log").html(a + "<br>" + msg);
+    }
+
+    function onkey(event) {
+      if(event.keyCode == 13) {
+        send();
+      }
+    }
+
+    /*
+    $(document).ready(function() {
+      startGame()
+    });
+    */
   </script>
-  
+    
+    <div style="position: absolute; top: 0; left:0; z-index: 2;">  
+      <div style="float: left;">
+        <div id="log"></div>
+        <input id="msg" type="textbox" onkeypress="onkey(event);" />
+        <button onclick="send();"><?php echo __('Send')?></button>
+      </div>
+
+    </div>
+
 </body>
 </html>
 

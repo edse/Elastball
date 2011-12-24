@@ -301,7 +301,7 @@ function challengeReject($result, $user_id, $name, $user, $msg){
   }
 }
 
-function createGame($result, $usr1, $usr2, $user, $msg, $uid){
+function createGame($result, $usr1, $usr2, $user, $msg, $uid, $socket_id){
   global $users;
   $result["frame"] = $msg.addGame($uid, $user->user_id, $socket_id);
   $result["size"] = strlen($result["frame"]);
@@ -357,4 +357,18 @@ EOT;
   exec("./game-$usr1.sh > /dev/null");
 
   return $url;
+}
+
+function gameMove($result, $uid, $index, $vx, $vy, $user, $msg, $appID){
+  global $users;
+  $result["frame"] = $msg;
+  $result["size"] = strlen($result["frame"]);
+  foreach($users as $u){
+    if($appID==$u->appId()){
+    //if(($u->id() == $usr1)||($u->id() == $user->socket_user_id)){
+      $p = $u->protocol();
+      $p->setSocket($u->socket());
+      $p->send($result);
+    }
+  }
 }

@@ -1,28 +1,27 @@
-    <div style="position: absolute; top: 0; left:0; z-index: 2;">
+    <style type="text/css">
+      html , body {
+        font: normal 0.9em arial , helvetica;
+      }
       
-      <style type="text/css">
-        html , body {
-          font: normal 0.9em arial , helvetica;
-        }
-        
-        #log {
-          width: 440px;
-          height: 200px;
-          border: 1px solid #7F9DB9;
-          overflow: auto;
-        }
-        #players {
-          width: 180px;
-          height: 200px;
-          border: 1px solid #7F9DB9;
-          overflow: auto;
-        }
-        
-        #msg {
-          width: 330px;
-        }
-      </style>
-  
+      #log {
+        width: 440px;
+        height: 200px;
+        border: 1px solid #7F9DB9;
+        overflow: auto;
+      }
+      #players {
+        width: 180px;
+        height: 200px;
+        border: 1px solid #7F9DB9;
+        overflow: auto;
+      }
+      
+      #msg {
+        width: 330px;
+      }
+    </style>
+
+    <div style="position: absolute; top: 0; left:0; z-index: 2;">  
       <h3><?php echo __('Elastball: Online sectorball game - Chat room')?></h3>
       <div style="float: left;">
         <div id="log"></div>
@@ -37,13 +36,11 @@
         <ul id="players"style="margin-top: 0;"></ul>
       </div>
 
-      <div style="margin-top: 15px;">
-        <?php /*
+      <div style="margin-top: 15px;clear: both;padding-top: 15px;">
         <audio autoplay loop controls>
           <source src="/audios/waldir-calmon-na-cadencia-do-samba.mp3" />
           <source src="/audios/waldir-calmon-na-cadencia-do-samba.ogg" />
         </audio>
-        */ ?>
       </div>
 
     </div>

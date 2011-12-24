@@ -121,6 +121,14 @@ class WebSocket {
                 echo "\ncreating game $usr1 x $usr2 ...\n";
                 createGame($result, $usr1, $usr2, $this->user, "⟽go-to-game⟻", $uid, $socket_id);
               }
+              elseif($cmd == "gamemove"){
+                //$uid = $args[1];
+                $index = $args[1];
+                $vx = $args[2];
+                $vy = $args[3];
+                echo "\ngame move $index - $vx - $vy ...\n";
+                gameMove($result, $uid, $index, $vx, $vy, $this->user, "⟽gamemove⟻".$index."⟻".$vx."⟻".$vy, $appID);
+              }
             }
             else{
               //die(">>".count($commands));

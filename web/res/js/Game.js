@@ -1511,12 +1511,12 @@ Game.prototype.makeMove = function(id,vx,vy) {
   this.selected_ball.startPoint = new Point2D(this.selected_ball.x, this.selected_ball.y);
   this.selected_ball.velocityx = vx;
   this.selected_ball.velocityy = vy;
-  if(this.selected_ball.velocityx > this.maxSpeed)
-    this.selected_ball.velocityx = this.maxSpeed;
-  if(this.selected_ball.velocityy > this.maxSpeed)
-    this.selected_ball.velocityy = this.maxSpeed;
   this.running = true;
   this.currentPlayer = this.selected_ball.id;
+
+  this.storeMove(this.selected_ball.id,vx,vy); 
+  this.selected_ball = null;
+
 }
 
 
@@ -1592,3 +1592,13 @@ Game.prototype.setCurrentState = function(s) {
     b.y = s.y;
   }
 }
+/*
+Game.prototype.playerMove = function(index, vx, vy) {
+  b = this.balls[index];
+  b.startPoint = new Point2D(b.x, b.y);
+  b.velocityx = vx;
+  b.velocityy = vy;
+  running = true;
+  $('#running').val("true");
+}
+*/

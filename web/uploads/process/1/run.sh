@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/bin/php /Users/emersonestrella/Documents/Aptana\ Studio\ 3\ Workspace/elastball/web/uploads/../websocket/WSdaemon2.php --log=/Users/emersonestrella/Documents/Aptana\ Studio\ 3\ Workspace/elastball/web/uploads/../websocket/log/log.txt --address=elastball --port=8315 --id=1
