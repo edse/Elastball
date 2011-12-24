@@ -494,7 +494,7 @@ Game.prototype.render = function() {
   //keepers
   for(var i = 0; i < this.keepers.length; i++){
     keeper = this.keepers[i];
-    this.context.fillStyle = keeper.team.color;
+    //this.context.fillStyle = keeper.team.color;
     this.context.strokeStyle = 'rgba(255,255,255,1)';
     
     //Keeper points
