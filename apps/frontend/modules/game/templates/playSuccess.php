@@ -141,7 +141,7 @@
   <script src="/res/js/Intersections.js"></script>
   <script src="/res/js/Ball.js"></script>
   <script src="/res/js/Field.js"></script>
-  <script src="/res/js/Game.js"></script>
+  <script src="/res/js/Game.js?<?php echo time() ?>"></script>
   <script src="/res/js/Keeper.js"></script>
   <script src="/res/js/Mouse.js"></script>
   <script src="/res/js/Player.js"></script>
