@@ -166,7 +166,7 @@
       var host = "ws://<?php echo($socket->getHost()) ?>:<?php echo($socket->getPort()) ?>/<?php echo($uid) ?>";
       try {
         // Firefox accept only MozWebSocket
-        socket = ("MozWebSocket" in window ? new MozWebSocket (host) : new WebSocket(host));
+        socket = ("MozWebSocket" in window ? new MozWebSocket (host, "<?php echo($uid) ?>") : new WebSocket(host, "<?php echo($uid) ?>"));
         log('<?php echo __('Socket - status')?> ' + socket.readyState);
         socket.onopen = function (msg) {
           log("<?php echo __('Welcome - status')?> " + this.readyState); 

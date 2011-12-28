@@ -64,6 +64,7 @@ class WebSocket {
 			}
 		}
 		$appID = $this->user->appId();
+    echo "\n\napp> $appID\n\n";
     if(true){
 		//if($appID === "_ECHO_") {
 			try {
@@ -135,10 +136,12 @@ class WebSocket {
               echo "\n".$result["frame"]."\n";
               foreach($users as $u){
                 if($appID==$u->appId()){
-                  $p = $u->protocol();
-                  $p->setSocket($u->socket());
-                  
-                  $p->send($result);
+                  //echo "\n".$this->user->socket_user_id." != ".$u->socket_user_id;
+                  if($this->user->socket_user_id != $u->socket_user_id){
+                    $p = $u->protocol();
+                    $p->setSocket($u->socket());
+                    $p->send($result);
+                  }
                 }
               }
             }
