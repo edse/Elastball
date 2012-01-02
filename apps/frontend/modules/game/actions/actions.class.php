@@ -17,7 +17,7 @@ class gameActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    //$this->forward('default', 'module');
+    $this->user = $this->getUser()->getGuardUser();
   }
 
   public function executeMenu(sfWebRequest $request)

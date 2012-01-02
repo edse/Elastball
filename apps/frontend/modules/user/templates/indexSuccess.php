@@ -15,16 +15,7 @@
 
   <div data-role="content">
      
-    <div class="content-secondary">
-      <?php if($sf_user->isAuthenticated()): ?>
-      <?php include_partial('global/left2') ?>
-      <?php else: ?>
-      <?php include_partial('global/left') ?>
-      <?php endif; ?>
-    </div><!--/content-secondary--> 
-    
     <div class="content-primary">
-
       <nav> 
         <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
           <li data-role="list-divider"><?php echo __('User info...')?></li> 
@@ -34,7 +25,6 @@
           <li>Added: <?php echo $user->getCreatedAt()?></li>
         </ul>
       </nav> 
-
       <nav> 
         <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
           <li data-role="list-divider"><?php echo __('Statistics...')?></li> 
@@ -44,7 +34,6 @@
           <li><?php echo __('Loose')?>: 1</li>
         </ul>
       </nav> 
-      
       <nav> 
         <ol data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
           <li data-role="list-divider"><?php echo __('Last 10 games...')?></li> 
@@ -60,8 +49,15 @@
           <li>Russo</li>
         </ol>
       </nav>
+    </div><!--/content-primary--> 
 
-    </div>
+    <div class="content-secondary">
+      <?php if($sf_user->isAuthenticated()): ?>
+      <?php include_partial('global/left2') ?>
+      <?php else: ?>
+      <?php include_partial('global/left') ?>
+      <?php endif; ?>
+    </div><!--/content-secondary--> 
 
   </div> 
   

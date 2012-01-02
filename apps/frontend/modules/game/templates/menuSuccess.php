@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="/css/webapp.css" /> 
 <script src="/js/webapp.js"></script> 
 <script src="/js/jquery.mobile/jquery.mobile-1.0b2.min.js"></script>
-<script src="/js/jquery-validation/jquery.validate.min.js"></script>
 
 <div data-role="page">
   <div data-role="content" data-theme="a">

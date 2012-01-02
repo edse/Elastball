@@ -1,120 +1,171 @@
-<html>
-  <head>
-    <title>Sectorball</title>
-    <script src="/res/js/jquery.min.js"></script>
-    <script src="/res/js/Point2D.js"></script>
-    <script src="/res/js/Engine.js"></script>
-    <script src="/res/js/Intersections.js"></script>
-    <script>
-      $(function() {
-        Engine();
-      });
-      function send(){
-      }
-    </script>
-  </head>
-  <body>
-    <canvas id="canvasOne" width="1050" height="1300" style="background-color: black;"></canvas>
-    <div style="width: 210px; position: fixed; left: 1060px; top:8px; height: 450px; overflow-x: hidden; overflow-y: auto;">
-      <fieldset>
-        <label>p1.x: <input type="text" id="p1x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>p1.y: <input type="text" id="p1y" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>b1.x: <input type="text" id="b1x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>b1.y: <input type="text" id="b1y" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>b2.x: <input type="text" id="b2x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>b2.y: <input type="text" id="b2y" value="" /></label>
-      </fieldset>
+<div data-role="page" id="jqm-home" class="type-home">
+
+  <div data-role="content">
       
-      <fieldset>
-        <label>c1.x: <input type="text" id="c1x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>c1.y: <input type="text" id="c1y" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>c2.x: <input type="text" id="c2x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>c2.y: <input type="text" id="c2y" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>d1.x: <input type="text" id="d1x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>d1.y: <input type="text" id="d1y" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>d2.x: <input type="text" id="d2x" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>d2.y: <input type="text" id="d2y" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>ball mass: <input type="text" id="mass" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>test: <input type="text" id="test" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>Cursor: <input type="text" id="mouse" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>Running? <input type="text" id="running" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>Turn: <input type="text" id="turn" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>Current player: <input type="text" id="current_player" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>Current player first collision: <input type="text" id="first_collision" value="" /></label>
-      </fieldset>
-      <fieldset>
-        <label>Ball last collision: <input type="text" id="last_collision" value="" /></label>
-      </fieldset>
-      
-      <div id="log"></div>
-      <input id="msg" type="textbox" onkeypress="onkey (event);" />
-      <button onclick="send ();">Send</button>
-      <button onclick="quit ();">Quit</button>
+    <div class="content-primary">
 
+  <div id="container">
+    <div id="board">
+      <form id="predictions" method="get" action="#">
+        <!-- start .match -->
+        <div class="match">
+          <div class="vs" onclick="$('.info').toggle();">Vs</div>
+          <div class="info" style="display: none">
+            <div class="tip"></div>
+            <table id="stats">
+              <tbody>
+                <tr id="poss">
+                  <td style="width:33%"><p>7</p></td>
+                  <td style="width:34%"><p>Possession</p></td>
+                  <td style="width:33%"><p>2</p></td>
+                </tr>
+                <tr id="shot">
+                  <td style="width:33%"><p>2</p></td>
+                  <td style="width:34%"><p>Shots</p></td>
+                  <td style="width:33%"><p>0</p></td>
+                </tr>
+                <tr id="fault">
+                  <td style="width:33%"><p>5</p></td>
+                  <td style="width:34%"><p>Faults</p></td>
+                  <td style="width:33%"><p>2</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- end .info -->
+          <div class="badge leftSide"><img src="/uploads/assets/teams/sao_paulo_65x65.png" alt="bolton"/></div>
+          <div class="bar">
+            <p class="left"><label for="bolton">Bolton</label><input type="text" value="" id="bolton" name="bolton" class="score" /></p>            
+            <p class="right"><input type="text" value="" id="newcastle" name="newcastle" class="score" /><label for="newcastle">Newcastle</label></p>           
+          </div>
+          <div class="badge rightSide"><img src="/uploads/assets/teams/sao_paulo_65x65.png" alt="newcastle"/></div>
+        </div>
+        <!-- end .match -->
+      </form>
+      <!-- end #predictions -->
     </div>
+    <!-- end #board -->
+  </div>
+  <!-- end #container -->
+  
+  <!-- start #resources -->
+  <div id="resources" style="display: none">
+    <!-- <audio autoplay loop controls> -->
+    <audio id="bg">
+      <source src="/res/audio/bg.mp3" />
+      <source src="/res/audio/bg.ogg" />
+    </audio>
+    <audio id="crowd">
+      <source src="/res/audio/crowd.mp3" />
+      <source src="/res/audio/crowd.ogg" />
+    </audio>
+    <audio id="whistle1">
+      <source src="/res/audio/whistle1.mp3" />
+      <source src="/res/audio/whistle1.ogg" />
+    </audio>
+    <audio id="whistle2">
+      <source src="/res/audio/whistle2.mp3" />
+      <source src="/res/audio/whistle2.ogg" />
+    </audio>
+    <audio id="whistle3">
+      <source src="/res/audio/whistle3.mp3" />
+      <source src="/res/audio/whistle3.ogg" />
+    </audio>
+    <audio id="whistle4">
+      <source src="/res/audio/whistle4.mp3" />
+      <source src="/res/audio/whistle4.ogg" />
+    </audio>
+    <audio id="whistle5">
+      <source src="/res/audio/whistle5.ogg" />
+      <source src="/res/audio/whistle5.mp3" />
+    </audio>
+    <audio id="whistle6">
+      <source src="/res/audio/whistle6.mp3" />
+      <source src="/res/audio/whistle6.ogg" />
+    </audio>
+    <audio id="hit1">
+      <source src="/res/audio/hit1.mp3" />
+      <source src="/res/audio/hit1.ogg" />
+    </audio>
+    <audio id="hit2">
+      <source src="/res/audio/hit2.mp3" />
+      <source src="/res/audio/hit2.ogg" />
+    </audio>
+    <audio id="hit3">
+      <source src="/res/audio/hit3.mp3" />
+      <source src="/res/audio/hit3.ogg" />
+    </audio>
+    <audio id="hit5">
+      <source src="/res/audio/hit5.mp3" />
+      <source src="/res/audio/hit5.ogg" />
+    </audio>
+    <audio id="hit6">
+      <source src="/res/audio/hit6.mp3" />
+      <source src="/res/audio/hit6.ogg" />
+    </audio>
+    <audio id="hit7">
+      <source src="/res/audio/hit7.mp3" />
+      <source src="/res/audio/hit7.ogg" />
+    </audio>
+    <audio id="bar">
+      <source src="/res/audio/hitbar.mp3" />
+      <source src="/res/audio/hitbar.ogg" />
+    </audio>
+  </div>
+  <!-- end #resources -->
+  <div id="referee" class="fadein" style="display:none;">
+    <img src="/res/img/referee/amarelo.jpg" id="ref_yellow" style="display:none;" />
+    <img src="/res/img/referee/vermelho.jpg" id="ref_red" style="display:none;" />
+    <img src="/res/img/referee/falta1.jpg" id="ref_fault1" style="display:none;" />
+    <img src="/res/img/referee/falta2.jpg" id="ref_fault2" style="display:none;" />
+    <img src="/res/img/referee/lateral1.jpg" id="ref_trowin1" style="display:none;" />
+    <img src="/res/img/referee/lateral2.jpg" id="ref_trowin2" style="display:none;" />
+    <img src="/res/img/referee/escanteio.jpg" id="ref_corner" style="display:none;" />
+    <img src="/res/img/referee/falta2.jpg" id="refimg" />
+  </div>
+  <div id="t1" style="display: block; position: absolute; left: 500px;"></div>
+  <div id="t2" style="display: block; position: absolute;"></div>
+  <div id="turn" style="display: block; position: absolute; left: 800px;"></div>
+  <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
+  
+  <script src="/res/js/Point2D.js"></script>
+  <script src="/res/js/Intersections.js"></script>
+  <script src="/res/js/Ball.js"></script>
+  <script src="/res/js/Field.js"></script>
+  <script src="/res/js/Game.js?<?php echo time() ?>"></script>
+  <script src="/res/js/Keeper.js"></script>
+  <script src="/res/js/Mouse.js"></script>
+  <script src="/res/js/Player.js"></script>
+  <script src="/res/js/Team.js"></script>
+  <script src="/res/js/Timer.js"></script>
 
-    <div style="display: none" />
-    <img src="/res/img/model.png" id="model" alt="test" />
-    <img src="/res/img/SPO/1/02.png" id="a1" alt="test" />
-    <img src="/res/img/SPO/1/03.png" id="a2" alt="test" />
-    <img src="/res/img/SPO/1/04.png" id="a3" alt="test" />
-    <img src="/res/img/SPO/1/05.png" id="a4" alt="test" />
-    <img src="/res/img/SPO/1/06.png" id="a5" alt="test" />
-    <img src="/res/img/SPO/1/07.png" id="a6" alt="test" />
-    <img src="/res/img/SPO/1/08.png" id="a7" alt="test" />
-    <img src="/res/img/SPO/1/09.png" id="a8" alt="test" />
-    <img src="/res/img/SPO/1/10.png" id="a9" alt="test" />
-    <img src="/res/img/SPO/1/11.png" id="a10" alt="test" />
-    <img src="/res/img/SPO/2/02.png" id="b1" alt="test" />
-    <img src="/res/img/SPO/2/03.png" id="b2" alt="test" />
-    <img src="/res/img/SPO/2/04.png" id="b3" alt="test" />
-    <img src="/res/img/SPO/2/05.png" id="b4" alt="test" />
-    <img src="/res/img/SPO/2/06.png" id="b5" alt="test" />
-    <img src="/res/img/SPO/2/07.png" id="b6" alt="test" />
-    <img src="/res/img/SPO/2/08.png" id="b7" alt="test" />
-    <img src="/res/img/SPO/2/09.png" id="b8" alt="test" />
-    <img src="/res/img/SPO/2/10.png" id="b9" alt="test" />
-    <img src="/res/img/SPO/2/11.png" id="b10" alt="test" />
-    </div>
+  <script>
+    var game;
+    var socket=false;
 
-    
-  </body>
+    window.addEventListener('load', startGame, true);
+    function startGame(){
+      game = new Game(document.getElementById('canvasOne'));
+      bg = document.getElementById('crowd');
+      bg.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+      }, false);
+      bg.volume = 0.4;
+      bg.play();
+    }
+
+    // Utilities
+    function log(msg) {
+      var a = $("#log").html();
+      $("#log").html(a + "<br>" + msg);
+    }
+  </script>
+
+</div>
+</div>
+</div>
+
+</body>
 </html>
+

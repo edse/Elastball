@@ -134,8 +134,6 @@
   <div id="t2" style="display: block; position: absolute;"></div>
   <div id="turn" style="display: block; position: absolute; left: 800px;"></div>
   <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
-
-  <script src="/res/js/jquery.min.js"></script> 
   
   <script src="/res/js/Point2D.js"></script>
   <script src="/res/js/Intersections.js"></script>
