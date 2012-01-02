@@ -7,6 +7,10 @@
 
 <div data-role="page" id="jqm-home" class="type-home">
 
+  <?php if($sf_user->isAuthenticated()): ?>
+  <?php include_partial('global/header2', array('user' => $sf_user->getGuardUser())) ?>
+  <?php endif; ?>
+
   <div data-role="content">
      
     <div class="content-secondary">
@@ -37,12 +41,29 @@
     <div class="content-primary">
       
       <div id="video" style="padding-bottom: 20px; text-align: center;">
-        <iframe width="560" height="315" src="http://www.youtube.com/embed/WNkVHYfTReM?rel=0" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/WNkVHYfTReM?rel=0&wmode=opaque" frameborder="0" allowfullscreen></iframe>
       </div>
        
       <nav> 
+        <ol data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+          <li data-role="list-divider"><?php echo __('Top ten ranking...')?></li> 
+          <li><a href="<?php echo url_for('@default?module=user&action=asdf') ?>" data-ajax="false">EDSE</a></li>
+          <li><a href="index.html">The Godfather</a></li>
+          <li>Brasileiro</li>
+          <li>Espanhol</li>
+          <li>Francês</li>
+          <li>Inglês</li>
+          <li>Italiano</li>
+          <li>Japonês</li>
+          <li>Português</li>
+          <li>Russo</li>
+        </ol>
+      </nav>
+      <!-- 
+      <nav> 
         <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
           <li data-role="list-divider"><?php echo __('Play with the best teams around the world...')?></li> 
+          <li>Campeonato Turco</li>
           <li>Campeonato Alemão</li>
           <li>Campeonato Argentino</li>
           <li>Campeonato Brasileiro Series A, B, C e D</li>
@@ -53,9 +74,9 @@
           <li>Campeonato Japonês</li>
           <li>Campeonato Português</li>
           <li>Campeonato Russo</li>
-          <li>Campeonato Turco</li>
         </ul>
       </nav> 
+      -->
     </div>
 
   </div> 

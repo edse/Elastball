@@ -20,6 +20,11 @@ class gameActions extends sfActions
     //$this->forward('default', 'module');
   }
 
+  public function executeMenu(sfWebRequest $request)
+  {
+    //$this->forward('default', 'module');
+  }
+
   public function executePlay(sfWebRequest $request)
   {
     echo ">>>>".$request->getParameter('u');

@@ -1,6 +1,26 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+game:
+  url: /game
+  param: { module: game, action: index }
+
+chat:
+  url: /chat
+  param: { module: chat, action: index }
+
+game_menu:
+  url: /game/menu
+  param: { module: game, action: menu }
+
+setup:
+  url: /setup
+  param: { module: setup, action: index }
+
+user:
+  url: /user/:u
+  param: { module: user, action: index }
+
 go_to_game:
   url: /game/:u
   param: { module: game, action: play }

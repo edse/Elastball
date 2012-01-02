@@ -59,36 +59,35 @@
       padding-right: .25em; 
   }
   </style>
-  <div data-role="page" class="type-index">
+  <div data-role="page" id="jqm-home" class="type-home">
 
-    <div data-role="header" data-theme="b">
-      <h1>Futebol Clube - <?php echo __('Sign up')?></h1>
-      <?php /* <a href="<?php echo url_for("/webapp/index")?>" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> */ ?>
-    </div>
+  <?php if($sf_user->isAuthenticated()): ?>
+  <?php include_partial('global/header2', array('user' => $user)) ?>
+  <?php else: ?>
+  <?php include_partial('global/header', array('title' => $user_details->getNickname())) ?>
+  <?php endif; ?>
 
-    <div data-role="type-interior">
+  <div data-role="content">
       
     <div class="content-primary">
-    
-      <p><?php echo __("We are all most there... Fill up the information bellow and get ready to play")?>.</p>
-      
-      <form method="post" action="<?php echo url_for('@default?module=login&action=register&code=verify') ?>" name="signup" id="signup" data-ajax="false" />
+
+      <form method="post" action="<?php echo url_for('@setup') ?>" name="setup" id="setup" data-ajax="false" style="margin-bottom: 25px;">
         <ul data-role="listview" data-inset="true">
           <li data-role="fieldcontain"> 
             <label for="nickname"><em>*</em> <?php echo __('Nickname')?>:</label>
-            <input type="text" name="nickname" id="nickname" value="" style="width: 25%;" />
+            <input type="text" name="nickname" id="nickname" value="<?php echo $user->getNickname()?>" style="width: 25%;" />
           </li>
           <li data-role="fieldcontain"> 
             <label for="firstname"><em>*</em> <?php echo __('First Name')?>:</label>
-            <input type="text" name="firstname" id="firstname" value="" />
+            <input type="text" name="firstname" id="firstname" value="<?php echo $user->getFirstName()?>" />
           </li>
           <li data-role="fieldcontain"> 
             <label for="lastname"><em>*</em> <?php echo __('Last Name')?>:</label>
-            <input type="text" name="lastname" id="lastname" value="" />
+            <input type="text" name="lastname" id="lastname" value="<?php echo $user->getLastName()?>" />
           </li>
           <li data-role="fieldcontain"> 
             <label for="email"><em>*</em> <?php echo __('Email')?>:</label>
-            <input type="text" name="email" id="email" value="" class="required email" />
+            <input type="text" name="email" id="email" value="<?php echo $user->getEmailAddress()?>" class="required email" />
           </li>
           <!--
           <li data-role="fieldcontain"> 
@@ -105,11 +104,11 @@
             ->execute(); 
           ?>
           <li data-role="fieldcontain">
-            <label for="select-choice-a" class="select"><?php echo __('Select your team')?>:</label>
+            <label for="select-choice-a" class="select"><?php echo __('Your team')?>:</label>
             <select name="team_id" id="team_id" data-native-menu="false">
-              <option><?php echo __('Select your team')?></option>
+              <option><?php echo __('Choose other team')?></option>
               <?php foreach($teams as $t): ?>
-              <option value="<?php echo $t->getId() ?>"><?php echo $t->getName() ?></option>
+              <option value="<?php echo $t->getId() ?>"<?php if($t->getId() == $user->Team->getId()) echo " selected=\"selected\"";?>><?php echo $t->getName() ?></option>
               <?php endforeach; ?>
             </select>
           </li>
@@ -133,11 +132,7 @@
     </div>
     
     <div class="content-secondary">
-      <?php if($sf_user->isAuthenticated()): ?>
       <?php include_partial('global/left2') ?>
-      <?php else: ?>
-      <?php include_partial('global/left') ?>
-      <?php endif; ?>
     </div><!--/content-secondary--> 
 
   </div><!-- /ui-body wrapper -->
@@ -145,5 +140,6 @@
   <?php include_partial('global/footer') ?>
 
 </div> 
+
 </body> 
 </html>
