@@ -1,15 +1,18 @@
-<div data-role="page" id="jqm-home" class="type-home">
+<div data-role="page" id="jqm-home">
 
-  <div data-role="content">
-      
-    <div class="content-primary">
+  <?php //include_partial('global/header3', array('user' => $user)) ?>
 
-  <div id="container">
+  <div id="container" style="left: 50%; margin-left: -472px;">
     <div id="board">
       <form id="predictions" method="get" action="#">
         <!-- start .match -->
         <div class="match">
-          <div class="vs" onclick="$('.info').toggle();">Vs</div>
+          <div class="timers">
+            <div id="t1" style="padding: 3px;"></div>
+            <div id="t2" style="padding: 3px;"></div>
+            <div id="turn" style="padding: 3px;"></div>
+          </div>
+          <!-- <div class="vs" onclick="$('.info').toggle();"></div> -->
           <div class="info" style="display: none">
             <div class="tip"></div>
             <table id="stats">
@@ -33,12 +36,18 @@
             </table>
           </div>
           <!-- end .info -->
-          <div class="badge leftSide"><img src="/uploads/assets/teams/sao_paulo_65x65.png" alt="bolton"/></div>
+          <div class="badge leftSide"><img src="/uploads/assets/teams/sao_paulo_65x65.png" alt="bolton" style="height: 32px;" /></div>
           <div class="bar">
-            <p class="left"><label for="bolton">Bolton</label><input type="text" value="" id="bolton" name="bolton" class="score" /></p>            
-            <p class="right"><input type="text" value="" id="newcastle" name="newcastle" class="score" /><label for="newcastle">Newcastle</label></p>           
+            <div class="left">
+              <div id="home" class="text">Bolton</div>
+              <div id="home_score" class="score">0</div>
+            </div>            
+            <div class="right">
+              <div id="away_score" class="score">0</div>
+              <div id="away" class="text">Newcastle</div>
+            </div>            
           </div>
-          <div class="badge rightSide"><img src="/uploads/assets/teams/sao_paulo_65x65.png" alt="newcastle"/></div>
+          <div class="badge rightSide"><img src="/uploads/assets/teams/sao_paulo_65x65.png" alt="newcastle" style="height: 32px;" /></div>
         </div>
         <!-- end .match -->
       </form>
@@ -47,6 +56,9 @@
     <!-- end #board -->
   </div>
   <!-- end #container -->
+
+
+  <div data-role="content" style="padding-bottom: 5px; padding-top: 55px; text-align: center;">
   
   <!-- start #resources -->
   <div id="resources" style="display: none">
@@ -123,10 +135,9 @@
     <img src="/res/img/referee/escanteio.jpg" id="ref_corner" style="display:none;" />
     <img src="/res/img/referee/falta2.jpg" id="refimg" />
   </div>
-  <div id="t1" style="display: block; position: absolute; left: 500px;"></div>
-  <div id="t2" style="display: block; position: absolute;"></div>
-  <div id="turn" style="display: block; position: absolute; left: 800px;"></div>
-  <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas>
+
+  <!-- <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas> -->
+  <canvas id="canvasOne" width="1050" height="600" style="background-color: black; border: 1px solid black;"></canvas>
   
   <script src="/res/js/Point2D.js"></script>
   <script src="/res/js/Intersections.js"></script>
@@ -162,7 +173,6 @@
     }
   </script>
 
-</div>
 </div>
 </div>
 
