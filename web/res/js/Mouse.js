@@ -25,6 +25,10 @@ function Mouse(game) {
   window.addEventListener('mouseup', function(e){ me.mouseup(e) }, true);
   window.addEventListener("keyup", function(e){ me.keyup(e) }, true);
 
+  window.addEventListener('ontouchstart', function(e){ me.touchstart(e) }, true);
+  window.addEventListener('ontouchstop', function(e){ me.touchstop(e) }, true);
+  window.addEventListener('ontouchmove', function(e){ me.touchmove(e) }, true);
+
   
 }
 
@@ -239,4 +243,31 @@ Mouse.prototype.keyup = function(e) {
     this.down_y = 0;
     this.game.selected_ball = null;
   }
+}
+
+/*****
+ *
+ *   touchstart
+ *
+ *****/
+Mouse.prototype.touchstart = function(e) {
+  alert('touchstart')
+}
+
+/*****
+ *
+ *   touchstop
+ *
+ *****/
+Mouse.prototype.touchstop = function(e) {
+  alert('touchstop')
+}
+
+/*****
+ *
+ *   touchmove
+ *
+ *****/
+Mouse.prototype.touchmove = function(e) {
+  alert('touchmove')
 }
