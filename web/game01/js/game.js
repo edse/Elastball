@@ -323,9 +323,9 @@ Game.prototype.draw = function() {
     this.update();
     this.collide();
     //this.testKeepers();
-    //this.testNet();
     //this.testLateral();
-    //this.testWalls();
+    this.testWalls();
+    this.testNet();
   }
   
   this.drawField();
@@ -527,6 +527,7 @@ Game.prototype.render = function() {
   }
 
   //keepers
+  /*
   for(var i = 0; i < this.keepers.length; i++){
     keeper = this.keepers[i];
     //this.context.fillStyle = keeper.team.color;
@@ -634,7 +635,6 @@ Game.prototype.render = function() {
       this.context.restore();
     }
     
-    /*
     if((this.selected_ball == null)&&(this.mouse.down)&&(this.mouse.down_y != this.mouse.y)&&(!this.running)){
       this._y = this._y - ((this.mouse.down_y - this.mouse.y) * 0.1);
       this.is_moving = true;
@@ -645,9 +645,9 @@ Game.prototype.render = function() {
          this._y = -this.height + this.canvas.height;
       
     }
-    */
     
   }
+  */
 
   this.context.restore();
 
@@ -946,8 +946,8 @@ Game.prototype.testLateral = function() {
 Game.prototype.testWalls = function() {
   var ball;
   var testBall;
-  var w = this.canvas.width;
-  var h = this.canvas.height;
+  var w = this.width;
+  var h = this.height;
   var hasCollided = false;
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
