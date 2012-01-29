@@ -6,7 +6,7 @@
 
       <p class="intro"><strong>ElastBall</strong> <?php echo __('allows you to chalenge other players online with 700+ soccer teams') ?>.</p>
 
-      <a href="http://www.w3.org/html/logo/" style="margin-left: 45px;">
+      <a href="http://www.w3.org/html/logo/">
         <img src="http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-device-graphics-multimedia-performance-semantics-storage.png" width="357" height="64" alt="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage" title="HTML5 Powered with Connectivity / Realtime, CSS3 / Styling, Device Access, Graphics, 3D &amp; Effects, Multimedia, Performance &amp; Integration, Semantics, and Offline &amp; Storage">
       </a>
       

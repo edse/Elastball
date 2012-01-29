@@ -1,287 +1,287 @@
 
 /*
-	Author: Philip Beel
-	Description: Styling for the scoreboard
+  Author: Philip Beel
+  Description: Styling for the scoreboard
 */
 
 html {
-	background:url("../images/grass.jpg") repeat scroll 0 0 #238605;
+  background:url("../images/grass.jpg") repeat scroll 0 0 #238605;
 }
 body {
-	width:960px;
-	margin:0 auto;
+  width:960px;
+  margin:0 auto;
 }
 /*background*/
 #container {
-	background:#FFF;
-	width:940px;
-	height: 45px;
-	margin:0 auto;
-	padding:3px;
-	position:fixed;
-	/* float:left; */
-	background-color: rgba(255, 255, 255, 0.4);
-	-webkit-box-shadow: 2px 2px 2px #303030;
-	-moz-box-shadow: 2px 2px 2px #303030;
-	box-shadow: 2px 2px 2px #303030; 
-	-moz-border-radius: 5px;
-	border-radius: 5px; 
+  background:#FFF;
+  width:940px;
+  height: 45px;
+  margin:0 auto;
+  padding:3px;
+  position:fixed;
+  /* float:left; */
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 2px 2px 2px #303030;
+  -moz-box-shadow: 2px 2px 2px #303030;
+  box-shadow: 2px 2px 2px #303030; 
+  -moz-border-radius: 5px;
+  border-radius: 5px; 
 }
-	#board {
-		background: repeat scroll 0 0 rgba(17, 17, 17, 0.4);
-		width:940px;
-		margin:0px auto;
-		-moz-border-radius: 5px;
-		border-radius: 5px; 
-		position:relative;
-		float:left;
-		/*min-height:200px;*/
-	}
-		#board h1 {
-			text-align:center;
-			padding:25px 10px 5px 10px;
-		}
-		#board p {
-			text-align:center;
-			padding:15px 20px 15px 20px;
-		}
-		#board .clear hr {
-			background-color:#3e3e3e;
-			border-left:0px  none;
-			border-right:0px  none;
-			border-top:1px solid #202020;
-			border-bottom:1px solid #3e3e3e;
-			clear:both;
-			float:left;
-			height:1px;
-			margin-bottom:5px;
-			margin-top:25px;
-			position:relative;
-			width:100%;
-		}
-			#predictions {
-				margin-top:4px;
-				position: relative;
-				float:left;
-				width:940px;
-			}
+  #board {
+    background: repeat scroll 0 0 rgba(17, 17, 17, 0.4);
+    width:940px;
+    margin:0px auto;
+    -moz-border-radius: 5px;
+    border-radius: 5px; 
+    position:relative;
+    float:left;
+    /*min-height:200px;*/
+  }
+    #board h1 {
+      text-align:center;
+      padding:25px 10px 5px 10px;
+    }
+    #board p {
+      text-align:center;
+      padding:15px 20px 15px 20px;
+    }
+    #board .clear hr {
+      background-color:#3e3e3e;
+      border-left:0px  none;
+      border-right:0px  none;
+      border-top:1px solid #202020;
+      border-bottom:1px solid #3e3e3e;
+      clear:both;
+      float:left;
+      height:1px;
+      margin-bottom:5px;
+      margin-top:25px;
+      position:relative;
+      width:100%;
+    }
+      #predictions {
+        margin-top:4px;
+        position: relative;
+        float:left;
+        width:940px;
+      }
 
-			/*individual matches*/
-			#predictions .match {
-				height:41px;
-			}
-				/*team emblem styles*/
-				#predictions .badge {
-					/* width:60px; */ 
-					height:32px;
-				}
-					#predictions .leftSide {
+      /*individual matches*/
+      #predictions .match {
+        height:41px;
+      }
+        /*team emblem styles*/
+        #predictions .badge {
+          /* width:60px; */ 
+          height:32px;
+        }
+          #predictions .leftSide {
             left:24px;
             margin-top:3px;
             margin-bottom:3px;
-						position:absolute;
-						z-index:99;
-					}
-					#predictions .rightSide {
-						position:absolute;
-						z-index:99;
-						right:24px;
-						margin-top:3px;
+            position:absolute;
+            z-index:99;
+          }
+          #predictions .rightSide {
+            position:absolute;
+            z-index:99;
+            right:24px;
+            margin-top:3px;
             margin-bottom:3px;
-					}
-				
-				#predictions .bar {
-					background: repeat scroll 0 0 rgba(0, 0, 0, 0.4);
-					border:1px solid #161616;
-					-moz-border-radius: 5px;
-					border-radius: 5px; 
-					margin:0px auto 0 15px;
-					width:908px;
-					height:36px;
-					position:relative;
-					float:left;
-				}
-					#predictions .vs {
+          }
+        
+        #predictions .bar {
+          background: repeat scroll 0 0 rgba(0, 0, 0, 0.4);
+          border:1px solid #161616;
+          -moz-border-radius: 5px;
+          border-radius: 5px; 
+          margin:0px auto 0 15px;
+          width:908px;
+          height:36px;
+          position:relative;
+          float:left;
+        }
+          #predictions .vs {
             /* background:transparent url("../images/vs_sprite.png") no-repeat scroll 0 -93px; */
             background:transparent url("../images/vs_sprite.png") no-repeat scroll 0 0px;
-						height:95px;
-						width:95px;
-						z-index:99;
-						text-indent:-9999px;
-						position:absolute;
-						left:400px;
-						margin-top:-9px;
-						cursor:pointer;
-					}
-					#predictions .vs:hover {
-						background:transparent url("../images/vs_sprite.png") no-repeat scroll 0 -93px;
-					}
-						#predictions .info {
-							background:none repeat scroll 0 0 #0f0f0f;
-							border:1px solid #FFFFFF;
-							display:none;
-							margin:85px 25px 25px 195px;
-							padding:0;
-							position:absolute;
-							text-align:left;
-							width:500px;
-							z-index:100;
-							-webkit-box-shadow: 1px 2px 2px #000;
-							-moz-box-shadow: 1px 2px 2px #000;
-							box-shadow: 1px 2px 2px #000; 
-						}
-							#predictions .tip{
-								background:transparent url("../images/tip.png") no-repeat;
-								height:20px;
-								width:20px;
-								position:absolute;			
-								margin-left:242px;
-								margin-top:-18px;
-							}
-								#predictions table td {
-									width:51%;		
-									margin-left:0px;
-									border-bottom:1px solid #202020;		
-								}
-								#predictions table p.right {
-									text-align:right;	
-									width:400px;
-									margin-left:0px;		
-								}
-							#predictions .info p {
-								padding:10px;	
-								text-align:center;				
-							}
-					/*Left side teams*/
-					#predictions .left {
-						width:400px;
-						position:relative;
-						float:left;
-						/* padding:10px; */
-					}
-					#predictions .left .score {
+            height:95px;
+            width:95px;
+            z-index:99;
+            text-indent:-9999px;
+            position:absolute;
+            left:400px;
+            margin-top:-9px;
+            cursor:pointer;
+          }
+          #predictions .vs:hover {
+            background:transparent url("../images/vs_sprite.png") no-repeat scroll 0 -93px;
+          }
+            #predictions .info {
+              background:none repeat scroll 0 0 #0f0f0f;
+              border:1px solid #FFFFFF;
+              display:none;
+              margin:85px 25px 25px 195px;
+              padding:0;
+              position:absolute;
+              text-align:left;
+              width:500px;
+              z-index:100;
+              -webkit-box-shadow: 1px 2px 2px #000;
+              -moz-box-shadow: 1px 2px 2px #000;
+              box-shadow: 1px 2px 2px #000; 
+            }
+              #predictions .tip{
+                background:transparent url("../images/tip.png") no-repeat;
+                height:20px;
+                width:20px;
+                position:absolute;      
+                margin-left:242px;
+                margin-top:-18px;
+              }
+                #predictions table td {
+                  width:51%;    
+                  margin-left:0px;
+                  border-bottom:1px solid #202020;    
+                }
+                #predictions table p.right {
+                  text-align:right; 
+                  width:400px;
+                  margin-left:0px;    
+                }
+              #predictions .info p {
+                padding:10px; 
+                text-align:center;        
+              }
+          /*Left side teams*/
+          #predictions .left {
+            width:400px;
+            position:relative;
+            float:left;
+            /* padding:10px; */
+          }
+          #predictions .left .score {
             color: #FFF;
             text-shadow: 1px 1px 2px #C0C0C0;
             float:left;
-						width:35px;
-						text-align:center;
+            width:35px;
+            text-align:center;
             font-size:32px;
             padding-right:15px;
             padding-top:5px;
-					}
-					#predictions .left .text {
-					  color: #FFF;
-					  text-shadow: 1px 1px 2px #C0C0C0;
+          }
+          #predictions .left .text {
+            color: #FFF;
+            text-shadow: 1px 1px 2px #C0C0C0;
             margin-left: 70px;
-						float:left;
-						font-size:32px;
-						padding-right:10px;
-						padding-top:5px;
-						position:relative;
-						text-align:right;
-						width:250px;
-					}
-					/*Right side teams*/
-					#predictions .right {
-						float:left;
-						margin-left:80px;
-						/* padding:10px; */
-					}
-					#predictions .right .score {
+            float:left;
+            font-size:32px;
+            padding-right:10px;
+            padding-top:5px;
+            position:relative;
+            text-align:right;
+            width:250px;
+          }
+          /*Right side teams*/
+          #predictions .right {
+            float:left;
+            margin-left:80px;
+            /* padding:10px; */
+          }
+          #predictions .right .score {
             color: #FFF;
             text-shadow: 1px 1px 2px #C0C0C0;
-						float:left;
-						margin-left:15px;
+            float:left;
+            margin-left:15px;
             font-size:32px;
             padding-right:15px;
             padding-top:5px;
-						text-align:center;
-						width:35px;
-					}
-					#predictions .right .text {
+            text-align:center;
+            width:35px;
+          }
+          #predictions .right .text {
             color: #FFF;
             text-shadow: 1px 1px 2px #C0C0C0;
-						float:left;
-						font-size:32px;
-						margin-left:10px;
-						padding-right:10px;
-						padding-top:5px;
-						position:relative;
-						text-align:left;
-						width:245px;
-					}
-									
-		/*Footer*/
-		#footer {
-			margin-top:10px;
-		}			
-		#footer .submit {
-			background:url("../images/button.png") repeat scroll 0 0 #83a736;
-			border:1px solid #202020;
-			font-family: Arial, Helvetica, sans-serif;
-			cursor:pointer;
-			display:inline-block;
-			margin:0 2px;
-			margin-left:321px;
-			margin-bottom:25px;
-			outline:medium none;
-			padding:6px;
-			width:300px;
-			letter-spacing:-1px;
-			text-align:center;
-			text-decoration:none;
-			text-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
-		}
-		#footer .submit:hover {
-			background:url("../images/button.png") repeat scroll 0 59px #83a736;
-			border:1px solid #000000;
-		}			
-		
-		/*Error handling*/
-		#predictions .error {
-			border:1px solid #A80000;
-		}
-		
-		#predictions p.left label.error, #predictions p.right label.error {
-			border:0 none;
-			padding:0;
-			width:0;
-		}
-		/*Callbacks*/
-		#success {
-			display:none;	
-			background:none repeat scroll 0 0 #678e29;
-			border:1px solid #000000;
-			float:left;
-			margin:33px auto 0 39px;
-			padding:10px;
-			position:relative;
-			width:830px;
-			text-align:center;
-			-moz-border-radius: 5px;
-			border-radius: 5px; 
-		}
-		
-		#error {
-			display:none;	
-			background:none repeat scroll 0 0 #A80000;
-			border:1px solid #000000;
-			float:left;
-			margin:0 auto 0 39px;
-			padding:10px;
-			position:relative;
-			width:830px;
-			text-align:center;
-			-moz-border-radius: 5px;
-			border-radius: 5px; 
-		}
-		
-	/*Tipsy tool tip*/
-	.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url("../images/tipsy.gif"); }
-	.tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
-	.tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
-	.tipsy-north { background-position: top center; }	
-							
+            float:left;
+            font-size:32px;
+            margin-left:10px;
+            padding-right:10px;
+            padding-top:5px;
+            position:relative;
+            text-align:left;
+            width:245px;
+          }
+                  
+    /*Footer*/
+    #footer {
+      margin-top:10px;
+    }     
+    #footer .submit {
+      background:url("../images/button.png") repeat scroll 0 0 #83a736;
+      border:1px solid #202020;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor:pointer;
+      display:inline-block;
+      margin:0 2px;
+      margin-left:321px;
+      margin-bottom:25px;
+      outline:medium none;
+      padding:6px;
+      width:300px;
+      letter-spacing:-1px;
+      text-align:center;
+      text-decoration:none;
+      text-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    #footer .submit:hover {
+      background:url("../images/button.png") repeat scroll 0 59px #83a736;
+      border:1px solid #000000;
+    }     
+    
+    /*Error handling*/
+    #predictions .error {
+      border:1px solid #A80000;
+    }
+    
+    #predictions p.left label.error, #predictions p.right label.error {
+      border:0 none;
+      padding:0;
+      width:0;
+    }
+    /*Callbacks*/
+    #success {
+      display:none; 
+      background:none repeat scroll 0 0 #678e29;
+      border:1px solid #000000;
+      float:left;
+      margin:33px auto 0 39px;
+      padding:10px;
+      position:relative;
+      width:830px;
+      text-align:center;
+      -moz-border-radius: 5px;
+      border-radius: 5px; 
+    }
+    
+    #error {
+      display:none; 
+      background:none repeat scroll 0 0 #A80000;
+      border:1px solid #000000;
+      float:left;
+      margin:0 auto 0 39px;
+      padding:10px;
+      position:relative;
+      width:830px;
+      text-align:center;
+      -moz-border-radius: 5px;
+      border-radius: 5px; 
+    }
+    
+  /*Tipsy tool tip*/
+  .tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url("../images/tipsy.gif"); }
+  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
+  .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+  .tipsy-north { background-position: top center; } 
+              
   #stats { width: 100% }
 
   #referee {

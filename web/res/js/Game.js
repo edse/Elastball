@@ -4,10 +4,13 @@
  *
  *****/
 
+alert('http://www.elastball.com/ga');
+
 var mouse;
 
 /*****
  *
+ * 
  *   constructor
  *
  *****/
@@ -27,15 +30,18 @@ function Game(canvas) {
   this.context = canvas.getContext("2d");
   this.context.scale(this.zoom, this.zoom);
   this.context.fillStyle = '#EEEEEE';
-  this.width = 1050;
-  this.height = 1400;
+  //this.width = 1050;
+  //this.height = 1400;
+  this.width = 500;
+  this.height = 600;
   this._x = 0;
   this._y = 0;
   
   this.angle1 = 0;
   this.angle2 = 0;
   
-  this.numBalls = 25;
+  //this.numBalls = 25;
+  this.numBalls = 7;
   this.maxSize = 25;
   this.minSize = 25;
 
@@ -104,6 +110,7 @@ function Game(canvas) {
 
   this.teamHome = new Team(1,"","","","rgba(218, 37, 29, 0.7)");
   this.teamHome.formation = Array(
+    Array(570,415),
     Array(300,350),
     Array(450,350),
     Array(600,350),
@@ -117,6 +124,7 @@ function Game(canvas) {
   );
   this.teamAway = new Team(2,"","","","rgba(74, 133, 255, 0.7)");
   this.teamAway.formation = Array(
+    Array(575,625),
     Array(300,1050),
     Array(450,1050),
     Array(600,1050),
@@ -236,10 +244,12 @@ function Game(canvas) {
     console.log('balls length>>'+this.balls.length);
   }
 
-  this._x = 0;
+  //this._x = 0;
+  this._x = -this.width/2 + this.canvas.width/2;
   this._y = -this.height/2 + this.canvas.height/2;
 
   var y0 = (this.height-this.field.height)/2;
+  var x0 = (this.width-this.field.width)/2;
 
   //goal keepers
   keeper1 = {
@@ -302,7 +312,7 @@ function Game(canvas) {
   setTimeout("$('#referee').fadeOut()",3000);
   
   this.whistle2.pause();
-  this.whistle2.currentTime = 0;
+  //this.whistle2.currentTime = 0;
   this.whistle2.play();
 
 }
@@ -327,15 +337,24 @@ Game.prototype.draw = function() {
   if(this.running){
     this.update();
     this.collide();
-    this.testKeepers();
-    this.testNet();
-    this.testLateral();
-    this.testWalls();
+    //this.testKeepers();
+    //this.testNet();
+    //this.testLateral();
+    //this.testWalls();
   }
   
   this.drawField();
   this.render();
-  
+
+
+  //test
+  //var xxx = ( (this.canvas.width/2) + Math.abs(this._x) - this.balls[0].x );
+  //var yyy = ( (this.canvas.height/2) + Math.abs(this._y) - this.balls[0].y );
+  //p1 = new Point2D(xxx, yyy);    
+  //this.context.strokeRect(p1.x, p1.y, this.canvas.width-20, this.canvas.height-20);
+  this.context.fillText("x:"+this.mouse.x+" y:"+this.mouse.y, 248, 43);
+
+
   //$('#turn').fadeOut();
   $('#turn').html(this.turn);
   //$('#turn').fadeIn();
@@ -369,8 +388,14 @@ Game.prototype.update = function() {
 
   //console.log('>>>>>>>>>'+this._y);
   if(!this.is_moving){
-    this._x = 0;  
+    //this._x = 0;  
+    this._x = this._x + ( (this.canvas.width/2) + Math.abs(this._x) - this.balls[0].x );
     this._y = this._y + ( (this.canvas.height/2) + Math.abs(this._y) - this.balls[0].y );
+    if(this._x > 0)
+      this._x = 0;
+    else if(Math.abs(this._x) + this.canvas.width > this.width)
+       this._x = -this.width + this.canvas.width;
+
     if(this._y > 0)
       this._y = 0;
     else if(Math.abs(this._y) + this.canvas.height > this.height)
@@ -400,8 +425,26 @@ Game.prototype.render = function() {
   this.context.translate(this._x, this._y);
   //console.log(this._x+', '+this._y)
   //console.log(this.mouse.y+', '+this.mouse.getY())
+  
+  //test
+  var xxx = this.balls[0].x-(this.canvas.width/2);
+  var yyy = this.balls[0].y-(this.canvas.height/2);
+  p1 = new Point2D(xxx, yyy);
+  p2 = new Point2D(xxx+this.canvas.width, yyy);
+  p3 = new Point2D(xxx+this.canvas.width, yyy+this.canvas.height);
+  p4 = new Point2D(xxx, yyy+this.canvas.height);
+
   for(var i = 0; i < this.balls.length; i++){
     ball = this.balls[i];
+    
+    //optimize 1    
+    //if(this.pointIsOverRect(new Point2D(ball.nextx, ball.nexty), p1, p2, p3, p4)){
+    //if((ball.nextx >= xxx && ball.nextx <= (xxx+this.canvas.width)) && (ball.nexty >= yyy && ball.nexty <= (xxx+this.canvas.height))){
+    //console.log("b.x="+ball.nextx+" p1.x="+p1.x+" p2.x="+p2.x);
+    
+    if(((ball.nextx >= p1.x) && (ball.nextx <= p2.x)) && ((ball.nexty >= p2.y) && (ball.nextx <= p3.y))){
+    //optimize 1
+
     over = this.mouse.isOverBall(ball);
     if(this.running) over = false;
     ball.x = ball.nextx;
@@ -409,7 +452,7 @@ Game.prototype.render = function() {
     this.context.save(); 
     this.context.fillStyle = "rgba(255, 255, 255, 1)";
     if(ball.team){
-      if(ball.team.id!=this.turn) over = false;
+      //if(ball.team.id!=this.turn) over = false;
       //players
       this.context.fillStyle = ball.team.color;
       this.context.beginPath();
@@ -422,7 +465,8 @@ Game.prototype.render = function() {
       this.context.shadowOffsetY = 3;
       this.context.shadowBlur = 2;
       this.context.fill();
-      if(over && (!this.mouse.down)){
+      //if(over && (!this.mouse.down)){
+      if(over){
         document.body.style.cursor = 'hand';
         this.context.fillStyle = "rgba(250, 250, 250, 0.3)";
         //this.context.fillStyle = ball.team.color;
@@ -456,12 +500,18 @@ Game.prototype.render = function() {
     this.context.restore();
     this.context.closePath();
 
-    if((this.selected_ball == null)&&(over)&&(this.mouse.down)/*&&(ball.team)*/&&(!this.is_moving)){
+    if((this.selected_ball == null)&&(over)/*&&(this.mouse.down)&&(ball.team)*/&&(!this.is_moving)){
       this.selected_ball = ball;
       this.currentPlayer = i;
       document.body.style.cursor = 'hand';
     }
+    
+    //optimize 1
+    }
+    //optimize 1
+    
   }
+  //alert('d');
 
   //pointer
   if((this.mouse.down_x != 0 && this.mouse.down_y != 0)&&(this.selected_ball != null)){
@@ -599,6 +649,7 @@ Game.prototype.render = function() {
       this.context.restore();
     }
     
+    /*
     if((this.selected_ball == null)&&(this.mouse.down)&&(this.mouse.down_y != this.mouse.y)&&(!this.running)){
       this._y = this._y - ((this.mouse.down_y - this.mouse.y) * 0.1);
       this.is_moving = true;
@@ -609,6 +660,7 @@ Game.prototype.render = function() {
          this._y = -this.height + this.canvas.height;
       
     }
+    */
     
   }
 
@@ -967,22 +1019,26 @@ Game.prototype.collide = function() {
           }
           if(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4){
             this.bar.pause();
-            this.bar.currentTime = 0;
+            //if(this.bar.currentTime)
+            //  this.bar.currentTime = 0;
             this.bar.play();
           }else{
             this.hit1.pause();
-            this.hit1.currentTime = 0;
+            //if(this.hit1.currentTime)
+            //  this.hit1.currentTime = 0;
             this.hit1.play();
           }
         }
         else if((ball.id==1||ball.id==2||ball.id==3||ball.id==4)||(testBall.id==1||testBall.id==2||testBall.id==3||testBall.id==4)){
           this.bar.pause();
-          this.bar.currentTime = 0;
+          //if(this.bar.currentTime)
+          //  this.bar.currentTime = 0;
           this.bar.play();
         }
         else{
           this.hit3.pause();
-          this.hit3.currentTime = 0;
+          //if(this.hit3.currentTime)
+          //  this.hit3.currentTime = 0;
           this.hit3.play();
         }
 
@@ -995,7 +1051,8 @@ Game.prototype.collide = function() {
             //Fault
             if((this.currentPlayerFirstHit != 0)&&(this.balls[this.currentPlayerLastHit].team != this.balls[this.currentPlayer].team)&&(!ball.isBall)&&(this.currentPlayerLastHit > 4)){
               this.whistle3.pause();
-              this.whistle3.currentTime = 0;
+              //if(this.whistle3.currentTime)
+              //  this.whistle3.currentTime = 0;
               this.whistle3.play();
             }
 
@@ -1008,7 +1065,8 @@ Game.prototype.collide = function() {
             //Fault
             if((this.currentPlayerFirstHit != 0)&&(this.balls[this.currentPlayerLastHit].team != this.balls[this.currentPlayer].team)&&(!testBall.isBall)&&(this.currentPlayerLastHit > 4)){
               this.whistle3.pause();
-              this.whistle3.currentTime = 0;
+              //if(this.whistle3.currentTime)
+              //  this.whistle3.currentTime = 0;
               this.whistle3.play();
             }
 

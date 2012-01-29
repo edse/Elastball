@@ -137,7 +137,7 @@
   </div>
 
   <!-- <canvas id="canvasOne" width="1050" height="600" style="background-color: black; position: absolute; top: 200px; left:110px; border: 1px solid black;"></canvas> -->
-  <canvas id="canvasOne" width="1050" height="600" style="background-color: black; border: 1px solid black;"></canvas>
+  <canvas id="canvasOne" width="300" height="300" style="background-color: black; border: 1px solid black;"></canvas>
   
   <script src="/res/js/Point2D.js"></script>
   <script src="/res/js/Intersections.js"></script>
@@ -145,7 +145,7 @@
   <script src="/res/js/Field.js"></script>
   <script src="/res/js/Game.js?<?php echo time() ?>"></script>
   <script src="/res/js/Keeper.js"></script>
-  <script src="/res/js/Mouse.js"></script>
+  <script src="/res/js/Mouse.js?<?php echo time() ?>"></script>
   <script src="/res/js/Player.js"></script>
   <script src="/res/js/Team.js"></script>
   <script src="/res/js/Timer.js"></script>
