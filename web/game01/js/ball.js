@@ -34,6 +34,7 @@ function Ball(id, radius, x, y) {
   this.speed = 0;
   this.center = new Point2D(this.x,this.y);
   this.startPoint = new Point2D(this.x,this.y);
+  this.running = false;
 }
 
 /*****

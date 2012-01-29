@@ -30,14 +30,16 @@
           socket = false,
           context = canvas.getContext('2d'),
           zoom = 1,
-          start_time = new Date().getTime(),
-          time = getTimer(),
           game = new Game(canvas);
           
       /////
   
         context.scale(this.zoom, this.zoom);
-    
+
+        var maxElapsedTime = 0;
+        var start_time = 0;
+        var time = getTimer();
+
         function getTimer () {
           return (new Date().getTime() - start_time); //milliseconds
         }
@@ -57,7 +59,9 @@
            * Default framerate is about 17 ms.
            */
           
-          elapsed = Math.min(20, Math.max(-20, elapsed));
+          //elapsed = Math.min(20, Math.max(-20, elapsed));
+          if(elapsed > maxElapsedTime)
+            maxElapsedTime = elapsed;
           
           /*
           vy += gravity * elapsed / 1000;
@@ -81,6 +85,9 @@
           */
 
           context.fillText(">>> "+elapsed, 50, 50);
+          context.fillText("maxElapsedTime>>> "+maxElapsedTime, 50, 60);
+          context.fillText("running>>> "+game.running, 50, 70);
+          context.fillText("runningBalls>>> "+game.runningBalls.length, 50, 80);
           
         }());
 

@@ -218,6 +218,8 @@ Mouse.prototype.mouseup = function(event) {
       this.game.running = true;
       this.game.currentPlayer = this.game.selected_ball.id;
 
+      //this.game.runningBalls.push(this.game.selected_ball);
+
     }
     else if(this.game.selected_ball.id == "rotate"){
       //alert(keepers[0].angle)
@@ -300,23 +302,19 @@ Mouse.prototype.touchend = function(e) {
       var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
       var vy = (this.game.selected_ball.y - this.up_y) * 0.1;
       
-      if(socket)
-        socket.send("✓gamemove➾"+this.game.selected_ball.id+"➾"+vx+"➾"+vy);
-      else{
-        var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
-        var vy = (this.game.selected_ball.y - this.up_y) * 0.1;
-        this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
-        this.game.selected_ball.velocityx = vx;
-        this.game.selected_ball.velocityy = vy;
-        this.game.storeMove(this.game.selected_ball.id,vx,vy); 
-        if(this.game.selected_ball.velocityx > this.game.maxSpeed)
-          this.game.selected_ball.velocityx = this.game.maxSpeed;
-        if(this.game.selected_ball.velocityy > this.game.maxSpeed)
-          this.game.selected_ball.velocityy = this.game.maxSpeed;
-  
-        this.game.running = true;
-        this.game.currentPlayer = this.game.selected_ball.id;
-      }
+      this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
+      this.game.selected_ball.velocityx = vx;
+      this.game.selected_ball.velocityy = vy;
+      this.game.storeMove(this.game.selected_ball.id,vx,vy); 
+      if(this.game.selected_ball.velocityx > this.game.maxSpeed)
+        this.game.selected_ball.velocityx = this.game.maxSpeed;
+      if(this.game.selected_ball.velocityy > this.game.maxSpeed)
+        this.game.selected_ball.velocityy = this.game.maxSpeed;
+
+      this.game.running = true;
+      this.game.currentPlayer = this.game.selected_ball.id;
+      
+      //this.game.runningBalls.push(this.game.selected_ball);
 
     }
     else if(this.game.selected_ball.id == "rotate"){
