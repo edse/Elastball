@@ -1,44 +1,48 @@
-function Ball (radius, color) {
-  if (radius === undefined) { radius = 40; }
-  if (color === undefined) { color = "#ff0000"; }
-  this.x = 0;
-  this.y = 0;
-  this.radius = radius;
-  this.vx = 0;
-  this.vy = 0;
-  this.mass = 1;
-  this.rotation = 0;
-  this.scaleX = 1;
-  this.scaleY = 1;
-  this.color = utils.parseColor(color);
-  this.lineWidth = 1;
-  this.visible = true;
+/*****
+ *
+ *   Ball.js
+ *
+ *****/
+
+/*****
+ *
+ *   constructor
+ *
+ *****/
+function Ball(id, radius, x, y) {
+  if(arguments.length > 0) {
+    this.id = id;
+    this.radius = radius;
+    this.x = x;
+    this.y = y;
+  }
+  else{
+    this.id = 0;
+    this.radius = 10;
+    this.x = 0;
+    this.y = 0;
+  }
+  this.speed = 0;
+  this.angle = 0;
+  this.velocityx = 0;
+  this.velocityy = 0;
+  this.mass = this.radius*8;
+  this.nextx = this.x;
+  this.nexty = this.y;
+  this.anglespeed = 0;
+  this.rangle = 0;
+  this.speed = 0;
+  this.center = new Point2D(this.x,this.y);
+  this.startPoint = new Point2D(this.x,this.y);
 }
 
-Ball.prototype.draw = function (context) {
-  context.save();
-  context.translate(this.x, this.y);
-  context.rotate(this.rotation);
-  context.scale(this.scaleX, this.scaleY);
-  
-  context.lineWidth = this.lineWidth;
-  context.fillStyle = this.color;
-  context.beginPath();
-  //x, y, radius, start_angle, end_angle, anti-clockwise
-  context.arc(0, 0, this.radius, 0, (Math.PI * 2), true);
-  context.closePath();
-  context.fill();
-  if (this.lineWidth > 0) {
-    context.stroke();
-  }
-  context.restore();
+/*****
+ *
+ *   draw
+ *
+ *****/
+Ball.prototype.draw = function() {
+  return true;
 };
 
-Ball.prototype.getBounds = function () {
-  return {
-    x: this.x - this.radius,
-    y: this.y - this.radius,
-    width: this.radius * 2,
-    height: this.radius * 2
-  };
-};
+
