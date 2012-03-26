@@ -4,13 +4,31 @@
     <meta charset="utf-8">
     <title>Time Based 3</title>
     <link rel="stylesheet" href="../include/style.css">
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
-  <body>
-    <header>
-      FPS tests - 20120128
-    </header>
-    
-    <canvas id="canvas" width="400" height="400"></canvas>
+  <body>    
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <button id="z1">-</button>
+    <button id="z2">+</button>
+    Zoom: <input type="range" name="zoom" id="zoom" min="0" max="10" /><br />
+    Scale: <input type="text" name="scale" id="scale" />
+    <div>
+      x: <input type="text" name="mx" id="mx" />
+      y: <input type="text" name="my" id="my" />
+    </div>
+    <div>
+      virtual x: <input type="text" name="mvx" id="mvx" />
+      virtual y: <input type="text" name="mvy" id="mvy" />
+    </div>
+    <div>
+      ball x: <input type="text" name="bx" id="bx" />
+      ball y: <input type="text" name="by" id="by" />
+    </div>
     <script src="./js/utils.js"></script>
 
 
@@ -26,10 +44,12 @@
 
     <script>
     window.onload = function () {
+      
       var canvas = document.getElementById('canvas'),
           socket = false,
           context = canvas.getContext('2d'),
-          zoom = 1,
+          scale = 1,
+          zoom = 0,
           game = new Game(canvas);
           
       /////
@@ -90,8 +110,49 @@
           context.fillText("runningBalls>>> "+game.runningBalls.length, 50, 80);
           
         }());
+        
+        var slider = document.getElementById('zoom');
+        slider.addEventListener('change', function(e){ 
+          var s = slider.value/5;
+          context.scale(s, s); }, false);
+  
+        var z1 = document.getElementById('z1');
+        z1.addEventListener('click', function(e){
+          zoom = 0.5;
+          x = game.balls[0].x;
+          y = game.balls[0].y;
+          ox = game._x;
+          oy = game._y;
+          cx = x+ox-(canvas.width/2);
+          cy = y+oy-(canvas.height/2);
+          fx = cx+(canvas.width/2*zoom);
+          fy = cy+(canvas.height/2*zoom);
+          context.translate(fx,fy);
+          context.scale(zoom, zoom);
+          game.scale *= zoom;
+          document.getElementById('scale').value = game.scale;
+        }, false);
+        
+        var z2 = document.getElementById('z2');
+        z2.addEventListener('click', function(e){
+          zoom = 2;
+          x = game.balls[0].x;
+          y = game.balls[0].y;
+          ox = game._x;
+          oy = game._y;
+          cx = x+ox-(canvas.width/2);
+          cy = y+oy-(canvas.height/2);
+          fx = cx-(canvas.width/zoom);
+          fy = cy-(canvas.height/zoom);
+          context.translate(fx,fy);
+          context.scale(zoom, zoom);
+          game.scale *= zoom;
+          document.getElementById('scale').value = game.scale;
+        }, false);
 
       };
+
+
     </script>
     
   </body>

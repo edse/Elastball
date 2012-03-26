@@ -20,10 +20,18 @@ function Mouse(game) {
   this.down = false;
   this.up = false;
   var me = this;
-  window.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
-  window.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
-  window.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
-  window.addEventListener("keyup", function(e){ me.keyup(e) }, false);
+  
+  var o = this.game.canvas;
+  
+  //window.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
+  //window.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
+  //window.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
+  //window.addEventListener("keyup", function(e){ me.keyup(e) }, false);
+
+  o.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
+  o.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
+  o.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
+  o.addEventListener("keyup", function(e){ me.keyup(e) }, false);
 
   //window.ontouchstart = function(e){ me.touchstart(e); }
   ////window.ontouchstop = function(e){ alert('asdf') }
@@ -35,7 +43,7 @@ function Mouse(game) {
   window.addEventListener("touchstart", function(e){ me.touchstart(e); }, false);
   window.addEventListener("touchend", function(e){ me.touchend(e); }, false);
 
-  alert('21');
+  alert('24');
 
   //window.addEventListener('ontouchstart', function(e){ me.touchstart(e) }, true);
   //window.addEventListener('ontouchstop', function(e){ me.touchstop(e) }, true);
@@ -164,8 +172,30 @@ Mouse.prototype.getUp = function() {
  *
  *****/
 Mouse.prototype.mousemove = function(event) {
-  this.x = event.pageX + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  this.y = event.pageY + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;
+  mx = (event.pageX)/this.game.scale;
+  my = (event.pageY)/this.game.scale;
+  xx = this.game.get_x()*this.game.scale;
+  yy = this.game.get_y()*this.game.scale;
+  this.x = (mx) + Math.abs(xx);
+  this.y = (my) + Math.abs(yy);
+
+  //test
+  this.x = Math.abs(event.pageX) + Math.abs(this.game.get_x());
+  this.y = Math.abs(event.pageY) + Math.abs(this.game.get_y());
+
+  document.getElementById('scale').value = this.game.scale;
+  
+  document.getElementById('mvx').value = this.x;
+  document.getElementById('mvy').value = this.y;
+
+  document.getElementById('mx').value = event.pageX;
+  document.getElementById('my').value = event.pageY;
+
+  document.getElementById('bx').value = this.game.balls[0].x;
+  document.getElementById('by').value = this.game.balls[0].y;
+
+  //this.x /= this.game.scale;
+  //this.y /= this.game.scale;
   //console.log('> '+this.game.canvas.offsetTop+' : '+this.x+', '+this.y);
 }
 

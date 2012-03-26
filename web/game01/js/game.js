@@ -4,7 +4,7 @@
  *
  *****/
 
-alert('http://www.elastball.com/ga');
+alert('http://www.elastball.com/gam');
 
 var mouse;
 
@@ -25,6 +25,7 @@ function Game(canvas) {
   this.whistle4 = document.getElementById('whistle4'); //end game
   this.whistle5 = document.getElementById('whistle5'); //out of bounds
   
+  this.scale = 1;
   this.zoom = 1;
   this.canvas = canvas;
   this.context = canvas.getContext("2d");
@@ -371,12 +372,38 @@ Game.prototype.updateAndCollide = function() {
         if(ball.velocityy > this.maxSpeed)
           ball.velocityy = this.maxSpeed;
       }
+      //collisions between balls
       for(var j = i+1; j < this.balls.length; j++){
         testBall = this.balls[j];
         if(this.hitTestCircle(ball,testBall)){
           this.collideBalls(ball, testBall);
         }
       }
+      //wall colissions
+      var w = this.width;
+      var h = this.height;
+      hasCollided = false;
+      if(ball.nextx+ball.radius > w){
+        ball.velocityx = ball.velocityx*-1;
+        ball.nextx = w-ball.radius;
+        hasCollided = true;
+      }else if(ball.nextx-ball.radius < 0){
+        ball.velocityx = ball.velocityx*-1;
+        ball.nextx = ball.radius; 
+        hasCollided = true;
+      }
+      else if(ball.nexty+ball.radius > h){
+        ball.velocityy = ball.velocityy*-1;
+        ball.nexty = h-ball.radius; 
+        hasCollided = true;
+      }else if(ball.nexty-ball.radius < 0){
+        ball.velocityy = ball.velocityy*-1;
+        ball.nexty = ball.radius; 
+        hasCollided = true;
+      }
+      if(hasCollided)
+        ball.startPoint = new Point2D(ball.nextx, ball.nexty);
+
     }
   }
   if(this.runningBalls.length > 0)
@@ -1149,12 +1176,13 @@ Game.prototype.collideBalls = function(ball1, ball2) {
     ball1.nexty = (ball1.nexty += ball1.velocityy);
     ball1.startPoint = new Point2D(ball1.nextx, ball1.nexty);
     //this.runningBalls.push(ball1);
-
+    /*
     //update position - to avoid objects becoming stuck together
     var absV = Math.abs(ball1.velocityx) + Math.abs(ball2.velocityx),
         overlap = (ball1.radius + ball2.radius) - Math.abs(ball1.nextx - ball2.nextx);
     ball1.nextx += ball1.velocityx / absV * overlap;
     //ball2.nextx += ball2.velocityx / absV * overlap;
+    */
   }
   if(ball2.moveble){
     ball2.velocityx = Math.cos(collisionAngle) * finalVelocityx_2 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityy_2;
@@ -1164,11 +1192,13 @@ Game.prototype.collideBalls = function(ball1, ball2) {
     ball2.startPoint = new Point2D(ball2.nextx, ball2.nexty);
     //this.runningBalls.push(ball2);
 
+    /*
     //update position - to avoid objects becoming stuck together
     var absV = Math.abs(ball1.velocityx) + Math.abs(ball2.velocityx),
         overlap = (ball1.radius + ball2.radius) - Math.abs(ball1.nextx - ball2.nextx);
     //ball1.nextx += ball1.velocityx / absV * overlap;
     ball2.nextx += ball2.velocityx / absV * overlap;
+    */
   }
   
 }
