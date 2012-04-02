@@ -15,7 +15,7 @@ if(isset($_REQUEST["payload"])){
     $msg .= "\nMessage: ".$c->message;
   }
   
-  $a = exec('cd /var/frontend');
+  $msg2 = exec('cd '.dirname(__FILE__).'..');
   $msg2 .= "\n\n".exec('git pull');
   
   mail('emerson.estrella@gmail.com', 'Git Pulled [Elastball]', $msg.$msg2);
