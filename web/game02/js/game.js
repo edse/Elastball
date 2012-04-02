@@ -1,5 +1,7 @@
 function Game(canvas) {
 
+  this.canvas = canvas;
+
   this.is_moving = false;
   this.balls = new Array();
   this.runningBalls = new Array();
@@ -14,7 +16,7 @@ function Game(canvas) {
 
   this.selected_ball = null;
   this.currentPlayer = null;
-  this.context = canvas.getContext("2d");
+  this.context = this.canvas.getContext("2d");
   //this.mouse = utils.captureMouse(canvas,this);
   var me = this;
   this.mouse = new Mouse(me);
@@ -47,20 +49,20 @@ function Game(canvas) {
 Game.prototype.draw = function() {
   //bg
   this.context.fillStyle = '#EEEEEE';
-  this.context.fillRect(0,0,canvas.width/this.scale,canvas.height/this.scale);
+  this.context.fillRect(0,0,this.canvas.width/this.scale,this.canvas.height/this.scale);
   //box
   this.context.strokeStyle = '#000000';
-  this.context.strokeRect(1,1,canvas.width-2,canvas.height-2);
+  this.context.strokeRect(1,1,this.canvas.width-2,this.canvas.height-2);
   //grass
   this.context.save();
   this.context.fillStyle = "rgba(82,132,61, 1)";
-  this.context.fillRect(0, 0, canvas.width, canvas.height);
+  this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
   this.context.fillStyle = "rgba(49,107,56, 1)";
   var x0 = 0;
   var y0 = 0;
-  var h = canvas.height/15;
-  for(var i=0; i*h<canvas.height; i++){
-    if(i%2!=1) this.context.fillRect(x0, y0+(i*h), canvas.width, h);
+  var h = this.canvas.height/15;
+  for(var i=0; i*h<this.canvas.height; i++){
+    if(i%2!=1) this.context.fillRect(x0, y0+(i*h), this.canvas.width, h);
   }
   this.context.restore();
   this.context.save();
