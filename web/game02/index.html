@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Zoom tests</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>    
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <button id="z1">-</button>
+    <button id="z2">+</button>
+    Zoom: <input type="range" name="zoom" id="zoom" min="0" max="10" /><br />
+    Scale: <input type="text" name="scale" id="scale" />
+    <div>
+      x: <input type="text" name="mx" id="mx" />
+      y: <input type="text" name="my" id="my" />
+    </div>
+    <div>
+      virtual x: <input type="text" name="mvx" id="mvx" />
+      virtual y: <input type="text" name="mvy" id="mvy" />
+    </div>
+    <div>
+      ball x: <input type="text" name="bx" id="bx" />
+      ball y: <input type="text" name="by" id="by" />
+    </div>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/mouse.js"></script>
+
+    <script src="./js/intersections.js"></script>
+    <script src="./js/_point2D.js"></script>
+
+    <script src="./js/ball.js"></script>
+    <script src="./js/game.js"></script>
+
+    <script src="./js/main.js"></script>
+    
+  </body>
+</html>

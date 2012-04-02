@@ -123,6 +123,24 @@
           y = game.balls[0].y;
           ox = game._x;
           oy = game._y;
+          cx = (x+ox-(canvas.width/2))*zoom;
+          cy = (y+oy-(canvas.height/2))*zoom;
+          fx = cx+(canvas.width/2*zoom);
+          fy = cy+(canvas.height/2*zoom);
+          context.translate(fx,fy);
+          context.scale(zoom, zoom);
+          game.scale *= zoom;
+          document.getElementById('scale').value = game.scale;
+        }, false);
+
+        /*
+        var z1 = document.getElementById('z1');
+        z1.addEventListener('click', function(e){
+          zoom = 0.5;
+          x = game.balls[0].x;
+          y = game.balls[0].y;
+          ox = game._x;
+          oy = game._y;
           cx = x+ox-(canvas.width/2);
           cy = y+oy-(canvas.height/2);
           fx = cx+(canvas.width/2*zoom);
@@ -132,7 +150,26 @@
           game.scale *= zoom;
           document.getElementById('scale').value = game.scale;
         }, false);
+        */
+
+        var z2 = document.getElementById('z2');
+        z2.addEventListener('click', function(e){
+          zoom = 2;
+          x = game.balls[0].x;
+          y = game.balls[0].y;
+          ox = game._x;
+          oy = game._y;
+          cx = (x+ox-(canvas.width/zoom))*zoom;
+          cy = (y+oy-(canvas.height/zoom))*zoom;
+          fx = cx-(canvas.width/zoom);
+          fy = cy-(canvas.height/zoom);
+          context.translate(fx,fy);
+          context.scale(zoom, zoom);
+          game.scale *= zoom;
+          document.getElementById('scale').value = game.scale;
+        }, false);
         
+        /*
         var z2 = document.getElementById('z2');
         z2.addEventListener('click', function(e){
           zoom = 2;
@@ -142,13 +179,14 @@
           oy = game._y;
           cx = x+ox-(canvas.width/2);
           cy = y+oy-(canvas.height/2);
-          fx = cx-(canvas.width/zoom);
-          fy = cy-(canvas.height/zoom);
+          fx = cx*zoom-(canvas.width/zoom);
+          fy = cy*zoom-(canvas.height/zoom);
           context.translate(fx,fy);
           context.scale(zoom, zoom);
           game.scale *= zoom;
           document.getElementById('scale').value = game.scale;
         }, false);
+        */
 
       };
 

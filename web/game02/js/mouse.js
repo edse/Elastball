@@ -20,40 +20,14 @@ function Mouse(game) {
   this.down = false;
   this.up = false;
   var me = this;
+
+  //this.element = window;
+  this.element = document.getElementById('canvas');
     
-  window.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
-  window.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
-  window.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
-  window.addEventListener("keyup", function(e){ me.keyup(e) }, false);
-  
-  /*
-  var o = this.game.canvas;
-  o.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
-  o.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
-  o.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
-  o.addEventListener("keyup", function(e){ me.keyup(e) }, false);
-  */
-
-  //window.ontouchstart = function(e){ me.touchstart(e); }
-  ////window.ontouchstop = function(e){ alert('asdf') }
-  //window.ontouchend = function(e){ me.touchend(e); }
-  //window.ontouchmove = function(e){ me.touchmove(e); }
-  
-  //window:addEventListener("touchmove", touchHandler);
-  window.addEventListener("touchmove", function(e){ me.touchmove(e); }, false);
-  window.addEventListener("touchstart", function(e){ me.touchstart(e); }, false);
-  window.addEventListener("touchend", function(e){ me.touchend(e); }, false);
-
-  alert('24');
-
-  //window.addEventListener('ontouchstart', function(e){ me.touchstart(e) }, true);
-  //window.addEventListener('ontouchstop', function(e){ me.touchstop(e) }, true);
-  //window.addEventListener('ontouchmove', function(e){ me.touchmove(e) }, true);
-
-  //this.game.canvas.addEventListener('ontouchstart', function(e){ me.touchstart(e) }, true);
-  //this.game.canvas.addEventListener('ontouchstop', function(e){ me.touchstop(e) }, true);
-  //this.game.canvas.addEventListener('ontouchmove', function(e){ me.touchmove(e) }, true);
-
+  this.element.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
+  this.element.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
+  this.element.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
+  this.element.addEventListener("keyup", function(e){ me.keyup(e) }, false);
   
 }
 
@@ -69,6 +43,7 @@ Mouse.prototype.isOverBall = function(ball) {
     if(((this.x >= (ball.x - ball.radius)) && (this.x <= (ball.x + ball.radius)))&&
     ((this.y >= (ball.y - ball.radius)) && (this.y <= (ball.y + ball.radius)))){
       r = true;
+      console.log('over '+this.x+' '+this.y);
     }
   }
   return r;
@@ -173,19 +148,32 @@ Mouse.prototype.getUp = function() {
  *
  *****/
 Mouse.prototype.mousemove = function(event) {
-  mx = (event.pageX)/this.game.scale;
-  my = (event.pageY)/this.game.scale;
-  xx = this.game.get_x()*this.game.scale;
-  yy = this.game.get_y()*this.game.scale;
-  this.x = (mx) + Math.abs(xx);
-  this.y = (my) + Math.abs(yy);
-
-  //test
-  this.x = Math.abs(event.pageX) + this.game.get_x();
-  this.y = Math.abs(event.pageY) + this.game.get_y();
+  body_scrollLeft = document.body.scrollLeft,
+  element_scrollLeft = document.documentElement.scrollLeft,
+  body_scrollTop = document.body.scrollTop,
+  element_scrollTop = document.documentElement.scrollTop,
+  offsetLeft = this.element.offsetLeft,
+  offsetTop = this.element.offsetTop;
+  
+  var xx, yx;
+  if (event.pageX || event.pageY) {
+    xx = event.pageX;
+    yx = event.pageY;
+  } else {
+    xx = event.clientX + body_scrollLeft + element_scrollLeft;
+    yx = event.clientY + body_scrollTop + element_scrollTop;
+  }
+  
+  xx -= offsetLeft;
+  yx -= offsetTop;
+  
+  this.x = xx/this.game.scale;
+  this.y = yx/this.game.scale;
+  this.event = event;
+  console.log('move'+xx);
 
   document.getElementById('scale').value = this.game.scale;
-  
+
   document.getElementById('mvx').value = this.x;
   document.getElementById('mvy').value = this.y;
 
@@ -195,9 +183,7 @@ Mouse.prototype.mousemove = function(event) {
   document.getElementById('bx').value = this.game.balls[0].x;
   document.getElementById('by').value = this.game.balls[0].y;
 
-  //this.x /= this.game.scale;
-  //this.y /= this.game.scale;
-  //console.log('> '+this.game.canvas.offsetTop+' : '+this.x+', '+this.y);
+
 }
 
 /*****
@@ -206,14 +192,25 @@ Mouse.prototype.mousemove = function(event) {
  *
  *****/
 Mouse.prototype.mousedown = function(event) {
-  if(!this.game.is_moving)
-    document.body.style.cursor = 'auto';
-  this.down_x =  (event.pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  this.down_y = (event.pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
+  var xx, yy;
+  if (event.pageX || event.pageY) {
+    xx = event.pageX;
+    yy = event.pageY;
+  } else {
+    xx = event.clientX + body_scrollLeft + element_scrollLeft;
+    yy = event.clientY + body_scrollTop + element_scrollTop;
+  }
+  xx -= offsetLeft;
+  yy -= offsetTop;
+
+  this.down_x =  xx/this.game.scale;
+  this.down_y = yy/this.game.scale;
   this.down = true;
   this.up = false;
   this.up_x = 0;
   this.up_y = 0;
+  this.event = event;
+  console.log('down');
 }
 
 /*****
@@ -222,9 +219,18 @@ Mouse.prototype.mousedown = function(event) {
  *
  *****/
 Mouse.prototype.mouseup = function(event) {
-  document.body.style.cursor = 'auto';
-  this.up_x =  (event.pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  this.up_y = (event.pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;
+  var xx, yy;
+  if (event.pageX || event.pageY) {
+    xx = event.pageX;
+    yy = event.pageY;
+  } else {
+    xx = event.clientX + body_scrollLeft + element_scrollLeft;
+    yy = event.clientY + body_scrollTop + element_scrollTop;
+  }
+  xx -= offsetLeft;
+  yy -= offsetTop;
+  this.up_x =  xx/this.game.scale;
+  this.up_y = yy/this.game.scale;
   this.up = true;
   this.down = false;
   this.down_x = 0;
@@ -240,32 +246,16 @@ Mouse.prototype.mouseup = function(event) {
       this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
       this.game.selected_ball.velocityx = vx;
       this.game.selected_ball.velocityy = vy;
-      this.game.storeMove(this.game.selected_ball.id,vx,vy); 
-      if(this.game.selected_ball.velocityx > this.game.maxSpeed)
-        this.game.selected_ball.velocityx = this.game.maxSpeed;
-      if(this.game.selected_ball.velocityy > this.game.maxSpeed)
-        this.game.selected_ball.velocityy = this.game.maxSpeed;
 
       this.game.running = true;
       this.game.currentPlayer = this.game.selected_ball.id;
-
-      //this.game.runningBalls.push(this.game.selected_ball);
-
-    }
-    else if(this.game.selected_ball.id == "rotate"){
-      //alert(keepers[0].angle)
-      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].angle);
-      //send();
-    }
-    else if(this.game.selected_ball.id == "move"){
-      //alert(keepers[0].angle)
-      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].x+"<->"+keepers[selected_ball.k].y);
-      //send();
     }
   }
   else if(this.game.is_moving)
     this.game.is_moving = false;
   this.game.selected_ball = null;
+  console.log('up');
+
 }
 
 
