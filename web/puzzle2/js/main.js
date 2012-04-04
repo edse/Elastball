@@ -20,7 +20,7 @@ window.onload = function () {
   }
     
   function drawFrame() {
-    window.requestAnimationFrame(drawFrame, canvas);
+    //window.requestAnimationFrame(drawFrame, canvas);
     //game.draw();
     game.render();
 
@@ -34,8 +34,7 @@ window.onload = function () {
     context.fillText(">>> "+elapsed, 50, 50);
     context.fillText("maxElapsedTime>>> "+maxElapsedTime, 50, 60);
   }
-  drawFrame();
-
+  
   window.m = {game: game};
   window.m.interv = function () {
     interval = setTimeout("window.m.game.mouse.moving = false; document.getElementById('moving').value = false; window.m.intervClear();", 500);
@@ -43,5 +42,20 @@ window.onload = function () {
   window.m.intervClear = function () {
     clearInterval(interval)
   }
+
+  document.getElementById('scale').onchange = function() {
+    game.num_lines = this.value;
+    game.num_pieces = this.value*this.value;
+    game.piece_width = game.img_width / game.num_lines;
+    game.piece_height = game.img_height / game.num_lines;
+    game.init();
+
+    
+    //game.piece_width = game.canvas.width / game.num_pieces;
+    //setBoard();
+    //drawTiles();
+  };
+  
+  window.setInterval(drawFrame, 150);
 
 }

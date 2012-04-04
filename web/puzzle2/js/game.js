@@ -1,11 +1,17 @@
 function Game(canvas) {
-
   this.canvas = canvas;
-  this.num_pieces = 4;
+  this.img_width = 480;
+  this.img_height = 480;
+  this.init();
+}
+
+Game.prototype.init = function(){
+  this.num_lines = document.getElementById('scale').value;
+  this.num_pieces = document.getElementById('scale').value * document.getElementById('scale').value;
+  this.piece_width = this.img_width / this.num_lines;
+  this.piece_height = this.img_height / this.num_lines;
   this.pieces = new Array();
   this.holders = new Array();
-  this.piece_width = 40;
-  this.piece_height = 40;
   this.moving = true;
   this.selected = null;
   this.over = null;
@@ -16,17 +22,17 @@ function Game(canvas) {
 }
 
 Game.prototype.placePieces = function(){
-  for(i=1; i<=this.num_pieces; i++){
+  for(i=0; i<this.num_pieces; i++){
     x = Math.floor(Math.random()*canvas.width-this.piece_width)+this.piece_width;
     y = Math.floor(Math.random()*canvas.height-this.piece_height)+this.piece_height;
     temp = {
-      id:i,
+      id:i+1,
       x:x,
       y:y,
-      width:40,
-      height:40,
+      width:this.piece_width,
+      height:this.piece_height,
       startPoint: new Point2D(this.x,this.y),
-      target: new Point2D(this.holders[i-1].x,this.holders[i-1].y),
+      target: new Point2D(this.holders[i].x,this.holders[i].y),
       moveble:true,
       placed:false
     }
@@ -36,60 +42,22 @@ Game.prototype.placePieces = function(){
 }
 
 Game.prototype.placeHolders = function(){
-  hw = canvas.width/2;
-  hh = canvas.height/2;
-  p1 = new Point2D(hw-this.piece_width,hh-this.piece_height);
-  p2 = new Point2D(hw,hh-this.piece_height);
-  p3 = new Point2D(hw,hh);
-  p4 = new Point2D(hw-this.piece_width,hh);
-
-  temp = {
-    id:101,
-    x:p1.x,
-    y:p1.y,
-    width:40,
-    height:40,
-    startPoint: new Point2D(this.x,this.y),
-    moveble:false
+  var pieces = 1;
+  var offsetx = this.canvas.width/this.img_width;
+  var offsety = this.canvas.height/this.img_height;
+  for(var i = 1; i <= this.num_lines; ++i) {
+    for(var j = 1; j <= this.num_lines; ++j) {
+      temp = {
+        id:pieces,
+        x:j*this.piece_width+offsetx,
+        y:i*this.piece_height+offsety,
+        moveble:false
+      }
+      this.holders.push(temp);
+      console.log('holders array length>>'+this.holders.length);
+      pieces++;
+    }
   }
-  this.holders.push(temp);
-  console.log('holders array length>>'+this.holders.length);
-
-  temp = {
-    id:102,
-    x:p2.x,
-    y:p2.y,
-    width:40,
-    height:40,
-    startPoint: new Point2D(this.x,this.y),
-    moveble:false
-  }
-  this.holders.push(temp);
-  console.log('holders array length>>'+this.holders.length);
-
-  temp = {
-    id:103,
-    x:p3.x,
-    y:p3.y,
-    width:40,
-    height:40,
-    startPoint: new Point2D(this.x,this.y),
-    moveble:false
-  }
-  this.holders.push(temp);
-  console.log('holders array length>>'+this.holders.length);
-
-  temp = {
-    id:104,
-    x:p4.x,
-    y:p4.y,
-    width:40,
-    height:40,
-    startPoint: new Point2D(this.x,this.y),
-    moveble:false
-  }
-  this.holders.push(temp);
-  console.log('holders array length>>'+this.holders.length);
 }
 
 ////////////////////////////////////////
@@ -113,8 +81,8 @@ Game.prototype.render = function() {
     holder = this.holders[i];
     this.context.fillStyle = "rgba(255, 255, 255, 0.5)";
     this.context.beginPath();
-    this.context.strokeRect(holder.x-holder.width/2,holder.y-holder.height/2,holder.width,holder.height);
-    this.context.fillRect(holder.x-holder.width/2,holder.y-holder.height/2,holder.width,holder.height);
+    this.context.strokeRect(holder.x-this.piece_width/2,holder.y-this.piece_height/2,this.piece_width,this.piece_height);
+    this.context.fillRect(holder.x-this.piece_width/2,holder.y-this.piece_height/2,this.piece_width,this.piece_height);
     this.context.fillStyle = "rgba(0, 0, 0, 0.5)";
     this.context.fillText(holder.id, holder.x-3, holder.y+3);
     this.context.closePath();
@@ -179,8 +147,13 @@ Game.prototype.render = function() {
   document.getElementById('mx').value = this.mouse.x;
   document.getElementById('my').value = this.mouse.y;
 
-  document.getElementById('px').value = this.pieces[1].x;
-  document.getElementById('py').value = this.pieces[1].y;
+  //document.getElementById('px').value = this.pieces[0].x;
+  //document.getElementById('py').value = this.pieces[0].y;
+
+  document.getElementById('hx').value = this.holders[0].x;
+  document.getElementById('hy').value = this.holders[0].y;
+  document.getElementById('hx2').value = this.holders[1].x;
+  document.getElementById('hy2').value = this.holders[1].y;
 
   document.getElementById('moving').value = this.mouse.moving;
   if(this.over)
@@ -191,6 +164,11 @@ Game.prototype.render = function() {
     document.getElementById('selected').value = this.selected.id;
   else
     document.getElementById('selected').value = "";
+
+  document.getElementById('p').value = this.num_pieces;
+  document.getElementById('l').value = this.num_lines;
+  document.getElementById('pw').value = this.piece_width;
+  document.getElementById('ph').value = this.piece_height;
 
 }
 

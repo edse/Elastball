@@ -195,7 +195,7 @@ Mouse.prototype.mousemove = function(event) {
   this.x = xx;
   this.y = yx;
   this.event = event;
-  console.log('move '+xx);
+  //console.log('move '+xx);
 }
 
 /*****
