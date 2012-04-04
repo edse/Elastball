@@ -40,7 +40,7 @@ document.getElementById('puzzle').onclick = function() {
     drawTiles();
   }
   if (solved) {
-    setTimeout(function() {alert("You solved it!");}, 500);
+    setTimeout(function() {alert("Huhu! Você resolveu! Tente um nível mais difícil.");}, 500);
   }
 };
 
