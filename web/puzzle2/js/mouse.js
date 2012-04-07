@@ -45,7 +45,10 @@ Mouse.prototype.isOverBall = function(ball) {
     if(((this.x >= (ball.x - ball.radius)) && (this.x <= (ball.x + ball.radius)))&&
     ((this.y >= (ball.y - ball.radius)) && (this.y <= (ball.y + ball.radius)))){
       r = true;
-      console.log('over '+this.x+' '+this.y);
+
+      if(this.game.debug){
+        console.log('over '+this.x+' '+this.y);
+      }
     }
   }
   return r;
@@ -195,7 +198,10 @@ Mouse.prototype.mousemove = function(event) {
   this.x = xx;
   this.y = yx;
   this.event = event;
-  //console.log('move '+xx);
+
+  if(this.game.debug){
+    console.log('move '+xx);
+  }
 }
 
 /*****
@@ -252,40 +258,24 @@ Mouse.prototype.mouseup = function(event) {
   this.down = false;
   this.down_x = 0;
   this.down_y = 0;
-  /*
-  if(this.game.selected_ball != null){
-    //new move
-    this.game.currentPlayerFirstHit = false;
-    this.game.currentPlayerLastHit = false;
-    if(this.game.selected_ball.id != "move" && this.game.selected_ball.id != "rotate"){
-      var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
-      var vy = (this.game.selected_ball.y - this.up_y) * 0.1;
-      
-      this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
-      this.game.selected_ball.velocityx = vx;
-      this.game.selected_ball.velocityy = vy;
-
-      this.game.running = true;
-      this.game.currentPlayer = this.game.selected_ball.id;
-    }
-  }
-  else if(this.game.is_moving)
-    this.game.is_moving = false;
-  */
  
-  if((this.game.selected)&&(this.game.selected.placed)){
-    this.game.selected.placed = true;
-    this.game.selected.moveble = false;
+  //place
+  if((this.game.selected)&&(this.game.selected.near())){
     this.game.selected.x = this.game.selected.target.x;
     this.game.selected.y = this.game.selected.target.y;
+    this.game.selected.placed = true;
+    this.game.selected.moveble = false;
+    this.game.placed_pieces.push(this.game.selected);
   }
- 
+
   //unselect
   if(this.game.selected){
     this.game.selected = null;
   }
 
-  console.log('up');
+  if(this.game.debug){
+    console.log('up');
+  }
 
 }
 

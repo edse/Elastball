@@ -9,6 +9,7 @@ window.onload = function () {
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
   var game = new Game(canvas);
+  game.debug = false;
   var inteval = null;
   
   var maxElapsedTime = 0;
@@ -49,7 +50,6 @@ window.onload = function () {
     game.piece_width = game.img_width / game.num_lines;
     game.piece_height = game.img_height / game.num_lines;
     game.init();
-
     
     //game.piece_width = game.canvas.width / game.num_pieces;
     //setBoard();
