@@ -56,6 +56,6 @@ window.onload = function () {
     //drawTiles();
   };
   
-  window.setInterval(drawFrame, 150);
+  game.interval = window.setInterval(drawFrame, 150);
 
 }

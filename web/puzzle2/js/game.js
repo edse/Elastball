@@ -1,5 +1,6 @@
 function Game(canvas) {
   this.canvas = canvas;
+  this.interval = null;
   this.img = new Image();
   //this.img.src = './img/spfc.jpg';
   this.img.src = './img/rainbow.png';
@@ -129,6 +130,8 @@ Game.prototype.render = function() {
   }
   
   //Game Over
+  if(this.is_over)
+    clearInterval(this.interval);
   if(this.num_pieces == this.placed_pieces.length){
     this.is_over = true;
   }

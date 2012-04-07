@@ -34,6 +34,7 @@ function Holder(id, game, x, y, line, column, moveble) {
 
 Holder.prototype.draw = function() {
   this.game.context.save();
+  this.game.context.globalAlpha = 0.15
   this.game.context.fillStyle = "rgba(255, 255, 255, 0.5)";
   this.game.context.beginPath();
   this.game.context.strokeRect(this.x-this.game.piece_width/2,this.y-this.game.piece_height/2,this.game.piece_width,this.game.piece_height);

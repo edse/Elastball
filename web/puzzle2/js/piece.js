@@ -36,7 +36,7 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
     this.moveble = null;
     this.placed = null;
   }
-  this.tolerance = 80;
+  this.tolerance = 200;
   this.moving = false;
   this.placed = false;
 }
@@ -45,7 +45,9 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
 Piece.prototype.draw = function() {
   this.game.context.save();
   
-  if(!this.game.is_over)
+  if(this.placed)
+    this.game.context.globalAlpha = 1
+  else if(!this.game.is_over)
     this.game.context.globalAlpha = 0.25
   else
     this.game.context.globalAlpha = 1
