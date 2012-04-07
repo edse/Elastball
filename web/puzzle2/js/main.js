@@ -23,7 +23,8 @@ window.onload = function () {
   function drawFrame() {
     //window.requestAnimationFrame(drawFrame, canvas);
     //game.draw();
-    game.render();
+    if(game.img.width > 0)
+      game.render();
 
     var elapsed = getTimer() - time;
     time = getTimer();
