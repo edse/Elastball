@@ -1,10 +1,14 @@
 function Game(canvas) {
   this.canvas = canvas;
   this.interval = null;
+  this.img = document.getElementById("img");
+  this.init();
+  /*
   this.img = new Image();
   //this.img.src = './img/spfc.jpg';
   this.img.src = './img/rainbow.png';
   this.img.addEventListener('load', this.init(), false);
+  */
 }
 
 Game.prototype.init = function(){
