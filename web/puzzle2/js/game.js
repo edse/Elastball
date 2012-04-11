@@ -3,6 +3,7 @@ function Game(canvas) {
   this.interval = null;
   this.img = document.getElementById("img");
   this.init();
+  this.startClock();
   /*
   this.img = new Image();
   //this.img.src = './img/spfc.jpg';
@@ -26,6 +27,8 @@ Game.prototype.init = function(){
   this.selected = null;
   this.over = null;
   this.is_over = false;
+  this.remaining_time = 30;
+  this.clock_interval = null;
   this.context = this.canvas.getContext("2d");
   this.mouse = new Mouse(this);
   this.placeHolders();
@@ -202,4 +205,20 @@ Game.prototype.draw_bg = function() {
   this.context.drawImage(this.img, offsetx, offsety);
   
   this.context.restore();
+}
+
+Game.prototype.stopClock = function() {
+  window.clearInterval(this.clock_interval);
+}
+
+Game.prototype.startClock = function() {
+  //var me = this;
+}
+
+Game.prototype.clockTick = function() {
+  this.remaining_time--;
+}
+
+function clockTick(game) {
+  game.remaining_time--;
 }

@@ -36,6 +36,7 @@ window.onload = function () {
       
     context.fillText(">>> "+elapsed, 50, 50);
     context.fillText("maxElapsedTime>>> "+maxElapsedTime, 50, 60);
+    context.fillText(game.remaining_time, 50, 80);
   }
   drawFrame();
   
@@ -60,5 +61,12 @@ window.onload = function () {
   };
   
   //game.interval = window.setInterval(drawFrame, 150);
+  
+  //clock interval
+  game.clock_interval = window.setInterval( function() {
+    //alert(game.remaining_time);
+    game.remaining_time--;
+  }, 1000);
+
 
 }
