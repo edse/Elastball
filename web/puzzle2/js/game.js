@@ -135,7 +135,8 @@ Game.prototype.render = function() {
   
   //Game Over
   if(this.is_over){
-    clearInterval(this.interval);
+    //clearInterval(this.interval);
+    window.cancelAnimationFrame(this.interval);
     alert('Huhuhuh! You did it!');
   }
   if(this.num_pieces == this.placed_pieces.length){

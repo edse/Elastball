@@ -8,6 +8,7 @@ window.onload = function () {
 
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
+  //context.scale(0.5, 0.5);
   var game = new Game(canvas);
   game.debug = false;
   var inteval = null;
@@ -21,7 +22,7 @@ window.onload = function () {
   }
     
   function drawFrame() {
-    //window.requestAnimationFrame(drawFrame, canvas);
+    game.interval = window.requestAnimationFrame(drawFrame, canvas);
     //game.draw();
     if(game.img.width > 0)
       game.render();
@@ -36,6 +37,7 @@ window.onload = function () {
     context.fillText(">>> "+elapsed, 50, 50);
     context.fillText("maxElapsedTime>>> "+maxElapsedTime, 50, 60);
   }
+  drawFrame();
   
   window.m = {game: game};
   window.m.interv = function () {
@@ -57,6 +59,6 @@ window.onload = function () {
     //drawTiles();
   };
   
-  game.interval = window.setInterval(drawFrame, 150);
+  //game.interval = window.setInterval(drawFrame, 150);
 
 }

@@ -48,7 +48,7 @@ Piece.prototype.draw = function() {
   if(this.placed)
     this.game.context.globalAlpha = 1
   else if(!this.game.is_over)
-    this.game.context.globalAlpha = 0.25
+    this.game.context.globalAlpha = 0.8
   else
     this.game.context.globalAlpha = 1
 
@@ -84,7 +84,8 @@ Piece.prototype.draw = function() {
   if(!this.game.is_over){
     this.game.context.strokeRect(this.x-this.width/2,this.y-this.height/2,this.width,this.height);
     this.game.context.fillRect(this.x-this.width/2,this.y-this.height/2,this.width,this.height);
-    this.game.context.fillStyle = "rgba(0, 0, 0, 0.5)";
+    this.game.context.globalAlpha = 1
+    this.game.context.fillStyle = "rgba(0, 0, 0, 1)";
     this.game.context.fillText(this.id, this.x-3, this.y+3);
   }
   
