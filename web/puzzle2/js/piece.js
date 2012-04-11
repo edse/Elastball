@@ -18,10 +18,11 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
     this.x = x;
     this.y = y;
     this.target = target;
-    this.startPoint = startPoint;
+    this.startPoint = new Point2D(target.x,target.y),
     this.holder = holder;
     this.moveble = moveble;
     this.placed = placed;
+    this.moveble = false;
   }
   else{
     this.id = 0;
@@ -33,7 +34,7 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
     this.target = null;
     this.startPoint = null;
     this.holder = null;
-    this.moveble = null;
+    this.moveble = false;
     this.placed = null;
   }
   this.tolerance = 200;
@@ -43,54 +44,86 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
 
 
 Piece.prototype.draw = function() {
-  this.game.context.save();
-  
-  if(this.placed)
-    this.game.context.globalAlpha = 1
-  else if(!this.game.is_over)
-    this.game.context.globalAlpha = 0.8
-  else
-    this.game.context.globalAlpha = 1
-
-  this.game.context.fillStyle = "rgba(255, 255, 255, 0.5)";
-  //over = this.game.mouse.isOverPiece(this);
-
-  /*  
-  if(!this.game.selected){
-    if((!this.game.over)||(this.game.over.id < this.id)||(this.mouse_is_over())){
-      if(this.mouse_is_over()){
-        this.game.over = this;
+  if((!this.moveble)&&(!this.placed)){
+    if(this.startPoint.x != this.x){
+      if(this.startPoint.x <= this.x-1)
+        this.startPoint.x++;
+      else if(this.startPoint.x >= this.x+1)
+        this.startPoint.x--;
+      else{
+        this.startPoint.x = this.x;
+        this.moveble = true;
       }
     }
+    if(this.startPoint.y != this.y){
+      if(this.startPoint.y <= this.y-1)
+        this.startPoint.y++;
+      else if(this.startPoint.y >= this.y+1)
+        this.startPoint.y--;
+      else{
+        this.startPoint.y = this.y;
+        this.moveble = true;
+      }
+    }
+    this.game.context.save();
+    this.game.context.globalAlpha = 1;
+    this.game.context.fillStyle = "rgba(255, 255, 255, 0.5)";
+    this.game.context.beginPath();
+
+    this.game.context.drawImage(this.game.img, this.holder.column*this.game.piece_width, this.holder.line*this.game.piece_height, this.game.piece_width, this.game.piece_height, 
+      this.startPoint.x-this.game.piece_width/2, this.startPoint.y-this.game.piece_height/2, this.game.piece_width, this.game.piece_height);
+
   }
-  */
-
-  if(this == this.game.selected){
-    this.game.context.fillStyle = "rgba(0, 0, 255, 0.1)";
-  }
-  else if(this.game.over == this)
-    this.game.context.fillStyle = "rgba(255, 0, 0, 0.1)";
-
-  //target distance
-  if(this.near())
-    this.game.context.fillStyle = "rgba(0, 255, 0, 0.1)";
-
-  //piece.draw();
-  this.game.context.beginPath();
+  else{
+    this.game.context.save();
+    
+    if(this.placed)
+      this.game.context.globalAlpha = 1
+    else if(!this.game.is_over)
+      this.game.context.globalAlpha = 0.8
+    else
+      this.game.context.globalAlpha = 1
   
-  this.game.context.drawImage(this.game.img, this.holder.column*this.game.piece_width, this.holder.line*this.game.piece_height, this.game.piece_width, this.game.piece_height, 
-    this.x-this.game.piece_width/2, this.y-this.game.piece_height/2, this.game.piece_width, this.game.piece_height);
-
-  if(!this.game.is_over){
-    this.game.context.strokeRect(this.x-this.width/2,this.y-this.height/2,this.width,this.height);
-    this.game.context.fillRect(this.x-this.width/2,this.y-this.height/2,this.width,this.height);
-    this.game.context.globalAlpha = 1
-    this.game.context.fillStyle = "rgba(0, 0, 0, 1)";
-    this.game.context.fillText(this.id, this.x-3, this.y+3);
-  }
+    this.game.context.fillStyle = "rgba(255, 255, 255, 0.5)";
+    //over = this.game.mouse.isOverPiece(this);
   
-  this.game.context.closePath();
-  this.game.context.restore();
+    /*  
+    if(!this.game.selected){
+      if((!this.game.over)||(this.game.over.id < this.id)||(this.mouse_is_over())){
+        if(this.mouse_is_over()){
+          this.game.over = this;
+        }
+      }
+    }
+    */
+  
+    if(this == this.game.selected){
+      this.game.context.fillStyle = "rgba(0, 0, 255, 0.1)";
+    }
+    else if(this.game.over == this)
+      this.game.context.fillStyle = "rgba(255, 0, 0, 0.1)";
+  
+    //target distance
+    if(this.near())
+      this.game.context.fillStyle = "rgba(0, 255, 0, 0.1)";
+  
+    //piece.draw();
+    this.game.context.beginPath();
+    
+    this.game.context.drawImage(this.game.img, this.holder.column*this.game.piece_width, this.holder.line*this.game.piece_height, this.game.piece_width, this.game.piece_height, 
+      this.x-this.game.piece_width/2, this.y-this.game.piece_height/2, this.game.piece_width, this.game.piece_height);
+  
+    if(!this.game.is_over){
+      this.game.context.strokeRect(this.x-this.width/2,this.y-this.height/2,this.width,this.height);
+      this.game.context.fillRect(this.x-this.width/2,this.y-this.height/2,this.width,this.height);
+      this.game.context.globalAlpha = 1
+      this.game.context.fillStyle = "rgba(0, 0, 0, 1)";
+      this.game.context.fillText(this.id, this.x-3, this.y+3);
+    }
+    
+    this.game.context.closePath();
+    this.game.context.restore();
+  }
   
   if(this.game.debug)
     console.log('pieace: '+this.id+' drew');
