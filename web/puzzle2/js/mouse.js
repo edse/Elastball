@@ -332,7 +332,7 @@ Mouse.prototype.touchstart = function(e) {
  *
  *****/
 Mouse.prototype.touchend = function(e) {
-  //e.preventDefault();
+  e.preventDefault();
   //alert('touchend');
   
   //pageX = e.targetTouches[0].pageX;
@@ -374,6 +374,7 @@ Mouse.prototype.touchend = function(e) {
  *
  *****/
 Mouse.prototype.touchmove = function(e) {
+  e.preventDefault();
   this.moving = true;  
   body_scrollLeft = document.body.scrollLeft,
   element_scrollLeft = document.documentElement.scrollLeft,
