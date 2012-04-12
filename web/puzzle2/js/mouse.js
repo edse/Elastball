@@ -218,8 +218,6 @@ Mouse.prototype.mousedown = function(event) {
     xx = event.clientX + body_scrollLeft + element_scrollLeft;
     yy = event.clientY + body_scrollTop + element_scrollTop;
   }
-  xx -= offsetLeft;
-  yy -= offsetTop;
   this.down_x =  xx;
   this.down_y = yy;
   this.down = true;
@@ -250,8 +248,6 @@ Mouse.prototype.mouseup = function(event) {
     xx = event.clientX + body_scrollLeft + element_scrollLeft;
     yy = event.clientY + body_scrollTop + element_scrollTop;
   }
-  xx -= offsetLeft;
-  yy -= offsetTop;
   this.up_x =  xx;
   this.up_y = yy;
   this.up = true;
@@ -287,16 +283,7 @@ Mouse.prototype.mouseup = function(event) {
  *
  *****/
 Mouse.prototype.keyup = function(e) {
-  if(e.keyCode == 27){
-    document.body.style.cursor = 'auto';
-    this.up_x =  (event.pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-    this.up_y = (event.pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
-    this.up = true;
-    this.down = false;
-    this.down_x = 0;
-    this.down_y = 0;
-    this.game.selected_ball = null;
-  }
+  console.log('Key '+e.keyCode+' pressed');
 }
 
 /*****
@@ -315,6 +302,28 @@ Mouse.prototype.touchstart = function(e) {
   this.up = false;
   this.up_x = 0;
   this.up_y = 0;
+  
+  var xx, yy;
+  if (event.pageX || event.pageY) {
+    xx = e.targetTouches[0].pageX;
+    yy = e.targetTouches[0].pageY;
+  }
+  this.down_x =  xx;
+  this.down_y = yy;
+  this.down = true;
+  this.up = false;
+  this.up_x = 0;
+  this.up_y = 0;
+  this.event = event;
+  
+  //select
+  if(this.game.over){
+    this.game.selected = this.game.over;
+  }
+
+  //if(this.game.debug)
+    console.log('touch start');
+  
 }
 
 /*****
@@ -325,54 +334,38 @@ Mouse.prototype.touchstart = function(e) {
 Mouse.prototype.touchend = function(e) {
   //e.preventDefault();
   //alert('touchend');
-  //console.log('touchend: '+e.targetTouches[0].pageX);
+  
   //pageX = e.targetTouches[0].pageX;
   //pageY = e.targetTouches[0].pageY;
   //this.up_x =  (pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
   //this.up_y = (pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
-  this.up_x =  this.x;
-  this.up_y = this.y;
+  
+  var xx, yy;
+  xx = e.targetTouches[0].pageX;
+  yy = e.targetTouches[0].pageY;
+  this.up_x =  xx;
+  this.up_y = yy;
   this.up = true;
   this.down = false;
   this.down_x = 0;
   this.down_y = 0;
-  if(this.game.selected_ball != null){
-    //new move
-    this.game.currentPlayerFirstHit = false;
-    this.game.currentPlayerLastHit = false;
-    if(this.game.selected_ball.id != "move" && this.game.selected_ball.id != "rotate"){
-      var vx = (this.game.selected_ball.x - this.up_x) * 0.1;
-      var vy = (this.game.selected_ball.y - this.up_y) * 0.1;
-      
-      this.game.selected_ball.startPoint = new Point2D(this.game.selected_ball.x, this.game.selected_ball.y);
-      this.game.selected_ball.velocityx = vx;
-      this.game.selected_ball.velocityy = vy;
-      this.game.storeMove(this.game.selected_ball.id,vx,vy); 
-      if(this.game.selected_ball.velocityx > this.game.maxSpeed)
-        this.game.selected_ball.velocityx = this.game.maxSpeed;
-      if(this.game.selected_ball.velocityy > this.game.maxSpeed)
-        this.game.selected_ball.velocityy = this.game.maxSpeed;
-
-      this.game.running = true;
-      this.game.currentPlayer = this.game.selected_ball.id;
-      
-      //this.game.runningBalls.push(this.game.selected_ball);
-
-    }
-    else if(this.game.selected_ball.id == "rotate"){
-      //alert(keepers[0].angle)
-      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].angle);
-      //send();
-    }
-    else if(this.game.selected_ball.id == "move"){
-      //alert(keepers[0].angle)
-      //$('#msg').val("gamemove<->"+$('#game_id').val()+"<->"+"k"+selected_ball.k+"<->"+keepers[selected_ball.k].x+"<->"+keepers[selected_ball.k].y);
-      //send();
-    }
+ 
+  //place
+  if((this.game.selected)&&(this.game.selected.near())){
+    this.game.selected.x = this.game.selected.target.x;
+    this.game.selected.y = this.game.selected.target.y;
+    this.game.selected.placed = true;
+    this.game.selected.moveble = false;
+    this.game.placed_pieces.push(this.game.selected);
   }
-  else if(this.game.is_moving)
-    this.game.is_moving = false;
-  this.game.selected_ball = null;
+
+  //unselect
+  if(this.game.selected){
+    this.game.selected = null;
+  }
+
+  //if(this.game.debug)
+    console.log('touchend');
 }
 
 /*****
@@ -381,14 +374,26 @@ Mouse.prototype.touchend = function(e) {
  *
  *****/
 Mouse.prototype.touchmove = function(e) {
-  //e.preventDefault();
-  //console.log(e.targetTouches[0].pageX);
-  pageX = e.targetTouches[0].pageX;
-  pageY = e.targetTouches[0].pageY;
-  this.x = pageX + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  this.y = pageY + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;
+  this.moving = true;  
+  body_scrollLeft = document.body.scrollLeft,
+  element_scrollLeft = document.documentElement.scrollLeft,
+  body_scrollTop = document.body.scrollTop,
+  element_scrollTop = document.documentElement.scrollTop,
+  offsetLeft = this.element.offsetLeft,
+  offsetTop = this.element.offsetTop;
   
-  this.x = pageX + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  this.y = pageY + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;
+  var xx, yx;
+  xx = e.targetTouches[0].pageX;
+  yx = e.targetTouches[0].pageY;
+  
+  xx -= offsetLeft;
+  yx -= offsetTop;
+  
+  this.x = xx;
+  this.y = yx;
+  this.event = event;
+
+  //if(this.game.debug)
+    console.log('move '+xx);
 
 }
