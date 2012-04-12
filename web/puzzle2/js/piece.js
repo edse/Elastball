@@ -23,6 +23,12 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
     this.moveble = moveble;
     this.placed = placed;
     this.moveble = false;
+    this.m = (target.y - this.y)/(target.x - this.x);
+    this.b = target.y - (this.m * target.x);
+    if(Math.random() >= 0.5)
+      this.p = 0.1;
+    else
+      this.p = -0.1;
   }
   else{
     this.id = 0;
@@ -45,29 +51,20 @@ function Piece(id, game, width, height, x, y, startPoint, target, holder, movebl
 
 Piece.prototype.draw = function() {
   if((!this.moveble)&&(!this.placed)){
-    if(this.startPoint.x != this.x){
-      if(this.startPoint.x <= this.x-1)
-        this.startPoint.x++;
-      else if(this.startPoint.x >= this.x+1)
-        this.startPoint.x--;
-      else{
-        this.startPoint.x = this.x;
-        this.moveble = true;
-      }
+    this.p = this.p*1.1;
+    this.startPoint.x = this.startPoint.x + this.p;
+    this.startPoint.y = this.m * this.startPoint.x + this.b;
+    if((this.startPoint.x > this.game.canvas.width-this.game.piece_width/2) || 
+      (this.startPoint.y > this.game.canvas.height-this.game.piece_height/2) || 
+      (this.startPoint.x < this.game.piece_width/2) || 
+      (this.startPoint.y < this.game.piece_height/2)){
+      this.moveble = true;
+      this.x = this.startPoint.x;
+      this.y = this.startPoint.y;
     }
-    if(this.startPoint.y != this.y){
-      if(this.startPoint.y <= this.y-1)
-        this.startPoint.y++;
-      else if(this.startPoint.y >= this.y+1)
-        this.startPoint.y--;
-      else{
-        this.startPoint.y = this.y;
-        this.moveble = true;
-      }
-    }
+   
     this.game.context.save();
     this.game.context.globalAlpha = 1;
-    this.game.context.fillStyle = "rgba(255, 255, 255, 0.5)";
     this.game.context.beginPath();
 
     this.game.context.drawImage(this.game.img, this.holder.column*this.game.piece_width, this.holder.line*this.game.piece_height, this.game.piece_width, this.game.piece_height, 
