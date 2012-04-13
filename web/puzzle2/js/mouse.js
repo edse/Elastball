@@ -266,7 +266,7 @@ Mouse.prototype.mouseup = function(event) {
     if(this.game.drip.currentTime != 0)
       this.game.drip.currentTime = 0;
     this.game.drip.play();
-  }else{
+  }else if((this.game.selected)&&(!this.game.selected.near())){
     if(this.game.twang.currentTime != 0)
       this.game.twang.currentTime = 0;
     this.game.twang.play();
