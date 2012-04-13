@@ -69,4 +69,9 @@ window.onload = function () {
   }, 1000);
 
 
+  document.getElementById('chimes').addEventListener('ended', function(){
+    document.getElementById('bg').play();
+  }, false);
+
+
 }

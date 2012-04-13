@@ -2,6 +2,12 @@ function Game(canvas) {
   this.canvas = canvas;
   this.interval = null;
   this.img = document.getElementById("img");
+  this.ding = document.getElementById('ding');
+  this.twang = document.getElementById('twang');
+  this.bg = document.getElementById('bg');
+  this.chimes = document.getElementById('chimes');
+  this.drip = document.getElementById('drip');
+
   this.init();
   this.startClock();
   /*
@@ -33,6 +39,10 @@ Game.prototype.init = function(){
   this.mouse = new Mouse(this);
   this.placeHolders();
   this.placePieces();
+  
+  if(this.chimes.currentTime != 0)
+    this.chimes.currentTime = 0;
+  this.chimes.play();
 }
 
 Game.prototype.placePieces = function(){
