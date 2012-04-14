@@ -6,28 +6,29 @@
  * @param {HTMLElement} element   Optional parameter specifying the element that visually bounds the entire animation.
  * @return {number} Animation frame request.
  */
-if (!window.requestAnimationFrame) {
-  window.requestAnimationFrame = (window.webkitRequestAnimationFrame ||
-                                  window.mozRequestAnimationFrame ||
-                                  window.msRequestAnimationFrame ||
-                                  window.oRequestAnimationFrame ||
-                                  function (callback) {
-                                    return window.setTimeout(callback, 17 /*~ 1000/60*/);
-                                  });
-}
 
-/**
- * ERRATA: 'cancelRequestAnimationFrame' renamed to 'cancelAnimationFrame' to reflect an update to the W3C Animation-Timing Spec.
- *
- * Cancels an animation frame request.
- * Checks for cross-browser support, falls back to clearTimeout.
- * @param {number}  Animation frame request.
- */
-if (!window.cancelAnimationFrame) {
-  window.cancelAnimationFrame = (window.cancelRequestAnimationFrame ||
-                                 window.webkitCancelAnimationFrame || window.webkitCancelRequestAnimationFrame ||
-                                 window.mozCancelAnimationFrame || window.mozCancelRequestAnimationFrame ||
-                                 window.msCancelAnimationFrame || window.msCancelRequestAnimationFrame ||
-                                 window.oCancelAnimationFrame || window.oCancelRequestAnimationFrame ||
-                                 window.clearTimeout);
-}
+// A robust polyfill for animation frame
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame = 
+          window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+ 
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+              timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+ 
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());

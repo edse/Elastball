@@ -231,7 +231,9 @@ Mouse.prototype.mousedown = function(event) {
     this.game.selected = this.game.over;
   }
 
-  console.log('down');
+  if(this.game.debug){
+    console.log('down');
+  }
 }
 
 /*****
@@ -262,7 +264,6 @@ Mouse.prototype.mouseup = function(event) {
     this.game.selected.placed = true;
     this.game.selected.moveble = false;
     this.game.placed_pieces.push(this.game.selected);
-    
     if(this.game.drip.currentTime != 0)
       this.game.drip.currentTime = 0;
     this.game.drip.play();

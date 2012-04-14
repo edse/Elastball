@@ -5,22 +5,41 @@
     <style>
     *{ margin: 0; padding: 0; }
     #slider { padding: 50px; }
+    form { padding: 10px; }
     </style>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
   </head>
   <body>
+
+    <!-- GAME -->
     <div id="slider">
       <form>
         <label>Easy</label>
         <input type="range" id="scale" value="2" min="2" max="10" step="1" />
         <label>Hard</label>
+        <input type="button" id="bgm_btn" value="BGM off" />
+        <input type="button" id="sfx_btn" value="SFX off" />
       </form>
       <canvas id="canvas" width="800" height="600"></canvas>
     </div>
+    <!-- /GAME -->
     
+    <!-- CREDITS -->
+    <h5>Music By:</h5>
+    <ul>
+      <li><a href="http://www.jamendo.com/en/track/901640">Pictures, Sleep on soft sheets</a></li>
+    </ul>
+    <h5>Sound Effects:</h5>
+    <ul>
+      <li><a href="http://www.freesound.org/people/acclivity/sounds/25879/">Acclivity, Drip1.wav</a></li>
+      <li><a href="http://www.freesound.org/people/Adam_N/sounds/148965/">Adam_N, Twang_16.wav</a></li>
+    </ul>
+    <!-- /CREDITS -->    
+    
+    <!-- DEBUG -->
     <div id="debug" style="display:none">
       <img id="img" src="./img/rainbow2.png" />
-      <audio id="bg">
+      <audio id="bgm">
         <source src="audio/final/Pictures-Sleep_on_soft_sheets.mp3" type="audio/mpeg" />
         <source src="audio/final/Pictures-Sleep_on_soft_sheets.ogg" type="audio/ogg" />
         Your browser does not support the audio tag.
@@ -30,14 +49,9 @@
         <source src="audio/final/drip.ogg" type="audio/ogg" />
         Your browser does not support the audio tag.
       </audio>
-      <audio id="ding">
-        <source src="audio/final/ding.mp3" type="audio/mpeg" />
-        <source src="audio/final/ding.ogg" type="audio/ogg" />
-        Your browser does not support the audio tag.
-      </audio>
       <audio id="twang">
-        <source src="audio/final/twang.mp3" type="audio/mpeg" />
-        <source src="audio/final/twang.ogg" type="audio/ogg" />
+        <source src="audio/final/twang2.mp3" type="audio/mpeg" />
+        <source src="audio/final/twang2.ogg" type="audio/ogg" />
         Your browser does not support the audio tag.
       </audio>
       <audio id="chimes">
@@ -74,16 +88,14 @@
         h2 y: <input type="text" name="hy2" id="hy2" />
       </div>
     </div>
+    <!-- /DEBUG -->
   
     <script src="./js/utils.js"></script>
     <script src="./js/mouse.js"></script>
-  
     <script src="./js/point2D.js"></script>
-  
     <script src="./js/piece.js"></script>
     <script src="./js/holder.js"></script>
     <script src="./js/game.js"></script>
-  
     <script src="./js/main.js"></script>
 
   </body>

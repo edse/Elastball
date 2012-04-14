@@ -38,7 +38,6 @@ window.onload = function () {
     context.fillText("maxElapsedTime>>> "+maxElapsedTime, 50, 60);
     context.fillText(game.remaining_time, 50, 80);
   }
-  drawFrame();
   
   window.m = {game: game};
   window.m.interv = function () {
@@ -47,6 +46,28 @@ window.onload = function () {
   window.m.intervClear = function () {
     clearInterval(interval)
   }
+  window.m.stopGame = function () {
+    window.cancelAnimationFrame(window.m.game.interval);
+  }
+  window.m.startGame = function () {
+    drawFrame();
+  }
+  window.m.stopSFX = function () {
+    window.m.game.drip.volume = 0.0;
+    window.m.game.twang.volume = 0.0;
+  }
+  window.m.startSFX = function () {
+    window.m.game.drip.volume = 1.0;
+    window.m.game.twang.volume = 1.0;
+  }
+  window.m.stopBGM = function () {
+    window.m.game.bgm.volume = 0.0;
+  }
+  window.m.startBGM = function () {
+    window.m.game.bgm.volume = 1.0;
+  }
+  
+  window.m.startGame();
 
   document.getElementById('scale').onchange = function() {
     game.num_lines = this.value;
@@ -54,10 +75,25 @@ window.onload = function () {
     game.piece_width = game.img_width / game.num_lines;
     game.piece_height = game.img_height / game.num_lines;
     game.init();
-    
-    //game.piece_width = game.canvas.width / game.num_pieces;
-    //setBoard();
-    //drawTiles();
+  };
+
+  document.getElementById('bgm_btn').onclick = function() {
+    if(this.value == "BGM off"){
+      window.m.stopBGM();
+      this.value = "BGM on";
+    }else if(this.value == "BGM on"){
+      window.m.startBGM();
+      this.value = "BGM off";
+    }
+  };
+  document.getElementById('sfx_btn').onclick = function() {
+    if(this.value == "SFX off"){
+      window.m.stopSFX();
+      this.value = "SFX on";
+    }else if(this.value == "SFX on"){
+      window.m.startSFX();
+      this.value = "SFX off";
+    }
   };
   
   //game.interval = window.setInterval(drawFrame, 150);
@@ -68,10 +104,10 @@ window.onload = function () {
     game.remaining_time--;
   }, 1000);
 
-
+  /*
   document.getElementById('chimes').addEventListener('ended', function(){
-    document.getElementById('bg').play();
+    document.getElementById('bgm').play();
   }, false);
-
+  */
 
 }

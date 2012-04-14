@@ -1,10 +1,11 @@
 function Game(canvas) {
   this.canvas = canvas;
   this.interval = null;
+  this.level = document.getElementById("scale");
   this.img = document.getElementById("img");
-  this.ding = document.getElementById('ding');
+  this.drip = document.getElementById('drip');
   this.twang = document.getElementById('twang');
-  this.bg = document.getElementById('bg');
+  this.bgm = document.getElementById('bgm');
   this.chimes = document.getElementById('chimes');
   this.drip = document.getElementById('drip');
 
@@ -33,7 +34,7 @@ Game.prototype.init = function(){
   this.selected = null;
   this.over = null;
   this.is_over = false;
-  this.remaining_time = 30;
+  this.remaining_time = this.num_pieces*5;
   this.clock_interval = null;
   this.context = this.canvas.getContext("2d");
   this.mouse = new Mouse(this);
@@ -43,6 +44,10 @@ Game.prototype.init = function(){
   if(this.chimes.currentTime != 0)
     this.chimes.currentTime = 0;
   this.chimes.play();
+
+  if(this.bgm.currentTime == 0)
+    this.bgm.play();
+
 }
 
 Game.prototype.placePieces = function(){
@@ -147,13 +152,29 @@ Game.prototype.render = function() {
   }
   
   //Game Over
-  if(this.is_over){
-    //clearInterval(this.interval);
-    window.cancelAnimationFrame(this.interval);
-    alert('Huhuhuh! You did it!');
+  if(this.remaining_time <=0 ){
+    window.m.stopGame();
+    if(confirm('Timeup! Game Over! Wanna try again?')){
+      this.is_over = false;
+      this.init();
+      window.m.startGame();
+    }
   }
-  if(this.num_pieces == this.placed_pieces.length){
-    this.is_over = true;
+  else{
+    if(this.is_over){
+      //clearInterval(this.interval);
+      window.m.stopGame();
+      if(confirm('Huhuhuh! You did it! Wanna try the next level?')){
+        this.is_over = false;
+        this.level.value++;
+        this.init();
+        window.m.startGame();
+      }
+    }else{
+      if(this.num_pieces == this.placed_pieces.length){
+        this.is_over = true;
+      }
+    }
   }
 
   //DEBUG  
