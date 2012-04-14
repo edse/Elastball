@@ -34,7 +34,11 @@ Game.prototype.init = function(){
   this.selected = null;
   this.over = null;
   this.is_over = false;
-  this.remaining_time = this.num_pieces*5;
+  if(document.getElementById('snap_btn').value != "AUTO-SNAP on")
+    this.auto_snap = true;
+  else
+    this.auto_snap = false;
+  this.remaining_time = this.num_pieces*3;
   this.clock_interval = null;
   this.context = this.canvas.getContext("2d");
   this.mouse = new Mouse(this);

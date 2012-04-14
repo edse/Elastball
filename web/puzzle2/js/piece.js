@@ -61,6 +61,7 @@ Piece.prototype.draw = function() {
       this.moveble = true;
       this.x = this.startPoint.x;
       this.y = this.startPoint.y;
+      this.iniPoint = new Point2D(this.x,this.y)
     }
    
     this.game.context.save();
@@ -101,8 +102,20 @@ Piece.prototype.draw = function() {
       this.game.context.fillStyle = "rgba(255, 0, 0, 0.1)";
   
     //target distance
-    if(this.near())
+    if(this.near()){
       this.game.context.fillStyle = "rgba(0, 255, 0, 0.1)";
+      if((this.game.auto_snap == true)&&(!this.placed)){
+        //place
+        this.game.selected.x = this.game.selected.target.x;
+        this.game.selected.y = this.game.selected.target.y;
+        this.game.selected.placed = true;
+        this.game.selected.moveble = false;
+        this.game.placed_pieces.push(this.game.selected);
+        if(this.game.drip.currentTime != 0)
+          this.game.drip.currentTime = 0;
+        this.game.drip.play();
+      }
+    }
   
     //piece.draw();
     this.game.context.beginPath();

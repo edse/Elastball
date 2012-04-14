@@ -258,7 +258,7 @@ Mouse.prototype.mouseup = function(event) {
   this.down_y = 0;
  
   //place
-  if((this.game.selected)&&(this.game.selected.near())){
+  if((this.game.selected)&&(this.game.selected.near())&&(!this.game.selected.placed)){
     this.game.selected.x = this.game.selected.target.x;
     this.game.selected.y = this.game.selected.target.y;
     this.game.selected.placed = true;
@@ -268,15 +268,20 @@ Mouse.prototype.mouseup = function(event) {
       this.game.drip.currentTime = 0;
     this.game.drip.play();
   }else if((this.game.selected)&&(!this.game.selected.near())){
+    this.game.selected.p = 0
+    this.game.selected.moveble = false;
+    this.game.selected.placed = false;
+    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
+    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
+    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
+    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
     if(this.game.twang.currentTime != 0)
       this.game.twang.currentTime = 0;
     this.game.twang.play();
   }
 
   //unselect
-  if(this.game.selected){
-    this.game.selected = null;
-  }
+  this.game.selected = null;
 
   if(this.game.debug){
     console.log('up');
