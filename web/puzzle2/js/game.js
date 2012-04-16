@@ -1,32 +1,143 @@
 function Game(canvas) {
-  this.canvas = canvas;
-  this.interval = null;
-  this.level = document.getElementById("scale");
-  this.img = document.getElementById("img");
-  this.drip = document.getElementById('drip');
-  this.twang = document.getElementById('twang');
-  this.bgm = document.getElementById('bgm');
-  this.chimes = document.getElementById('chimes');
-  this.drip = document.getElementById('drip');
+  //this.canvas = document.getElementById('canvas');
+  //this.context = this.canvas.getContext('2d');
+  console.log('start loading...')
+  this.loadAssets();
+}
 
-  this.init();
-  this.startClock();
-  /*
+Game.prototype.loadAssets = function() {
+  this.canvas = document.getElementById('canvas');
+  this.context = this.canvas.getContext('2d');
+    
+  this.items_to_load = 5;
+  this.loaded_items = 0;
+  this.loaded = false;
+  this.interval = null;
+  this.maxElapsedTime = 0;
+  this.start_time = 0;
+
+  //AUDIO
+  this.drip = document.createElement('audio');
+  var source= document.createElement('source');
+  if(this.drip.canPlayType('audio/mpeg;')) {
+    source.type= 'audio/mpeg';
+    source.src= 'audio/final/drip.mp3';
+  }else {
+    source.type= 'audio/ogg';
+    source.src= 'audio/final/drip.ogg';
+  }
+  this.drip.appendChild(source);
+  this.drip.addEventListener('canplaythrough', asdf(this), false);
+  
+  //AUDIO
+  this.twang = document.createElement('audio');
+  var source= document.createElement('source');
+  if(this.twang.canPlayType('audio/mpeg;')) {
+    source.type= 'audio/mpeg';
+    source.src= 'audio/final/twang2.mp3';
+  }else {
+    source.type= 'audio/ogg';
+    source.src= 'audio/final/twang2.ogg';
+  }
+  this.twang.appendChild(source);
+  this.twang.addEventListener('canplaythrough', asdf(this), false);
+
+  //AUDIO
+  this.bgm = document.createElement('audio');
+  var source= document.createElement('source');
+  if(this.bgm.canPlayType('audio/mpeg;')) {
+    source.type= 'audio/mpeg';
+    source.src= 'audio/final/Pictures-Sleep_on_soft_sheets.mp3';
+  }else {
+    source.type= 'audio/ogg';
+    source.src= 'audio/final/Pictures-Sleep_on_soft_sheets.ogg';
+  }
+  this.bgm.appendChild(source);
+  this.bgm.addEventListener('canplaythrough', asdf(this), false);
+  
+  //AUDIO
+  this.chimes = document.createElement('audio');
+  var source= document.createElement('source');
+  if(this.chimes.canPlayType('audio/mpeg;')) {
+    source.type= 'audio/mpeg';
+    source.src= 'audio/final/chimes.mp3';
+  }else {
+    source.type= 'audio/ogg';
+    source.src= 'audio/final/chimes.ogg';
+  }
+  this.chimes.appendChild(source);
+  this.chimes.addEventListener('canplaythrough', asdf(this), false);
+      
+  //IMAGE
   this.img = new Image();
-  //this.img.src = './img/spfc.jpg';
-  this.img.src = './img/rainbow.png';
-  this.img.addEventListener('load', this.init(), false);
-  */
+  this.img.src = "img/rainbow2.png";
+  this.img.onload = this.loaded_items++;
+  
+  //BUTTON
+  this.bgm_btn = document.createElement("input");
+  this.bgm_btn.setAttribute("type", "button");
+  this.bgm_btn.setAttribute("value", "BGM off");
+  this.bgm_btn.setAttribute("id", "bgm_btn");
+  this.bgm_btn.onclick = function() {
+    if(this.value == "BGM off"){
+      window.m.stopBGM();
+      this.value = "BGM on";
+    }else if(this.value == "BGM on"){
+      window.m.startBGM();
+      this.value = "BGM off";
+    }
+  };
+  document.getElementById("controls").appendChild(this.bgm_btn);
+
+  //BUTTON
+  this.sfx_btn = document.createElement("input");
+  this.sfx_btn.setAttribute("type", "button");
+  this.sfx_btn.setAttribute("value", "SFX off");
+  this.sfx_btn.setAttribute("id", "sfx_btn");
+  this.sfx_btn.onclick = function() {
+    if(this.value == "SFX off"){
+      window.m.stopSFX();
+      this.value = "SFX on";
+    }else if(this.value == "SFX on"){
+      window.m.startSFX();
+      this.value = "SFX off";
+    }
+  };
+  document.getElementById("controls").appendChild(this.sfx_btn);
+
+  //BUTTON
+  this.snap_btn = document.createElement("input");
+  this.snap_btn.setAttribute("type", "button");
+  this.snap_btn.setAttribute("value", "AUTO-SNAP off");
+  this.snap_btn.setAttribute("id", "snap_btn");
+  this.snap_btn.onclick = function() {
+    if(this.value == "AUTO-SNAP off"){
+      window.m.game.auto_snap = false;
+      this.value = "AUTO-SNAP on";
+    }else if(this.value == "AUTO-SNAP on"){
+      window.m.game.auto_snap = true;
+      this.value = "AUTO-SNAP off";
+    }
+  };
+  document.getElementById("controls").appendChild(this.snap_btn);
+
+  //INPUT TEXT
+  this.scale_input = document.createElement("input");
+  this.scale_input.setAttribute("type", "text");
+  this.scale_input.setAttribute("value", "2");
+  this.scale_input.setAttribute("id", "scale");
+  this.scale_input.onchange = function() {
+    game.num_lines = this.value;
+    game.num_pieces = this.value*this.value;
+    game.piece_width = game.img_width / game.num_lines;
+    game.piece_height = game.img_height / game.num_lines;
+    game.init();
+  };
+  document.getElementById("controls").appendChild(this.scale_input);
 }
 
 Game.prototype.init = function(){
-  console.log(this.img.width+','+this.img.height)
-  this.img_width = this.img.width;
-  this.img_height = this.img.height;
-  this.num_lines = document.getElementById('scale').value;
-  this.num_pieces = document.getElementById('scale').value * document.getElementById('scale').value;
-  this.piece_width = this.img_width / this.num_lines;
-  this.piece_height = this.img_height / this.num_lines;
+  this.loaded = true;
   this.pieces = new Array();
   this.holders = new Array();
   this.placed_pieces = new Array();
@@ -34,14 +145,24 @@ Game.prototype.init = function(){
   this.selected = null;
   this.over = null;
   this.is_over = false;
-  if(document.getElementById('snap_btn').value != "AUTO-SNAP on")
+
+  console.log(this.img.width+','+this.img.height)
+  this.img_width = this.img.width;
+  this.img_height = this.img.height;
+  this.num_lines = this.scale_input.value;
+  this.num_pieces = this.scale_input.value * this.scale_input.value;
+  this.piece_width = this.img_width / this.num_lines;
+  this.piece_height = this.img_height / this.num_lines;
+
+  this.remaining_time = this.num_pieces*3;
+  this.clock_interval = null;
+  this.mouse = new Mouse(this);
+
+  if(this.snap_btn.value != "AUTO-SNAP on")
     this.auto_snap = true;
   else
     this.auto_snap = false;
-  this.remaining_time = this.num_pieces*3;
-  this.clock_interval = null;
-  this.context = this.canvas.getContext("2d");
-  this.mouse = new Mouse(this);
+
   this.placeHolders();
   this.placePieces();
   
@@ -51,7 +172,6 @@ Game.prototype.init = function(){
 
   if(this.bgm.currentTime == 0)
     this.bgm.play();
-
 }
 
 Game.prototype.placePieces = function(){
@@ -98,88 +218,90 @@ Game.prototype.placeHolders = function(){
   }
 }
 
-////////////////////////////////////////
-
-Game.prototype.draw = function() {
-}
-
 Game.prototype.render = function() {
   
   this.draw_bg();
-  
-  //HOLDERS
-  for(var i = 0; i < this.holders.length; i++){
-    holder = this.holders[i];
-    holder.draw();
-  }
-
-  //PIECES
-  var not_placed = new Array();
-  var over = false;
-  for(var i = 0; i < this.pieces.length; i++){
-    piece = this.pieces[i];
-    if(!over && piece.mouse_is_over())
-      over = true;
-    if(!piece.placed)
-      not_placed.push(piece);
-    else if(piece != this.selected)
-      piece.draw();
-      
-    if(!this.selected){
-      if((!this.over)||(this.over.id < piece.id)||(piece.mouse_is_over())){
-        if(piece.mouse_is_over() && !piece.placed){
-          this.over = piece;
-        }
-      }
-    }
-      
-  }
-  for(var i = 0; i < not_placed.length; i++){
-    not_placed[i].draw();
-  }
-  if(this.selected)
-    this.selected.draw();
-
-  if(!over)
-    this.over = null;
-  
-  //move
-  if((this.selected != null)&&(this.selected.moveble)){
-    /*
-    var dx = this.mouse.x - this.selected.x;
-    var dy = this.mouse.y - this.selected.y;
-    this.selected.x = this.mouse.x-dx;
-    this.selected.y = this.mouse.y-dy;
-    */
-    this.selected.x = this.mouse.x;
-    this.selected.y = this.mouse.y;
-  }
-  
-  //Game Over
-  if(this.remaining_time <=0 ){
-    window.m.stopGame();
-    if(confirm('Timeup! Game Over! Wanna try again?')){
-      this.is_over = false;
-      this.init();
-      window.m.startGame();
+    
+  //LOADING
+  if(!this.loaded){
+    if((this.items_to_load > 0)&&(this.loaded_items == this.items_to_load)){
+      this.items_to_load = 0;
+      var t = setTimeout("game.init();", 3000);
+      //this.init();
+    }else{
+      game.context.fillText("loading...", 50, 20);
     }
   }
   else{
-    if(this.is_over){
-      //clearInterval(this.interval);
+    //HOLDERS
+    for(var i = 0; i < this.holders.length; i++){
+      holder = this.holders[i];
+      holder.draw();
+    }
+  
+    //PIECES
+    var not_placed = new Array();
+    var over = false;
+    for(var i = 0; i < this.pieces.length; i++){
+      piece = this.pieces[i];
+      if(!over && piece.mouse_is_over())
+        over = true;
+      if(!piece.placed)
+        not_placed.push(piece);
+      else if(piece != this.selected)
+        piece.draw();
+        
+      if(!this.selected){
+        if((!this.over)||(this.over.id < piece.id)||(piece.mouse_is_over())){
+          if(piece.mouse_is_over() && !piece.placed){
+            this.over = piece;
+          }
+        }
+      }
+        
+    }
+    for(var i = 0; i < not_placed.length; i++){
+      not_placed[i].draw();
+    }
+    if(this.selected)
+      this.selected.draw();
+  
+    if(!over)
+      this.over = null;
+    
+    //move
+    if((this.selected != null)&&(this.selected.moveble)){
+      this.selected.x = this.mouse.x;
+      this.selected.y = this.mouse.y;
+    }
+    
+    //Game Over
+    if(this.remaining_time <=0 ){
       window.m.stopGame();
-      if(confirm('Huhuhuh! You did it! Wanna try the next level?')){
+      if(confirm('Timeup! Game Over! Wanna try again?')){
         this.is_over = false;
-        this.level.value++;
         this.init();
         window.m.startGame();
       }
-    }else{
-      if(this.num_pieces == this.placed_pieces.length){
-        this.is_over = true;
+    }
+    else{
+      if(this.is_over){
+        window.m.stopGame();
+        if(confirm('Huhuhuh! You did it! Wanna try the next level?')){
+          this.is_over = false;
+          this.scale_input.value++;
+          this.init();
+          window.m.startGame();
+        }
+      }else{
+        if(this.num_pieces == this.placed_pieces.length){
+          this.is_over = true;
+        }
       }
     }
   }
+  
+
 
   //DEBUG  
   if(this.debug){
@@ -211,18 +333,6 @@ Game.prototype.render = function() {
 
 }
 
-Game.prototype.update = function() {
-  /*
-  var running = false;
-  for(var i = 0; i < this.pieces.length; i++){
-    piece = this.pieces[i];
-    ball.x = this.mouse.x;
-    ball.y = this.mouse.y;
-  }
-  this.running = running;
-  */
-}
-
 Game.prototype.draw_bg = function() {
   this.context.save();
   //bg
@@ -242,18 +352,17 @@ Game.prototype.draw_bg = function() {
   this.context.restore();
 }
 
-Game.prototype.stopClock = function() {
-  window.clearInterval(this.clock_interval);
-}
-
-Game.prototype.startClock = function() {
-  //var me = this;
-}
+////////////////////////////////////////
 
 Game.prototype.clockTick = function() {
   this.remaining_time--;
 }
 
-function clockTick(game) {
-  game.remaining_time--;
+Game.prototype.getTimer = function() {
+  return (new Date().getTime() - this.start_time); //milliseconds
+}
+
+Game.prototype.loop = function(){
+  var instance = this;
+  instance.interval = requestAnimationFrame(instance.drawFrame2(instance), instance.canvas);
 }

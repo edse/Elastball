@@ -4,7 +4,7 @@
     <title>Puzzle</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <style>
-      #slider { padding: 10px 50px; }
+      #game, #holder, #controls { padding: 10px 50px; }
       form { padding: 10px; }
       * { margin: 0; padding: 0; }
       body { background: #333; text-align: center; color: #eee; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
@@ -26,17 +26,23 @@
     <!-- /LOADING -->
 
     <!-- GAME -->
-    <div id="slider" style="display: block">
-      <h1>Star Shape Puzzle</h1>
+    <div id="holder">
+      <h1>Puzzle</h1>
+      <h3>You have a few seconds to solve this puzzle</h3>
+      <!--
       <form>
         <label>Easy</label>
         <input type="range" id="scale" value="2" min="2" max="10" step="1" />
         <label>Hard</label>
         <input type="button" id="bgm_btn" value="BGM off" />
         <input type="button" id="sfx_btn" value="SFX off" />
-        <input type="button" id="snap_btn" value="AUTO-SNAP on" />
+        <input type="button" id="snap_btn" value="AUTO-SNAP off" />
       </form>
-      <canvas id="canvas" width="800" height="600"></canvas>
+      -->
+      <div id="game">
+        <div id="controls" ></div>
+        <canvas id="canvas" width="800" height="600"></canvas>
+      </div>
       
       <!-- CREDITS -->
       <div id="credits">
@@ -55,15 +61,11 @@
 
       <!-- DEBUG -->
       <div id="debug" style="display:none">
+        <!--
         <img id="img" src="./img/rainbow2.png" />
         <audio id="bgm">
           <source src="audio/final/Pictures-Sleep_on_soft_sheets.mp3" type="audio/mpeg" />
           <source src="audio/final/Pictures-Sleep_on_soft_sheets.ogg" type="audio/ogg" />
-          Your browser does not support the audio tag.
-        </audio>
-        <audio id="drip">
-          <source src="audio/final/drip.mp3" type="audio/mpeg" />
-          <source src="audio/final/drip.ogg" type="audio/ogg" />
           Your browser does not support the audio tag.
         </audio>
         <audio id="twang">
@@ -76,6 +78,7 @@
           <source src="audio/final/chimes.ogg" type="audio/ogg" />
           Your browser does not support the audio tag.
         </audio>
+        -->
         <div>
           pieces: <input type="text" name="p" id="p" />
           pieces placed: <input type="text" name="pp" id="pp" />
@@ -115,7 +118,7 @@
     <script src="./js/piece.js"></script>
     <script src="./js/holder.js"></script>
     <script src="./js/game.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/init.js"></script>
 
   </body>
 </html>
