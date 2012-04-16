@@ -54,6 +54,7 @@ Game.prototype.loadAssets = function() {
   }
   this.bgm.appendChild(source);
   this.bgm.addEventListener('canplaythrough', asdf(this), false);
+  this.bgm.play();
   
   //AUDIO
   this.chimes = document.createElement('audio');
@@ -165,13 +166,6 @@ Game.prototype.init = function(){
 
   this.placeHolders();
   this.placePieces();
-  
-  if(this.chimes.currentTime != 0)
-    this.chimes.currentTime = 0;
-  this.chimes.play();
-
-  if(this.bgm.currentTime == 0)
-    this.bgm.play();
 }
 
 Game.prototype.placePieces = function(){
@@ -197,6 +191,10 @@ Game.prototype.placePieces = function(){
 }
 
 Game.prototype.placeHolders = function(){
+  if(this.chimes.currentTime != 0)
+    this.chimes.currentTime = 0;
+  this.chimes.play();
+
   var pieces = 1;
   var offsetx = this.canvas.width/2-this.img_width/2;
   var offsety = this.canvas.height/2-this.img_height/2;
