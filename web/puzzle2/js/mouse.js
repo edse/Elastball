@@ -25,11 +25,15 @@ function Mouse(game) {
 
   //this.element = window;
   this.element = document.getElementById('canvas');
-    
+  
   this.element.addEventListener('mousemove', function(e){ me.mousemove(e) }, false);
   this.element.addEventListener('mousedown', function(e){ me.mousedown(e) }, false);
   this.element.addEventListener('mouseup', function(e){ me.mouseup(e) }, false);
   this.element.addEventListener("keyup", function(e){ me.keyup(e) }, false);
+  
+  this.element.addEventListener('touchstart', function(e) { me.touchstart(e) }, false);
+  this.element.addEventListener('touchmove', function(e) { me.touchmove(e) }, false);
+  this.element.addEventListener('touchend', function(e) { me.touchend(e) }, false);
   
 }
 
@@ -306,37 +310,48 @@ Mouse.prototype.keyup = function(e) {
  *
  *****/
 Mouse.prototype.touchstart = function(e) {
-  e.preventDefault();
-  pageX = e.targetTouches[0].pageX;
-  pageY = e.targetTouches[0].pageY;
+  //if(this.game.debug)
+    console.log('touch start');
+
+  body_scrollLeft = document.body.scrollLeft,
+  element_scrollLeft = document.documentElement.scrollLeft,
+  body_scrollTop = document.body.scrollTop,
+  element_scrollTop = document.documentElement.scrollTop,
+  offsetLeft = this.element.offsetLeft,
+  offsetTop = this.element.offsetTop;
+
+  var xx, yy, touch_event = e.touches[0]; //first touch
+  if (touch_event.pageX || touch_event.pageY) {
+    xx = touch_event.pageX;
+    yy = touch_event.pageY;
+  } else {
+    xx = touch_event.clientX + body_scrollLeft + element_scrollLeft;
+    yy = touch_event.clientY + body_scrollTop + element_scrollTop;
+  }  
+  this.moving = true;
+  offsetLeft = this.element.offsetLeft,
+  offsetTop = this.element.offsetTop;
+  xx -= offsetLeft;
+  yy -= offsetTop;
   
-  this.down_x =  (pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  this.down_y = (pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
-  this.down = true;
-  this.up = false;
-  this.up_x = 0;
-  this.up_y = 0;
-  
-  var xx, yy;
-  if (event.pageX || event.pageY) {
-    xx = e.targetTouches[0].pageX;
-    yy = e.targetTouches[0].pageY;
-  }
+  this.x = xx;
+  this.y = yy;
   this.down_x =  xx;
   this.down_y = yy;
   this.down = true;
   this.up = false;
   this.up_x = 0;
   this.up_y = 0;
-  this.event = event;
+  this.e = e;
   
   //select
   if(this.game.over){
     this.game.selected = this.game.over;
   }
 
-  //if(this.game.debug)
+  if(this.game.debug){
     console.log('touch start');
+  }
   
 }
 
@@ -346,40 +361,65 @@ Mouse.prototype.touchstart = function(e) {
  *
  *****/
 Mouse.prototype.touchend = function(e) {
+  //if(this.game.debug)
+    console.log('touchend');
+    
   e.preventDefault();
-  //alert('touchend');
-  
-  //pageX = e.targetTouches[0].pageX;
-  //pageY = e.targetTouches[0].pageY;
-  //this.up_x =  (pageX) + Math.abs(this.game.get_x()) - this.game.canvas.offsetLeft;
-  //this.up_y = (pageY) + Math.abs(this.game.get_y()) - this.game.canvas.offsetTop;;
-  
-  var xx, yy;
-  xx = e.targetTouches[0].pageX;
-  yy = e.targetTouches[0].pageY;
-  this.up_x =  xx;
-  this.up_y = yy;
+
+  body_scrollLeft = document.body.scrollLeft,
+  element_scrollLeft = document.documentElement.scrollLeft,
+  body_scrollTop = document.body.scrollTop,
+  element_scrollTop = document.documentElement.scrollTop,
+  offsetLeft = this.element.offsetLeft,
+  offsetTop = this.element.offsetTop;
+
+  var xx, yy, touch_event = e.touches[0]; //first touch
+  if (touch_event.pageX || touch_event.pageY) {
+    xx = touch_event.pageX;
+    yy = touch_event.pageY;
+  } else {
+    xx = touch_event.clientX + body_scrollLeft + element_scrollLeft;
+    yy = touch_event.clientY + body_scrollTop + element_scrollTop;
+  }  
+  xx -= offsetLeft;
+  yy -= offsetTop;
+
   this.up = true;
   this.down = false;
+  this.up_x =  xx;
+  this.up_y = yy;
   this.down_x = 0;
   this.down_y = 0;
- 
+  this.x = 0;
+  this.y = 0;
+
   //place
-  if((this.game.selected)&&(this.game.selected.near())){
+  if((this.game.selected)&&(this.game.selected.near())&&(!this.game.selected.placed)){
     this.game.selected.x = this.game.selected.target.x;
     this.game.selected.y = this.game.selected.target.y;
     this.game.selected.placed = true;
     this.game.selected.moveble = false;
     this.game.placed_pieces.push(this.game.selected);
-  }
-
-  //unselect
-  if(this.game.selected){
+    if(this.game.drip.currentTime != 0)
+      this.game.drip.currentTime = 0;
+    this.game.drip.play();
+  }else if((this.game.selected)&&(!this.game.selected.near())){
+    this.game.selected.p = 0
+    this.game.selected.moveble = false;
+    this.game.selected.placed = false;
+    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
+    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
+    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
+    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
+    if(this.game.twang.currentTime != 0)
+      this.game.twang.currentTime = 0;
+    this.game.twang.play();
     this.game.selected = null;
   }
 
-  //if(this.game.debug)
-    console.log('touchend');
+  //unselect
+  this.game.selected = null;
+
 }
 
 /*****
@@ -389,26 +429,31 @@ Mouse.prototype.touchend = function(e) {
  *****/
 Mouse.prototype.touchmove = function(e) {
   e.preventDefault();
-  this.moving = true;  
+
   body_scrollLeft = document.body.scrollLeft,
   element_scrollLeft = document.documentElement.scrollLeft,
   body_scrollTop = document.body.scrollTop,
   element_scrollTop = document.documentElement.scrollTop,
   offsetLeft = this.element.offsetLeft,
   offsetTop = this.element.offsetTop;
-  
-  var xx, yx;
-  xx = e.targetTouches[0].pageX;
-  yx = e.targetTouches[0].pageY;
-  
+
+  var xx, yy, touch_event = e.touches[0]; //first touch
+  if (touch_event.pageX || touch_event.pageY) {
+    xx = touch_event.pageX;
+    yy = touch_event.pageY;
+  } else {
+    xx = touch_event.clientX + body_scrollLeft + element_scrollLeft;
+    yy = touch_event.clientY + body_scrollTop + element_scrollTop;
+  }  
   xx -= offsetLeft;
-  yx -= offsetTop;
+  yy -= offsetTop;
   
+  this.moving = true;
   this.x = xx;
-  this.y = yx;
-  this.event = event;
+  this.y = yy;
+  this.event = e;
 
   //if(this.game.debug)
-    console.log('move '+xx);
+    console.log('touchmove '+xx);
 
 }

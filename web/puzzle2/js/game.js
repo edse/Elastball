@@ -1,6 +1,4 @@
 function Game(canvas) {
-  //this.canvas = document.getElementById('canvas');
-  //this.context = this.canvas.getContext('2d');
   console.log('start loading...')
   this.loadAssets();
 }

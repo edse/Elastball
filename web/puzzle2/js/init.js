@@ -62,14 +62,7 @@ window.m.startBGM = function () {
   window.m.game.bgm.volume = 1.0;
 }
 
-/*
-game.img.onload = function(){
-  start();
-};
-*/
-
 function start(){
-  //game.init();
   window.requestAnimationFrame(loop, game.canvas);
 }
 start();
