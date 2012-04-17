@@ -114,7 +114,6 @@ Piece.prototype.draw = function() {
         if(this.game.drip.currentTime != 0)
           this.game.drip.currentTime = 0;
         this.game.drip.play();
-        console.log('>>> drip PLAY')
       }
     }
   

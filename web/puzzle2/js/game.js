@@ -225,7 +225,7 @@ Game.prototype.render = function() {
       var t = setTimeout("game.init();", 3000);
       //this.init();
     }else{
-      game.context.fillText("loading...", 50, 20);
+      this.context.fillText("loading...", 50, 20);
     }
   }
   else{
