@@ -204,6 +204,8 @@ Mouse.prototype.touchstart = function(e) {
   //if(this.game.debug)
     console.log('touch start');
 
+  this.game.drip.play();
+
   e.preventDefault();
 
   this.moving = false;
