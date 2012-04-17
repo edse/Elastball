@@ -228,6 +228,7 @@ Mouse.prototype.touchend = function(e) {
     
   e.preventDefault();
 
+  this.moving = false;
   this.up = true;
   this.down = false;
   this.x = -1;
@@ -290,7 +291,6 @@ Mouse.prototype.touchmove = function(e) {
   yy -= offsetTop;
   
   this.moving = true;
-  window.m.interv();
   this.x = xx;
   this.y = yy;
   this.event = e;
