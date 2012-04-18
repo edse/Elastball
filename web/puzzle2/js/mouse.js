@@ -108,22 +108,25 @@ Mouse.prototype.mousemove = function(e) {
   offsetLeft = this.element.offsetLeft,
   offsetTop = this.element.offsetTop;
   
-  var xx, yx;
+  var xx, yy;
   if (e.pageX || e.pageY) {
     xx = e.pageX;
-    yx = e.pageY;
+    yy = e.pageY;
   } else {
     xx = e.clientX + body_scrollLeft + element_scrollLeft;
-    yx = e.clientY + body_scrollTop + element_scrollTop;
+    yy = e.clientY + body_scrollTop + element_scrollTop;
   }
   
   //xx -= offsetLeft;
-  //yx -= offsetTop;
+  //yy -= offsetTop;
+  
+  xx += document.getElementById("game").style.marginLeft*2;
+  yy += document.getElementById("game").style.marginTop*2;
   
   this.moving = true;
   window.m.interv();
   this.x = xx;
-  this.y = yx;
+  this.y = yy;
   this.event = e;
 
   if(this.game.debug){

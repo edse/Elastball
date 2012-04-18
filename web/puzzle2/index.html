@@ -10,8 +10,9 @@
 <link rel="apple-touch-startup-image" sizes="1024x748" href="images/ipad-splash-landscape.png"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
 <link rel="apple-touch-icon" href="images/logo.jpg" />
 <style>
-  html, body, #holder { width: 100%; height: 100%; } 
-  #game, #holder, #controls { padding: 10px 50px; }
+  html, body, #holder { width: 100%; height: 100%; }
+  #game { position: absolute; left: 50%; top: 50%; }
+  #controls { padding: 10px 50px; }
   form { padding: 10px; }
   * { margin: 0; padding: 0; }
   body { background: #333; text-align: center; color: #eee; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
@@ -29,8 +30,8 @@
     <h3>A simple HTML5 puzzle game</h3>
 
     <div id="game">
+      <canvas id="canvas"></canvas>
       <div id="controls" ></div>
-      <canvas id="canvas" width="500" height="450"></canvas>
     </div>
     
     <!-- CREDITS -->
@@ -84,10 +85,10 @@
   </div>
   <!-- /GAME -->
 
-  <script src="./js/mouse.js"></script>
-  <script src="./js/point2D.js"></script>
-  <script src="./js/piece.js"></script>
-  <script src="./js/holder.js"></script>
+  <script src="./js/mouse.js?v=2"></script>
+  <script src="./js/point2D.js?v=2"></script>
+  <script src="./js/piece.js?v=2"></script>
+  <script src="./js/holder.js?v=2"></script>
   <script src="./js/game.js?v=2"></script>
   <script src="./js/init.js?v=2"></script>
 
