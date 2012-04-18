@@ -129,7 +129,7 @@ function resizeGame() {
     gameCanvas.width = newWidth;
     gameCanvas.height = newHeight;
     console.log("canvas: "+newWidth+", "+newHeight)
-    //game.init();
+    game.init();
 }
 
 window.addEventListener('resize', resizeGame, false);
