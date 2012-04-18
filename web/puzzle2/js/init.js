@@ -88,3 +88,49 @@ function loop(){
 function asdf(g){
   g.loaded_items++;
 }
+
+function mediaSupport(mimetype, container) {
+  var elem = document.createElement(container);
+  if(typeof elem.canPlayType == 'function'){
+    var playable = elem.canPlayType(mimetype);
+    if((playable.toLowerCase() == 'maybe')||(playable.toLowerCase() == 'probably')){
+      return true;
+    }
+  }
+  return false;
+}
+/*
+//Handle the melody
+  if(mediaSupport('audio/ogg; codecs=vorbis', 'audio') ||
+    mediaSupport('audio/mpeg', 'audio')) {
+*/
+
+function resizeGame() {
+    var gameArea = document.getElementById('gameArea');
+    var widthToHeight = 4 / 3;
+    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight;
+    var newWidthToHeight = newWidth / newHeight;
+    
+    if (newWidthToHeight > widthToHeight) {
+        newWidth = newHeight * widthToHeight;
+        gameArea.style.height = newHeight + 'px';
+        gameArea.style.width = newWidth + 'px';
+    } else {
+        newHeight = newWidth / widthToHeight;
+        gameArea.style.width = newWidth + 'px';
+        gameArea.style.height = newHeight + 'px';
+    }
+    
+    gameArea.style.marginTop = (-newHeight / 2) + 'px';
+    gameArea.style.marginLeft = (-newWidth / 2) + 'px';
+    
+    var gameCanvas = document.getElementById('canvas');
+    gameCanvas.width = newWidth;
+    gameCanvas.height = newHeight;
+    console.log("canvas: "+newWidth+", "+newHeight)
+    //game.init();
+}
+
+window.addEventListener('resize', resizeGame, false);
+window.addEventListener('orientationchange', resizeGame, false);

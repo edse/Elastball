@@ -117,8 +117,8 @@ Mouse.prototype.mousemove = function(e) {
     yx = e.clientY + body_scrollTop + element_scrollTop;
   }
   
-  xx -= offsetLeft;
-  yx -= offsetTop;
+  //xx -= offsetLeft;
+  //yx -= offsetTop;
   
   this.moving = true;
   window.m.interv();
