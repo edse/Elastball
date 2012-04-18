@@ -8,8 +8,7 @@ Game.prototype.loadAssets = function() {
   this.context = this.canvas.getContext('2d');
   
 //
-
-    var gameArea = document.getElementById('gameArea');
+    var gameArea = document.getElementById('game');
     var widthToHeight = 4 / 3;
     var newWidth = window.innerWidth;
     var newHeight = window.innerHeight;
