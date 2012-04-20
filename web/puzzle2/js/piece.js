@@ -54,10 +54,10 @@ Piece.prototype.draw = function() {
     this.p = this.p*1.1;
     this.startPoint.x = this.startPoint.x + this.p;
     this.startPoint.y = this.m * this.startPoint.x + this.b;
-    if((this.startPoint.x > this.game.canvas.width-this.game.piece_width/2) || 
-      (this.startPoint.y > this.game.canvas.height-this.game.piece_height/2) || 
-      (this.startPoint.x < this.game.piece_width/2) || 
-      (this.startPoint.y < this.game.piece_height/2)){
+    if((this.startPoint.x > this.game.canvas.width-this.game.img.width/2) || 
+      (this.startPoint.y > this.game.canvas.height-this.game.img.height/2) || 
+      (this.startPoint.x < this.game.img.width/2) || 
+      (this.startPoint.y < this.game.img.height/2)){
       this.moveble = true;
       this.x = this.startPoint.x;
       this.y = this.startPoint.y;

@@ -79,6 +79,24 @@ Game.prototype.loadAssets = function() {
   this.img.onload = this.loaded_items++;
   
   //BUTTON
+  this.full_btn = document.createElement("input");
+  this.full_btn.setAttribute("type", "button");
+  this.full_btn.setAttribute("value", "FULLSCREEN on");
+  this.full_btn.setAttribute("id", "full_btn");
+  this.full_btn.onclick = function() {
+    if(this.value == "FULLSCREEN off"){
+      document.webkitCancelFullScreen();
+      document.mozCancelFullScreen();
+      this.value = "FULLSCREEN on";
+    }else if(this.value == "FULLSCREEN on"){
+      document.getElementById("canvas").webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      document.getElementById("canvas").mozRequestFullScreen();
+      this.value = "FULLSCREEN off";
+    }
+  };
+  document.getElementById("controls").appendChild(this.full_btn);
+
+  //BUTTON
   this.bgm_btn = document.createElement("input");
   this.bgm_btn.setAttribute("type", "button");
   this.bgm_btn.setAttribute("value", "BGM off");
@@ -174,8 +192,8 @@ Game.prototype.init = function(){
 
 Game.prototype.placePieces = function(){
   for(i=0; i<this.num_pieces; i++){
-    x = Math.floor(Math.random()*this.canvas.width-this.piece_width*2)+this.piece_width*2;
-    y = Math.floor(Math.random()*this.canvas.height-this.piece_height*2)+this.piece_height*2;
+    x = Math.floor(Math.random()*this.canvas.width);
+    y = Math.floor(Math.random()*this.canvas.height);
     temp = new Piece(
       i+1,
       this,
