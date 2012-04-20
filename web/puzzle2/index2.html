@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html manifest="./puzzle.appcache">
 <head>
 <title>Puzzle</title>
 <meta name="apple-touch-fullscreen" content="yes">
@@ -8,33 +9,31 @@
 <link rel="apple-touch-startup-image" sizes="768x1004" href="img/ipad-splash-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" />
 <link rel="apple-touch-startup-image" sizes="1024x748" href="img/ipad-splash-landscape.png"  media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" />
 <link rel="apple-touch-icon" href="images/logo.jpg" />
-  <style type="text/css">
-    html, body, #canvas {
-      width: 100%;
-      height: 100%;
-    }
-    #controls {
-      position: absolute;
-      width: 100%;
-      height: 8%;
-      bottom: 0;
-      opacity: 0.8;
-    }
-    #gameArea {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-    }
-  </style>
+<style type="text/css">
+  html, body, #canvas {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  #controls {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    bottom: 0;
+    opacity: 0.8;
+  }
+  #game {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+</style>
 </head>
 <body>
-
   <!-- GAME -->
-  <div id="gameArea">
-    <canvas id="canvas"></canvas>
-    <div id="controls" ></div>
-  </div>
-  
+  <canvas id="canvas"></canvas>
+  <div id="controls" ></div>
   <!-- DEBUG -->
   <div id="debug" style="display:none">
     <div>
@@ -68,12 +67,12 @@
   </div>
   <!-- /DEBUG -->
 
-  <script src="./js/mouse.js"></script>
-  <script src="./js/point2D.js"></script>
-  <script src="./js/piece.js"></script>
-  <script src="./js/holder.js"></script>
-  <script src="./js/game.js"></script>
-  <script src="./js/init.js"></script>
+  <script src="./js/mouse.js?v=2"></script>
+  <script src="./js/point2D.js?v=2"></script>
+  <script src="./js/piece.js?v=2"></script>
+  <script src="./js/holder.js?v=2"></script>
+  <script src="./js/game.js?v=2"></script>
+  <script src="./js/init.js?v=2"></script>
 
 </body>
 </html>

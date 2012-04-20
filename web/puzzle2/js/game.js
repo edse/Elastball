@@ -8,30 +8,9 @@ Game.prototype.loadAssets = function() {
   this.context = this.canvas.getContext('2d');
   
 //
-    var gameArea = document.getElementById('game');
-    var widthToHeight = 4 / 3;
-    var newWidth = window.innerWidth;
-    var newHeight = window.innerHeight;
-    var newWidthToHeight = newWidth / newHeight;
-    
-    if (newWidthToHeight > widthToHeight) {
-        newWidth = newHeight * widthToHeight;
-        gameArea.style.height = newHeight + 'px';
-        gameArea.style.width = newWidth + 'px';
-    } else {
-        newHeight = newWidth / widthToHeight;
-        gameArea.style.width = newWidth + 'px';
-        gameArea.style.height = newHeight + 'px';
-    }
-    
-    gameArea.style.marginTop = (-newHeight / 2) + 'px';
-    gameArea.style.marginLeft = (-newWidth / 2) + 'px';
-    
-    var gameCanvas = document.getElementById('canvas');
-    gameCanvas.width = newWidth;
-    gameCanvas.height = newHeight;
-    console.log("canvas: "+newWidth+", "+newHeight)
-
+    document.getElementById('canvas').width = window.innerWidth;
+    document.getElementById('canvas').height = window.innerHeight;
+    console.log("canvas: "+window.innerWidth+", "+window.innerHeight)
 //
     
   this.items_to_load = 5;
@@ -96,7 +75,7 @@ Game.prototype.loadAssets = function() {
       
   //IMAGE
   this.img = new Image();
-  this.img.src = "img/rainbow2.png";
+  this.img.src = "img/rainbow3.png";
   this.img.onload = this.loaded_items++;
   
   //BUTTON
@@ -195,8 +174,8 @@ Game.prototype.init = function(){
 
 Game.prototype.placePieces = function(){
   for(i=0; i<this.num_pieces; i++){
-    x = Math.floor(Math.random()*this.canvas.width-this.piece_width)+this.piece_width;
-    y = Math.floor(Math.random()*this.canvas.height-this.piece_height)+this.piece_height;
+    x = Math.floor(Math.random()*this.canvas.width-this.piece_width*2)+this.piece_width*2;
+    y = Math.floor(Math.random()*this.canvas.height-this.piece_height*2)+this.piece_height*2;
     temp = new Piece(
       i+1,
       this,

@@ -120,8 +120,8 @@ Mouse.prototype.mousemove = function(e) {
   //xx -= offsetLeft;
   //yy -= offsetTop;
   
-  xx += document.getElementById("game").style.marginLeft*2;
-  yy += document.getElementById("game").style.marginTop*2;
+  //xx += document.getElementById("game").style.marginLeft*2;
+  //yy += document.getElementById("game").style.marginTop*2;
   
   this.moving = true;
   window.m.interv();
