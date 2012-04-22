@@ -62,10 +62,10 @@ Mouse.prototype.isOverBall = function(ball) {
  *****/
 Mouse.prototype.isOverPiece = function(piece) {
   var poly = new Array();
-  poly[0]= new Point2D(piece.x-piece.width/2, piece.y-piece.height/2);
-  poly[1]= new Point2D(piece.x+piece.width/2, piece.y-piece.height/2);
-  poly[2]= new Point2D(piece.x+piece.width/2, piece.y+piece.height/2);
-  poly[3]= new Point2D(piece.x-piece.width/2, piece.y+piece.height/2);
+  poly[0]= new Point2D(piece.position.x, piece.position.y);
+  poly[1]= new Point2D(piece.position.x+piece.img.width, piece.position.y);
+  poly[2]= new Point2D(piece.position.x+piece.img.width, piece.position.y+piece.img.height);
+  poly[3]= new Point2D(piece.position.x, piece.position.y+piece.img.height);
   pt = new Point2D(this.x, this.y);
   for(var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
       ((poly[i].y <= pt.y && pt.y < poly[j].y) || (poly[j].y <= pt.y && pt.y < poly[i].y))
@@ -100,7 +100,6 @@ Mouse.prototype.isOverRect = function(p1, p2, p3, p4) {
  *
  *****/
 Mouse.prototype.mousemove = function(e) {
-  
   body_scrollLeft = document.body.scrollLeft,
   element_scrollLeft = document.documentElement.scrollLeft,
   body_scrollTop = document.body.scrollTop,
@@ -122,16 +121,24 @@ Mouse.prototype.mousemove = function(e) {
   
   //xx += document.getElementById("game").style.marginLeft*2;
   //yy += document.getElementById("game").style.marginTop*2;
-  
+
+  xx = xx/this.game.scale;
+  yy = yy/this.game.scale;
+
   this.moving = true;
   window.m.interv();
   this.x = xx;
   this.y = yy;
   this.event = e;
 
-  if(this.game.debug){
+  /*
+  //if(this.game.debug){
+    document.getElementById('moving').value = this.moving;
+    document.getElementById('mx').value = this.x;
+    document.getElementById('my').value = this.y;
     console.log('move '+xx);
-  }
+  //}
+  */
 }
 
 /*****
@@ -168,11 +175,12 @@ Mouse.prototype.mouseup = function(e) {
 
   //place
   if((this.game.selected)&&(this.game.selected.near())&&(!this.game.selected.placed)){
-    this.game.selected.x = this.game.selected.target.x;
-    this.game.selected.y = this.game.selected.target.y;
+    this.game.selected.position.x = this.game.selected.holder.position.x;
+    this.game.selected.position.y = this.game.selected.holder.position.y;
     this.game.selected.placed = true;
     this.game.selected.moveble = false;
     this.game.placed_pieces.push(this.game.selected);
+    //sfx
     if(this.game.drip.currentTime != 0)
       this.game.drip.currentTime = 0;
     this.game.drip.play();
@@ -180,10 +188,7 @@ Mouse.prototype.mouseup = function(e) {
     this.game.selected.p = 0
     this.game.selected.moveble = false;
     this.game.selected.placed = false;
-    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
-    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
-    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
-    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
+    //sfx
     if(this.game.twang.currentTime != 0)
       this.game.twang.currentTime = 0;
     this.game.twang.play();
@@ -228,7 +233,7 @@ Mouse.prototype.touchstart = function(e) {
  *
  *****/
 Mouse.prototype.touchend = function(e) {
-  if(this.game.debug)
+  //if(this.game.debug)
     console.log('touchend');
     
   e.preventDefault();
@@ -241,11 +246,12 @@ Mouse.prototype.touchend = function(e) {
 
   //place
   if((this.game.selected)&&(this.game.selected.near())&&(!this.game.selected.placed)){
-    this.game.selected.x = this.game.selected.target.x;
-    this.game.selected.y = this.game.selected.target.y;
+    this.game.selected.position.x = this.game.selected.holder.position.x;
+    this.game.selected.position.y = this.game.selected.holder.position.y;
     this.game.selected.placed = true;
     this.game.selected.moveble = false;
     this.game.placed_pieces.push(this.game.selected);
+    //sfx
     if(this.game.drip.currentTime != 0)
       this.game.drip.currentTime = 0;
     this.game.drip.play();
@@ -253,14 +259,11 @@ Mouse.prototype.touchend = function(e) {
     this.game.selected.p = 0
     this.game.selected.moveble = false;
     this.game.selected.placed = false;
-    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
-    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
-    //this.game.selected.startPoint.x = this.game.selected.iniPoint.x;
-    //this.game.selected.startPoint.y = this.game.selected.iniPoint.y;
+    this.game.selected = null;
+    //sfx
     if(this.game.twang.currentTime != 0)
       this.game.twang.currentTime = 0;
     this.game.twang.play();
-    this.game.selected = null;
   }
   
   //unselect
@@ -294,7 +297,10 @@ Mouse.prototype.touchmove = function(e) {
   }  
   //xx -= offsetLeft;
   //yy -= offsetTop;
-  
+    
+  xx = xx/this.game.scale;
+  yy = yy/this.game.scale;
+
   this.moving = true;
   this.x = xx;
   this.y = yy;
@@ -305,7 +311,7 @@ Mouse.prototype.touchmove = function(e) {
     this.game.selected = this.game.over;
   }
 
-  if(this.game.debug)
+  //if(this.game.debug)
     console.log('touchmove '+xx);
 
 }

@@ -20,6 +20,23 @@ Game.prototype.loadAssets = function() {
   this.maxElapsedTime = 0;
   this.start_time = 0;
 
+  //IMAGE
+  this.img = new Image();
+  if(window.innerHeight > 600){
+    this.img.src = "img/rainbow500x400.png";
+  }
+  else{
+    this.img.src = "img/rainbow125x100.png";
+  }
+  this.img.onload = this.loaded_items++;
+
+  //IMAGE
+  /*
+  this.img_bg = new Image();
+  this.img_bg.src = "img/bg.jpg";
+  this.img_bg.onload = this.loaded_items++;
+  */
+  
   //AUDIO
   this.drip = document.createElement('audio');
   var source= document.createElement('source');
@@ -73,11 +90,6 @@ Game.prototype.loadAssets = function() {
   this.chimes.appendChild(source);
   this.chimes.addEventListener('canplaythrough', asdf(this), false);
       
-  //IMAGE
-  this.img = new Image();
-  this.img.src = "img/rainbow3.png";
-  this.img.onload = this.loaded_items++;
-  
   //BUTTON
   this.full_btn = document.createElement("input");
   this.full_btn.setAttribute("type", "button");
@@ -160,6 +172,14 @@ Game.prototype.loadAssets = function() {
 }
 
 Game.prototype.init = function(){
+  //IMAGE SIZE
+  if(window.innerHeight > 600){
+    this.img.src = "img/rainbow500x400.png";
+  }
+  else{
+    this.img.src = "img/rainbow125x100.png";
+  }
+  
   this.loaded = true;
   this.pieces = new Array();
   this.holders = new Array();
@@ -362,6 +382,14 @@ Game.prototype.draw_bg = function() {
   this.context.strokeStyle = '#000000';
   this.context.lineWidth = 1;
   this.context.strokeRect(1,1,this.canvas.width-2,this.canvas.height-2);
+
+  //bg image
+  /*
+  var offsetx = this.canvas.width/2-this.img_bg.width/2;
+  var offsety = this.canvas.height/2-this.img_bg.height/2;
+  this.context.globalAlpha = 1
+  this.context.drawImage(this.img_bg, offsetx, offsety);
+  */
   
   //puzzle image
   var offsetx = this.canvas.width/2-this.img_width/2;

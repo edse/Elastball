@@ -34,7 +34,6 @@
 }());
 
 var game = new Game();
-game.debug = false;
 window.m = {game: game};
 window.m.interv = function () {
   interval = setTimeout("window.m.game.mouse.moving = false; document.getElementById('moving').value = false; window.m.intervClear();", 500);
@@ -86,7 +85,7 @@ function loop(){
   game.context.fillText(game.auto_snap, 50, 100);
 }
 
-function asdf(g){
+function itemLoaded(g){
   g.loaded_items++;
 }
 
@@ -110,7 +109,7 @@ function resizeGame() {
     document.getElementById('canvas').width = window.innerWidth;
     document.getElementById('canvas').height = window.innerHeight;
     console.log("canvas: "+window.innerWidth+", "+window.innerHeight)
-    game.init();
+    //game.init();
 }
 
 window.addEventListener('resize', resizeGame, false);
