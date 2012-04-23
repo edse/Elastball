@@ -60,10 +60,10 @@ Piece.prototype.draw = function() {
       (this.startPoint.x < this.game.img.width/this.game.num_lines) || 
       (this.startPoint.y < this.game.img.height/this.game.num_lines)){
     */
-    if((this.startPoint.x > (this.game.canvas.width/this.scale)-this.game.img.width/this.game.num_lines) || 
-      (this.startPoint.y > (this.game.canvas.height/this.scale)-this.game.img.height/this.game.num_lines) || 
-      (this.startPoint.x < (this.game.img.width/this.game.num_lines)/this.scale) || 
-      (this.startPoint.y < (this.game.img.height/this.game.num_lines)/this.scale)){
+    if((this.startPoint.x+this.width/2 >= (this.game.canvas.width/this.game.scale)) || 
+      (this.startPoint.y+this.height/2 >= (this.game.canvas.height/this.game.scale)) || 
+      (this.startPoint.x-this.width/2 <= 0) || 
+      (this.startPoint.y-this.height/2 <= 0)){
       this.moveble = true;
       this.x = this.startPoint.x;
       this.y = this.startPoint.y;
