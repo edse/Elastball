@@ -79,6 +79,7 @@ function loop(){
   if(elapsed > game.maxElapsedTime)
     game.maxElapsedTime = elapsed;
     
+  game.context.fillText("scale: "+game.scale, 50, 20);
   game.context.fillText("loaded items: "+game.loaded_items, 50, 30);
   game.context.fillText(">>> "+elapsed, 50, 50);
   game.context.fillText("maxElapsedTime>>> "+game.maxElapsedTime, 50, 60);
@@ -110,14 +111,7 @@ function resizeGame() {
     document.getElementById('canvas').width = window.innerWidth;
     document.getElementById('canvas').height = window.innerHeight;
     console.log("canvas: "+window.innerWidth+", "+window.innerHeight)
-    //game.init();
-    //IMAGE SIZE
-    if(window.innerHeight <= 600){
-      this.game.context.scale(0.5,0.5);
-      this.game.scale = 0.5;
-    }else
-      this.game.scale = 1;
-
+    game.init();
 }
 
 window.addEventListener('resize', resizeGame, false);

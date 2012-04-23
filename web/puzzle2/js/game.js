@@ -12,8 +12,7 @@ Game.prototype.loadAssets = function() {
     document.getElementById('canvas').height = window.innerHeight;
     console.log("canvas: "+window.innerWidth+", "+window.innerHeight)
 //
-    
-  this.items_to_load = 5;
+  this.items_to_load = 4;
   this.loaded_items = 0;
   this.loaded = false;
   this.interval = null;
@@ -59,6 +58,7 @@ Game.prototype.loadAssets = function() {
   this.twang.addEventListener('canplaythrough', asdf(this), false);
 
   //AUDIO
+  /*
   this.bgm = document.createElement('audio');
   var source= document.createElement('source');
   if(this.bgm.canPlayType('audio/mpeg;')) {
@@ -71,6 +71,7 @@ Game.prototype.loadAssets = function() {
   this.bgm.appendChild(source);
   this.bgm.addEventListener('canplaythrough', asdf(this), false);
   this.bgm.play();
+  */
   
   //AUDIO
   this.chimes = document.createElement('audio');
@@ -168,11 +169,17 @@ Game.prototype.loadAssets = function() {
 
 Game.prototype.init = function(){
   //IMAGE SIZE
-  if(window.innerHeight <= 600){
+  if(window.innerHeight <= 300){
+    this.context.scale(0.3,0.3);
+    this.scale = 0.3;
+  }else if(window.innerHeight <= 600){
     this.context.scale(0.5,0.5);
     this.scale = 0.5;
-  }else
+  }else{
+    this.context.scale(1,1);
     this.scale = 1;
+  }
+  console.log('scale: '+this.scale)
   
   this.loaded = true;
   this.pieces = new Array();
@@ -206,8 +213,8 @@ Game.prototype.init = function(){
 
 Game.prototype.placePieces = function(){
   for(i=0; i<this.num_pieces; i++){
-    x = Math.floor(Math.random()*this.canvas.width);
-    y = Math.floor(Math.random()*this.canvas.height);
+    x = Math.floor(Math.random()*this.canvas.width/this.scale);
+    y = Math.floor(Math.random()*this.canvas.height/this.scale);
     temp = new Piece(
       i+1,
       this,
@@ -232,8 +239,8 @@ Game.prototype.placeHolders = function(){
   this.chimes.play();
 
   var pieces = 1;
-  var offsetx = this.canvas.width/2-this.img_width/2;
-  var offsety = this.canvas.height/2-this.img_height/2;
+  var offsetx = (this.canvas.width/this.scale)/2-(this.img_width)/2;
+  var offsety = (this.canvas.height/this.scale)/2-(this.img_height)/2;
   for(var i = 0; i < this.num_lines; ++i) {
     for(var j = 0; j < this.num_lines; ++j) {
       temp = new Holder(
@@ -371,11 +378,12 @@ Game.prototype.draw_bg = function() {
   this.context.save();
   //bg
   this.context.fillStyle = '#FEFEFE';
-  this.context.fillRect(0,0,this.canvas.width,this.canvas.height);
+  this.context.fillRect(0,0,this.canvas.width/this.scale,this.canvas.height/this.scale);
+  
   //box
   this.context.strokeStyle = '#000000';
   this.context.lineWidth = 1;
-  this.context.strokeRect(1,1,this.canvas.width-2,this.canvas.height-2);
+  this.context.strokeRect(1,1,this.canvas.width/this.scale-2,this.canvas.height/this.scale-2);
 
   //bg image
   /*
@@ -386,8 +394,8 @@ Game.prototype.draw_bg = function() {
   */
   
   //puzzle image
-  var offsetx = this.canvas.width/2-this.img_width/2;
-  var offsety = this.canvas.height/2-this.img_height/2;
+  var offsetx = (this.canvas.width/this.scale)/2-(this.img_width)/2;
+  var offsety = (this.canvas.height/this.scale)/2-(this.img_height)/2;
   this.context.globalAlpha = 0.2
   this.context.drawImage(this.img, offsetx, offsety);
   
