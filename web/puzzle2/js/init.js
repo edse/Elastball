@@ -110,7 +110,7 @@ function resizeGame() {
     document.getElementById('canvas').width = window.innerWidth;
     document.getElementById('canvas').height = window.innerHeight;
     console.log("canvas: "+window.innerWidth+", "+window.innerHeight)
-    game.init();
+    //game.init();
 }
 
 window.addEventListener('resize', resizeGame, false);

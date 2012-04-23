@@ -22,12 +22,7 @@ Game.prototype.loadAssets = function() {
 
   //IMAGE
   this.img = new Image();
-  if(window.innerHeight > 600){
-    this.img.src = "img/rainbow500x400.png";
-  }
-  else{
-    this.img.src = "img/rainbow125x100.png";
-  }
+  this.img.src = "img/rainbow500x400.png";
   this.img.onload = this.loaded_items++;
 
   //IMAGE
@@ -173,12 +168,11 @@ Game.prototype.loadAssets = function() {
 
 Game.prototype.init = function(){
   //IMAGE SIZE
-  if(window.innerHeight > 600){
-    this.img.src = "img/rainbow500x400.png";
-  }
-  else{
-    this.img.src = "img/rainbow125x100.png";
-  }
+  if(window.innerHeight <= 600){
+    this.context.scale(0.5,0.5);
+    this.scale = 0.5;
+  }else
+    this.scale = 1;
   
   this.loaded = true;
   this.pieces = new Array();
