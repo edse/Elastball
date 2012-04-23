@@ -111,6 +111,13 @@ function resizeGame() {
     document.getElementById('canvas').height = window.innerHeight;
     console.log("canvas: "+window.innerWidth+", "+window.innerHeight)
     //game.init();
+    //IMAGE SIZE
+    if(window.innerHeight <= 600){
+      this.game.context.scale(0.5,0.5);
+      this.game.scale = 0.5;
+    }else
+      this.game.scale = 1;
+
 }
 
 window.addEventListener('resize', resizeGame, false);
